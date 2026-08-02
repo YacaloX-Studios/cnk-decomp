@@ -59,3 +59,8 @@ python tools/export_all.py --gob ASSETS.GOB --manifest gfc_extracted/_manifest.c
 - `docs/06_IGB_VARIANTS.md` — IGB v5 parser status and the 64KB slot / paged
   static-data recovery
 - `docs/04_EXTRACTION.md` — end-to-end extraction pipeline (audio included)
+
+### Posdata
+
+Threre are some things (like the UV Maps, some names and missplacements) that won't export properly, but they're kinda easy to fix
+If someone can fix it, please open a Pull request!
