@@ -1,0 +1,32 @@
+# ── Game binaries (do not commit) ─────────────────────────────
+ASSETS.GOB
+ASSETS.GFC
+SLUS_206.49
+IOPRP255.IMG
+SYSTEM.CNF
+*.TGA
+
+# ── Extracted / derived game data ─────────────────────────────
+gfc_extracted/
+ALL_ASSETS/
+exported/
+converted/
+VIDEO/
+VOICE/
+MUSIC/
+MODULES/
+output/
+textures/
+recovered_igb/
+recovered_pngs/
+tests/
+
+# ── Large raw analysis dumps (copies of game data) ────────────
+GCF.txt
+GOB.txt
+gob_gt.txt
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
