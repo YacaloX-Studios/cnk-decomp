@@ -75,6 +75,18 @@ python tools/decomp_split.py SLUS_206.49.c src/decomp   # 440 real / 13,999 stub
 - `src/decomp/real/` = one clean `.c` per recovered function; 67 symboled via
   the `SYMBOLS` table in `decomp_split.py`, plus auto-classified pure-copy
   leaves (`core/struct`). Subsystem census in `docs/08_SUBSYSTEMS.md`.
+- **Caveat**: only **214 of the 440 "real"** bodies actually contain logic; the
+  other 226 reduce to `halt_baddata()`/`halt_unimplemented()` (unrecovered).
+  See `docs/09_ROADMAP.md`.
+- Priority scoring / call graph / leaf classification:
+
+```powershell
+python tools/score_functions.py            # reads src/decomp, writes src/decomp/analysis/
+```
+
+  Emits `features.csv`, `call_edges.csv`, `call_graph.dot`, `leaf_classify.csv`
+  and `roadmap.md`. Score = fan-in × 3 + callees + globals + COP2 + loops +
+  size. `docs/09_ROADMAP.md` explains the ranking and the recoverable set.
 - The on-disc SLUS_206.49 reads as **little-endian** MIPS ELF (`data=1`,
   `e_flags=0x20924000`, entry `0x00108D28`, LOAD at `0x00100000`) — endian-swapped
   preservation copy; the EE is big-endian.

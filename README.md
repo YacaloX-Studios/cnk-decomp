@@ -63,6 +63,8 @@ python tools/export_all.py --gob ASSETS.GOB --manifest gfc_extracted/_manifest.c
   segments, and the function inventory (440 recovered / 13,999 stubs)
 - `docs/08_SUBSYSTEMS.md` — subsystem census of the 440 real functions
   (shape distribution, module map, key recovered areas, leaf heuristics)
+- `docs/09_ROADMAP.md` — quantitative decomp priority: call graph, VU0 kernels,
+  leaf auto-classification, what to decompile first
 
 ## Executable decompilation
 

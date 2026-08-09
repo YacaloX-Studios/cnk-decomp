@@ -304,8 +304,9 @@ def render(name, sym, body, leaf=False):
         "/* ============================================================================\n"
         " * %s\n"
         " * UNCLASSIFIED - real body recovered from raw decomp; semantic TBD.\n"
+        " * raw address: 0x%s  (ELF vaddr 0x00100000 + file offset)\n"
         " * ======================================================================== */\n"
-        "\n%s\n" % (name, "".join(body))
+        "\n%s\n" % (name, name.split("_")[1], "".join(body))
     )
 
 
@@ -330,6 +331,16 @@ def main():
         out = render(e["name"], sym_name, body, leaf=leaf)
         with io.open(os.path.join(real_dir, fname), "w", encoding="utf-8") as f:
             f.write(out)
+
+    # remove stale files from previous runs (renamed symbols / dropped entries)
+    written = {os.path.join(real_dir, n) for n in
+               ((sym.get(e["addr"])[0] + ".c") if sym.get(e["addr"]) else
+                (e["name"] + ".c") for e in real)}
+    if os.path.isdir(real_dir):
+        for old in os.listdir(real_dir):
+            p = os.path.join(real_dir, old)
+            if old.endswith(".c") and p not in written:
+                os.remove(p)
 
     # inventory.csv
     csv_path = os.path.join(out_dir, "inventory.csv")

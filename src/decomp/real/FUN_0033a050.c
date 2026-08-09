@@ -1,6 +1,7 @@
 /* ============================================================================
  * FUN_0033a050
  * UNCLASSIFIED - real body recovered from raw decomp; semantic TBD.
+ * raw address: 0x0033a050  (ELF vaddr 0x00100000 + file offset)
  * ======================================================================== */
 
 void FUN_0033a050(int param_1)
