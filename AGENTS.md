@@ -78,6 +78,18 @@ python tools/decomp_split.py SLUS_206.49.c src/decomp   # 440 real / 13,999 stub
 - **Caveat**: only **214 of the 440 "real"** bodies actually contain logic; the
   other 226 reduce to `halt_baddata()`/`halt_unimplemented()` (unrecovered).
   See `docs/09_ROADMAP.md`.
+- **Stub classification** (`tools/classify_stubs.py`): the **13,999 "stubs"
+  are genuine R5900 code**, not garbage. Every one starts with the MIPS
+  `addiu sp` prologue (`0x27bdxxxx`). Binary census over the on-disc ELF:
+  **13,916 `code`** (normal functions) + **83 `thunk`** (small jump-pad
+  entries) + 0 in the other categories. Writes `stub_classify.csv` +
+  `stub_census.md` to `src/decomp/analysis/`. Re-running `decomp_split.py`
+  cleans orphan files so `real/` stays 1:1 with `inventory.csv`.
+- **Symbol registry** (`tools/make_registry.py`): merges symbol + status +
+  size + confidence + callers/callees + score into ONE navigable map:
+  `src/decomp/analysis/symbols.csv` (14,439 rows). Status classes:
+  `real_c` (67 symboled), `real_logic` (147), `pseudo_stub` (226),
+  `stub_code` (13,916), `stub_thunk` (83).
 - Priority scoring / call graph / leaf classification:
 
 ```powershell

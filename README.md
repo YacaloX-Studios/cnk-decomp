@@ -21,6 +21,31 @@ The game and all of its assets are © 2003 Universal Interactive / Vivendi Unive
 the Crash Bandicoot IP is owned by Activision Blizzard (Microsoft). Nothing in this
 repository grants permission to redistribute the game's data.
 
+## Current Status
+
+### Assets
+- [x] GFC/GOB extraction
+- [x] 4327 STBL frames recovered
+- [x] IGB v5 parsing
+- [x] Geometry export (313/454 files, 531k verts)
+- [x] Texture extraction
+- [x] Animation extraction
+- [x] Audio extraction (VAGP -> WAV)
+
+### Executable
+- [x] ELF analysis (LE byte-swapped MIPS, both endiannesses)
+- [x] Function inventory (14,439 functions)
+- [x] 440 functions with recovered bodies
+- [x] Stub classification (13,916 code + 83 thunk = real R5900, not garbage)
+- [x] Subsystem census
+- [x] Symbol registry (`src/decomp/analysis/symbols.csv`)
+- [x] Quantitative roadmap (`docs/09_ROADMAP.md`)
+- [ ] Recover remaining functions
+- [ ] Recover data structures
+- [ ] Recover function signatures
+- [ ] Reconstruct build environment
+- [ ] Matching/recompilation
+
 ## Repository layout
 
 ```
@@ -65,6 +90,11 @@ python tools/export_all.py --gob ASSETS.GOB --manifest gfc_extracted/_manifest.c
   (shape distribution, module map, key recovered areas, leaf heuristics)
 - `docs/09_ROADMAP.md` — quantitative decomp priority: call graph, VU0 kernels,
   leaf auto-classification, what to decompile first
+- `src/decomp/analysis/stub_census.md` — binary stub classification of the
+  13,999 "stubs" (13,916 real code / 83 thunks; confirmed via ELF opcodes,
+  not garbage)
+- `src/decomp/analysis/symbols.csv` — master symbol registry
+  (address / size / subsystem / confidence / callers / callees / status)
 
 ## Executable decompilation
 
@@ -74,6 +104,15 @@ python tools/analyze_elf.py SLUS_206.49
 
 # 2. Split the raw export into a readable decomposition
 python tools/decomp_split.py SLUS_206.49.c src/decomp
+
+# 3. Classify the 13,999 "stub" functions by their ELF opcodes
+python tools/classify_stubs.py SLUS_206.49 src/decomp
+
+# 4. Score features / call graph / leaf ranking
+python tools/score_functions.py
+
+# 5. Build the master symbol registry
+python tools/make_registry.py
 ```
 
 ### Posdata
