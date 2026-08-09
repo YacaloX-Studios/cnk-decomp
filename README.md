@@ -73,3 +73,10 @@ python tools/analyze_elf.py SLUS_206.49
 # 2. Split the raw export into a readable decomposition
 python tools/decomp_split.py SLUS_206.49.c src/decomp
 ```
+
+### Posdata
+
+Threre are some things (like the UV Maps, some names and missplacements) that won't export properly, but they're kinda easy to fix
+If someone can fix it, please open a Pull request!
+
+I know the actual engine used for the game was, supposedly, the Intrinsic Alchemy 3.0, but on the game the archived name was "Velocity", probably a codename or a different pipeline of the engine
