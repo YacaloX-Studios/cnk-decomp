@@ -64,6 +64,23 @@ Diagnostic scripts (`diagNN.py`) are single-use; re-run from the temp folder:
 python C:\Users\Admin\AppData\Local\Temp\opencodec\diagNN.py
 ```
 
+### Executable analysis / decomp (SLUS_206.49)
+
+```powershell
+python tools/analyze_elf.py SLUS_206.49      # byte-exact ELF header/segments, both endiannesses
+python tools/decomp_split.py SLUS_206.49.c src/decomp   # 440 real / 13,999 stub functions
+```
+
+- `src/decomp/inventory.csv` = full function census (`kind=real|stub`).
+- `src/decomp/real/` = one clean `.c` per recovered function; 67 symboled via
+  the `SYMBOLS` table in `decomp_split.py`, plus auto-classified pure-copy
+  leaves (`core/struct`). Subsystem census in `docs/08_SUBSYSTEMS.md`.
+- The on-disc SLUS_206.49 reads as **little-endian** MIPS ELF (`data=1`,
+  `e_flags=0x20924000`, entry `0x00108D28`, LOAD at `0x00100000`) — endian-swapped
+  preservation copy; the EE is big-endian.
+- IGB parser (`tests` regression): public object list is `igb.objs` (not
+  `objects`); scene walk is `extract_meshes()` (not `walk_scene()`).
+
 ## Linting / type-checking
 
 No linter or type-checker is configured for this repo (plain Python scripts).

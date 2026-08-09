@@ -25,6 +25,13 @@ tests/
 GCF.txt
 GOB.txt
 gob_gt.txt
+SLUS_206.49.c
+IOPRP255.IMG.c
+SYSTEM.CNF.c
+
+# ── Ghidra project (tool state, not source) ────────────────────
+Crash Nitro Kart Decomp.gpr
+Crash Nitro Kart Decomp.rep/
 
 # ── Python ────────────────────────────────────────────────────
 __pycache__/

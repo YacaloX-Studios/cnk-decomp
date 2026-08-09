@@ -1,10 +1,16 @@
 # Análisis del ELF: SLUS_206.49
 
+> **Estado (corregido en `docs/07_EXECUTABLES.md`):** mediciones byte-exactas del
+> binario real — 6,234,672 B, `e_machine=MIPS`, `e_flags=0x20924000` (R5900),
+> `e_entry=0x00108D28`, segmento LOAD en `0x00100000`. La copia en el repo se
+> lee como **little-endian** (típico de copias byte-swapeadas de preservación) —
+> ver `tools/analyze_elf.py` para el análisis reproducible de ambas endiannesses.
+
 ## Información básica
 
 - **Archivo:** `SLUS_206.49`
 - **Plataforma:** PlayStation 2 (EE MIPS R5900)
-- **Tamaño:** ~2.5 MB
+- **Tamaño:** ~2.5 MB (ver corrigo en 07; el binario es 6,234,672 B)
 - **Game ID:** SLUS-20649 (USA)
 - **Región:** NTSC
 

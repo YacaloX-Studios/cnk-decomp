@@ -26,7 +26,7 @@ repository grants permission to redistribute the game's data.
 ```
 ├── docs/         format specifications and research notes
 ├── tools/        extraction, parsing, and export scripts
-├── src/          placeholder for decompiled source (future)
+├── src/          decompiled, readable source (src/decomp/, generated)
 ├── include/      placeholder for headers (future)
 ├── README.md
 └── .gitignore
@@ -59,3 +59,17 @@ python tools/export_all.py --gob ASSETS.GOB --manifest gfc_extracted/_manifest.c
 - `docs/06_IGB_VARIANTS.md` — IGB v5 parser status and the 64KB slot / paged
   static-data recovery
 - `docs/04_EXTRACTION.md` — end-to-end extraction pipeline (audio included)
+- `docs/07_EXECUTABLES.md` — SLUS_206.49 / IOPRP255.IMG / SYSTEM.CNF, ELF
+  segments, and the function inventory (440 recovered / 13,999 stubs)
+- `docs/08_SUBSYSTEMS.md` — subsystem census of the 440 real functions
+  (shape distribution, module map, key recovered areas, leaf heuristics)
+
+## Executable decompilation
+
+```powershell
+# 1. Analyze the ELF (both endiannesses, byte-exact)
+python tools/analyze_elf.py SLUS_206.49
+
+# 2. Split the raw export into a readable decomposition
+python tools/decomp_split.py SLUS_206.49.c src/decomp
+```
