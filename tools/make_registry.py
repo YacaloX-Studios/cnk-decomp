@@ -109,7 +109,7 @@ def main():
         if status == "real_c":
             conf = 1.0
         ft = feat.get(addr, {})
-        v = 0x00100000 + int(addr, 16)
+        v = int(addr, 16)                  # address already is the vaddr
         rows.append([addr, v, v - BASE_VADDR + SEG_OFF, size_of.get(addr, 0),
                      r["raw_name"], r["symbol"] or r["raw_name"], r["module"],
                      status, conf,
@@ -118,7 +118,7 @@ def main():
     # stubs (code + thunk, union set)
     for addr in sorted(stub_code | stub_thunk):
         status = "stub_thunk" if addr in stub_thunk else "stub_code"
-        v = 0x00100000 + int(addr, 16)
+        v = int(addr, 16)
         rows.append([addr, v, v - BASE_VADDR + SEG_OFF, size_of.get(addr, 0),
                      addr, addr, "", status, CONF[status], 0, 0, 0])
 

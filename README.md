@@ -95,6 +95,8 @@ python tools/export_all.py --gob ASSETS.GOB --manifest gfc_extracted/_manifest.c
   not garbage)
 - `src/decomp/analysis/symbols.csv` — master symbol registry
   (address / size / subsystem / confidence / callers / callees / status)
+- `docs/10_TYPES.md` — Phase 3: signature evidence and anonymous structs
+  (`inferred_types.csv`, `binary_call_edges.csv`, `inferred_structs.json`)
 
 ## Executable decompilation
 
@@ -113,6 +115,9 @@ python tools/score_functions.py
 
 # 5. Build the master symbol registry
 python tools/make_registry.py
+
+# 6. Infer function signatures + anonymous structs from the binary
+python tools/infer_types.py SLUS_206.49 src/decomp
 ```
 
 ### Posdata

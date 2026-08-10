@@ -90,6 +90,15 @@ python tools/decomp_split.py SLUS_206.49.c src/decomp   # 440 real / 13,999 stub
   `src/decomp/analysis/symbols.csv` (14,439 rows). Status classes:
   `real_c` (67 symboled), `real_logic` (147), `pseudo_stub` (226),
   `stub_code` (13,916), `stub_thunk` (83).
+- **Signature inference** (`tools/infer_types.py`): decodes the on-disc ELF
+  at every function (LE uint32 words -> BE R5900 opcode) and gathers
+  evidence: args read / ptr-vs-int via pointer-taint on a0..a3, return kind
+  in v0 at `jr $ra`, struct field offsets incl. pointer-chases, absolute
+  `jal` targets, notable constants, float/COP2/simd flags. Writes
+  `inferred_types.csv` (per-func), `binary_call_edges.csv` (**45,203 edges**,
+  true call graph incl. stubs), `inferred_types.md` (evidence blocks) and
+  `inferred_structs.json` (Phase 3B anonymous structs + shared-field mesh).
+  Evidence only, no invented names; confidence 0..0.95.
 - Priority scoring / call graph / leaf classification:
 
 ```powershell
