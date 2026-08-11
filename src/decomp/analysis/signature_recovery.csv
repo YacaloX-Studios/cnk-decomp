@@ -1,0 +1,215 @@
+address,name,status,known_good,return_c,args_c,args_src
+0x00108ee8,FUN_00108ee8,real_logic,0,void,int a0,a0:int
+0x0010c820,FUN_0010c820,real_logic,0,void *,"void * a0, void * a1, int a2, int a3",a0:ptr|a1:ptr|a2:int|a3:int
+0x00114cf0,FUN_00114cf0,real_logic,0,void,int a0,a0:int
+0x00115430,FUN_00115430,real_logic,0,void *,void * a0,a0:ptr
+0x00115460,FUN_00115460,real_logic,0,void,,
+0x001206f0,FUN_001206f0,real_logic,0,void,void * a0,a0:ptr
+0x00120720,FUN_00120720,real_logic,0,void,"void * a0, struct Unknown_a2_0_4_8 * a2",a0:ptr|a2:struct Unknown_a2_0_4_8
+0x00120750,FUN_00120750,real_logic,0,void,void * a0,a0:ptr
+0x001207c0,FUN_001207c0,real_logic,0,void,void * a0,a0:ptr
+0x001238d0,FUN_001238d0,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c
+0x00134ec0,FUN_00134ec0,real_logic,0,void *,,
+0x00136110,FUN_00136110,real_logic,0,void,void * a0,a0:ptr
+0x0013e950,FUN_0013e950,real_logic,0,void *,"struct Unknown_a0_0_4_8 * a0, int a1",a0:struct Unknown_a0_0_4_8|a1:int
+0x00154d50,FUN_00154d50,real_logic,0,void *,"int a0, void * a1, int a2, int a3",a0:int|a1:ptr|a2:int|a3:int
+0x00157010,FUN_00157010,real_logic,0,int,"void * a0, void * a1",a0:ptr|a1:ptr
+0x00157070,FUN_00157070,real_logic,0,void *,"void * a0, void * a1",a0:ptr|a1:ptr
+0x00157440,FUN_00157440,real_logic,0,int,"void * a0, void * a1",a0:ptr|a1:ptr
+0x001574a0,FUN_001574a0,real_logic,0,void *,"void * a0, void * a1",a0:ptr|a1:ptr
+0x00161de0,FUN_00161de0,real_logic,0,void *,"void * a0, void * a1, struct Unknown_a2_0_4_8 * a2, int a3",a0:ptr|a1:ptr|a2:struct Unknown_a2_0_4_8|a3:int
+0x0016a110,FUN_0016a110,real_logic,0,void *,"void * a0, int a1, int a2",a0:ptr|a1:int|a2:int
+0x0016b030,FUN_0016b030,real_logic,0,void *,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x0018ddc0,FUN_0018ddc0,real_logic,0,void,,
+0x00195cd0,FUN_00195cd0,real_logic,0,void,"void * a0, struct Unknown_a1_0_4_8 * a1",a0:ptr|a1:struct Unknown_a1_0_4_8
+0x001963d0,FUN_001963d0,real_logic,0,void *,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x00197870,FUN_00197870,real_logic,0,void *,"void * a0, void * a1, int a2",a0:ptr|a1:ptr|a2:int
+0x0019a560,FUN_0019a560,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x0019d330,FUN_0019d330,real_logic,0,void *,void * a0,a0:ptr
+0x001acde0,FUN_001acde0,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8
+0x001b82f0,FUN_001b82f0,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8
+0x001c3470,FUN_001c3470,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8
+0x001ca130,FUN_001ca130,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c
+0x001cad90,FUN_001cad90,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8
+0x001ccb00,FUN_001ccb00,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c
+0x001cf680,FUN_001cf680,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8
+0x001cf6f0,FUN_001cf6f0,real_logic,0,void *,"void * a0, void * a1, void * a2, int a3",a0:ptr|a1:ptr|a2:ptr|a3:int
+0x001dbea0,FUN_001dbea0,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c
+0x001df840,FUN_001df840,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c
+0x001dfdb0,FUN_001dfdb0,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c
+0x001e0050,FUN_001e0050,real_logic,0,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c
+0x001f4e00,FUN_001f4e00,real_logic,0,int,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x002366c0,FUN_002366c0,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x0023e070,FUN_0023e070,real_logic,0,void,"struct Unknown_a1_0_4 * a0, struct Unknown_a1_0_4_8 * a1",a0:struct Unknown_a1_0_4|a1:struct Unknown_a1_0_4_8
+0x002470e0,FUN_002470e0,real_logic,0,void *,"void * a0, void * a1, void * a3",a0:ptr|a1:ptr|a3:ptr
+0x0028b3f0,FUN_0028b3f0,real_logic,0,void *,"struct Unknown_a0_0_4_8_10 * a0, int a1, struct Unknown_a2_0_4_8 * a2, int a3",a0:struct Unknown_a0_0_4_8_10|a1:int|a2:struct Unknown_a2_0_4_8|a3:int
+0x0031c990,FUN_0031c990,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x00337690,FUN_00337690,real_logic,0,void *,"void * a0, void * a1, int a2, int a3",a0:ptr|a1:ptr|a2:int|a3:int
+0x0033a050,FUN_0033a050,real_logic,0,void,void * a0,a0:ptr
+0x0034bb20,FUN_0034bb20,real_logic,0,void *,void * a0,a0:ptr
+0x00363b70,FUN_00363b70,real_logic,0,void *,,
+0x00365450,FUN_00365450,real_logic,0,void *,void * a0,a0:ptr
+0x0036d630,FUN_0036d630,real_logic,0,void *,void * a0,a0:ptr
+0x003bff30,FUN_003bff30,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x003eddf0,FUN_003eddf0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003ee2e0,FUN_003ee2e0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003eea70,FUN_003eea70,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003ef2b0,FUN_003ef2b0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003ef8c0,FUN_003ef8c0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003efc30,FUN_003efc30,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003f00a0,FUN_003f00a0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003f0810,FUN_003f0810,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003f0d60,FUN_003f0d60,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003f1430,FUN_003f1430,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x003f5b50,FUN_003f5b50,real_logic,0,int,void * a0,a0:ptr
+0x00404e80,FUN_00404e80,real_logic,0,int,int a3,a3:int
+0x0040a820,FUN_0040a820,real_logic,0,void,,
+0x0040b3e0,FUN_0040b3e0,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0040f030,FUN_0040f030,real_logic,0,void,"int a0, int a2, int a3",a0:int|a2:int|a3:int
+0x004238c0,FUN_004238c0,real_logic,0,void *,,
+0x00423d80,FUN_00423d80,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x004285f0,FUN_004285f0,real_logic,0,void,,
+0x00428630,FUN_00428630,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429708,FUN_00429708,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429760,FUN_00429760,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x004297c0,FUN_004297c0,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429820,FUN_00429820,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429880,FUN_00429880,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x004298e0,FUN_004298e0,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429940,FUN_00429940,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x004299a0,FUN_004299a0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429b08,FUN_00429b08,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429b80,FUN_00429b80,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429c60,FUN_00429c60,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429de0,FUN_00429de0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429ef0,FUN_00429ef0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00429f10,FUN_00429f10,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042a5e8,FUN_0042a5e8,real_logic,0,void,"void * a0, int a1",a0:ptr|a1:int
+0x0042a7f8,FUN_0042a7f8,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042a980,FUN_0042a980,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042ab60,FUN_0042ab60,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042acb0,FUN_0042acb0,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x0042acd0,FUN_0042acd0,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042ae68,FUN_0042ae68,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042ba78,FUN_0042ba78,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042bb70,FUN_0042bb70,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042bd70,FUN_0042bd70,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042bd98,FUN_0042bd98,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042bdb8,FUN_0042bdb8,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042bde0,FUN_0042bde0,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042bfa8,FUN_0042bfa8,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x0042c1c8,FUN_0042c1c8,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042c1e8,FUN_0042c1e8,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042c238,FUN_0042c238,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042c280,FUN_0042c280,real_logic,0,int,"int a0, void * a1, int a2, void * a3",a0:int|a1:ptr|a2:int|a3:ptr
+0x0042c5c0,FUN_0042c5c0,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042c620,FUN_0042c620,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042c660,FUN_0042c660,real_logic,0,void,"int a0, void * a1, int a2, int a3",a0:int|a1:ptr|a2:int|a3:int
+0x0042c740,FUN_0042c740,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042c848,FUN_0042c848,real_logic,0,void,"int a0, void * a1, int a2, int a3",a0:int|a1:ptr|a2:int|a3:int
+0x0042cac8,FUN_0042cac8,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042cb00,FUN_0042cb00,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042cd18,FUN_0042cd18,real_logic,0,void *,"int a0, void * a1, int a2, int a3",a0:int|a1:ptr|a2:int|a3:int
+0x0042ce18,FUN_0042ce18,real_logic,0,void,"struct Unknown_a0_0_4 * a0, int a1, int a2, int a3",a0:struct Unknown_a0_0_4|a1:int|a2:int|a3:int
+0x0042cfe0,FUN_0042cfe0,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042d3d0,FUN_0042d3d0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042d680,FUN_0042d680,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042d6b0,FUN_0042d6b0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042d708,FUN_0042d708,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042d770,FUN_0042d770,real_logic,0,int,"struct Unknown_a0_0_8 * a0, void * a1, void * a2, int a3",a0:struct Unknown_a0_0_8|a1:ptr|a2:ptr|a3:int
+0x0042f100,FUN_0042f100,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042f130,FUN_0042f130,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042f158,FUN_0042f158,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042f638,FUN_0042f638,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042f750,FUN_0042f750,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042fb10,FUN_0042fb10,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042fd98,FUN_0042fd98,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00430000,FUN_00430000,real_logic,0,void *,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x00430748,FUN_00430748,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x004312a0,FUN_004312a0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00431390,FUN_00431390,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00431488,FUN_00431488,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00431920,FUN_00431920,real_logic,0,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00432588,FUN_00432588,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00432e90,FUN_00432e90,real_logic,0,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x00433090,FUN_00433090,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00433ec0,FUN_00433ec0,real_logic,0,void,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x00433ef0,FUN_00433ef0,real_logic,0,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0043cb00,FUN_0043cb00,real_logic,0,void,,
+0x0043f5b8,FUN_0043f5b8,real_logic,0,void *,"void * a0, int a1",a0:ptr|a1:int
+0x004450e0,FUN_004450e0,real_logic,0,void,,
+0x0044fcb0,FUN_0044fcb0,real_logic,0,int,"void * a0, void * a1, void * a2",a0:ptr|a1:ptr|a2:ptr
+0x0045d6f0,FUN_0045d6f0,real_logic,0,int,"void * a0, void * a1, int a2",a0:ptr|a1:ptr|a2:int
+0x0046c500,FUN_0046c500,real_logic,0,int,"int a1, int a2",a1:int|a2:int
+0x0047f4a0,FUN_0047f4a0,real_logic,0,int,"int a1, int a2",a1:int|a2:int
+0x0053fd80,FUN_0053fd80,real_logic,0,void *,void * a0,a0:ptr
+0x00540780,FUN_00540780,real_logic,0,int,"void * a0, void * a1",a0:ptr|a1:ptr
+0x00551a70,FUN_00551a70,real_logic,0,void *,void * a0,a0:ptr
+0x0058ab30,FUN_0058ab30,real_logic,0,void *,"void * a0, void * a1, int a3",a0:ptr|a1:ptr|a3:int
+0x001071e0,FUN_001071e0,real_c,1,void,"void * a0, void * a1, int a2, int a3",a0:ptr|a1:ptr|a2:int|a3:int
+0x0010e780,FUN_0010e780,real_c,1,void,"struct Unknown_a0_0_4_8_10 * a0, int a1, void * a2, int a3",a0:struct Unknown_a0_0_4_8_10|a1:int|a2:ptr|a3:int
+0x0010ee50,FUN_0010ee50,real_c,1,void *,"void * a0, void * a1, int a2, int a3",a0:ptr|a1:ptr|a2:int|a3:int
+0x0011e790,FUN_0011e790,real_c,1,void,"void * a0, int a1, int a2",a0:ptr|a1:int|a2:int
+0x0012bda0,FUN_0012bda0,real_c,1,int,"int a0, int a1, int a2",a0:int|a1:int|a2:int
+0x0015ba30,FUN_0015ba30,real_c,1,void *,"struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1",a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8
+0x00165e70,FUN_00165e70,real_c,1,void *,"void * a0, void * a1, int a2, int a3",a0:ptr|a1:ptr|a2:int|a3:int
+0x00190370,FUN_00190370,real_c,1,void,"void * a0, int a1, int a2",a0:ptr|a1:int|a2:int
+0x00195820,FUN_00195820,real_c,1,void,"void * a0, int a2",a0:ptr|a2:int
+0x0019e150,FUN_0019e150,real_c,1,void *,"void * a0, int a1, int a2",a0:ptr|a1:int|a2:int
+0x0019ea30,FUN_0019ea30,real_c,1,void *,"void * a0, int a1, int a2",a0:ptr|a1:int|a2:int
+0x0019f130,FUN_0019f130,real_c,1,void *,"void * a0, int a1",a0:ptr|a1:int
+0x0019f7f0,FUN_0019f7f0,real_c,1,void *,"void * a0, int a1, int a2",a0:ptr|a1:int|a2:int
+0x001a1800,FUN_001a1800,real_c,1,void *,"void * a0, void * a1, int a2, int a3",a0:ptr|a1:ptr|a2:int|a3:int
+0x001a1bd0,FUN_001a1bd0,real_c,1,void,"void * a0, int a1, int a2, void * a3",a0:ptr|a1:int|a2:int|a3:ptr
+0x001b6340,FUN_001b6340,real_c,1,void *,"void * a0, void * a1, struct Unknown_a2_0_4_8 * a2",a0:ptr|a1:ptr|a2:struct Unknown_a2_0_4_8
+0x001c3910,FUN_001c3910,real_c,1,void *,"void * a0, int a1, void * a2, int a3",a0:ptr|a1:int|a2:ptr|a3:int
+0x0022ade0,FUN_0022ade0,real_c,1,void *,"int a0, void * a1",a0:int|a1:ptr
+0x0022d1a0,FUN_0022d1a0,real_c,1,void,"struct Unknown_a0_0_4_8 * a0, void * a1, int a2",a0:struct Unknown_a0_0_4_8|a1:ptr|a2:int
+0x002304a0,FUN_002304a0,real_c,1,void,"struct Unknown_a0_0_4_8 * a0, int a2",a0:struct Unknown_a0_0_4_8|a2:int
+0x0026d960,FUN_0026d960,real_c,1,void *,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x0026e060,FUN_0026e060,real_c,1,void *,"struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3",a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int
+0x0026e1a0,FUN_0026e1a0,real_c,1,void *,"struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3",a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int
+0x0026e2e0,FUN_0026e2e0,real_c,1,void *,"struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3",a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int
+0x0026e420,FUN_0026e420,real_c,1,void *,"struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3",a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int
+0x003472f0,FUN_003472f0,real_c,1,void *,void * a0,a0:ptr
+0x0035bc40,FUN_0035bc40,real_c,1,void *,void * a0,a0:ptr
+0x0035c3f0,FUN_0035c3f0,real_c,1,void *,void * a0,a0:ptr
+0x00365d80,FUN_00365d80,real_c,1,void *,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x003803c0,FUN_003803c0,real_c,1,void,"struct Unknown_a0_0_8_10 * a0, void * a1, void * a2, int a3",a0:struct Unknown_a0_0_8_10|a1:ptr|a2:ptr|a3:int
+0x00380560,FUN_00380560,real_c,1,void,"struct Unknown_a0_0_8_10 * a0, void * a1, void * a2, int a3",a0:struct Unknown_a0_0_8_10|a1:ptr|a2:ptr|a3:int
+0x00381030,FUN_00381030,real_c,1,void *,"void * a0, void * a1, void * a2, int a3",a0:ptr|a1:ptr|a2:ptr|a3:int
+0x00394050,FUN_00394050,real_c,1,void *,void * a0,a0:ptr
+0x003955c0,FUN_003955c0,real_c,1,void *,void * a0,a0:ptr
+0x003a0730,FUN_003a0730,real_c,1,void *,"void * a0, int a1, void * a2, void * a3",a0:ptr|a1:int|a2:ptr|a3:ptr
+0x003a09f0,FUN_003a09f0,real_c,1,void *,"void * a0, int a1, void * a2, void * a3",a0:ptr|a1:int|a2:ptr|a3:ptr
+0x003ae0e0,FUN_003ae0e0,real_c,1,void *,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x003ec660,FUN_003ec660,real_c,1,void *,"struct Unknown_a0_0_4 * a0, int a2",a0:struct Unknown_a0_0_4|a2:int
+0x003f6840,FUN_003f6840,real_c,1,void *,"void * a0, int a1",a0:ptr|a1:int
+0x003f6b20,FUN_003f6b20,real_c,1,void *,"void * a0, int a1",a0:ptr|a1:int
+0x00405d20,FUN_00405d20,real_c,1,void,"void * a0, int a1, int a2, void * a3",a0:ptr|a1:int|a2:int|a3:ptr
+0x00405dc0,FUN_00405dc0,real_c,1,void,"void * a0, int a1, int a2, void * a3",a0:ptr|a1:int|a2:int|a3:ptr
+0x00407550,FUN_00407550,real_c,1,void,"void * a0, int a1, int a2, void * a3",a0:ptr|a1:int|a2:int|a3:ptr
+0x004075f0,FUN_004075f0,real_c,1,void,"void * a0, int a1, int a2, void * a3",a0:ptr|a1:int|a2:int|a3:ptr
+0x00428b18,FUN_00428b18,real_c,1,void,"void * a0, int a1, int a2, int a3",a0:ptr|a1:int|a2:int|a3:int
+0x00428c50,FUN_00428c50,real_c,1,void *,"void * a0, int a1, int a2",a0:ptr|a1:int|a2:int
+0x00428f48,FUN_00428f48,real_c,1,void *,"int a0, void * a1, void * a2, int a3",a0:int|a1:ptr|a2:ptr|a3:int
+0x0042a4e0,FUN_0042a4e0,real_c,1,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042a680,FUN_0042a680,real_c,1,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042a818,FUN_0042a818,real_c,1,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042ac48,FUN_0042ac48,real_c,1,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042bc88,FUN_0042bc88,real_c,1,int,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
+0x0042f660,FUN_0042f660,real_c,1,void,"int a0, int a1, void * a2",a0:int|a1:int|a2:ptr
+0x004311f0,FUN_004311f0,real_c,1,void *,"int a0, int a2, int a3",a0:int|a2:int|a3:int
+0x004327a0,FUN_004327a0,real_c,1,void *,"int a0, void * a1, int a2, void * a3",a0:int|a1:ptr|a2:int|a3:ptr
+0x00432818,FUN_00432818,real_c,1,void,"int a0, void * a1, int a2, int a3",a0:int|a1:ptr|a2:int|a3:int
+0x00432fc0,FUN_00432fc0,real_c,1,void,"int a0, void * a1, void * a2, int a3",a0:int|a1:ptr|a2:ptr|a3:int
+0x004518d0,FUN_004518d0,real_c,1,void,"void * a0, void * a1, void * a2, void * a3",a0:ptr|a1:ptr|a2:ptr|a3:ptr
+0x004f9eb0,FUN_004f9eb0,real_c,1,void,"void * a0, void * a1, int a2, void * a3",a0:ptr|a1:ptr|a2:int|a3:ptr
+0x00530050,FUN_00530050,real_c,1,void,void * a0,a0:ptr
+0x00530080,FUN_00530080,real_c,1,void,void * a0,a0:ptr
+0x00534b60,FUN_00534b60,real_c,1,void,"void * a0, void * a1, int a2, void * a3",a0:ptr|a1:ptr|a2:int|a3:ptr
+0x0058d7c0,FUN_0058d7c0,real_c,1,void,"struct Unknown_a0_0_4 * a0, struct Unknown_a1_0_4_8 * a1, struct Unknown_a2_0_4_8 * a2",a0:struct Unknown_a0_0_4|a1:struct Unknown_a1_0_4_8|a2:struct Unknown_a2_0_4_8
+0x0058dea0,FUN_0058dea0,real_c,1,void,"struct Unknown_a0_0_4_8_c * a0, int a1, int a2",a0:struct Unknown_a0_0_4_8_c|a1:int|a2:int
+0x005ec0a0,FUN_005ec0a0,real_c,1,void *,"struct Unknown_a0_0_8_10 * a0, int a1, int a2, int a3",a0:struct Unknown_a0_0_8_10|a1:int|a2:int|a3:int
+0x005ed330,FUN_005ed330,real_c,1,void *,"struct Unknown_a0_0_8_10 * a0, int a1, int a2, int a3",a0:struct Unknown_a0_0_8_10|a1:int|a2:int|a3:int
+0x006588a0,FUN_006588a0,real_c,1,void *,"int a0, int a1, int a2, int a3",a0:int|a1:int|a2:int|a3:int
