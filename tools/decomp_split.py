@@ -316,11 +316,13 @@ def main():
     real, stubs = split_functions(src)
 
     real_dir = os.path.join(out_dir, "real")
-    for d in (out_dir, real_dir):
+    recovered_dir = os.path.join(out_dir, "recovered")
+    for d in (out_dir, real_dir, recovered_dir):
         os.makedirs(d, exist_ok=True)
 
     sym = SYMBOLS
     used = set()
+    recovered_kept = 0
     for e in real:
         addr = e["addr"]
         sym_name = sym.get(addr)
@@ -328,6 +330,15 @@ def main():
         leaf = sym_name is None and is_pure_leaf(body)
         fname = (sym_name[0] + ".c") if sym_name else (e["name"] + ".c")
         used.add(addr)
+        rec = os.path.join(recovered_dir, fname)
+        if os.path.exists(rec):
+            # human-recovered body is the source of truth: copy it in place
+            # and do not let regeneration overwrite it.
+            with io.open(rec, "rb") as fsrc, io.open(
+                    os.path.join(real_dir, fname), "wb") as fdst:
+                fdst.write(fsrc.read())
+            recovered_kept += 1
+            continue
         out = render(e["name"], sym_name, body, leaf=leaf)
         with io.open(os.path.join(real_dir, fname), "w", encoding="utf-8") as f:
             f.write(out)
@@ -372,6 +383,7 @@ def main():
     print("real functions : %d" % len(real))
     print("stub functions : %d" % len(stubs))
     print("classified     : %d / %d real" % (len(used & set(sym)), len(real)))
+    print("recovered kept : %d (from recovered/, not overwritten)" % recovered_kept)
     print("wrote real/  -> %s" % real_dir)
     print("wrote        -> %s" % csv_path)
     print("wrote        -> %s" % os.path.join(out_dir, "stub_addresses.txt"))

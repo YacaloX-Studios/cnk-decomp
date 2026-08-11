@@ -131,6 +131,7 @@ def main():
             "- score: %s  |  callers: %s  |  callees: %s  |  real edges: %s  |  conflicts: %s" %
             (r["score"], r["callers"], r["callees"], r["calls_real"],
              r["conflicts"]),
+            "- asm: recovery_asm/%s.asm  (regenerate a la tools/recovery_asm.py)" % addr,
             "- signature (conf %s): %s -> %s" %
             (r["confidence"], r["args"], r["return_kind"]),
             "- propagated labels: %s" % (r["labels"] or "-"),

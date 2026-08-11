@@ -1,0 +1,70 @@
+; 0x0042c740  FUN_0042c740  size=264  status=real_logic
+; evidence: args=a0=int;a1=int;a2=int;a3=int ret=int calls=0x004287e0;0x0042c660;0x0042c708
+; 66 words
+
+  0042c740: addiu  $sp, $sp, -96      
+  0042c744: dsubu  $zero, $a2, +0     
+  0042c748: sw     $s4, +64($sp)      
+  0042c74c: dsubu  $zero, $zero, +0   
+  0042c750: sw     $s3, +48($sp)      
+  0042c754: dsubu  $zero, $a0, +0     
+  0042c758: sw     $s1, +16($sp)      
+  0042c75c: dsubu  $zero, $a3, +0     
+  0042c760: sw     $ra, +80($sp)      
+  0042c764: dsubu  $zero, $a1, +0     
+  0042c768: sw     $s0, +0($sp)       
+  0042c76c: addiu  $a3, $s1, +20      
+  0042c770: sw     $s2, +32($sp)      
+  0042c774: lw     $s2, +16($s1)      
+  0042c778: lw     $v1, +0($a3)       
+  0042c77c: addiu  $t1, $t1, +1       
+  0042c780: dadd   $s2, $t1, +0       
+  0042c784: andi   $a0, $v1, -1       
+  0042c788: mult   $t0, $a0, +0       
+  0042c78c: srl    $v1, $zero, +16    
+  0042c790: mult   $t0, $v1, +0       
+  0042c794: addu   $s3, $v0, +0       
+  0042c798: srl    $a0, $zero, +16    
+  0042c79c: addu   $a1, $v1, +0       
+  0042c7a0: andi   $a0, $a0, -1       
+  0042c7a4: sll    $v1, $zero, +16    
+  0042c7a8: srl    $v1, $zero, +16    
+  0042c7ac: addu   $a0, $v0, +0       
+  0042c7b0: sw     $v0, +0($a3)       
+  0042c7b4: bne    $a2, $zero, -64       ; br -> 0x0046c778
+  0042c7b8: addiu  $a3, $a3, +4       
+  0042c7bc: beq    $s3, $zero, +104      ; br -> 0x0042c828
+  0042c7c0: dsubu  $zero, $s1, +0     
+  0042c7c4: lw     $v0, +8($s1)       
+  0042c7c8: dadd   $v0, $s2, +0       
+  0042c7cc: bne    $v0, $zero, +68       ; br -> 0x0042c814
+  0042c7d0: sll    $s2, $zero, +2     
+  0042c7d4: lw     $a1, +4($s1)       
+  0042c7d8: dsubu  $zero, $s4, +0     
+  0042c7dc: jal   0xf042c660             ; -> FUN_0042c660
+  0042c7e0: addiu  $a1, $a1, +1       
+  0042c7e4: lw     $a2, +16($s1)      
+  0042c7e8: dsubu  $zero, $v0, +0     
+  0042c7ec: addiu  $a1, $s1, +12      
+  0042c7f0: addiu  $a0, $s0, +12      
+  0042c7f4: sll    $a2, $zero, +2     
+  0042c7f8: jal   0xf04287e0             ; -> 0x004287e0
+  0042c7fc: addiu  $a2, $a2, +8       
+  0042c800: dsubu  $zero, $s1, +0     
+  0042c804: jal   0xf042c708             ; -> 0x0042c708
+  0042c808: dsubu  $zero, $s4, +0     
+  0042c80c: dsubu  $zero, $s0, +0     
+  0042c810: sll    $s2, $zero, +2     
+  0042c814: addu   $v0, $s1, +0       
+  0042c818: addiu  $s2, $s2, +1       
+  0042c81c: sw     $s3, +20($v0)      
+  0042c820: sw     $s2, +16($s1)      
+  0042c824: dsubu  $zero, $s1, +0     
+  0042c828: lw     $ra, +80($sp)      
+  0042c82c: lw     $s4, +64($sp)      
+  0042c830: lw     $s3, +48($sp)      
+  0042c834: lw     $s2, +32($sp)      
+  0042c838: lw     $s1, +16($sp)      
+  0042c83c: lw     $s0, +0($sp)       
+  0042c840: jr     $ra                
+  0042c844: addiu  $sp, $sp, +96      

@@ -1,0 +1,30 @@
+; 0x004297c0  FUN_004297c0  size=96  status=real_logic
+; evidence: args=a0=int;a1=int;a2=int;a3=int ret=ptr calls=0x0043d1d8
+; 24 words
+
+  004297c0: addiu  $sp, $sp, -48      
+  004297c4: sw     $s0, +0($sp)       
+  004297c8: dsubu  $zero, $a0, +0     
+  004297cc: sw     $s1, +16($sp)      
+  004297d0: dsubu  $zero, $a1, +0     
+  004297d4: lui   $s1, 0x00650000     
+  004297d8: dsubu  $zero, $a2, +0     
+  004297dc: sw     $ra, +32($sp)      
+  004297e0: sw     $zero, +30552($s1)    ; GLOBAL 0x00657758
+  004297e4: jal   0xf043d1d8             ; -> 0x0043d1d8
+  004297e8: dsubu  $zero, $a3, +0     
+  004297ec: dsubu  $zero, $v0, +0     
+  004297f0: addiu  $v0, $zero, -1     
+  004297f4: bne    $v1, $v0, +20         ; br -> 0x0042980c
+  004297f8: lw     $ra, +32($sp)      
+  004297fc: lw     $v0, +30552($s1)      ; GLOBAL 0x00657758
+  00429800: bnel   $v0, $zero, +8        ; br -> 0x0042980c
+  00429804: sw     $v0, +0($s0)       
+  00429808: lw     $ra, +32($sp)      
+  0042980c: dsubu  $zero, $v1, +0     
+  00429810: lw     $s1, +16($sp)      
+  00429814: lw     $s0, +0($sp)       
+  00429818: jr     $ra                
+  0042981c: addiu  $sp, $sp, +48      
+
+; globals: 0x00657758(x2)

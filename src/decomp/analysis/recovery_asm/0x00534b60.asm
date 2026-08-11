@@ -1,0 +1,138 @@
+; 0x00534b60  FUN_00534b60  size=528  status=real_c
+; evidence: args=a0=ptr;a1=ptr;a2=int;a3=ptr ret=void calls=
+; 132 words
+
+  00534b60: addiu  $sp, $sp, -16      
+  00534b64: dsubu  $zero, $zero, +0   
+  00534b68: sw     $s0, +0($sp)       
+  00534b6c: dsubu  $zero, $zero, +0   
+  00534b70: dsubu  $zero, $zero, +0   
+  00534b74: beq    $zero, $zero, +56     ; br -> 0x00534bb0
+  00534b78: andi   $v1, $a2, -1       
+  00534b7c: sll    $t7, $zero, +1     
+  00534b80: sll    $t7, $zero, +2     
+  00534b84: addu   $t2, $t1, +0       
+  00534b88: addu   $t5, $a3, +0       
+  00534b8c: lw     $t6, +0($t2)       
+  00534b90: lw     $t5, +0($t5)       
+  00534b94: lw     $t2, +8($a1)       
+  00534b98: addu   $t5, $t4, +0       
+  00534b9c: dadd   $t6, $t2, +0       
+  00534ba0: movz    $t2,$at,$t6       
+  00534ba4: andi   $t2, $t6, -1       
+  00534ba8: addiu  $t7, $t7, +1       
+  00534bac: addu   $t2, $t3, +0       
+  00534bb0: daddu  $v1, $t7, +0       
+  00534bb4: bne    $t2, $zero, -56       ; br -> 0x00574b80
+  00534bb8: sll    $t7, $zero, +1     
+  00534bbc: andi   $a2, $a2, -1       
+  00534bc0: sll    $v1, $zero, +2     
+  00534bc4: subu   $a2, $t3, +0       
+  00534bc8: addu   $t2, $t3, +0       
+  00534bcc: lw     $a2, +28($a1)      
+  00534bd0: lw     $t2, +32($a1)      
+  00534bd4: addu   $t5, $t4, +0       
+  00534bd8: addiu  $t5, $t2, +4       
+  00534bdc: subu   $a2, $t5, +0       
+  00534be0: daddu  $t4, $t5, +0       
+  00534be4: bne    $at, $zero, +144      ; br -> 0x00534c78
+  00534be8: sll    $zero, $zero, +0   
+  00534bec: beq    $zero, $zero, +104    ; br -> 0x00534c58
+  00534bf0: dsubu  $zero, $zero, +0   
+  00534bf4: sll    $t5, $zero, +1     
+  00534bf8: lw     $a2, +8($a1)       
+  00534bfc: addu   $t3, $t1, +0       
+  00534c00: lw     $t3, +0($t3)       
+  00534c04: dadd   $t3, $a2, +0       
+  00534c08: movz    $a2,$at,$t3       
+  00534c0c: lw     $t6, +28($a1)      
+  00534c10: andi   $s0, $t3, -1       
+  00534c14: sll    $t5, $zero, +2     
+  00534c18: addiu  $t7, $s0, -1       
+  00534c1c: addu   $a2, $a3, +0       
+  00534c20: addiu  $t5, $t5, +1       
+  00534c24: lw     $t3, +0($t3)       
+  00534c28: addu   $a2, $t0, +0       
+  00534c2c: and    $t7, $t6, +0       
+  00534c30: subu   $t4, $s0, +0       
+  00534c34: and    $t4, $t7, +0       
+  00534c38: addu   $t3, $t7, +0       
+  00534c3c: addu   $t7, $t6, +0       
+  00534c40: sw     $t3, +0($a2)       
+  00534c44: lw     $a2, +28($a1)      
+  00534c48: addu   $t4, $a2, +0       
+  00534c4c: sw     $a2, +28($a1)      
+  00534c50: sw     $t4, +0($t2)       
+  00534c54: addiu  $t2, $t2, -4       
+  00534c58: daddu  $v1, $t5, +0       
+  00534c5c: bne    $a2, $zero, -104      ; br -> 0x00574bf8
+  00534c60: sll    $t5, $zero, +1     
+  00534c64: sw     $t2, +32($a1)      
+  00534c68: lui   $at, 0x006b0000     
+  00534c6c: lw     $v1, +25744($at)      ; GLOBAL 0x006b6490
+  00534c70: beq    $zero, $zero, +228    ; br -> 0x00534d58
+  00534c74: sw     $v1, +0($a0)       
+  00534c78: subu   $t3, $t4, +0       
+  00534c7c: daddu  $t3, $t5, +0       
+  00534c80: bne    $at, $zero, +164      ; br -> 0x00534d28
+  00534c84: sll    $zero, $zero, +0   
+  00534c88: beq    $zero, $zero, +112    ; br -> 0x00534cfc
+  00534c8c: dsubu  $zero, $zero, +0   
+  00534c90: sll    $t6, $zero, +1     
+  00534c94: lw     $t3, +8($a1)       
+  00534c98: addu   $t4, $t1, +0       
+  00534c9c: lw     $t4, +0($t4)       
+  00534ca0: dadd   $t4, $t3, +0       
+  00534ca4: movz    $t3,$at,$t4       
+  00534ca8: lw     $t8, +28($a1)      
+  00534cac: andi   $s0, $t4, -1       
+  00534cb0: sll    $t6, $zero, +2     
+  00534cb4: addiu  $t9, $s0, -1       
+  00534cb8: addu   $t7, $a3, +0       
+  00534cbc: subu   $a2, $t2, +0       
+  00534cc0: lw     $t4, +0($t4)       
+  00534cc4: and    $t9, $t8, +0       
+  00534cc8: subu   $t5, $s0, +0       
+  00534ccc: and    $t5, $t9, +0       
+  00534cd0: addu   $t4, $t9, +0       
+  00534cd4: daddu  $t5, $t3, +0       
+  00534cd8: bne    $t3, $zero, +44       ; br -> 0x00534d08
+  00534cdc: sll    $zero, $zero, +0   
+  00534ce0: addu   $t9, $t8, +0       
+  00534ce4: addu   $t7, $t0, +0       
+  00534ce8: sw     $t4, +0($t3)       
+  00534cec: addu   $t5, $a2, +0       
+  00534cf0: sw     $t5, +0($t2)       
+  00534cf4: addiu  $t6, $t6, +1       
+  00534cf8: addiu  $t2, $t2, -4       
+  00534cfc: daddu  $v1, $t6, +0       
+  00534d00: bne    $t3, $zero, -112      ; br -> 0x00574c94
+  00534d04: sll    $t6, $zero, +1     
+  00534d08: bne    $t6, $v1, +28         ; br -> 0x00534d28
+  00534d0c: sll    $zero, $zero, +0   
+  00534d10: sw     $a2, +28($a1)      
+  00534d14: lui   $at, 0x006b0000     
+  00534d18: sw     $t2, +32($a1)      
+  00534d1c: lw     $v1, +25744($at)      ; GLOBAL 0x006b6490
+  00534d20: beq    $zero, $zero, +52     ; br -> 0x00534d58
+  00534d24: sw     $v1, +0($a0)       
+  00534d28: beq    $zero, $zero, +20     ; br -> 0x00534d40
+  00534d2c: dsubu  $zero, $zero, +0   
+  00534d30: sll    $a2, $zero, +2     
+  00534d34: addu   $a1, $t0, +0       
+  00534d38: addiu  $a2, $a2, +1       
+  00534d3c: sw     $zero, +0($a1)     
+  00534d40: daddu  $v1, $a2, +0       
+  00534d44: bne    $a1, $zero, -20       ; br -> 0x00574d34
+  00534d48: sll    $a2, $zero, +2     
+  00534d4c: lui   $at, 0x006b0000     
+  00534d50: lw     $v1, +25752($at)      ; GLOBAL 0x006b6498
+  00534d54: sw     $v1, +0($a0)       
+  00534d58: lw     $s0, +0($sp)       
+  00534d5c: jr     $ra                
+  00534d60: addiu  $sp, $sp, +16      
+  00534d64: sll    $zero, $zero, +0   
+  00534d68: sll    $zero, $zero, +0   
+  00534d6c: sll    $zero, $zero, +0   
+
+; globals: 0x006b6490(x2), 0x006b6498(x1)
