@@ -126,6 +126,27 @@ python tools/decomp_split.py SLUS_206.49.c src/decomp   # 440 real / 13,999 stub
   per-field **member derives** (widths each site uses; non-empty `split_widths`
   ⇒ overload/struct boundary) and **co-occurrence groups** (offsets on one arg
   that appear together ≥3×, unioned into candidate substructs).
+- **Recovery worklist** (`tools/recovery_sheets.py`): Phase 4A. Merges all
+  analysis products into `recovery_worklist.csv` (ranked real_logic targets by
+  `features.score`) + `recovery_sheets/<addr>.md` per-function evidence packs
+  (score, signature, labels, graph, accesses, consts, hub/frontier).
+- **Candidate structs** (`tools/recover_structs.py`): Phase 4B. Drafts the
+  composed groups as commented C in `include/engine/recovered_structs.h`
+  (layout-derived names, evidence comments; PROMOTE-ME workflow).
+- **Full signatures** (`tools/emit_signatures.py`): Phase 4C. Emits typed
+  prototypes for **all 214** logic functions (not just the 95 with struct
+  labels) into `include/engine/logic_signatures.h`; `signature_recovery.csv`
+  records sources.
+- **Build env** (`tools/build_check.py`, `Makefile`): Phase 4D. Compiles
+  `include/engine/validate_headers.c` (layout `_Static_assert`s) with the best
+  available compiler (host gcc/clang or ps2dev ee-gcc). Exits 2 with a FATAL
+  gap message when no toolchain exists. GitHub Actions `decomp-ci.yml` gates
+  tools + headers.
+- **Match baseline** (`tools/match_baseline.py`, `tools/match_check.py`):
+  Phase 4E. Baseline freezes per-function raw bytes from the on-disc ELF
+  (`match_baseline.csv`, 14,439 fn / 5.1 MB, sha256-fingerprinted).
+  `match_check.py <candidate|--self>` reports EXACT/SIZE-ONLY/DIFF/MISSING
+  and a global match %; `--self` = 100% parity by construction.
 - **Conflict triage + hub dissection** (`tools/triage_conflicts.py`,
   `tools/dissect_hubs.py`): the human-review toolkit. Triage ranks all
   type-conflicts by class S-S > S-I > P-I (`conflicts_priority.csv`,

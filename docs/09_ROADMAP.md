@@ -131,3 +131,19 @@ covered recovered bodies; the full graph exposes *much* bigger centres.
    discoveries: 4,895 are hard (struct-vs-struct / struct-vs-int), e.g.
    `Unknown_a0_4_8` (40 members) colliding with `Unknown_a0_0_1c` (40).
    `type_chains.json` traces each label's propagation edges (446 chained).
+
+## Recovery toolchain (Phases 4A-4E)
+
+Roadmap step 1-5 materialized as a runnable chain (each tool owned by its own
+commit, see AGENTS.md for exact commands):
+
+| step | tool | deliverable |
+|---|---|---|
+| 1. Recover remaining functions | `tools/recovery_sheets.py` | `recovery_worklist.csv` + `recovery_sheets/<addr>.md` (147 real_logic ranked by score, evidence-dense) |
+| 2. Recover data structures | `tools/recover_structs.py` | `include/engine/recovered_structs.h` draft C from composed groups (PROMOTE-ME) |
+| 3. Recover function signatures | `tools/emit_signatures.py` | `logic_signatures.h` — typed prototypes for **all 214** logic functions |
+| 4. Reconstruct build env | `tools/build_check.py` + `Makefile` + `decomp-ci.yml` | compiles `validate_headers.c` (layout `_Static_assert`s); FATAL-2 "no toolchain" gap |
+| 5. Matching/recompilation | `tools/match_baseline.py` + `tools/match_check.py` | `match_baseline.csv` (14,439 fn / 5.1 MB, sha256); `match_check --self` = 100% |
+
+The final loop for step 5: recompile the recovered `.c` bodies with the EE
+toolchain, then `match_check.py <candidate.elf>` until every function is EXACT.
