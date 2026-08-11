@@ -194,10 +194,12 @@ def analyze(words, base_vaddr):
     fields = {}            # origin(4..7) -> off -> evidence
     consts = collections.Counter()
     calls = set()
+    flows = []            # per call-site arg snapshot {target, tags[4]}
     jalr = 0
     floats = simd = cop2 = 0
     v0_written = False
     return_kind = "unknown"
+    ret_callee = 0
     ptr_derefs = 0
 
     def field(origin, off, ins):
@@ -222,8 +224,9 @@ def analyze(words, base_vaddr):
             if base.ptr and base.origin in range(4, 8):
                 eff = base.off + ins.imm
                 e = field(base.origin, eff, ins)
-                if base.loaded_from is not None and ins.kind in ("load",
-                                                                 "fload"):
+                if (base.loaded_from is not None and
+                        isinstance(base.loaded_from[0], int) and
+                        ins.kind in ("load", "fload")):
                     ptr_derefs += 1
                     f0 = fields[base.loaded_from[0]][base.loaded_from[1]]
                     f0["ptr"] = True
@@ -291,11 +294,31 @@ def analyze(words, base_vaddr):
 
         if ins.kind == "jal":
             hi = (cur_vaddr + 4) & 0xf0000000
-            calls.add((hi | ins.target))
+            target = hi | ins.target
+            calls.add(target)
             reads[4] += 1; reads[5] += 1; reads[6] += 1; reads[7] += 1
             writes[31] += 1                           # ra link
+            # snapshot what is in a0..a3 at the call site
+            tags = []
+            for k in range(4):
+                t = taint[4 + k]
+                if t.origin in range(4, 8):
+                    tags.append("own_a%d" % (t.origin - 4))
+                elif (t.loaded_from is not None and
+                        t.loaded_from[0] == "ret" and t.loaded_from[1]):
+                    tags.append("ret_0x%08x" % t.loaded_from[1])
+                elif t.ptr or t.loaded_from is not None:
+                    tags.append("ptr")
+                else:
+                    tags.append("int")
+            flows.append({"target": target, "tags": tags})
+            # v0 holds the callee's return afterwards (for return-propagation)
+            taint[2] = Taint(origin=-1, off=0, ptr=True,
+                             loaded_from=("ret", target))
         elif ins.kind == "jalr":
             jalr += 1
+            taint[2] = Taint(origin=-1, off=0, ptr=True,
+                             loaded_from=("ret", 0))
 
         if ins.kind == "float":
             floats += 1
@@ -306,7 +329,11 @@ def analyze(words, base_vaddr):
 
         if ins.kind == "jr" and ins.rs == 31:         # jr $ra
             v = taint[2]
-            if v.ptr or v.loaded_from is not None:
+            if v.loaded_from is not None and v.loaded_from[0] == "ret":
+                return_kind = "ret"                   # passthrough of callee
+                ret_callee = v.loaded_from[1]
+            elif v.ptr or (v.loaded_from is not None and
+                           isinstance(v.loaded_from[0], int)):
                 return_kind = "ptr"
             elif not v0_written:
                 return_kind = "void"
@@ -332,7 +359,9 @@ def analyze(words, base_vaddr):
         "fields": fields,
         "arg_kinds": arg_kinds,
         "return_kind": return_kind,
+        "ret_callee": ret_callee,
         "calls": sorted(calls),
+        "flows": flows,
         "jalr": jalr,
         "consts": top_consts[:6],
         "floats": floats > 0 or any(
@@ -451,6 +480,22 @@ def main():
                 "%.2f" % confidence(ev, r["status"]),
             ])
     print("wrote %s" % os.path.join(out_dir, "inferred_types.csv"))
+
+    # ---- call-site argument flow (for type propagation) ----
+    with io.open(os.path.join(out_dir, "call_arg_flow.csv"), "w",
+                 encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["caller", "callee", "a0", "a1", "a2", "a3"])
+        for r in rows:
+            ev = evs.get(r["address"])
+            if ev is None:
+                continue
+            for fl in ev["flows"]:
+                w.writerow(["0x%08x" % int(r["address"], 16),
+                            "0x%08x" % fl["target"]] + fl["tags"])
+    print("wrote %s (%d call sites)" %
+          (os.path.join(out_dir, "call_arg_flow.csv"),
+           sum(len(evs[a]["flows"]) for a in evs)))
 
     # ---- binary call edges: the real call graph (stubs included) ----
     edges = set()

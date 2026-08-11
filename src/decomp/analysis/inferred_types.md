@@ -745,13 +745,13 @@ Evidence from binary decoding; no invented names. HIGH conf>=0.7, MEDIUM >=0.5, 
     a3 + 0x0 (2 bytes, data, 1l/0s)
   consts: lui 0x2aaa0000, sz 0xc
 
-0x00428b18  strcat  confidence=0.65 [MEDIUM]
+0x00428b18  strcat  confidence=0.55 [MEDIUM]
   args:
     a0 -> ptr
     a1 -> int
     a2 -> int
     a3 -> int
-  return: ptr
+  return: ret
   accesses:
     a0 + 0x-1fe00 (1 bytes, data, 1l/0s)
     a0 + 0x-1fdf0 (16 bytes, data, 1l/0s)
@@ -880,26 +880,26 @@ Evidence from binary decoding; no invented names. HIGH conf>=0.7, MEDIUM >=0.5, 
     a1 + 0x0 (1 bytes, data, 1l/1s)
     a3 + 0x0 (1 bytes, data, 1l/1s)
 
-0x00432818  itoa  confidence=0.60 [MEDIUM]
+0x00432818  itoa  confidence=0.50 [MEDIUM]
   args:
     a0 -> int
     a1 -> ptr
     a2 -> int
     a3 -> int
-  return: int
+  return: ret
   accesses:
     a1 + 0x0 (1 bytes, data, 1l/0s)
   calls:
     0x004327a0
   consts: lui 0x650000
 
-0x00432fc0  format_scan  confidence=0.65 [MEDIUM]
+0x00432fc0  format_scan  confidence=0.55 [MEDIUM]
   args:
     a0 -> int
     a1 -> ptr
     a2 -> ptr
     a3 -> int
-  return: ptr
+  return: ret
   accesses:
     a1 + 0x54 (4 bytes, data, 2l/0s)
     a2 + 0x0 (1 bytes, data, 1l/0s)
@@ -1286,8 +1286,7 @@ Evidence from binary decoding; no invented names. HIGH conf>=0.7, MEDIUM >=0.5, 
     a3 -> int
   return: ptr
   accesses:
-    a0 + 0x14 (4 bytes, ptr, 1l/0s)
-    a0 + 0x68 (2 bytes, data, 1l/0s)
+    a0 + 0x14 (4 bytes, data, 1l/0s)
     a0 + 0x1e0 (4 bytes, ptr, 1l/0s)
     a1 + 0x8 (4 bytes, data, 1l/0s)
     a2 + 0x4 (4 bytes, float, 0l/1s)
@@ -1325,50 +1324,6 @@ Evidence from binary decoding; no invented names. HIGH conf>=0.7, MEDIUM >=0.5, 
     0x0035be10
   consts: lui 0x3f800000, lui 0x3f000000, lui 0x3c230000, lui 0x3a830000, lui 0x38d10000, lui 0x40800000
 
-0x0019d240  FUN_0019d240  confidence=0.85 [HIGH]
-  args:
-    a0 -> ptr
-    a1 -> ptr
-    a2 -> int
-    a3 -> w
-  return: ptr
-  accesses:
-    a0 + 0x0 (4 bytes, ptr, 4l/0s)
-    a0 + 0x4 (4 bytes, ptr, 1l/0s)
-    a0 + 0x20 (4 bytes, float, 1l/0s)
-    a0 + 0x24 (4 bytes, float, 1l/0s)
-    a0 + 0x28 (4 bytes, float, 1l/0s)
-    a0 + 0x2c (4 bytes, ptr, 3l/0s)
-    a0 + 0x30 (16 bytes, data, 1l/0s)
-    a0 + 0x38 (4 bytes, ptr, 1l/0s)
-    a0 + 0x40 (4 bytes, data, 1l/0s)
-    a0 + 0x94 (4 bytes, ptr, 2l/0s)
-    a0 + 0x1e0 (4 bytes, float, 1l/0s)
-    a0 + 0x290 (4 bytes, ptr, 1l/0s)
-    a1 + 0x0 (4 bytes, data, 1l/0s)
-  calls:
-    (1 indirect jalr)
-  consts: sz 0x10, sz 0x20, sz 0x30
-
-0x0012ce60  0x0012ce60  confidence=0.85 [HIGH]
-  args:
-    a0 -> ptr
-    a1 -> ptr
-    a2 -> ptr
-    a3 -> int
-  return: void
-  accesses:
-    a0 + 0x0 (4 bytes, data, 1l/0s)
-    a1 + 0x4 (4 bytes, data, 1l/0s)
-    a1 + 0x8 (4 bytes, ptr, 1l/0s)
-    a1 + 0x88 (4 bytes, ptr, 1l/0s)
-    a2 + 0x4 (4 bytes, ptr, 1l/0s)
-    a2 + 0x4c0 (4 bytes, data, 1l/0s)
-    a2 + 0x4c8 (4 bytes, float, 1l/0s)
-  calls:
-    0x0012c650
-  consts: sz 0x1c, lui 0x6a0000, sz 0x4, sz 0xc
-
 0x00182710  0x00182710  confidence=0.85 [HIGH]
   args:
     a0 -> ptr
@@ -1394,102 +1349,160 @@ Evidence from binary decoding; no invented names. HIGH conf>=0.7, MEDIUM >=0.5, 
     0x001ff6f0
   consts: sz 0x28, sz 0x20, lui 0x6f0000, lui 0x630000, sz 0x30, sz 0x80
 
-0x001a2220  0x001a2220  confidence=0.85 [HIGH]
+0x003aa190  0x003aa190  confidence=0.85 [HIGH]
+  args:
+    a0 -> ptr
+    a1 -> int
+    a2 -> ptr
+    a3 -> int
+  return: ptr
+  accesses:
+    a0 + 0x0 (4 bytes, float, 1l/0s)
+    a0 + 0x4 (4 bytes, float, 1l/0s)
+    a0 + 0x8 (4 bytes, float, 1l/0s)
+    a0 + 0x10 (4 bytes, float, 1l/0s)
+    a0 + 0x14 (4 bytes, float, 1l/0s)
+    a0 + 0x18 (4 bytes, float, 1l/0s)
+    a0 + 0x20 (4 bytes, float, 1l/0s)
+    a0 + 0x24 (4 bytes, float, 1l/0s)
+    a0 + 0x28 (4 bytes, float, 1l/0s)
+    a2 + 0x0 (4 bytes, float, 1l/0s)
+    a2 + 0x4 (4 bytes, float, 1l/0s)
+    a2 + 0x8 (4 bytes, ptr, 1l/0s)
+    a2 + 0x20 (4 bytes, float, 1l/0s)
+    a2 + 0x24 (4 bytes, float, 1l/0s)
+    a2 + 0x28 (4 bytes, float, 2l/0s)
+  calls:
+    0x00120750
+    0x00120780
+  consts: lui 0x3f800000, sz 0x28, lui 0x3f000000, lui 0x40000000
+
+0x00161800  0x00161800  confidence=0.80 [HIGH]
   args:
     a0 -> ptr
     a1 -> int
     a2 -> int
-    a3 -> ptr
-  return: ptr
-  accesses:
-    a0 + 0x0 (16 bytes, ptr, 5l/0s)
-    a0 + 0x4 (4 bytes, ptr, 2l/0s)
-    a0 + 0x8 (4 bytes, ptr, 3l/0s)
-    a0 + 0xc (4 bytes, ptr, 2l/0s)
-    a0 + 0x10 (4 bytes, ptr, 4l/0s)
-    a3 + 0x0 (16 bytes, data, 0l/2s)
-  calls:
-    0x0043af80
-    0x0043b320
-  consts: lui 0x3f800000, sz 0x10, lui 0x3f000000, lui 0x41200000
-
-0x001a29f0  0x001a29f0  confidence=0.85 [HIGH]
-  args:
-    a0 -> ptr
-    a1 -> ptr
-    a2 -> int
     a3 -> int
   return: ptr
   accesses:
-    a0 + 0x14 (4 bytes, data, 1l/0s)
-    a1 + 0x0 (16 bytes, float, 3l/0s)
-    a1 + 0x4 (4 bytes, ptr, 2l/0s)
-    a1 + 0x8 (4 bytes, ptr, 8l/0s)
-    a1 + 0xc (4 bytes, float, 1l/0s)
-    a1 + 0x10 (4 bytes, ptr, 3l/0s)
-    a1 + 0x14 (4 bytes, float, 1l/0s)
-    a1 + 0x18 (4 bytes, float, 1l/0s)
-  calls:
-    0x001329d0
-    0x00134e50
-    0x001a23f0
-    0x0043af80
-    0x0043b320
-  consts: mask 0x1, lui 0x7f7f0000, mask 0xffffffff, sz 0x4, lui 0x6f0000, sz 0x1c
-
-0x001b8990  0x001b8990  confidence=0.85 [HIGH]
-  args:
-    a0 -> ptr
-    a1 -> ptr
-    a2 -> int
-    a3 -> int
-  return: int
-  accesses:
-    a0 + 0xc (4 bytes, float, 0l/1s)
-    a0 + 0x10 (4 bytes, float, 0l/1s)
-    a0 + 0x14 (4 bytes, float, 0l/1s)
-    a0 + 0x20 (1 bytes, data, 0l/1s)
-    a1 + 0x0 (4 bytes, ptr, 1l/0s)
-    a1 + 0x10 (4 bytes, float, 1l/0s)
-    a1 + 0x14 (4 bytes, float, 1l/0s)
-    a1 + 0x18 (4 bytes, float, 1l/0s)
-    a1 + 0x2c (4 bytes, ptr, 1l/0s)
-    a1 + 0x40 (16 bytes, data, 1l/0s)
-    a1 + 0x44 (1 bytes, data, 1l/0s)
-    a1 + 0x70 (4 bytes, ptr, 1l/0s)
+    a0 + 0x8 (4 bytes, ptr, 1l/0s)
+    a0 + 0xc (4 bytes, float, 3l/0s)
+    a0 + 0x10 (4 bytes, float, 3l/0s)
+    a0 + 0x14 (4 bytes, float, 3l/0s)
+    a0 + 0x28 (1 bytes, data, 2l/0s)
+    a0 + 0x30 (1 bytes, data, 1l/0s)
+    a0 + 0x34 (1 bytes, data, 1l/0s)
+    a0 + 0x36 (1 bytes, data, 1l/0s)
+    a0 + 0x40 (1 bytes, data, 1l/0s)
+    a0 + 0x54 (4 bytes, float, 2l/0s)
+    a0 + 0x58 (4 bytes, float, 2l/0s)
+    a0 + 0x5c (4 bytes, float, 2l/0s)
+    a0 + 0x70 (4 bytes, float, 3l/0s)
+    a0 + 0x74 (4 bytes, float, 3l/0s)
+    a0 + 0x78 (4 bytes, float, 3l/0s)
+    a0 + 0x7c (4 bytes, float, 3l/0s)
+    a0 + 0x80 (4 bytes, float, 2l/0s)
+    a0 + 0xf80 (4 bytes, data, 1l/0s)
   calls:
     0x001238a0
     0x00123910
-    0x001b8b60
-  consts: sz 0x40, sz 0x30, lui 0x3f800000, sz 0x10, sz 0x70, sz 0x80
+    0x00136160
+    0x001610e0
+    0x00161c80
+    0x00161ce0
+    0x00161db0
+    0x00161dc0
+    0x00161dd0
+    0x00161de0
+    0x00161f50
+    0x00161f90
+  consts: lui 0x3f800000, sz 0x68, lui 0x6f0000, mask 0x1, lui 0x447a0000, lui 0x3f000000
 
-0x001f9bf0  0x001f9bf0  confidence=0.85 [HIGH]
+0x00196280  0x00196280  confidence=0.80 [HIGH]
   args:
     a0 -> ptr
     a1 -> int
-    a2 -> ptr
-    a3 -> ptr
+    a2 -> int
+    a3 -> int
+  return: ptr
+  accesses:
+    a0 + 0x38 (4 bytes, ptr, 1l/0s)
+    a0 + 0x88 (4 bytes, data, 1l/0s)
+  calls:
+    0x001c1ff0
+  consts: sz 0x50, lui 0xbf800000, sz 0x80
+
+0x002ffb00  0x002ffb00  confidence=0.80 [HIGH]
+  args:
+    a0 -> ptr
+    a1 -> int
+    a2 -> int
+    a3 -> int
+  return: ptr
+  accesses:
+    a0 + 0x0 (4 bytes, data, 1l/0s)
+    a0 + 0x10 (4 bytes, ptr, 1l/0s)
+    a0 + 0x20 (4 bytes, ptr, 1l/0s)
+    a0 + 0x48 (4 bytes, data, 1l/0s)
+  calls:
+    0x0020aba0
+    0x0022c980
+    0x0023c840
+    0x002e7160
+    0x0042d770
+    0x00511940
+    0x00513210
+    0x00545430
+    0x0055a8a0
+    0x00585c00
+    0x00585cb0
+    0x0058d880
+    (9 indirect jalr)
+  consts: sz 0x10, sz 0xc, mask 0x1, lui 0x437f0000, sz 0x18, sz 0x8
+
+0x00339310  0x00339310  confidence=0.80 [HIGH]
+  args:
+    a0 -> int
+    a1 -> ptr
+    a2 -> int
+    a3 -> int
   return: int
   accesses:
-    a0 + 0x34 (1 bytes, data, 1l/0s)
-    a2 + 0x10 (4 bytes, data, 1l/0s)
-    a2 + 0x48 (4 bytes, ptr, 1l/0s)
-    a2 + 0xac (4 bytes, float, 1l/0s)
-    a2 + 0x4ac (4 bytes, data, 1l/0s)
-    a2 + 0x4cc (4 bytes, ptr, 1l/0s)
-    a3 + 0x10 (4 bytes, data, 1l/0s)
-    a3 + 0x4aa (4 bytes, data, 1l/0s)
-    a3 + 0x4ca (4 bytes, ptr, 1l/0s)
+    a1 + 0x0 (2 bytes, data, 1l/0s)
+    a1 + 0x2 (2 bytes, data, 1l/0s)
+    a1 + 0x4 (2 bytes, data, 1l/0s)
+    a1 + 0x18 (4 bytes, data, 1l/0s)
+    a1 + 0x24 (4 bytes, ptr, 1l/0s)
+    a1 + 0x1e0 (4 bytes, ptr, 1l/0s)
   calls:
-    0x001e56a0
-    0x001e9dc0
-    0x001ebea0
-    0x001ec060
-    0x001fb010
-    (7 indirect jalr)
-  consts: sz 0x4, sz 0xd4, lui 0x3f800000, sz 0x74, sz 0xc, lui 0x6f0000
+    0x00338ff0
+    0x00395990
+    0x0043b068
+  consts: sz 0xe0, sz 0xf0, sz 0x60, sz 0x30, sz 0x150, sz 0x40
 
-0x00202af0  0x00202af0  confidence=0.85 [HIGH]
+0x0038cd30  0x0038cd30  confidence=0.80 [HIGH]
+  args:
+    a0 -> int
+    a1 -> ptr
+    a2 -> int
+    a3 -> int
+  return: ptr
+  accesses:
+    a1 + 0x0 (4 bytes, ptr, 6l/0s)
+    a1 + 0x4 (4 bytes, ptr, 6l/0s)
+    a1 + 0x8 (4 bytes, float, 6l/0s)
+    a1 + 0x10 (4 bytes, ptr, 2l/0s)
+    a1 + 0x14 (4 bytes, ptr, 2l/0s)
+    a1 + 0x18 (4 bytes, ptr, 2l/0s)
+    a1 + 0x20 (4 bytes, ptr, 2l/0s)
+    a1 + 0x24 (4 bytes, ptr, 2l/0s)
+    a1 + 0x28 (4 bytes, ptr, 2l/0s)
+  calls:
+    0x001207c0
+    0x0035b0e0
+  consts: lui 0x3f800000, sz 0x4, sz 0x8, lui 0x42c80000, lui 0x2edb0000
+
+0x003a03e0  0x003a03e0  confidence=0.80 [HIGH]
   args:
     a0 -> ptr
     a1 -> ptr
@@ -1497,15 +1510,17 @@ Evidence from binary decoding; no invented names. HIGH conf>=0.7, MEDIUM >=0.5, 
     a3 -> int
   return: ptr
   accesses:
-    a0 + 0x4 (4 bytes, ptr, 2l/0s)
+    a0 + 0x0 (4 bytes, ptr, 18l/0s)
+    a0 + 0x4 (4 bytes, data, 1l/0s)
     a0 + 0x8 (4 bytes, data, 1l/0s)
-    a1 + 0x4 (4 bytes, ptr, 3l/0s)
-    a1 + 0x18 (4 bytes, data, 1l/0s)
-    a2 + 0x4 (4 bytes, ptr, 2l/0s)
-    a2 + 0x8 (4 bytes, data, 2l/2s)
-  calls:
-    0x00202c80
-    0x00204a30
-    0x0031a9e0
-    0x0031aa00
-  consts: sz 0x4, mask 0xff, mask 0x1, lui 0x6f0000
+    a0 + 0xc (4 bytes, data, 9l/0s)
+    a1 + 0x0 (4 bytes, data, 9l/0s)
+    a2 + 0x0 (4 bytes, ptr, 12l/3s)
+    a2 + 0x4 (4 bytes, float, 2l/1s)
+    a2 + 0x8 (4 bytes, float, 1l/1s)
+    a2 + 0xc (4 bytes, float, 1l/1s)
+    a2 + 0x10 (4 bytes, float, 1l/1s)
+    a2 + 0x14 (4 bytes, float, 1l/1s)
+    a2 + 0x18 (4 bytes, float, 1l/1s)
+    a2 + 0x1c (4 bytes, float, 1l/1s)
+  consts: sz 0x4, sz 0x8, sz 0x20

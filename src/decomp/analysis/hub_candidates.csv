@@ -1,0 +1,8 @@
+address,status,size,globals,vtable_offsets,abs_calls,loops,singleton_global,pattern_hyp
+0x00511940,stub_code,240,0x00725d40,0x24/0x2c/0x40/0x4c,5,0,True,"virtual-method dispatch (vtable+0x4c/0x40/0x24/0x2c); global-singleton accessor; sub-calls 0x00503e70, 0x00511d20, 0x00511dc0, 0x00512f40"
+0x004ba240,stub_code,96,,,2,0,False,"sub-calls 0x0042c238, 0x004bab00"
+0x00511860,stub_code,224,0x00725f18;0x00725ee0,0xb4,4,0,True,"virtual-method dispatch (vtable+0xb4); global-singleton accessor; sub-calls 0x00511810, 0x00511100, 0x00511810, 0x00511140"
+0x0050fea0,stub_code,208,,,3,0,False,"sub-calls 0x00510320, 0x0050e720, 0x0050ea30"
+0x00510a20,stub_code,176,,,1,0,False,sub-calls 0x00511940
+0x00503ab0,stub_code,64,,0x80,0,0,False,virtual-method dispatch (vtable+0x80)
+0x004d9c40,stub_code,96,0x00724dc8,,2,0,False,"sub-calls 0x0050f930, 0x004d9ce0"

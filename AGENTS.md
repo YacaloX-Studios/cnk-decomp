@@ -99,7 +99,41 @@ python tools/decomp_split.py SLUS_206.49.c src/decomp   # 440 real / 13,999 stub
   true call graph incl. stubs), `inferred_types.md` (evidence blocks) and
   `inferred_structs.json` (Phase 3B anonymous structs + shared-field mesh).
   Evidence only, no invented names; confidence 0..0.95.
-- Priority scoring / call graph / leaf classification:
+- **Type propagation** (`tools/propagate_types.py`): pushes the per-function
+  evidence across the binary call graph to fixed point. 5 provenance levels:
+  `DIRECT` > `STRUCT_FIELD` > `CALL_PROPAGATED` > `RETURN_PROPAGATED` >
+  `HEURISTIC`; confidence decays 0.85/hop. Emits `propagated_types.csv`
+  (final label per function/arg/return), `type_conflicts.csv` (disagreeing
+  labels w/ provenance), `type_chains.json` (per-label propagation edges),
+  and `hub_metrics.csv` (full-graph in/out degree, weak components, sampled
+  Brandes betweenness — top 25 hubs printed).
+- **Header promotion** (`tools/emit_structs.py`): emits compilable
+  `include/engine/types.h` (promoted anonymous structs + opaque forward
+  decls), `include/engine/substruct_seeds.h` (shared-field seeds ≥3 sites)
+  and `include/engine/signatures.h` (typed prototypes for real functions
+  with struct-labelled args). Names remain layout-derived (`Unknown_a0_4_8`).
+- **Architecture clusters** (`tools/arch_clusters.py`): Phase 3G. Reads
+  `src/decomp/analysis/hub_metrics.csv` + `hub_names.csv` (editor-supplied
+  names) + N→1 `binary_call_edges.csv` edges, then BFS every hub upstream
+  & downstream. Emits `arch_map.csv` (every function → nearest hub,
+  direction, distance, peer flag) and `arch_clusters.md` (per-hub clusters,
+  peers sharing ≥10% of callers, and a "Seed next" footer of the biggest
+  unreached fan-in centres). Top-60 hubs by fan-in are auto-seeded as
+  `HUB_UNKNOWN_*`; rename in `hub_names.csv` and re-run to recolour the
+  binary. Run after every hub dissection/rename.
+- **Type B composition** (`tools/compose_structs.py`): Phase 3H. Recomposes
+  the shared-field mesh with per-function access records into `composed_structs.md/json`:
+  per-field **member derives** (widths each site uses; non-empty `split_widths`
+  ⇒ overload/struct boundary) and **co-occurrence groups** (offsets on one arg
+  that appear together ≥3×, unioned into candidate substructs).
+- **Conflict triage + hub dissection** (`tools/triage_conflicts.py`,
+  `tools/dissect_hubs.py`): the human-review toolkit. Triage ranks all
+  type-conflicts by class S-S > S-I > P-I (`conflicts_priority.csv`,
+  `conflict_report.md`); dissection flat-disassembles the top fan-in stubs
+  with global-table base resolution + annotated calls/vtable dispatch
+  (`hub_candidates.csv`, `hub_report.md`) — `0x00511940` (fan-in 1763)
+  resolves to a singleton unregister/release path.
+- **Priority scoring / call graph / leaf classification:**
 
 ```powershell
 python tools/score_functions.py            # reads src/decomp, writes src/decomp/analysis/

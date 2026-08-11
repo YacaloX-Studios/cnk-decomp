@@ -105,3 +105,29 @@ cop2=21), `aabb_corners_vu0`, `transform_point_vu0_*` (6 variants). The 44
   Ghidra first buys the most graph coverage.
 - Fan-in hubs: `0x004299a0`, `0x00429c60` (3 callers each), `0x0042a680`,
   `0x00431390`, `0x00433ef0`, `0x0042a5e8`, `0x0042f100` (2 callers each).
+
+### Type-propagation findings (Phase 3C/D, `tools/propagate_types.py`)
+
+Measured over the **full binary call graph** (45,203 edges incl. stubs) with
+sampled Brandes betweenness (`hub_metrics.csv`). The old fan-in list only
+covered recovered bodies; the full graph exposes *much* bigger centres.
+
+- **Unidentified mega-utilities (stub, no name, direct fan-in):**
+  - `0x00511940` (in=1763, reads ptr@a0+0 + int@0x4c, indirect `jalr`,
+    globals `0x720000`) — the single most-called function in the ELF.
+    Central API dispatcher.
+  - `0x004ba240` (in=1154) and `0x00511860` (in=703, out=0: pure `jalr`
+    leaf over `0x720000`), `0x0050fea0` (in=496).
+  - `0x00503xxx-0x0051exx` cluster: indirect-thunk wrappers over a global
+    table at `0x720000` (consts `lui 0x720000`). **Dispatchers, decompile
+    first with Ghidra — naming any of them unblocks hundreds of callers.**
+- **Real-symboled fan-in leaders** (new decompile targets): `0x00428f48`
+  (in=85), `0x0042bd70` (in=64), `0x0043cb00` (thunk, in=57),
+  `0x001207c0`/`0x00120750`/`0x001206f0` (engine copy utils, in=62/54/45),
+  `0x0026e060` (in=35), `0x0010e780` (in=22).
+- **Type propagation** (`propagated_types.csv`): 87,096 slot labels;
+   5,301 struct-typed (`Unknown_*`), 8,291 unique **conflicts** where a
+   callee arg disagrees with a caller. Conflicts rank REAL struct
+   discoveries: 4,895 are hard (struct-vs-struct / struct-vs-int), e.g.
+   `Unknown_a0_4_8` (40 members) colliding with `Unknown_a0_0_1c` (40).
+   `type_chains.json` traces each label's propagation edges (446 chained).
