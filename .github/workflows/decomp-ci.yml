@@ -1,0 +1,32 @@
+name: decomp-ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: python syntax check (tools)
+        run: |
+          set -e
+          for t in tools/*.py; do python -m py_compile "$t"; done
+      - name: regenerate analysis products (smoke)
+        run: |
+          python tools/make_registry.py
+          python tools/score_functions.py
+          python tools/infer_types.py
+          python tools/propagate_types.py
+
+  headers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: host C check of recovered headers
+        run: |
+          gcc -Iinclude/engine -std=c11 -Wall -Wextra -c -o /dev/null include/engine/validate_headers.c
+          echo "PASS (host gcc)"
