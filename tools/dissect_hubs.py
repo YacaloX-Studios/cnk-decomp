@@ -66,6 +66,9 @@ def render(ins):
     if ins.kind in ("fmove", "float", "cop2", "simd"):
         return "%-7s$%s,$%s,$%s" % (ins.name, r.get(ins.rd, ins.rd),
                                     r.get(ins.rs, ins.rs), r.get(ins.rt, ins.rt))
+    if ins.kind in ("shift",):
+        return "%s $%s,$%s,%d" % (ins.name, r.get(ins.rt, ins.rt),
+                                  r.get(ins.rs, ins.rs), ins.imm)
     return "%-7s $%s,$%s,$%s" % (ins.name, r.get(ins.rs, ins.rs),
                                  r.get(ins.rt, ins.rt), r.get(ins.rd, ins.rd))
 
