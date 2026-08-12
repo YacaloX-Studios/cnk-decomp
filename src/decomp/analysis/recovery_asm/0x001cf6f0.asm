@@ -5,7 +5,7 @@
   001cf6f0: addiu  $sp, $sp, -64      
   001cf6f4: addiu  $v1, $zero, +1     
   001cf6f8: fmove  $zero,$a0,$a3      
-  001cf6fc: sw     $v1, +140($a0)     
+  001cf6fc: sb     $v1, +140($a0)     
   001cf700: sw     $a3, +192($a0)     
   001cf704: lui   $t0, 0x3f800000     
   001cf708: f14.20 $zero,$s4,$zero    
@@ -26,14 +26,14 @@
   001cf744: swc1   $v0, +0($sp)       
   001cf748: swc1   $at, +0($t2)       
   001cf74c: swc1   $zero, +0($t3)     
-  001cf750: lw     $v1, +0($v1)       
-  001cf754: sw     $v1, +0($t1)       
+  001cf750: lq     $v1, +0($v1)       
+  001cf754: sq     $v1, +0($t1)       
   001cf758: addiu  $t0, $sp, +32      
-  001cf75c: lw     $v1, +0($a2)       
-  001cf760: sw     $v1, +0($t0)          ; GLOBAL 0x3f800000
+  001cf75c: lq     $v1, +0($a2)       
+  001cf760: sq     $v1, +0($t0)          ; GLOBAL 0x3f800000
   001cf764: addiu  $a3, $sp, +16      
-  001cf768: lw     $v1, +0($t1)       
-  001cf76c: sw     $v1, +0($a3)       
+  001cf768: lq     $v1, +0($t1)       
+  001cf76c: sq     $v1, +0($a3)       
   001cf770: fmove  $zero,$zero,$v1    
   001cf774: op36    $t0,$at,$zero     
   001cf778: cop2   $v0,$a1,$v1        
@@ -55,11 +55,11 @@
   001cf7b8: cop2   $at,$fp,$v0        
   001cf7bc: op3e    $a3,$at,$zero     
   001cf7c0: addiu  $a2, $a0, +176     
-  001cf7c4: lw     $v1, +0($a1)       
-  001cf7c8: sw     $v1, +0($a2)       
+  001cf7c4: lq     $v1, +0($a1)       
+  001cf7c8: sq     $v1, +0($a2)       
   001cf7cc: addiu  $a1, $a0, +160     
-  001cf7d0: lw     $v1, +0($t1)       
-  001cf7d4: sw     $v1, +0($a1)       
+  001cf7d0: lq     $v1, +0($t1)       
+  001cf7d4: sq     $v1, +0($a1)       
   001cf7d8: op36    $a1,$at,$zero     
   001cf7dc: op36    $a2,$v0,$zero     
   001cf7e0: cop2   $at,$fp,$v0        
@@ -88,8 +88,8 @@
   001cf83c: cop2   $at,$fp,$v0        
   001cf840: op3e    $a1,$at,$zero     
   001cf844: addiu  $v1, $a0, +144     
-  001cf848: lw     $a0, +0($a1)       
-  001cf84c: sw     $a0, +0($v1)          ; GLOBAL 0x3e800000
+  001cf848: lq     $a0, +0($a1)       
+  001cf84c: sq     $a0, +0($v1)          ; GLOBAL 0x3e800000
   001cf850: f10.7  $a0,$s0,$zero      
   001cf854: fmove  $zero,$zero,$a0    
   001cf858: op36    $v1,$at,$zero     

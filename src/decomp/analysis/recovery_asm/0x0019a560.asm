@@ -8,45 +8,45 @@
   0019a56c: sw     $v1, +64($a0)      
   0019a570: addiu  $a3, $a3, +8544    
   0019a574: addiu  $a2, $sp, +80      
-  0019a578: lw     $a1, +0($a3)          ; GLOBAL 0x006a0000
-  0019a57c: sw     $a1, +0($a2)       
+  0019a578: lq     $a1, +0($a3)          ; GLOBAL 0x006a0000
+  0019a57c: sq     $a1, +0($a2)       
   0019a580: addiu  $a1, $a0, +16      
-  0019a584: lw     $a2, +0($a2)       
-  0019a588: sw     $a2, +0($a1)       
+  0019a584: lq     $a2, +0($a2)       
+  0019a588: sq     $a2, +0($a1)       
   0019a58c: addiu  $a2, $sp, +64      
-  0019a590: lw     $a1, +0($a3)          ; GLOBAL 0x006a0000
-  0019a594: sw     $a1, +0($a2)       
+  0019a590: lq     $a1, +0($a3)          ; GLOBAL 0x006a0000
+  0019a594: sq     $a1, +0($a2)       
   0019a598: addiu  $a1, $a0, +32      
-  0019a59c: lw     $a2, +0($a2)       
-  0019a5a0: sw     $a2, +0($a1)       
+  0019a59c: lq     $a2, +0($a2)       
+  0019a5a0: sq     $a2, +0($a1)       
   0019a5a4: addiu  $a2, $sp, +48      
-  0019a5a8: lw     $a1, +0($a3)          ; GLOBAL 0x006a0000
-  0019a5ac: sw     $a1, +0($a2)       
+  0019a5a8: lq     $a1, +0($a3)          ; GLOBAL 0x006a0000
+  0019a5ac: sq     $a1, +0($a2)       
   0019a5b0: addiu  $a1, $a0, +48      
-  0019a5b4: lw     $a2, +0($a2)       
-  0019a5b8: sw     $a2, +0($a1)       
-  0019a5bc: sw     $zero, +136($a0)   
+  0019a5b4: lq     $a2, +0($a2)       
+  0019a5b8: sq     $a2, +0($a1)       
+  0019a5bc: sb     $zero, +136($a0)   
   0019a5c0: fmove  $zero,$a0,$zero    
   0019a5c4: sw     $zero, +152($a0)   
   0019a5c8: addiu  $a2, $sp, +32      
-  0019a5cc: lw     $a1, +0($a3)          ; GLOBAL 0x006a0000
-  0019a5d0: sw     $a1, +0($a2)       
+  0019a5cc: lq     $a1, +0($a3)          ; GLOBAL 0x006a0000
+  0019a5d0: sq     $a1, +0($a2)       
   0019a5d4: addiu  $a1, $a0, +160     
-  0019a5d8: lw     $a2, +0($a2)       
-  0019a5dc: sw     $a2, +0($a1)       
-  0019a5e0: sw     $zero, +176($a0)   
+  0019a5d8: lq     $a2, +0($a2)       
+  0019a5dc: sq     $a2, +0($a1)       
+  0019a5e0: sb     $zero, +176($a0)   
   0019a5e4: lui   $t0, 0x3f800000     
-  0019a5e8: sw     $zero, +177($a0)   
+  0019a5e8: sb     $zero, +177($a0)   
   0019a5ec: lui   $a1, 0x461c0000     
   0019a5f0: swc1   $at, +148($a0)     
   0019a5f4: ori    $a1, $a1, +16384   
-  0019a5f8: sw     $zero, +184($a0)   
+  0019a5f8: sb     $zero, +184($a0)   
   0019a5fc: addiu  $a3, $zero, +12    
   0019a600: swc1   $at, +180($a0)     
   0019a604: sw     $t0, +24($sp)      
   0019a608: sw     $a1, +188($a0)     
   0019a60c: fmove  $zero,$a0,$t0      
-  0019a610: sw     $v1, +356($a0)     
+  0019a610: sb     $v1, +356($a0)     
   0019a614: swc1   $at, +16($sp)      
   0019a618: swc1   $at, +68($a0)      
   0019a61c: sw     $t0, +28($sp)      
@@ -56,18 +56,18 @@
   0019a62c: addiu  $a1, $a0, +112     
   0019a630: swc1   $at, +76($a0)      
   0019a634: swc1   $at, +84($a0)      
-  0019a638: sw     $zero, +88($a0)    
+  0019a638: sb     $zero, +88($a0)    
   0019a63c: swc1   $at, +20($sp)      
-  0019a640: sw     $zero, +89($a0)    
-  0019a644: sw     $zero, +90($a0)    
-  0019a648: sw     $zero, +91($a0)    
-  0019a64c: sw     $zero, +92($a0)    
-  0019a650: sw     $zero, +93($a0)    
-  0019a654: sw     $zero, +94($a0)    
-  0019a658: sw     $zero, +95($a0)    
-  0019a65c: sw     $zero, +96($a0)    
-  0019a660: sw     $zero, +97($a0)    
-  0019a664: sw     $zero, +137($a0)   
+  0019a640: sb     $zero, +89($a0)    
+  0019a644: sb     $zero, +90($a0)    
+  0019a648: sb     $zero, +91($a0)    
+  0019a64c: sb     $zero, +92($a0)    
+  0019a650: sb     $zero, +93($a0)    
+  0019a654: sb     $zero, +94($a0)    
+  0019a658: sb     $zero, +95($a0)    
+  0019a65c: sb     $zero, +96($a0)    
+  0019a660: sb     $zero, +97($a0)    
+  0019a664: sb     $zero, +137($a0)   
   0019a668: swc1   $at, +208($a0)     
   0019a66c: swc1   $at, +212($a0)     
   0019a670: swc1   $at, +216($a0)     
@@ -75,13 +75,13 @@
   0019a678: swc1   $at, +140($a0)     
   0019a67c: sw     $t0, +192($a0)     
   0019a680: swc1   $at, +240($a0)     
-  0019a684: sw     $zero, +244($a0)   
-  0019a688: sw     $zero, +245($a0)   
+  0019a684: sb     $zero, +244($a0)   
+  0019a688: sb     $zero, +245($a0)   
   0019a68c: swc1   $at, +248($a0)     
   0019a690: swc1   $at, +276($a0)     
   0019a694: swc1   $at, +280($a0)     
-  0019a698: sw     $zero, +273($a0)   
-  0019a69c: sw     $zero, +272($a0)   
+  0019a698: sb     $zero, +273($a0)   
+  0019a69c: sb     $zero, +272($a0)   
   0019a6a0: swc1   $at, +252($a0)     
   0019a6a4: sw     $zero, +256($a0)   
   0019a6a8: sw     $zero, +260($a0)   
@@ -89,10 +89,10 @@
   0019a6b0: swc1   $at, +268($a0)     
   0019a6b4: swc1   $at, +328($a0)     
   0019a6b8: sw     $a3, +288($a0)     
-  0019a6bc: sw     $zero, +357($a0)   
-  0019a6c0: sw     $zero, +98($a0)    
-  0019a6c4: lw     $a2, +0($a2)       
-  0019a6c8: sw     $a2, +0($a1)          ; GLOBAL 0x461c0000
+  0019a6bc: sb     $zero, +357($a0)   
+  0019a6c0: sb     $zero, +98($a0)    
+  0019a6c4: lq     $a2, +0($a2)       
+  0019a6c8: sq     $a2, +0($a1)          ; GLOBAL 0x461c0000
   0019a6cc: lui   $a1, 0x006f0000     
   0019a6d0: sw     $zero, +128($a0)   
   0019a6d4: lw     $a3, +21472($a1)      ; GLOBAL 0x006f53e0
@@ -104,8 +104,8 @@
   0019a6ec: addiu  $a3, $a3, +4       
   0019a6f0: addiu  $a1, $a0, +368     
   0019a6f4: sw     $a3, +132($a0)     
-  0019a6f8: lw     $a2, +0($a2)       
-  0019a6fc: sw     $a2, +0($a1)          ; GLOBAL 0x006f0000
+  0019a6f8: lq     $a2, +0($a2)       
+  0019a6fc: sq     $a2, +0($a1)          ; GLOBAL 0x006f0000
   0019a700: swc1   $at, +388($a0)     
   0019a704: addiu  $a1, $zero, -1     
   0019a708: swc1   $at, +384($a0)     
@@ -120,10 +120,10 @@
   0019a72c: sw     $zero, +144($a0)   
   0019a730: swc1   $at, +224($a0)     
   0019a734: swc1   $at, +228($a0)     
-  0019a738: sw     $zero, +236($a0)   
+  0019a738: sb     $zero, +236($a0)   
   0019a73c: swc1   $at, +232($a0)     
   0019a740: swc1   $at, +332($a0)     
-  0019a744: sw     $v1, +336($a0)     
+  0019a744: sb     $v1, +336($a0)     
   0019a748: swc1   $at, +432($a0)     
   0019a74c: sw     $a1, +196($a0)     
   0019a750: sw     $a1, +200($a0)     

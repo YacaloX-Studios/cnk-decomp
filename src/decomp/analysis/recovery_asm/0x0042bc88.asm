@@ -3,9 +3,9 @@
 ; 58 words
 
   0042bc88: addiu  $sp, $sp, -32      
-  0042bc8c: sw     $s0, +0($sp)       
-  0042bc90: sw     $ra, +16($sp)      
-  0042bc94: dsubu $s0, $a0, $zero     
+  0042bc8c: sq     $s0, +0($sp)       
+  0042bc90: sq     $ra, +16($sp)      
+  0042bc94: daddu $s0, $a0, $zero     
   0042bc98: lw     $v0, +84($s0)      
   0042bc9c: bnel   $v0, $zero, +24       ; br -> 0x0042bcb8
   0042bca0: lw     $a0, +84($s0)      
@@ -16,10 +16,10 @@
   0042bcb4: sll $zero, $zero, 0       
   0042bcb8: lw     $v0, +56($a0)      
   0042bcbc: bnel   $v0, $zero, +16       ; br -> 0x0042bcd0
-  0042bcc0: lw     $a0, +12($s0)      
+  0042bcc0: lhu    $a0, +12($s0)      
   0042bcc4: jal   0xf0429c60             ; -> FUN_00429c60
   0042bcc8: sll $zero, $zero, 0       
-  0042bccc: lw     $a0, +12($s0)      
+  0042bccc: lhu    $a0, +12($s0)      
   0042bcd0: andi   $v0, $a0, +8       
   0042bcd4: bnel   $v0, $zero, +64       ; br -> 0x0042bd18
   0042bcd8: lw     $v0, +16($s0)      
@@ -31,18 +31,18 @@
   0042bcf0: beq    $v0, $zero, +20       ; br -> 0x0042bd08
   0042bcf4: andi   $v0, $a0, -37      
   0042bcf8: lw     $v1, +16($s0)      
-  0042bcfc: sw     $v0, +12($s0)      
+  0042bcfc: sh     $v0, +12($s0)      
   0042bd00: sw     $v1, +0($s0)       
   0042bd04: sw     $zero, +4($s0)     
-  0042bd08: lw     $v0, +12($s0)      
+  0042bd08: lhu    $v0, +12($s0)      
   0042bd0c: ori    $v0, $v0, +8       
-  0042bd10: sw     $v0, +12($s0)      
+  0042bd10: sh     $v0, +12($s0)      
   0042bd14: lw     $v0, +16($s0)      
   0042bd18: bnel   $v0, $zero, +16       ; br -> 0x0042bd2c
-  0042bd1c: lw     $v1, +12($s0)      
+  0042bd1c: lhu    $v1, +12($s0)      
   0042bd20: jal   0xf042a680             ; -> FUN_0042a680
-  0042bd24: dsubu $a0, $s0, $zero     
-  0042bd28: lw     $v1, +12($s0)      
+  0042bd24: daddu $a0, $s0, $zero     
+  0042bd28: lhu    $v1, +12($s0)      
   0042bd2c: andi   $v0, $v1, +1       
   0042bd30: beq    $v0, $zero, +24       ; br -> 0x0042bd4c
   0042bd34: andi   $v0, $v1, +2       
@@ -52,12 +52,12 @@
   0042bd44: beq    $zero, $zero, +20     ; br -> 0x0042bd5c
   0042bd48: sw     $v0, +24($s0)      
   0042bd4c: bne    $v0, $zero, +8        ; br -> 0x0042bd58
-  0042bd50: dsubu $v1, $zero, $zero   
+  0042bd50: daddu $v1, $zero, $zero   
   0042bd54: lw     $v1, +20($s0)      
   0042bd58: sw     $v1, +8($s0)       
-  0042bd5c: dsubu $v0, $zero, $zero   
-  0042bd60: lw     $ra, +16($sp)      
-  0042bd64: lw     $s0, +0($sp)       
+  0042bd5c: daddu $v0, $zero, $zero   
+  0042bd60: lq     $ra, +16($sp)      
+  0042bd64: lq     $s0, +0($sp)       
   0042bd68: jr     $ra                
   0042bd6c: addiu  $sp, $sp, +32      
 

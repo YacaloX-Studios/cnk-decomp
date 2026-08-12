@@ -3,7 +3,7 @@
 ; 24 words
 
   001238d0: addiu  $sp, $sp, -16      
-  001238d4: dsubu $v0, $a0, $zero     
+  001238d4: daddu $v0, $a0, $zero     
   001238d8: lwc1   $v1, +0($a1)       
   001238dc: lwc1   $v0, +4($a1)       
   001238e0: lwc1   $at, +8($a1)       
@@ -19,7 +19,7 @@
   00123908: addiu  $sp, $sp, +16      
   0012390c: sll $zero, $zero, 0       
   00123910: jr     $ra                
-  00123914: dsubu $v0, $a0, $zero     
+  00123914: daddu $v0, $a0, $zero     
   00123918: sll $zero, $zero, 0       
   0012391c: sll $zero, $zero, 0       
   00123920: lw     $v1, +16($a1)      

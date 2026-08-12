@@ -4,12 +4,12 @@
 
   004311f0: lui   $v0, 0x00650000     
   004311f4: lui   $a0, 0xffff0000     
-  004311f8: dsubu $t3, $v0, $zero     
+  004311f8: daddu $t3, $v0, $zero     
   004311fc: ori    $a0, $a0, -4       
   00431200: addiu  $v0, $v0, +31440   
   00431204: addiu  $a2, $zero, +1     
   00431208: lw     $a1, +8($v0)          ; GLOBAL 0x00650008
-  0043120c: dsubu $t2, $v0, $zero     
+  0043120c: daddu $t2, $v0, $zero     
   00431210: lui   $t1, 0x00650000     
   00431214: lw     $v1, +4($a1)       
   00431218: and $a3, $v1, $a0         

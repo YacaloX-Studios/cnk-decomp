@@ -10,22 +10,22 @@
   003ec674: sll $zero, $zero, 0       
   003ec678: beq    $zero, $zero, +8      ; br -> 0x003ec684
   003ec67c: addiu  $a2, $a2, -1       
-  003ec680: dsubu $a2, $v1, $zero     
-  003ec684: dadd $at, $v1, $a2        
+  003ec680: daddu $a2, $v1, $zero     
+  003ec684: slt $at, $v1, $a2         
   003ec688: beq    $at, $zero, +12       ; br -> 0x003ec698
-  003ec68c: dadd $at, $zero, $a2      
+  003ec68c: slt $at, $zero, $a2       
   003ec690: beq    $zero, $zero, +56     ; br -> 0x003ec6cc
   003ec694: addiu  $v0, $zero, -1     
   003ec698: addiu  $a0, $a0, +4       
   003ec69c: beq    $at, $zero, +40       ; br -> 0x003ec6c8
-  003ec6a0: dsubu $v0, $zero, $zero   
+  003ec6a0: daddu $v0, $zero, $zero   
   003ec6a4: lw     $v1, +0($a0)       
   003ec6a8: bne    $v1, $a1, +12         ; br -> 0x003ec6b8
   003ec6ac: addiu  $a0, $a0, +4       
   003ec6b0: beq    $zero, $zero, +24     ; br -> 0x003ec6cc
   003ec6b4: sll $zero, $zero, 0       
   003ec6b8: addiu  $v0, $v0, +1       
-  003ec6bc: dadd $v1, $v0, $a2        
+  003ec6bc: slt $v1, $v0, $a2         
   003ec6c0: bne    $v1, $zero, -32       ; br -> 0x003ec6a4
   003ec6c4: sll $zero, $zero, 0       
   003ec6c8: addiu  $v0, $zero, -1     

@@ -7,9 +7,9 @@
   003ae0e8: swc1   $fp, +40($sp)      
   003ae0ec: lui   $a2, 0x40000000     
   003ae0f0: swc1   $sp, +36($sp)      
-  003ae0f4: dsubu $v1, $zero, $zero   
+  003ae0f4: daddu $v1, $zero, $zero   
   003ae0f8: swc1   $gp, +32($sp)      
-  003ae0fc: dsubu $a1, $zero, $zero   
+  003ae0fc: daddu $a1, $zero, $zero   
   003ae100: swc1   $k1, +28($sp)      
   003ae104: swc1   $k0, +24($sp)      
   003ae108: swc1   $t9, +20($sp)      
@@ -197,7 +197,7 @@
   003ae3e0: swc1   $zero, -19960($at)    ; GLOBAL 0x0070b208
   003ae3e4: sll $zero, $zero, 0       
   003ae3e8: lw     $t2, +0($a0)       
-  003ae3ec: dadd $a2, $v1, $t2        
+  003ae3ec: slt $a2, $v1, $t2         
   003ae3f0: bne    $a2, $zero, -600      ; br -> 0x003ae19c
   003ae3f4: addiu  $a2, $v1, +1       
   003ae3f8: lui   $at, 0x00700000     

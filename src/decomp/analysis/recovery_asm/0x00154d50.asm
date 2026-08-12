@@ -5,7 +5,7 @@
   00154d50: addiu  $sp, $sp, -16      
   00154d54: lui   $v0, 0x7f7f0000     
   00154d58: ori    $v0, $v0, -1       
-  00154d5c: dsubu $a3, $zero, $zero   
+  00154d5c: daddu $a3, $zero, $zero   
   00154d60: fmove  $zero,$a0,$v0      
   00154d64: addiu  $a2, $sp, +4       
   00154d68: addiu  $v1, $sp, +8       

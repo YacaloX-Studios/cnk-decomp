@@ -12,7 +12,7 @@
   0012bdbc: slti   $at, $a2, +4       
   0012bdc0: beq    $at, $zero, +152      ; br -> 0x0012be5c
   0012bdc4: sll $zero, $zero, 0       
-  0012bdc8: lw     $a0, +9($v0)       
+  0012bdc8: lbu    $a0, +9($v0)       
   0012bdcc: addiu  $v0, $zero, +255   
   0012bdd0: beq    $a0, $v0, +96         ; br -> 0x0012be34
   0012bdd4: sll $a1, $a2, 1           

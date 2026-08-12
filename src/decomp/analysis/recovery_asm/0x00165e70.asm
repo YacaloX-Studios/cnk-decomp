@@ -3,7 +3,7 @@
 ; 60 words
 
   00165e70: addiu  $sp, $sp, -32      
-  00165e74: lw     $v1, +136($a0)     
+  00165e74: lbu    $v1, +136($a0)     
   00165e78: bne    $v1, $zero, +64       ; br -> 0x00165ebc
   00165e7c: sll $zero, $zero, 0       
   00165e80: lw     $v1, +8($a0)       

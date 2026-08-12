@@ -3,7 +3,7 @@
 ; 24 words
 
   0013e950: addiu  $sp, $sp, -16      
-  0013e954: lw     $v1, -31712($gp)   
+  0013e954: lbu    $v1, -31712($gp)   
   0013e958: beq    $v1, $zero, +12       ; br -> 0x0013e968
   0013e95c: sll $zero, $zero, 0       
   0013e960: beq    $zero, $zero, +56     ; br -> 0x0013e99c
@@ -13,7 +13,7 @@
   0013e970: lwc1   $at, +4($a0)       
   0013e974: addiu  $a1, $zero, +1     
   0013e978: lwc1   $zero, +8($a0)     
-  0013e97c: sw     $a1, -31712($gp)   
+  0013e97c: sb     $a1, -31712($gp)   
   0013e980: swc1   $v0, +0($sp)       
   0013e984: swc1   $v0, +15160($v1)      ; GLOBAL 0x006f3b38
   0013e988: swc1   $at, +4($sp)       

@@ -3,12 +3,12 @@
 ; 162 words
 
   0042fb10: addiu  $sp, $sp, -64      
-  0042fb14: sw     $s1, +16($sp)      
-  0042fb18: sw     $s2, +32($sp)      
-  0042fb1c: sw     $s0, +0($sp)       
-  0042fb20: sw     $ra, +48($sp)      
+  0042fb14: sq     $s1, +16($sp)      
+  0042fb18: sq     $s2, +32($sp)      
+  0042fb1c: sq     $s0, +0($sp)       
+  0042fb20: sq     $ra, +48($sp)      
   0042fb24: jal   0xf042f750             ; -> FUN_0042f750
-  0042fb28: dsubu $s1, $a0, $zero     
+  0042fb28: daddu $s1, $a0, $zero     
   0042fb2c: lw     $a2, +16($s1)      
   0042fb30: addiu  $v1, $zero, +60    
   0042fb34: lw     $a3, +4($s1)       
@@ -28,7 +28,7 @@
   0042fb6c: addiu  $s0, $v0, -1       
   0042fb70: addu $s2, $v1, $a1        
   0042fb74: bne    $a2, $zero, +84       ; br -> 0x0042fbcc
-  0042fb78: dsubu $s0, $s0, $t0       
+  0042fb78: daddu $s0, $s0, $t0       
   0042fb7c: lw     $a0, +20($s1)      
   0042fb80: andi   $v0, $a0, +3       
   0042fb84: bnel   $v0, $zero, +72       ; br -> 0x0042fbd0
@@ -62,11 +62,11 @@
   0042fbf4: bne    $v0, $zero, +128      ; br -> 0x0042fc78
   0042fbf8: slti   $v0, $a1, +70      
   0042fbfc: addiu  $a0, $zero, +70    
-  0042fc00: dadd $v0, $a0, $a1        
+  0042fc00: slt $v0, $a0, $a1         
   0042fc04: beq    $v0, $zero, +308      ; br -> 0x0042fd3c
-  0042fc08: dsubu $t0, $a1, $zero     
+  0042fc08: daddu $t0, $a1, $zero     
   0042fc0c: addiu  $a2, $zero, +100   
-  0042fc10: dsubu $a3, $zero, $zero   
+  0042fc10: daddu $a3, $zero, $zero   
   0042fc14: addiu  $a1, $zero, +400   
   0042fc18: andi   $v0, $a0, +3       
   0042fc1c: sll $zero, $zero, 0       
@@ -87,7 +87,7 @@
   0042fc58: op19    $s0,$s0,$zero     
   0042fc5c: op19    $s0,$s0,$zero     
   0042fc60: addiu  $a0, $a0, +1       
-  0042fc64: dadd $v0, $a0, $t0        
+  0042fc64: slt $v0, $a0, $t0         
   0042fc68: bne    $v0, $zero, -76       ; br -> 0x0042fc20
   0042fc6c: andi   $v0, $a0, +3       
   0042fc70: beq    $zero, $zero, +204    ; br -> 0x0042fd40
@@ -96,9 +96,9 @@
   0042fc7c: slti   $v0, $a1, +69      
   0042fc80: beq    $v0, $zero, +108      ; br -> 0x0042fcf0
   0042fc84: addiu  $a0, $zero, +69    
-  0042fc88: dsubu $t0, $a1, $zero     
+  0042fc88: daddu $t0, $a1, $zero     
   0042fc8c: addiu  $a2, $zero, +100   
-  0042fc90: dsubu $a3, $zero, $zero   
+  0042fc90: daddu $a3, $zero, $zero   
   0042fc94: addiu  $a1, $zero, +400   
   0042fc98: andi   $v0, $a0, +3       
   0042fc9c: sll $zero, $zero, 0       
@@ -119,7 +119,7 @@
   0042fcd8: op19    $s0,$s0,$ra       
   0042fcdc: op19    $s0,$s0,$ra       
   0042fce0: addiu  $a0, $a0, -1       
-  0042fce4: dadd $v0, $t0, $a0        
+  0042fce4: slt $v0, $t0, $a0         
   0042fce8: bne    $v0, $zero, -76       ; br -> 0x0042fca0
   0042fcec: andi   $v0, $a0, +3       
   0042fcf0: andi   $v0, $a0, +3       
@@ -151,16 +151,16 @@
   0042fd58: addiu  $v0, $v0, +7       
   0042fd5c: sw     $v0, +24($s1)      
   0042fd60: spec38  $zero,$s0,$v0     
-  0042fd64: dsubu $v0, $v0, $s0       
+  0042fd64: daddu $v0, $v0, $s0       
   0042fd68: spec38  $zero,$v0,$v1     
-  0042fd6c: spec2f  $v1,$v0,$v1       
+  0042fd6c: dsubu $v1, $v1, $v0       
   0042fd70: spec38  $zero,$v1,$v0     
-  0042fd74: spec2f  $v0,$v1,$v0       
+  0042fd74: dsubu $v0, $v0, $v1       
   0042fd78: spec38  $zero,$v0,$v0     
-  0042fd7c: dsubu $v0, $s2, $v0       
-  0042fd80: lw     $ra, +48($sp)      
-  0042fd84: lw     $s2, +32($sp)      
-  0042fd88: lw     $s1, +16($sp)      
-  0042fd8c: lw     $s0, +0($sp)       
+  0042fd7c: daddu $v0, $s2, $v0       
+  0042fd80: lq     $ra, +48($sp)      
+  0042fd84: lq     $s2, +32($sp)      
+  0042fd88: lq     $s1, +16($sp)      
+  0042fd8c: lq     $s0, +0($sp)       
   0042fd90: jr     $ra                
   0042fd94: addiu  $sp, $sp, +64      

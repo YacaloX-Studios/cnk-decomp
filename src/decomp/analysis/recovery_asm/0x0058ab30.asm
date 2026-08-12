@@ -4,47 +4,47 @@
 
   0058ab30: addiu  $sp, $sp, -128     
   0058ab34: andi   $v1, $zero, +1     
-  0058ab38: sw     $s3, +48($sp)      
+  0058ab38: sq     $s3, +48($sp)      
   0058ab3c: sll $v1, $v1, 7           
-  0058ab40: sw     $s2, +32($sp)      
+  0058ab40: sq     $s2, +32($sp)      
   0058ab44: addiu  $s3, $zero, -129   
-  0058ab48: sw     $s1, +16($sp)      
-  0058ab4c: dsubu $v0, $zero, $zero   
-  0058ab50: sw     $s0, +0($sp)       
-  0058ab54: dsubu $s1, $zero, $zero   
+  0058ab48: sq     $s1, +16($sp)      
+  0058ab4c: daddu $v0, $zero, $zero   
+  0058ab50: sq     $s0, +0($sp)       
+  0058ab54: daddu $s1, $zero, $zero   
   0058ab58: lwc1   $at, +0($a1)       
-  0058ab5c: dsubu $s0, $zero, $zero   
+  0058ab5c: daddu $s0, $zero, $zero   
   0058ab60: lwc1   $zero, +0($a0)     
-  0058ab64: dsubu $t9, $zero, $zero   
+  0058ab64: daddu $t9, $zero, $zero   
   0058ab68: lwc1   $v0, -32640($gp)   
-  0058ab6c: dsubu $t8, $zero, $zero   
-  0058ab70: dsubu $t7, $zero, $zero   
-  0058ab74: dsubu $t6, $zero, $zero   
-  0058ab78: dsubu $t5, $zero, $zero   
-  0058ab7c: dsubu $t4, $zero, $zero   
-  0058ab80: dsubu $t3, $zero, $zero   
-  0058ab84: dsubu $t2, $zero, $zero   
-  0058ab88: dsubu $t1, $zero, $zero   
-  0058ab8c: dsubu $t0, $zero, $zero   
+  0058ab6c: daddu $t8, $zero, $zero   
+  0058ab70: daddu $t7, $zero, $zero   
+  0058ab74: daddu $t6, $zero, $zero   
+  0058ab78: daddu $t5, $zero, $zero   
+  0058ab7c: daddu $t4, $zero, $zero   
+  0058ab80: daddu $t3, $zero, $zero   
+  0058ab84: daddu $t2, $zero, $zero   
+  0058ab88: daddu $t1, $zero, $zero   
+  0058ab8c: daddu $t0, $zero, $zero   
   0058ab90: f10.1  $at,$s0,$zero      
-  0058ab94: dsubu $a3, $zero, $zero   
+  0058ab94: daddu $a3, $zero, $zero   
   0058ab98: swc1   $zero, +124($sp)   
-  0058ab9c: lw     $s2, +127($sp)     
+  0058ab9c: lbu    $s2, +127($sp)     
   0058aba0: and $s2, $s2, $s3         
   0058aba4: or $s2, $s2, $v1          
-  0058aba8: sw     $s2, +127($sp)     
+  0058aba8: sb     $s2, +127($sp)     
   0058abac: lwc1   $zero, +124($sp)   
   0058abb0: f10.34 $zero,$s0,$v0      
   0058abb4: f8.e   $zero,$t0,$zero    
-  0058abb8: dsubu $a2, $zero, $zero   
+  0058abb8: daddu $a2, $zero, $zero   
   0058abbc: lwc1   $at, +4($a1)       
   0058abc0: lwc1   $zero, +4($a0)     
   0058abc4: f10.1  $at,$s0,$zero      
   0058abc8: swc1   $zero, +120($sp)   
-  0058abcc: lw     $s2, +123($sp)     
+  0058abcc: lbu    $s2, +123($sp)     
   0058abd0: and $s2, $s2, $s3         
   0058abd4: or $v1, $s2, $v1          
-  0058abd8: sw     $v1, +123($sp)     
+  0058abd8: sb     $v1, +123($sp)     
   0058abdc: lwc1   $zero, +120($sp)   
   0058abe0: f10.34 $zero,$s0,$v0      
   0058abe4: f8.2   $zero,$t0,$zero    
@@ -60,10 +60,10 @@
   0058ac0c: lwc1   $zero, -32640($gp) 
   0058ac10: f10.1  $v0,$s0,$at        
   0058ac14: swc1   $at, +116($sp)     
-  0058ac18: lw     $s2, +119($sp)     
+  0058ac18: lbu    $s2, +119($sp)     
   0058ac1c: and $v1, $s2, $v1         
   0058ac20: or $v1, $v1, $a2          
-  0058ac24: sw     $v1, +119($sp)     
+  0058ac24: sb     $v1, +119($sp)     
   0058ac28: lwc1   $at, +116($sp)     
   0058ac2c: f10.34 $at,$s0,$zero      
   0058ac30: f8.2   $zero,$t0,$zero    
@@ -79,10 +79,10 @@
   0058ac58: lwc1   $zero, -32640($gp) 
   0058ac5c: f10.1  $v0,$s0,$at        
   0058ac60: swc1   $at, +112($sp)     
-  0058ac64: lw     $a3, +115($sp)     
+  0058ac64: lbu    $a3, +115($sp)     
   0058ac68: and $v1, $a3, $v1         
   0058ac6c: or $v1, $v1, $a2          
-  0058ac70: sw     $v1, +115($sp)     
+  0058ac70: sb     $v1, +115($sp)     
   0058ac74: lwc1   $at, +112($sp)     
   0058ac78: f10.34 $at,$s0,$zero      
   0058ac7c: f8.2   $zero,$t0,$zero    
@@ -98,10 +98,10 @@
   0058aca4: lwc1   $zero, -32640($gp) 
   0058aca8: f10.1  $v0,$s0,$at        
   0058acac: swc1   $at, +108($sp)     
-  0058acb0: lw     $a3, +111($sp)     
+  0058acb0: lbu    $a3, +111($sp)     
   0058acb4: and $v1, $a3, $v1         
   0058acb8: or $v1, $v1, $a2          
-  0058acbc: sw     $v1, +111($sp)     
+  0058acbc: sb     $v1, +111($sp)     
   0058acc0: lwc1   $at, +108($sp)     
   0058acc4: f10.34 $at,$s0,$zero      
   0058acc8: f8.2   $zero,$t0,$zero    
@@ -117,10 +117,10 @@
   0058acf0: lwc1   $zero, -32640($gp) 
   0058acf4: f10.1  $v0,$s0,$at        
   0058acf8: swc1   $at, +104($sp)     
-  0058acfc: lw     $a3, +107($sp)     
+  0058acfc: lbu    $a3, +107($sp)     
   0058ad00: and $v1, $a3, $v1         
   0058ad04: or $v1, $v1, $a2          
-  0058ad08: sw     $v1, +107($sp)     
+  0058ad08: sb     $v1, +107($sp)     
   0058ad0c: lwc1   $at, +104($sp)     
   0058ad10: f10.34 $at,$s0,$zero      
   0058ad14: f8.2   $zero,$t0,$zero    
@@ -136,10 +136,10 @@
   0058ad3c: lwc1   $zero, -32640($gp) 
   0058ad40: f10.1  $v0,$s0,$at        
   0058ad44: swc1   $at, +100($sp)     
-  0058ad48: lw     $a3, +103($sp)     
+  0058ad48: lbu    $a3, +103($sp)     
   0058ad4c: and $v1, $a3, $v1         
   0058ad50: or $v1, $v1, $a2          
-  0058ad54: sw     $v1, +103($sp)     
+  0058ad54: sb     $v1, +103($sp)     
   0058ad58: lwc1   $at, +100($sp)     
   0058ad5c: f10.34 $at,$s0,$zero      
   0058ad60: f8.2   $zero,$t0,$zero    
@@ -155,10 +155,10 @@
   0058ad88: lwc1   $zero, -32640($gp) 
   0058ad8c: f10.1  $v0,$s0,$at        
   0058ad90: swc1   $at, +96($sp)      
-  0058ad94: lw     $a3, +99($sp)      
+  0058ad94: lbu    $a3, +99($sp)      
   0058ad98: and $v1, $a3, $v1         
   0058ad9c: or $v1, $v1, $a2          
-  0058ada0: sw     $v1, +99($sp)      
+  0058ada0: sb     $v1, +99($sp)      
   0058ada4: lwc1   $at, +96($sp)      
   0058ada8: f10.34 $at,$s0,$zero      
   0058adac: f8.2   $zero,$t0,$zero    
@@ -174,10 +174,10 @@
   0058add4: lwc1   $zero, -32640($gp) 
   0058add8: f10.1  $v0,$s0,$at        
   0058addc: swc1   $at, +92($sp)      
-  0058ade0: lw     $a3, +95($sp)      
+  0058ade0: lbu    $a3, +95($sp)      
   0058ade4: and $v1, $a3, $v1         
   0058ade8: or $v1, $v1, $a2          
-  0058adec: sw     $v1, +95($sp)      
+  0058adec: sb     $v1, +95($sp)      
   0058adf0: lwc1   $at, +92($sp)      
   0058adf4: f10.34 $at,$s0,$zero      
   0058adf8: f8.2   $zero,$t0,$zero    
@@ -193,10 +193,10 @@
   0058ae20: lwc1   $zero, -32640($gp) 
   0058ae24: f10.1  $v0,$s0,$at        
   0058ae28: swc1   $at, +88($sp)      
-  0058ae2c: lw     $a3, +91($sp)      
+  0058ae2c: lbu    $a3, +91($sp)      
   0058ae30: and $v1, $a3, $v1         
   0058ae34: or $v1, $v1, $a2          
-  0058ae38: sw     $v1, +91($sp)      
+  0058ae38: sb     $v1, +91($sp)      
   0058ae3c: lwc1   $at, +88($sp)      
   0058ae40: f10.34 $at,$s0,$zero      
   0058ae44: f8.2   $zero,$t0,$zero    
@@ -212,10 +212,10 @@
   0058ae6c: lwc1   $zero, -32640($gp) 
   0058ae70: f10.1  $v0,$s0,$at        
   0058ae74: swc1   $at, +84($sp)      
-  0058ae78: lw     $a3, +87($sp)      
+  0058ae78: lbu    $a3, +87($sp)      
   0058ae7c: and $v1, $a3, $v1         
   0058ae80: or $v1, $v1, $a2          
-  0058ae84: sw     $v1, +87($sp)      
+  0058ae84: sb     $v1, +87($sp)      
   0058ae88: lwc1   $at, +84($sp)      
   0058ae8c: f10.34 $at,$s0,$zero      
   0058ae90: f8.2   $zero,$t0,$zero    
@@ -231,10 +231,10 @@
   0058aeb8: lwc1   $zero, -32640($gp) 
   0058aebc: f10.1  $v0,$s0,$at        
   0058aec0: swc1   $at, +80($sp)      
-  0058aec4: lw     $a3, +83($sp)      
+  0058aec4: lbu    $a3, +83($sp)      
   0058aec8: and $v1, $a3, $v1         
   0058aecc: or $v1, $v1, $a2          
-  0058aed0: sw     $v1, +83($sp)      
+  0058aed0: sb     $v1, +83($sp)      
   0058aed4: lwc1   $at, +80($sp)      
   0058aed8: f10.34 $at,$s0,$zero      
   0058aedc: f8.2   $zero,$t0,$zero    
@@ -250,10 +250,10 @@
   0058af04: lwc1   $zero, -32640($gp) 
   0058af08: f10.1  $v0,$s0,$at        
   0058af0c: swc1   $at, +76($sp)      
-  0058af10: lw     $a3, +79($sp)      
+  0058af10: lbu    $a3, +79($sp)      
   0058af14: and $v1, $a3, $v1         
   0058af18: or $v1, $v1, $a2          
-  0058af1c: sw     $v1, +79($sp)      
+  0058af1c: sb     $v1, +79($sp)      
   0058af20: lwc1   $at, +76($sp)      
   0058af24: f10.34 $at,$s0,$zero      
   0058af28: f8.2   $zero,$t0,$zero    
@@ -269,10 +269,10 @@
   0058af50: lwc1   $zero, -32640($gp) 
   0058af54: f10.1  $v0,$s0,$at        
   0058af58: swc1   $at, +72($sp)      
-  0058af5c: lw     $a3, +75($sp)      
+  0058af5c: lbu    $a3, +75($sp)      
   0058af60: and $v1, $a3, $v1         
   0058af64: or $v1, $v1, $a2          
-  0058af68: sw     $v1, +75($sp)      
+  0058af68: sb     $v1, +75($sp)      
   0058af6c: lwc1   $at, +72($sp)      
   0058af70: f10.34 $at,$s0,$zero      
   0058af74: f8.2   $zero,$t0,$zero    
@@ -288,10 +288,10 @@
   0058af9c: lwc1   $zero, -32640($gp) 
   0058afa0: f10.1  $v0,$s0,$at        
   0058afa4: swc1   $at, +68($sp)      
-  0058afa8: lw     $a3, +71($sp)      
+  0058afa8: lbu    $a3, +71($sp)      
   0058afac: and $v1, $a3, $v1         
   0058afb0: or $v1, $v1, $a2          
-  0058afb4: sw     $v1, +71($sp)      
+  0058afb4: sb     $v1, +71($sp)      
   0058afb8: lwc1   $at, +68($sp)      
   0058afbc: f10.34 $at,$s0,$zero      
   0058afc0: f8.2   $zero,$t0,$zero    
@@ -307,19 +307,19 @@
   0058afe8: sll $a0, $v1, 7           
   0058afec: addiu  $v1, $zero, -129   
   0058aff0: swc1   $at, +64($sp)      
-  0058aff4: lw     $a1, +67($sp)      
+  0058aff4: lbu    $a1, +67($sp)      
   0058aff8: and $v1, $a1, $v1         
   0058affc: or $v1, $v1, $a0          
-  0058b000: sw     $v1, +67($sp)      
+  0058b000: sb     $v1, +67($sp)      
   0058b004: lwc1   $at, +64($sp)      
   0058b008: f10.34 $at,$s0,$zero      
   0058b00c: f8.2   $zero,$t0,$zero    
   0058b010: sll $zero, $zero, 0       
   0058b014: op19    $zero,$v0,$zero   
-  0058b018: lw     $s3, +48($sp)      
-  0058b01c: lw     $s2, +32($sp)      
-  0058b020: lw     $s1, +16($sp)      
-  0058b024: lw     $s0, +0($sp)       
+  0058b018: lq     $s3, +48($sp)      
+  0058b01c: lq     $s2, +32($sp)      
+  0058b020: lq     $s1, +16($sp)      
+  0058b024: lq     $s0, +0($sp)       
   0058b028: jr     $ra                
   0058b02c: addiu  $sp, $sp, +128     
   0058b030: lui   $v1, 0x3f800000     

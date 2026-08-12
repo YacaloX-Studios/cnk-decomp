@@ -11,7 +11,7 @@
   0053fd98: sll $zero, $zero, 0       
   0053fd9c: sll $zero, $zero, 0       
   0053fda0: beq    $zero, $zero, +40     ; br -> 0x0053fdcc
-  0053fda4: dsubu $v0, $zero, $zero   
+  0053fda4: daddu $v0, $zero, $zero   
   0053fda8: lw     $v1, +8($a0)       
   0053fdac: sll $a2, $v0, 2           
   0053fdb0: addu $v1, $v1, $a2        

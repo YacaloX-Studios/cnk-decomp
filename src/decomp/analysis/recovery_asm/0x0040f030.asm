@@ -3,7 +3,7 @@
 ; 64 words
 
   0040f030: lui   $a2, 0x00700000     
-  0040f034: dsubu $a3, $zero, $zero   
+  0040f034: daddu $a3, $zero, $zero   
   0040f038: beq    $zero, $zero, +8      ; br -> 0x0040f044
   0040f03c: addiu  $a2, $a2, +12112   
   0040f040: addiu  $a3, $a3, +1       
@@ -27,16 +27,16 @@
   0040f088: sw     $a1, +0($v1)          ; GLOBAL 0x00700000
   0040f08c: sll $zero, $zero, 0       
   0040f090: lui   $at, 0x00700000     
-  0040f094: lw     $v0, +11624($at)      ; GLOBAL 0x00702d68
-  0040f098: dadd $v0, $v0, $a0        
+  0040f094: ld     $v0, +11624($at)      ; GLOBAL 0x00702d68
+  0040f098: slt $v0, $v0, $a0         
   0040f09c: jr     $ra                
   0040f0a0: xori   $v0, $v0, +1       
   0040f0a4: sll $zero, $zero, 0       
   0040f0a8: sll $zero, $zero, 0       
   0040f0ac: sll $zero, $zero, 0       
   0040f0b0: lui   $at, 0x00700000     
-  0040f0b4: lw     $v0, +11632($at)      ; GLOBAL 0x00702d70
-  0040f0b8: dadd $v0, $v0, $a0        
+  0040f0b4: ld     $v0, +11632($at)      ; GLOBAL 0x00702d70
+  0040f0b8: slt $v0, $v0, $a0         
   0040f0bc: jr     $ra                
   0040f0c0: xori   $v0, $v0, +1       
   0040f0c4: sll $zero, $zero, 0       
@@ -46,7 +46,7 @@
   0040f0d4: sll $v1, $a0, 3           
   0040f0d8: addiu  $v0, $v0, +11616   
   0040f0dc: addu $v0, $v0, $v1        
-  0040f0e0: lw     $v0, +0($v0)          ; GLOBAL 0x00700000
+  0040f0e0: ld     $v0, +0($v0)          ; GLOBAL 0x00700000
   0040f0e4: xor $v0, $a1, $v0         
   0040f0e8: jr     $ra                
   0040f0ec: sltiu  $v0, $v0, +1       
@@ -58,12 +58,12 @@
   0040f104: addiu  $v1, $zero, -5     
   0040f108: lw     $a2, +11396($at)      ; GLOBAL 0x00702c84
   0040f10c: op19    $zero,$a0,$zero   
-  0040f110: lw     $a1, +64($a2)         ; GLOBAL 0x00700040
-  0040f114: lw     $v0, +0($a2)          ; GLOBAL 0x00700000
+  0040f110: lbu    $a1, +64($a2)         ; GLOBAL 0x00700040
+  0040f114: ld     $v0, +0($a2)          ; GLOBAL 0x00700000
   0040f118: and $v1, $a1, $v1         
   0040f11c: or $v1, $v1, $a0          
   0040f120: jr     $ra                
-  0040f124: sw     $v1, +64($a2)         ; GLOBAL 0x00700040
+  0040f124: sb     $v1, +64($a2)         ; GLOBAL 0x00700040
   0040f128: sll $zero, $zero, 0       
   0040f12c: sll $zero, $zero, 0       
 

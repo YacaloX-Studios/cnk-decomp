@@ -4,30 +4,30 @@
 
   0042fd98: addiu  $sp, $sp, -160     
   0042fd9c: lui   $v0, 0x00650000     
-  0042fda0: sw     $fp, +128($sp)     
+  0042fda0: sq     $fp, +128($sp)     
   0042fda4: lui   $a2, 0x00650000     
-  0042fda8: sw     $s7, +112($sp)     
+  0042fda8: sq     $s7, +112($sp)     
   0042fdac: addiu  $fp, $v0, +31440   
-  0042fdb0: sw     $s6, +96($sp)      
+  0042fdb0: sq     $s6, +96($sp)      
   0042fdb4: spec3c  $zero,$a1,$a1     
-  0042fdb8: sw     $s5, +80($sp)      
+  0042fdb8: sq     $s5, +80($sp)      
   0042fdbc: lui   $v0, 0xffff0000     
-  0042fdc0: sw     $s3, +48($sp)      
+  0042fdc0: sq     $s3, +48($sp)      
   0042fdc4: ori    $v0, $v0, -4       
-  0042fdc8: sw     $s2, +32($sp)      
+  0042fdc8: sq     $s2, +32($sp)      
   0042fdcc: spec3e  $zero,$a1,$a1     
-  0042fdd0: sw     $s0, +0($sp)       
+  0042fdd0: sq     $s0, +0($sp)       
   0042fdd4: lui   $s6, 0x00650000     
-  0042fdd8: sw     $ra, +144($sp)     
+  0042fdd8: sq     $ra, +144($sp)     
   0042fddc: lui   $s0, 0xffff0000     
-  0042fde0: sw     $s1, +16($sp)      
-  0042fde4: dsubu $s7, $a0, $zero     
-  0042fde8: sw     $s4, +64($sp)      
+  0042fde0: sq     $s1, +16($sp)      
+  0042fde4: daddu $s7, $a0, $zero     
+  0042fde8: sq     $s4, +64($sp)      
   0042fdec: ori    $s0, $s0, -1       
   0042fdf0: lw     $s4, +8($fp)       
-  0042fdf4: lw     $v1, +32480($a2)      ; GLOBAL 0x00657ee0
+  0042fdf4: ld     $v1, +32480($a2)      ; GLOBAL 0x00657ee0
   0042fdf8: lw     $a2, +4($s4)       
-  0042fdfc: dsubu $a1, $a1, $v1       
+  0042fdfc: daddu $a1, $a1, $v1       
   0042fe00: and $s3, $a2, $v0         
   0042fe04: op19    $a1,$a1,$zero     
   0042fe08: lw     $v0, +32488($s6)      ; GLOBAL 0x00657ee8
@@ -42,16 +42,16 @@
   0042fe2c: and $v0, $v0, $v1         
   0042fe30: spec3c  $zero,$v0,$s2     
   0042fe34: spec3f  $zero,$s2,$s2     
-  0042fe38: dsubu $a0, $s7, $zero     
+  0042fe38: daddu $a0, $s7, $zero     
   0042fe3c: jal   0xf04298e0             ; -> FUN_004298e0
-  0042fe40: dsubu $a1, $s2, $zero     
-  0042fe44: dsubu $s1, $v0, $zero     
+  0042fe40: daddu $a1, $s2, $zero     
+  0042fe44: daddu $s1, $v0, $zero     
   0042fe48: beq    $s1, $s0, +384        ; br -> 0x0042ffcc
-  0042fe4c: daddu $v0, $s1, $s5       
+  0042fe4c: sltu $v0, $s1, $s5        
   0042fe50: beq    $v0, $zero, +16       ; br -> 0x0042fe64
   0042fe54: lui   $v0, 0x00650000     
   0042fe58: bne    $s4, $fp, +372        ; br -> 0x0042ffd0
-  0042fe5c: lw     $ra, +144($sp)     
+  0042fe5c: lq     $ra, +144($sp)     
   0042fe60: lui   $v0, 0x00650000     
   0042fe64: lw     $v1, +32512($v0)      ; GLOBAL 0x00657f00
   0042fe68: addu $v1, $v1, $s2        
@@ -77,22 +77,22 @@
   0042feb8: subu $s0, $v0, $a1        
   0042febc: beq    $zero, $zero, +8      ; br -> 0x0042fec8
   0042fec0: addu $s1, $s1, $s0        
-  0042fec4: dsubu $s0, $zero, $zero   
+  0042fec4: daddu $s0, $zero, $zero   
   0042fec8: addu $v0, $s1, $s2        
   0042fecc: addiu  $v1, $zero, +4096  
   0042fed0: andi   $v0, $v0, +4095    
-  0042fed4: dsubu $a0, $s7, $zero     
-  0042fed8: spec2f  $v1,$v0,$v1       
+  0042fed4: daddu $a0, $s7, $zero     
+  0042fed8: dsubu $v1, $v1, $v0       
   0042fedc: spec3c  $zero,$v1,$v1     
   0042fee0: spec3f  $zero,$v1,$v1     
   0042fee4: addu $s0, $s0, $v1        
   0042fee8: jal   0xf04298e0             ; -> FUN_004298e0
-  0042feec: dsubu $a1, $s0, $zero     
-  0042fef0: dsubu $v1, $v0, $zero     
+  0042feec: daddu $a1, $s0, $zero     
+  0042fef0: daddu $v1, $v0, $zero     
   0042fef4: lui   $v0, 0xffff0000     
   0042fef8: ori    $v0, $v0, -1       
   0042fefc: beq    $v1, $v0, +208        ; br -> 0x0042ffd0
-  0042ff00: lw     $ra, +144($sp)     
+  0042ff00: lq     $ra, +144($sp)     
   0042ff04: subu $v1, $v1, $s1        
   0042ff08: lui   $a0, 0x00650000     
   0042ff0c: addu $a1, $v1, $s0        
@@ -126,33 +126,33 @@
   0042ff7c: sltiu  $v1, $s3, +16      
   0042ff80: bne    $v1, $zero, +16       ; br -> 0x0042ff94
   0042ff84: sw     $v0, +4($a0)          ; GLOBAL 0x00650004
-  0042ff88: dsubu $a0, $s7, $zero     
+  0042ff88: daddu $a0, $s7, $zero     
   0042ff8c: jal   0xf0430748             ; -> FUN_00430748
   0042ff90: addiu  $a1, $s4, +8       
   0042ff94: lui   $v0, 0x00650000     
   0042ff98: lui   $a0, 0x00650000     
   0042ff9c: lw     $v1, +32512($v0)      ; GLOBAL 0x00657f00
-  0042ffa0: lw     $v0, +32496($a0)      ; GLOBAL 0x00657ef0
-  0042ffa4: daddu $v0, $v0, $v1       
+  0042ffa0: ld     $v0, +32496($a0)      ; GLOBAL 0x00657ef0
+  0042ffa4: sltu $v0, $v0, $v1        
   0042ffa8: bnel   $v0, $zero, +4        ; br -> 0x0042ffb0
-  0042ffac: sw     $v1, +32496($a0)      ; GLOBAL 0x00657ef0
+  0042ffac: sd     $v1, +32496($a0)      ; GLOBAL 0x00657ef0
   0042ffb0: lui   $a0, 0x00650000     
   0042ffb4: lui   $a1, 0x00650000     
   0042ffb8: lw     $v1, +32512($a1)      ; GLOBAL 0x00657f00
-  0042ffbc: lw     $v0, +32504($a0)      ; GLOBAL 0x00657ef8
-  0042ffc0: daddu $v0, $v0, $v1       
+  0042ffbc: ld     $v0, +32504($a0)      ; GLOBAL 0x00657ef8
+  0042ffc0: sltu $v0, $v0, $v1        
   0042ffc4: bnel   $v0, $zero, +4        ; br -> 0x0042ffcc
-  0042ffc8: sw     $v1, +32504($a0)      ; GLOBAL 0x00657ef8
-  0042ffcc: lw     $ra, +144($sp)     
-  0042ffd0: lw     $fp, +128($sp)     
-  0042ffd4: lw     $s7, +112($sp)     
-  0042ffd8: lw     $s6, +96($sp)      
-  0042ffdc: lw     $s5, +80($sp)      
-  0042ffe0: lw     $s4, +64($sp)      
-  0042ffe4: lw     $s3, +48($sp)      
-  0042ffe8: lw     $s2, +32($sp)      
-  0042ffec: lw     $s1, +16($sp)      
-  0042fff0: lw     $s0, +0($sp)       
+  0042ffc8: sd     $v1, +32504($a0)      ; GLOBAL 0x00657ef8
+  0042ffcc: lq     $ra, +144($sp)     
+  0042ffd0: lq     $fp, +128($sp)     
+  0042ffd4: lq     $s7, +112($sp)     
+  0042ffd8: lq     $s6, +96($sp)      
+  0042ffdc: lq     $s5, +80($sp)      
+  0042ffe0: lq     $s4, +64($sp)      
+  0042ffe4: lq     $s3, +48($sp)      
+  0042ffe8: lq     $s2, +32($sp)      
+  0042ffec: lq     $s1, +16($sp)      
+  0042fff0: lq     $s0, +0($sp)       
   0042fff4: jr     $ra                
   0042fff8: addiu  $sp, $sp, +160     
   0042fffc: sll $zero, $zero, 0       

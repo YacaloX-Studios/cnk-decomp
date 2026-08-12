@@ -3,10 +3,10 @@
 ; 8 words
 
   0042acb0: addiu  $sp, $sp, -16      
-  0042acb4: sw     $ra, +0($sp)       
-  0042acb8: lw     $a1, +14($a0)      
+  0042acb4: sq     $ra, +0($sp)       
+  0042acb8: lh     $a1, +14($a0)      
   0042acbc: jal   0xf0429708             ; -> FUN_00429708
   0042acc0: lw     $a0, +84($a0)      
-  0042acc4: lw     $ra, +0($sp)       
+  0042acc4: lq     $ra, +0($sp)       
   0042acc8: jr     $ra                
   0042accc: addiu  $sp, $sp, +16      

@@ -34,13 +34,13 @@
   003f6b94: op3e    $v0,$t8,$zero     
   003f6b98: op3e    $v0,$t9,$zero     
   003f6b9c: op3e    $v0,$k0,$zero     
-  003f6ba0: lw     $a1, +0($v0)       
-  003f6ba4: lw     $v1, +16($v0)      
-  003f6ba8: sw     $a1, +0($a0)       
-  003f6bac: lw     $a1, +32($v0)      
-  003f6bb0: sw     $v1, +16($a0)      
-  003f6bb4: sw     $a1, +32($a0)      
-  003f6bb8: dsubu $v0, $a0, $zero     
+  003f6ba0: lq     $a1, +0($v0)       
+  003f6ba4: lq     $v1, +16($v0)      
+  003f6ba8: sq     $a1, +0($a0)       
+  003f6bac: lq     $a1, +32($v0)      
+  003f6bb0: sq     $v1, +16($a0)      
+  003f6bb4: sq     $a1, +32($a0)      
+  003f6bb8: daddu $v0, $a0, $zero     
   003f6bbc: jr     $ra                
   003f6bc0: addiu  $sp, $sp, +64      
   003f6bc4: sll $zero, $zero, 0       
@@ -243,11 +243,11 @@
   003f6ed8: lui   $t0, 0x00650000     
   003f6edc: addiu  $a2, $sp, +0       
   003f6ee0: addiu  $t0, $t0, +5040    
-  003f6ee4: dsubu $a3, $zero, $zero   
-  003f6ee8: lw     $v1, +0($t0)          ; GLOBAL 0x00650000
+  003f6ee4: daddu $a3, $zero, $zero   
+  003f6ee8: ld     $v1, +0($t0)          ; GLOBAL 0x00650000
   003f6eec: lwc1   $zero, +8($t0)        ; GLOBAL 0x00650008
   003f6ef0: f10.36 $v1,$s0,$v0        
-  003f6ef4: sw     $v1, +0($a2)       
+  003f6ef4: sd     $v1, +0($a2)       
   003f6ef8: f8.2   $zero,$t0,$at      
   003f6efc: swc1   $zero, +8($a2)     
   003f6f00: addiu  $a3, $zero, +1     

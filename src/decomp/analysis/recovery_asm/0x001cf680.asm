@@ -23,7 +23,7 @@
   001cf6c8: sw     $a1, +128($a0)     
   001cf6cc: addiu  $v1, $zero, +1     
   001cf6d0: beq    $zero, $zero, +12     ; br -> 0x001cf6e0
-  001cf6d4: sw     $v1, +12($a0)      
+  001cf6d4: sb     $v1, +12($a0)      
   001cf6d8: beq    $zero, $zero, -16     ; br -> 0x001cf6cc
   001cf6dc: sw     $v1, +128($a0)     
   001cf6e0: jr     $ra                

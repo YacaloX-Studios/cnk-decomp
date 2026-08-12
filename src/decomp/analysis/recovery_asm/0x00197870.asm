@@ -12,24 +12,24 @@
   0019788c: addiu  $v1, $v1, -18864   
   00197890: addu $v1, $v1, $a2        
   00197894: beq    $zero, $zero, +32     ; br -> 0x001978b8
-  00197898: lw     $v1, +0($v1)          ; GLOBAL 0x00690000
+  00197898: lbu    $v1, +0($v1)          ; GLOBAL 0x00690000
   0019789c: lui   $v1, 0x006f0000     
   001978a0: lui   $a2, 0x00690000     
   001978a4: lw     $v1, +13752($v1)      ; GLOBAL 0x006f35b8
   001978a8: addiu  $a2, $a2, -18864   
   001978ac: lw     $v1, +588($v1)        ; GLOBAL 0x006f024c
   001978b0: addu $v1, $a2, $v1        
-  001978b4: lw     $v1, +0($v1)          ; GLOBAL 0x006f0000
+  001978b4: lbu    $v1, +0($v1)          ; GLOBAL 0x006f0000
   001978b8: beq    $v1, $zero, +268      ; br -> 0x001979c8
   001978bc: addiu  $a2, $sp, +16      
-  001978c0: lw     $v1, +0($a1)       
-  001978c4: sw     $v1, +0($a2)          ; GLOBAL 0x00690000
+  001978c0: lq     $v1, +0($a1)       
+  001978c4: sq     $v1, +0($a2)          ; GLOBAL 0x00690000
   001978c8: lw     $a1, +44($a0)      
   001978cc: addiu  $v1, $sp, +0       
   001978d0: lw     $a1, +0($a1)       
   001978d4: addiu  $a1, $a1, +32      
-  001978d8: lw     $a1, +0($a1)       
-  001978dc: sw     $a1, +0($v1)          ; GLOBAL 0x006f0000
+  001978d8: lq     $a1, +0($a1)       
+  001978dc: sq     $a1, +0($v1)          ; GLOBAL 0x006f0000
   001978e0: lwc1   $v0, +0($a2)          ; GLOBAL 0x00690000
   001978e4: lwc1   $zero, +0($v1)        ; GLOBAL 0x006f0000
   001978e8: lwc1   $at, +4($a2)          ; GLOBAL 0x00690004

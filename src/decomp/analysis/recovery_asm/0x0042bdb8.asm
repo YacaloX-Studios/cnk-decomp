@@ -3,11 +3,11 @@
 ; 10 words
 
   0042bdb8: addiu  $sp, $sp, -16      
-  0042bdbc: dsubu $a1, $zero, $zero   
-  0042bdc0: sw     $ra, +0($sp)       
+  0042bdbc: daddu $a1, $zero, $zero   
+  0042bdc0: sq     $ra, +0($sp)       
   0042bdc4: jal   0xf04318c0             ; -> 0x004318c0
   0042bdc8: addiu  $a2, $zero, +10    
-  0042bdcc: lw     $ra, +0($sp)       
+  0042bdcc: lq     $ra, +0($sp)       
   0042bdd0: spec3c  $zero,$v0,$v0     
   0042bdd4: spec3f  $zero,$v0,$v0     
   0042bdd8: jr     $ra                

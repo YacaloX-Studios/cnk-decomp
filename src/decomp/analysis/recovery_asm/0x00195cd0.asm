@@ -5,7 +5,7 @@
   00195cd0: sw     $zero, +1260($a0)  
   00195cd4: addiu  $v1, $zero, +1     
   00195cd8: jr     $ra                
-  00195cdc: sw     $v1, +1264($a0)    
+  00195cdc: sb     $v1, +1264($a0)    
   00195ce0: lw     $v1, +44($a0)      
   00195ce4: lw     $v1, +0($v1)       
   00195ce8: addiu  $t0, $v1, +80      
@@ -55,7 +55,7 @@
   00195d98: f10.1  $v1,$s0,$at        
   00195d9c: f10.2  $at,$s0,$zero      
   00195da0: swc1   $zero, +0($a1)     
-  00195da4: lw     $v1, +1105($a0)    
+  00195da4: lbu    $v1, +1105($a0)    
   00195da8: beq    $v1, $zero, +104      ; br -> 0x00195e14
   00195dac: sll $zero, $zero, 0       
   00195db0: lwc1   $at, +1080($a0)    

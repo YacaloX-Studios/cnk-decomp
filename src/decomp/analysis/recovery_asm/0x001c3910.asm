@@ -10,7 +10,7 @@
   001c3924: addiu  $v1, $zero, +32    
   001c3928: sw     $a2, +8($a0)       
   001c392c: lui   $v0, 0x006d0000     
-  001c3930: sw     $a3, +12($a0)      
+  001c3930: sb     $a3, +12($a0)      
   001c3934: addiu  $v0, $v0, -9120    
   001c3938: sw     $v1, +16($a0)      
   001c393c: lui   $t0, 0x3f800000     
@@ -36,19 +36,19 @@
   001c398c: swc1   $v0, +0($sp)       
   001c3990: swc1   $at, +0($a1)       
   001c3994: swc1   $zero, +0($a3)     
-  001c3998: lw     $v0, +0($v0)          ; GLOBAL 0x006d0000
-  001c399c: sw     $v0, +0($v1)       
+  001c3998: lq     $v0, +0($v0)          ; GLOBAL 0x006d0000
+  001c399c: sq     $v0, +0($v1)       
   001c39a0: addiu  $v0, $a0, +32      
-  001c39a4: lw     $v1, +0($v1)       
-  001c39a8: sw     $v1, +0($v0)          ; GLOBAL 0x006d0000
+  001c39a4: lq     $v1, +0($v1)       
+  001c39a8: sq     $v1, +0($v0)          ; GLOBAL 0x006d0000
   001c39ac: lwc1   $zero, +32($a2)    
   001c39b0: addiu  $v1, $a2, +32      
   001c39b4: addiu  $v0, $a0, +64      
   001c39b8: addiu  $v1, $v1, +16      
   001c39bc: swc1   $zero, +48($a0)    
-  001c39c0: lw     $v1, +0($v1)       
-  001c39c4: sw     $v1, +0($v0)          ; GLOBAL 0x006d0000
-  001c39c8: dsubu $v0, $a0, $zero     
+  001c39c0: lq     $v1, +0($v1)       
+  001c39c4: sq     $v1, +0($v0)          ; GLOBAL 0x006d0000
+  001c39c8: daddu $v0, $a0, $zero     
   001c39cc: jr     $ra                
   001c39d0: addiu  $sp, $sp, +32      
   001c39d4: sll $zero, $zero, 0       

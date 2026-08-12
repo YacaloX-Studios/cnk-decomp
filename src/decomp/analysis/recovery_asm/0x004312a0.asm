@@ -3,13 +3,13 @@
 ; 60 words
 
   004312a0: addiu  $sp, $sp, -96      
-  004312a4: sw     $s1, +64($sp)      
-  004312a8: sw     $s0, +48($sp)      
-  004312ac: dsubu $s1, $a0, $zero     
-  004312b0: dsubu $s0, $a1, $zero     
-  004312b4: sw     $ra, +80($sp)      
+  004312a4: sq     $s1, +64($sp)      
+  004312a8: sq     $s0, +48($sp)      
+  004312ac: daddu $s1, $a0, $zero     
+  004312b0: daddu $s0, $a1, $zero     
+  004312b4: sq     $ra, +80($sp)      
   004312b8: jal   0xf042c5c0             ; -> FUN_0042c5c0
-  004312bc: dsubu $a0, $s0, $zero     
+  004312bc: daddu $a0, $s0, $zero     
   004312c0: jal   0xf04311f0             ; -> FUN_004311f0
   004312c4: sll $zero, $zero, 0       
   004312c8: lui   $v0, 0x00650000     
@@ -35,7 +35,7 @@
   00431318: op2c    $sp,$a1,$zero     
   0043131c: op2d    $sp,$a1,$zero     
   00431320: jal   0xf042c620             ; -> FUN_0042c620
-  00431324: dsubu $a0, $s0, $zero     
+  00431324: daddu $a0, $s0, $zero     
   00431328: mmi0   $zero,$sp,$v1      
   0043132c: mmi1   $zero,$sp,$v1      
   00431330: mmi0   $zero,$sp,$a0      
@@ -55,10 +55,10 @@
   00431368: mmi0   $zero,$sp,$v1      
   0043136c: mmi1   $zero,$sp,$v1      
   00431370: op2c    $s1,$v1,$zero     
-  00431374: dsubu $v0, $s1, $zero     
+  00431374: daddu $v0, $s1, $zero     
   00431378: op2d    $s1,$v1,$zero     
-  0043137c: lw     $ra, +80($sp)      
-  00431380: lw     $s1, +64($sp)      
-  00431384: lw     $s0, +48($sp)      
+  0043137c: lq     $ra, +80($sp)      
+  00431380: lq     $s1, +64($sp)      
+  00431384: lq     $s0, +48($sp)      
   00431388: jr     $ra                
   0043138c: addiu  $sp, $sp, +96      

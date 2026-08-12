@@ -16,8 +16,8 @@
   003955ec: cop2   $t8,$fp,$zero      
   003955f0: op3e    $v0,$s4,$zero     
   003955f4: addiu  $v1, $sp, +0       
-  003955f8: lw     $v0, +0($v0)       
-  003955fc: sw     $v0, +0($v1)       
+  003955f8: lq     $v0, +0($v0)       
+  003955fc: sq     $v0, +0($v1)       
   00395600: addiu  $v0, $a0, +480     
   00395604: lwc1   $v0, +0($v1)       
   00395608: lwc1   $zero, +0($v0)     
@@ -33,7 +33,7 @@
   00395630: sll $zero, $zero, 0       
   00395634: f8.2   $zero,$t0,$at      
   00395638: addiu  $v0, $zero, +1     
-  0039563c: dsubu $v0, $zero, $zero   
+  0039563c: daddu $v0, $zero, $zero   
   00395640: jr     $ra                
   00395644: addiu  $sp, $sp, +32      
   00395648: sll $zero, $zero, 0       

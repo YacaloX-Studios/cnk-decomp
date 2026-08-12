@@ -3,7 +3,7 @@
 ; 96 words
 
   0016b030: addiu  $sp, $sp, -144     
-  0016b034: lw     $v1, +521($a0)     
+  0016b034: lbu    $v1, +521($a0)     
   0016b038: beq    $v1, $zero, +364      ; br -> 0x0016b1a8
   0016b03c: sll $zero, $zero, 0       
   0016b040: lwc1   $v1, +16($a0)      
@@ -44,8 +44,8 @@
   0016b0cc: swc1   $at, +0($a2)       
   0016b0d0: swc1   $v1, +0($t4)       
   0016b0d4: swc1   $zero, +0($t3)     
-  0016b0d8: lw     $v1, +0($v1)       
-  0016b0dc: sw     $v1, +0($t0)       
+  0016b0d8: lq     $v1, +0($v1)       
+  0016b0dc: sq     $v1, +0($t0)       
   0016b0e0: addiu  $v1, $sp, +52      
   0016b0e4: addiu  $a1, $sp, +56      
   0016b0e8: lwc1   $a0, +0($v1)       
@@ -86,16 +86,16 @@
   0016b174: swc1   $v0, +0($sp)       
   0016b178: swc1   $at, +0($a2)       
   0016b17c: swc1   $zero, +0($a3)     
-  0016b180: lw     $a1, +0($a1)          ; GLOBAL 0x3f800000
-  0016b184: sw     $a1, +0($v1)       
+  0016b180: lq     $a1, +0($a1)          ; GLOBAL 0x3f800000
+  0016b184: sq     $a1, +0($v1)       
   0016b188: op36    $t0,$at,$zero     
   0016b18c: op36    $v1,$v0,$zero     
   0016b190: cop2   $at,$fp,$v0        
   0016b194: op3e    $t0,$at,$zero     
   0016b198: lw     $v1, +120($a0)     
   0016b19c: addiu  $v1, $v1, +1296    
-  0016b1a0: lw     $a0, +0($t0)       
-  0016b1a4: sw     $a0, +0($v1)       
+  0016b1a0: lq     $a0, +0($t0)       
+  0016b1a4: sq     $a0, +0($v1)       
   0016b1a8: jr     $ra                
   0016b1ac: addiu  $sp, $sp, +144     
 

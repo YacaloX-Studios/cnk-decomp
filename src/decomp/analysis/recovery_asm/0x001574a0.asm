@@ -33,11 +33,11 @@
   00157510: lw     $v0, +4($a0)       
   00157514: lw     $v0, +8($v0)          ; GLOBAL 0x3f800008
   00157518: jr     $ra                
-  0015751c: lw     $v0, +176($v0)        ; GLOBAL 0x3f8000b0
+  0015751c: lbu    $v0, +176($v0)        ; GLOBAL 0x3f8000b0
   00157520: lw     $v0, +4($a0)       
   00157524: lw     $v0, +2228($v0)       ; GLOBAL 0x3f8008b4
   00157528: nor $v0, $v0, $zero       
-  0015752c: daddu $v0, $zero, $v0     
+  0015752c: sltu $v0, $zero, $v0      
   00157530: xori   $v0, $v0, +1       
   00157534: bne    $v0, $zero, +24       ; br -> 0x00157550
   00157538: sll $zero, $zero, 0       
@@ -54,7 +54,7 @@
   00157564: lw     $v0, +4($v0)          ; GLOBAL 0x006f0004
   00157568: andi   $v0, $v0, +1024    
   0015756c: jr     $ra                
-  00157570: daddu $v0, $zero, $v0     
+  00157570: sltu $v0, $zero, $v0      
   00157574: sll $zero, $zero, 0       
   00157578: sll $zero, $zero, 0       
   0015757c: sll $zero, $zero, 0       
@@ -62,7 +62,7 @@
   00157584: lw     $v0, +8($v0)          ; GLOBAL 0x006f0008
   00157588: andi   $v0, $v0, +2048    
   0015758c: jr     $ra                
-  00157590: daddu $v0, $zero, $v0     
+  00157590: sltu $v0, $zero, $v0      
   00157594: sll $zero, $zero, 0       
   00157598: sll $zero, $zero, 0       
   0015759c: sll $zero, $zero, 0       
@@ -70,7 +70,7 @@
   001575a4: lw     $v0, +4($v0)          ; GLOBAL 0x006f0004
   001575a8: andi   $v0, $v0, +2048    
   001575ac: jr     $ra                
-  001575b0: daddu $v0, $zero, $v0     
+  001575b0: sltu $v0, $zero, $v0      
   001575b4: sll $zero, $zero, 0       
   001575b8: sll $zero, $zero, 0       
   001575bc: sll $zero, $zero, 0       

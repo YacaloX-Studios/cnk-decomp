@@ -3,10 +3,10 @@
 ; 8 words
 
   0042c1c8: addiu  $sp, $sp, -32      
-  0042c1cc: sw     $ra, +16($sp)      
+  0042c1cc: sq     $ra, +16($sp)      
   0042c1d0: jal   0xf042c098             ; -> 0x0042c098
-  0042c1d4: dsubu $a2, $sp, $zero     
-  0042c1d8: lw     $ra, +16($sp)      
+  0042c1d4: daddu $a2, $sp, $zero     
+  0042c1d8: lq     $ra, +16($sp)      
   0042c1dc: jr     $ra                
   0042c1e0: addiu  $sp, $sp, +32      
   0042c1e4: sll $zero, $zero, 0       

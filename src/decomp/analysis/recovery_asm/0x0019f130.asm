@@ -28,8 +28,8 @@
   0019f18c: sll $zero, $zero, 0       
   0019f190: f10.3  $at,$s0,$v1        
   0019f194: addiu  $a1, $sp, +0       
-  0019f198: lw     $v1, +0($v1)          ; GLOBAL 0x006f0000
-  0019f19c: sw     $v1, +0($a1)       
+  0019f198: lq     $v1, +0($v1)          ; GLOBAL 0x006f0000
+  0019f19c: sq     $v1, +0($a1)       
   0019f1a0: lw     $v1, +44($a0)      
   0019f1a4: lw     $v1, +0($v1)          ; GLOBAL 0x006f0000
   0019f1a8: lw     $v1, +148($v1)        ; GLOBAL 0x006f0094

@@ -3,42 +3,42 @@
 ; 150 words
 
   0042cfe0: addiu  $sp, $sp, -80      
-  0042cfe4: sw     $s3, +48($sp)      
-  0042cfe8: sw     $s2, +32($sp)      
-  0042cfec: dsubu $s3, $a0, $zero     
-  0042cff0: sw     $s1, +16($sp)      
-  0042cff4: dsubu $s2, $a2, $zero     
-  0042cff8: dsubu $s1, $a1, $zero     
-  0042cffc: sw     $s0, +0($sp)       
-  0042d000: sw     $ra, +64($sp)      
-  0042d004: dsubu $a1, $s2, $zero     
+  0042cfe4: sq     $s3, +48($sp)      
+  0042cfe8: sq     $s2, +32($sp)      
+  0042cfec: daddu $s3, $a0, $zero     
+  0042cff0: sq     $s1, +16($sp)      
+  0042cff4: daddu $s2, $a2, $zero     
+  0042cff8: daddu $s1, $a1, $zero     
+  0042cffc: sq     $s0, +0($sp)       
+  0042d000: sq     $ra, +64($sp)      
+  0042d004: daddu $a1, $s2, $zero     
   0042d008: jal   0xf042cf78             ; -> 0x0042cf78
-  0042d00c: dsubu $a0, $s1, $zero     
-  0042d010: dsubu $s0, $v0, $zero     
+  0042d00c: daddu $a0, $s1, $zero     
+  0042d010: daddu $s0, $v0, $zero     
   0042d014: bne    $s0, $zero, +32       ; br -> 0x0042d038
-  0042d018: dsubu $a0, $s3, $zero     
+  0042d018: daddu $a0, $s3, $zero     
   0042d01c: jal   0xf042c660             ; -> FUN_0042c660
-  0042d020: dsubu $a1, $zero, $zero   
-  0042d024: dsubu $t3, $v0, $zero     
+  0042d020: daddu $a1, $zero, $zero   
+  0042d024: daddu $t3, $v0, $zero     
   0042d028: addiu  $v0, $zero, +1     
   0042d02c: sw     $zero, +20($t3)    
   0042d030: beq    $zero, $zero, +284    ; br -> 0x0042d150
   0042d034: sw     $v0, +16($t3)      
   0042d038: regimm $s0, $at, +20         ; br -> 0x0042d050
-  0042d03c: dsubu $s0, $zero, $zero   
-  0042d040: dsubu $t3, $s1, $zero     
+  0042d03c: daddu $s0, $zero, $zero   
+  0042d040: daddu $t3, $s1, $zero     
   0042d044: addiu  $s0, $zero, +1     
-  0042d048: dsubu $s1, $s2, $zero     
-  0042d04c: dsubu $s2, $t3, $zero     
+  0042d048: daddu $s1, $s2, $zero     
+  0042d04c: daddu $s2, $t3, $zero     
   0042d050: lw     $a1, +4($s1)       
   0042d054: jal   0xf042c660             ; -> FUN_0042c660
-  0042d058: dsubu $a0, $s3, $zero     
-  0042d05c: dsubu $t3, $v0, $zero     
+  0042d058: daddu $a0, $s3, $zero     
+  0042d05c: daddu $t3, $v0, $zero     
   0042d060: addiu  $t0, $s1, +20      
   0042d064: sw     $s0, +12($t3)      
   0042d068: addiu  $t1, $s2, +20      
   0042d06c: addiu  $a3, $t3, +20      
-  0042d070: dsubu $t2, $zero, $zero   
+  0042d070: daddu $t2, $zero, $zero   
   0042d074: lw     $t4, +16($s1)      
   0042d078: lw     $v0, +16($s2)      
   0042d07c: sll $v1, $t4, 2           
@@ -58,26 +58,26 @@
   0042d0b4: addu $v1, $v1, $t2        
   0042d0b8: subu $a1, $a1, $v0        
   0042d0bc: sra $t2, $v1, 16          
-  0042d0c0: sw     $v1, +0($a3)       
+  0042d0c0: sh     $v1, +0($a3)       
   0042d0c4: addu $a1, $a1, $t2        
-  0042d0c8: daddu $v0, $t1, $a2       
-  0042d0cc: sw     $a1, +2($a3)       
+  0042d0c8: sltu $v0, $t1, $a2        
+  0042d0cc: sh     $a1, +2($a3)       
   0042d0d0: sra $t2, $a1, 16          
   0042d0d4: bne    $v0, $zero, -72       ; br -> 0x0042d090
   0042d0d8: addiu  $a3, $a3, +4       
-  0042d0dc: daddu $v0, $t0, $t5       
+  0042d0dc: sltu $v0, $t0, $t5        
   0042d0e0: beql   $v0, $zero, +60       ; br -> 0x0042d120
   0042d0e4: addiu  $a3, $a3, -4       
   0042d0e8: lw     $v0, +0($t0)       
   0042d0ec: addiu  $t0, $t0, +4       
   0042d0f0: andi   $v1, $v0, -1       
-  0042d0f4: daddu $a0, $t0, $t5       
+  0042d0f4: sltu $a0, $t0, $t5        
   0042d0f8: addu $v1, $v1, $t2        
   0042d0fc: srl $v0, $v0, 16          
   0042d100: sra $t2, $v1, 16          
-  0042d104: sw     $v1, +0($a3)       
+  0042d104: sh     $v1, +0($a3)       
   0042d108: addu $a1, $v0, $t2        
-  0042d10c: sw     $a1, +2($a3)       
+  0042d10c: sh     $a1, +2($a3)       
   0042d110: sra $t2, $a1, 16          
   0042d114: bne    $a0, $zero, -48       ; br -> 0x0042d0e8
   0042d118: addiu  $a3, $a3, +4       
@@ -94,12 +94,12 @@
   0042d144: beq    $v0, $zero, -24       ; br -> 0x0042d130
   0042d148: addiu  $t4, $t4, -1       
   0042d14c: sw     $t4, +16($t3)      
-  0042d150: dsubu $v0, $t3, $zero     
-  0042d154: lw     $ra, +64($sp)      
-  0042d158: lw     $s3, +48($sp)      
-  0042d15c: lw     $s2, +32($sp)      
-  0042d160: lw     $s1, +16($sp)      
-  0042d164: lw     $s0, +0($sp)       
+  0042d150: daddu $v0, $t3, $zero     
+  0042d154: lq     $ra, +64($sp)      
+  0042d158: lq     $s3, +48($sp)      
+  0042d15c: lq     $s2, +32($sp)      
+  0042d160: lq     $s1, +16($sp)      
+  0042d164: lq     $s0, +0($sp)       
   0042d168: jr     $ra                
   0042d16c: addiu  $sp, $sp, +80      
   0042d170: spec3f  $zero,$a0,$a0     
@@ -151,4 +151,4 @@
   0042d228: and $a1, $a1, $v1         
   0042d22c: or $a1, $a1, $v0          
   0042d230: jr     $ra                
-  0042d234: dsubu $v0, $a1, $zero     
+  0042d234: daddu $v0, $a1, $zero     

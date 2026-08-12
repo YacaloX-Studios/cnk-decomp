@@ -3,10 +3,10 @@
 ; 240 words
 
   0042f750: addiu  $sp, $sp, -80      
-  0042f754: sw     $s1, +48($sp)      
-  0042f758: sw     $s0, +32($sp)      
-  0042f75c: sw     $ra, +64($sp)      
-  0042f760: dsubu $s0, $a0, $zero     
+  0042f754: sq     $s1, +48($sp)      
+  0042f758: sq     $s0, +32($sp)      
+  0042f75c: sq     $ra, +64($sp)      
+  0042f760: daddu $s0, $a0, $zero     
   0042f764: lw     $a0, +0($s0)       
   0042f768: sltiu  $v0, $a0, +60      
   0042f76c: bne    $v0, $zero, +92       ; br -> 0x0042f7cc
@@ -138,7 +138,7 @@
   0042f964: addiu  $t2, $v0, +19536   
   0042f968: addiu  $t1, $zero, +11    
   0042f96c: addiu  $a2, $zero, +100   
-  0042f970: dsubu $a3, $zero, $zero   
+  0042f970: daddu $a3, $zero, $zero   
   0042f974: addiu  $a1, $zero, +400   
   0042f978: addiu  $t0, $zero, +1     
   0042f97c: sll $zero, $zero, 0       
@@ -180,12 +180,12 @@
   0042fa0c: blez   $v0, $zero, -144      ; br -> 0x0042f980
   0042fa10: sw     $v0, +12($s0)      
   0042fa14: beq    $zero, $zero, +232    ; br -> 0x0042fb00
-  0042fa18: lw     $ra, +64($sp)      
+  0042fa18: lq     $ra, +64($sp)      
   0042fa1c: addiu  $t1, $zero, +1     
   0042fa20: addiu  $t0, $v0, +19536   
   0042fa24: addiu  $t2, $zero, +12    
   0042fa28: addiu  $a2, $zero, +100   
-  0042fa2c: dsubu $a3, $zero, $zero   
+  0042fa2c: daddu $a3, $zero, $zero   
   0042fa30: beq    $zero, $zero, +144    ; br -> 0x0042fac4
   0042fa34: addiu  $a1, $zero, +400   
   0042fa38: beq    $v0, $t1, +24         ; br -> 0x0042fa54
@@ -229,17 +229,17 @@
   0042fad0: sll $v0, $v0, 2           
   0042fad4: addu $v0, $v0, $t0        
   0042fad8: lw     $v1, +0($v0)          ; GLOBAL 0x006a0000
-  0042fadc: dadd $v1, $v1, $a0        
+  0042fadc: slt $v1, $v1, $a0         
   0042fae0: bnel   $v1, $zero, -172      ; br -> 0x0042fa38
   0042fae4: lw     $v0, +16($s0)      
   0042fae8: beq    $zero, $zero, +20     ; br -> 0x0042fb00
-  0042faec: lw     $ra, +64($sp)      
-  0042faf0: dadd $v0, $s1, $a0        
+  0042faec: lq     $ra, +64($sp)      
+  0042faf0: slt $v0, $s1, $a0         
   0042faf4: bnel   $v0, $zero, -192      ; br -> 0x0042fa38
   0042faf8: lw     $v0, +16($s0)      
-  0042fafc: lw     $ra, +64($sp)      
-  0042fb00: lw     $s1, +48($sp)      
-  0042fb04: lw     $s0, +32($sp)      
+  0042fafc: lq     $ra, +64($sp)      
+  0042fb00: lq     $s1, +48($sp)      
+  0042fb04: lq     $s0, +32($sp)      
   0042fb08: jr     $ra                
   0042fb0c: addiu  $sp, $sp, +80      
 

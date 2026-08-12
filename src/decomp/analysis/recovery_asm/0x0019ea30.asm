@@ -7,7 +7,7 @@
   0019ea38: lw     $v1, +56($a0)      
   0019ea3c: lwc1   $v0, +60($a0)      
   0019ea40: lw     $a1, +0($a1)       
-  0019ea44: lw     $v1, +68($v1)      
+  0019ea44: lbu    $v1, +68($v1)      
   0019ea48: beq    $v1, $zero, +24       ; br -> 0x0019ea64
   0019ea4c: addiu  $a2, $a1, +16      
   0019ea50: lui   $v1, 0x006f0000     
@@ -37,8 +37,8 @@
   0019eab0: sll $zero, $zero, 0       
   0019eab4: f10.3  $v1,$s0,$v0        
   0019eab8: addiu  $a1, $sp, +0       
-  0019eabc: lw     $v1, +0($a2)       
-  0019eac0: sw     $v1, +0($a1)       
+  0019eabc: lq     $v1, +0($a2)       
+  0019eac0: sq     $v1, +0($a1)       
   0019eac4: lw     $v1, +44($a0)      
   0019eac8: lw     $v1, +0($v1)          ; GLOBAL 0x006f0000
   0019eacc: lw     $v1, +148($v1)        ; GLOBAL 0x006f0094

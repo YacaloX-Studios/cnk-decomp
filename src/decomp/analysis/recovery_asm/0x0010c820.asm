@@ -11,8 +11,8 @@
   0010c838: sltiu  $v0, $v1, +624     
   0010c83c: bne    $v0, $zero, +1200     ; br -> 0x0010ccf0
   0010c840: swc1   $zero, +12($sp)    
-  0010c844: dsubu $a2, $zero, $zero   
-  0010c848: dsubu $a1, $a0, $zero     
+  0010c844: daddu $a2, $zero, $zero   
+  0010c848: daddu $a1, $a0, $zero     
   0010c84c: ori    $v0, $zero, -32768 
   0010c850: spec38  $zero,$v0,$v1     
   0010c854: lw     $t0, +16($a1)      
@@ -187,7 +187,7 @@
   0010caf8: xor $t0, $t1, $t0         
   0010cafc: sw     $t0, +40($a1)      
   0010cb00: bne    $a3, $zero, -688      ; br -> 0x0010c854
-  0010cb04: dsubu $a1, $v0, $zero     
+  0010cb04: daddu $a1, $v0, $zero     
   0010cb08: sll $v0, $a2, 2           
   0010cb0c: addu $v0, $v0, $a0        
   0010cb10: addiu  $a2, $a2, +3       

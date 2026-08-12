@@ -15,7 +15,7 @@
   00115488: beq    $a1, $zero, +12       ; br -> 0x00115498
   0011548c: lui   $at, 0x00010000     
   00115490: beq    $zero, $zero, +76     ; br -> 0x001154e0
-  00115494: dsubu $v0, $zero, $zero   
+  00115494: daddu $v0, $zero, $zero   
   00115498: ori    $at, $at, +6468    
   0011549c: addu $v1, $a0, $at        
   001154a0: addiu  $a0, $zero, +12    
@@ -47,7 +47,7 @@
   00115508: beq    $a1, $zero, +12       ; br -> 0x00115518
   0011550c: lui   $at, 0x00010000     
   00115510: beq    $zero, $zero, +76     ; br -> 0x00115560
-  00115514: dsubu $v0, $zero, $zero   
+  00115514: daddu $v0, $zero, $zero   
   00115518: ori    $at, $at, +6468    
   0011551c: addu $v1, $a0, $at        
   00115520: addiu  $a0, $zero, +12    
@@ -73,18 +73,18 @@
   00115570: lui   $v1, 0x00010000     
   00115574: lui   $t3, 0x00010000     
   00115578: addu $v1, $a0, $v1        
-  0011557c: dsubu $t2, $t3, $zero     
+  0011557c: daddu $t2, $t3, $zero     
   00115580: lw     $t7, +6468($v1)       ; GLOBAL 0x00011944
   00115584: lui   $a1, 0xff000000     
   00115588: lui   $t1, 0x00010000     
   0011558c: lui   $a3, 0x00010000     
-  00115590: dsubu $t0, $t1, $zero     
+  00115590: daddu $t0, $t1, $zero     
   00115594: addu $t3, $a0, $t3        
   00115598: addu $t2, $a0, $t2        
   0011559c: addu $t1, $a0, $t1        
   001155a0: addu $t0, $a0, $t0        
   001155a4: addu $a3, $a0, $a3        
-  001155a8: dsubu $a2, $zero, $zero   
+  001155a8: daddu $a2, $zero, $zero   
   001155ac: lui   $v1, 0x00ff0000     
   001155b0: and $t5, $t7, $a1         
   001155b4: and $t4, $t7, $v1         
@@ -187,7 +187,7 @@
   00115738: addu $v0, $v0, $v1        
   0011573c: sll $zero, $zero, 0       
   00115740: sw     $a1, +0($a0)          ; GLOBAL 0x00010000
-  00115744: dsubu $v0, $a0, $zero     
+  00115744: daddu $v0, $a0, $zero     
   00115748: sw     $zero, +4($a0)        ; GLOBAL 0x00010004
   0011574c: jr     $ra                
   00115750: sw     $zero, +8($a0)        ; GLOBAL 0x00010008

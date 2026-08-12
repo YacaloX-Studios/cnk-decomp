@@ -4,9 +4,9 @@
 
   00134ec0: sll $v0, $a1, 5           
   00134ec4: addu $v1, $v0, $a0        
-  00134ec8: lw     $v0, +28($v1)      
+  00134ec8: lbu    $v0, +28($v1)      
   00134ecc: beq    $v0, $zero, +44       ; br -> 0x00134efc
-  00134ed0: dsubu $v0, $zero, $zero   
+  00134ed0: daddu $v0, $zero, $zero   
   00134ed4: lw     $v0, +44($v1)      
   00134ed8: beq    $v0, $zero, +28       ; br -> 0x00134ef8
   00134edc: sll $zero, $zero, 0       
@@ -16,7 +16,7 @@
   00134eec: sll $zero, $zero, 0       
   00134ef0: beq    $zero, $zero, +8      ; br -> 0x00134efc
   00134ef4: sll $zero, $zero, 0       
-  00134ef8: dsubu $v0, $zero, $zero   
+  00134ef8: daddu $v0, $zero, $zero   
   00134efc: jr     $ra                
   00134f00: sll $zero, $zero, 0       
   00134f04: sll $zero, $zero, 0       

@@ -29,15 +29,15 @@
   003f68a0: op3e    $v0,$a2,$zero     
   003f68a4: op3e    $v0,$a3,$zero     
   003f68a8: op3e    $v0,$t0,$zero     
-  003f68ac: lw     $a1, +0($v0)       
-  003f68b0: lw     $v1, +16($v0)      
-  003f68b4: sw     $a1, +0($a0)       
-  003f68b8: sw     $v1, +16($a0)      
-  003f68bc: lw     $a1, +32($v0)      
-  003f68c0: lw     $v1, +48($v0)      
-  003f68c4: sw     $a1, +32($a0)      
-  003f68c8: sw     $v1, +48($a0)      
-  003f68cc: dsubu $v0, $a0, $zero     
+  003f68ac: lq     $a1, +0($v0)       
+  003f68b0: lq     $v1, +16($v0)      
+  003f68b4: sq     $a1, +0($a0)       
+  003f68b8: sq     $v1, +16($a0)      
+  003f68bc: lq     $a1, +32($v0)      
+  003f68c0: lq     $v1, +48($v0)      
+  003f68c4: sq     $a1, +32($a0)      
+  003f68c8: sq     $v1, +48($a0)      
+  003f68cc: daddu $v0, $a0, $zero     
   003f68d0: jr     $ra                
   003f68d4: addiu  $sp, $sp, +64      
   003f68d8: sll $zero, $zero, 0       

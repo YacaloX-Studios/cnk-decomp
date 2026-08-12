@@ -33,12 +33,12 @@
   001570e0: lw     $v0, +4($a0)       
   001570e4: lw     $v0, +8($v0)          ; GLOBAL 0x3f800008
   001570e8: jr     $ra                
-  001570ec: lw     $v0, +168($v0)        ; GLOBAL 0x3f8000a8
+  001570ec: lbu    $v0, +168($v0)        ; GLOBAL 0x3f8000a8
   001570f0: lw     $v0, +8($a0)       
   001570f4: lw     $v0, +4($v0)          ; GLOBAL 0x3f800004
   001570f8: andi   $v0, $v0, +512     
   001570fc: jr     $ra                
-  00157100: daddu $v0, $zero, $v0     
+  00157100: sltu $v0, $zero, $v0      
   00157104: sll $zero, $zero, 0       
   00157108: sll $zero, $zero, 0       
   0015710c: sll $zero, $zero, 0       

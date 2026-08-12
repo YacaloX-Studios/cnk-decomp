@@ -11,8 +11,8 @@
   00136128: cop2   $at,$fp,$v0        
   0013612c: op3e    $v1,$at,$zero     
   00136130: addiu  $a1, $sp, +16      
-  00136134: lw     $v1, +0($v1)       
-  00136138: sw     $v1, +0($a1)       
+  00136134: lq     $v1, +0($v1)       
+  00136138: sq     $v1, +0($a1)       
   0013613c: addiu  $v1, $a0, +96      
   00136140: op36    $v1,$at,$zero     
   00136144: op36    $a1,$v0,$zero     
@@ -23,12 +23,12 @@
   00136158: sll $zero, $zero, 0       
   0013615c: sll $zero, $zero, 0       
   00136160: jr     $ra                
-  00136164: dsubu $v0, $a0, $zero     
+  00136164: daddu $v0, $a0, $zero     
   00136168: sll $zero, $zero, 0       
   0013616c: sll $zero, $zero, 0       
-  00136170: dsubu $t0, $zero, $zero   
-  00136174: dsubu $v1, $a0, $zero     
-  00136178: lw     $v0, +28($v1)      
+  00136170: daddu $t0, $zero, $zero   
+  00136174: daddu $v1, $a0, $zero     
+  00136178: lbu    $v0, +28($v1)      
   0013617c: beq    $v0, $zero, +72       ; br -> 0x001361c8
   00136180: sll $zero, $zero, 0       
   00136184: lw     $v0, +44($v1)      
@@ -52,7 +52,7 @@
   001361cc: slti   $v0, $t0, +8       
   001361d0: bne    $v0, $zero, -92       ; br -> 0x00136178
   001361d4: addiu  $v1, $v1, +32      
-  001361d8: dsubu $v0, $zero, $zero   
+  001361d8: daddu $v0, $zero, $zero   
   001361dc: jr     $ra                
   001361e0: sll $zero, $zero, 0       
   001361e4: sll $zero, $zero, 0       

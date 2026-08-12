@@ -37,8 +37,8 @@
   001b63c0: swc1   $v0, +0($a3)       
   001b63c4: swc1   $at, +0($t0)       
   001b63c8: swc1   $zero, +0($v1)     
-  001b63cc: lw     $v0, +0($v0)       
-  001b63d0: sw     $v0, +0($t3)       
+  001b63cc: lq     $v0, +0($v0)       
+  001b63d0: sq     $v0, +0($t3)       
   001b63d4: lw     $t1, +4($a0)       
   001b63d8: addiu  $t0, $sp, +24      
   001b63dc: addiu  $a3, $sp, +20      
@@ -56,8 +56,8 @@
   001b640c: swc1   $v0, +0($a3)       
   001b6410: swc1   $at, +0($t0)       
   001b6414: swc1   $zero, +0($v1)     
-  001b6418: lw     $v0, +0($v0)       
-  001b641c: sw     $v0, +0($t2)       
+  001b6418: lq     $v0, +0($v0)       
+  001b641c: sq     $v0, +0($t2)       
   001b6420: lw     $t1, +4($a0)       
   001b6424: addiu  $t0, $sp, +8       
   001b6428: addiu  $a3, $sp, +4       
@@ -75,8 +75,8 @@
   001b6458: swc1   $v0, +0($a3)       
   001b645c: swc1   $at, +0($t0)       
   001b6460: swc1   $zero, +0($a0)     
-  001b6464: lw     $v1, +0($v1)       
-  001b6468: sw     $v1, +0($v0)       
+  001b6464: lq     $v1, +0($v1)       
+  001b6468: sq     $v1, +0($v0)       
   001b646c: lwc1   $zero, +8($a2)     
   001b6470: fmove  $zero,$zero,$v1    
   001b6474: op36    $t3,$at,$zero     
@@ -109,8 +109,8 @@
   001b64e0: op3e    $a1,$at,$zero     
   001b64e4: beq    $zero, $zero, +12     ; br -> 0x001b64f4
   001b64e8: sll $zero, $zero, 0       
-  001b64ec: lw     $v0, +0($a2)       
-  001b64f0: sw     $v0, +0($a1)       
+  001b64ec: lq     $v0, +0($a2)       
+  001b64f0: sq     $v0, +0($a1)       
   001b64f4: addiu  $v0, $zero, +1     
   001b64f8: jr     $ra                
   001b64fc: addiu  $sp, $sp, +96      

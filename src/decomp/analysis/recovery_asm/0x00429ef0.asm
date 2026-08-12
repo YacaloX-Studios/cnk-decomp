@@ -4,9 +4,9 @@
 
   00429ef0: addiu  $sp, $sp, -16      
   00429ef4: lui   $a1, 0x00430000     
-  00429ef8: sw     $ra, +0($sp)       
+  00429ef8: sq     $ra, +0($sp)       
   00429efc: jal   0xf042a5e8             ; -> FUN_0042a5e8
   00429f00: addiu  $a1, $a1, -26208   
-  00429f04: lw     $ra, +0($sp)       
+  00429f04: lq     $ra, +0($sp)       
   00429f08: jr     $ra                
   00429f0c: addiu  $sp, $sp, +16      

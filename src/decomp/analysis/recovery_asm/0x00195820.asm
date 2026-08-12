@@ -37,8 +37,8 @@
   001958a0: lwc1   $zero, +432($a2)   
   001958a4: addiu  $v1, $v1, +80      
   001958a8: f10.2  $at,$s0,$zero      
-  001958ac: lw     $v1, +0($v1)       
-  001958b0: sw     $v1, +0($a1)       
+  001958ac: lq     $v1, +0($v1)       
+  001958b0: sq     $v1, +0($a1)       
   001958b4: f10.7  $zero,$s0,$zero    
   001958b8: fmove  $zero,$zero,$v1    
   001958bc: op36    $a1,$at,$zero     

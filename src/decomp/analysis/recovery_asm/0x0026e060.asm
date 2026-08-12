@@ -5,7 +5,7 @@
   0026e060: addiu  $sp, $sp, -16      
   0026e064: lw     $v1, +4($a0)       
   0026e068: beq    $v1, $zero, +84       ; br -> 0x0026e0c0
-  0026e06c: dsubu $t2, $zero, $zero   
+  0026e06c: daddu $t2, $zero, $zero   
   0026e070: lw     $t0, +12($v1)      
   0026e074: lui   $v0, 0x00630000     
   0026e078: lui   $a3, 0xff000000     
@@ -27,7 +27,7 @@
   0026e0b8: sll $zero, $zero, 0       
   0026e0bc: op19    $zero,$t2,$zero   
   0026e0c0: beq    $t2, $zero, +84       ; br -> 0x0026e118
-  0026e0c4: dsubu $v0, $zero, $zero   
+  0026e0c4: daddu $v0, $zero, $zero   
   0026e0c8: lw     $a0, +12($v1)      
   0026e0cc: lui   $v0, 0xff000000     
   0026e0d0: lui   $t1, 0x00ff0000     
@@ -43,7 +43,7 @@
   0026e0f8: addu $a3, $a3, $t0        
   0026e0fc: sll $a0, $a0, 24          
   0026e100: addu $a3, $a0, $a3        
-  0026e104: daddu $a0, $a2, $a3       
+  0026e104: sltu $a0, $a2, $a3        
   0026e108: bne    $a0, $zero, +20       ; br -> 0x0026e120
   0026e10c: mult   $a3, $a1, +0       
   0026e110: beq    $zero, $zero, +124    ; br -> 0x0026e190

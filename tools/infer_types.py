@@ -62,9 +62,14 @@ SPECIAL = {
     0x18: "mult",  0x19: "multu", 0x1a: "div",   0x1b: "divu",
     0x20: "add",   0x21: "addu",  0x22: "sub",   0x23: "subu",
     0x24: "and",   0x25: "or",    0x26: "xor",   0x27: "nor",
-    0x28: "slt",   0x29: "sltu",
-    0x2a: "dadd",  0x2b: "daddu", 0x2c: "dsub",  0x2d: "dsubu",
+    0x2a: "slt",   0x2b: "sltu",
+    0x2c: "dadd",  0x2d: "daddu", 0x2e: "dsub",  0x2f: "dsubu",
 }
+
+LOAD_NAME = {0x20: "lb", 0x21: "lh", 0x23: "lw", 0x24: "lbu", 0x25: "lhu",
+             0x22: "lwl", 0x26: "lwr", 0x30: "ll", 0x37: "ld", 0x1e: "lq"}
+STORE_NAME = {0x28: "sb", 0x29: "sh", 0x2b: "sw", 0x2a: "swl", 0x2e: "swr",
+              0x38: "sc", 0x3f: "sd", 0x1f: "sq"}
 
 OPNAME = {
     0x01: "regimm", 0x02: "j",     0x03: "jal",
@@ -133,11 +138,11 @@ def decode(w):
                      target=tgt)
 
     if op in LOADS:
-        return Instr(op, "lw", rs=rs, rt=rt, imm=imm, width=LOADS[op][0],
-                     kind="load")
+        return Instr(op, LOAD_NAME[op], rs=rs, rt=rt, imm=imm,
+                     width=LOADS[op][0], kind="load")
     if op in STORES:
-        return Instr(op, "sw", rs=rs, rt=rt, imm=imm, width=STORES[op],
-                     kind="store")
+        return Instr(op, STORE_NAME[op], rs=rs, rt=rt, imm=imm,
+                     width=STORES[op], kind="store")
     if op in FLOAT_LOAD:
         return Instr(op, "lwc1", rs=rs, rt=rt, imm=imm,
                      width=FLOAT_LOAD[op], kind="fload")

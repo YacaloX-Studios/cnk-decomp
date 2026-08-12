@@ -14,9 +14,9 @@
   0035bc64: cop2   $s7,$fp,$s4        
   0035bc68: cop2   $t8,$fp,$zero      
   0035bc6c: op3e    $v0,$s4,$zero     
-  0035bc70: lw     $v0, +0($v0)       
-  0035bc74: sw     $v0, +0($a0)       
-  0035bc78: dsubu $v0, $a0, $zero     
+  0035bc70: lq     $v0, +0($v0)       
+  0035bc74: sq     $v0, +0($a0)       
+  0035bc78: daddu $v0, $a0, $zero     
   0035bc7c: jr     $ra                
   0035bc80: addiu  $sp, $sp, +16      
   0035bc84: sll $zero, $zero, 0       

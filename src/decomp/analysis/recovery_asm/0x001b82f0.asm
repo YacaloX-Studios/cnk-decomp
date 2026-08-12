@@ -23,18 +23,18 @@
   001b8338: sll $zero, $zero, 0       
   001b833c: sll $zero, $zero, 0       
   001b8340: addiu  $v1, $a0, +128     
-  001b8344: lw     $a0, +0($a1)       
-  001b8348: sw     $a0, +0($v1)       
+  001b8344: lq     $a0, +0($a1)       
+  001b8348: sq     $a0, +0($v1)       
   001b834c: jr     $ra                
   001b8350: sll $zero, $zero, 0       
   001b8354: sll $zero, $zero, 0       
   001b8358: sll $zero, $zero, 0       
   001b835c: sll $zero, $zero, 0       
-  001b8360: lw     $v0, +148($a0)     
+  001b8360: lbu    $v0, +148($a0)     
   001b8364: beq    $v0, $zero, +12       ; br -> 0x001b8374
   001b8368: addiu  $v0, $zero, +1     
   001b836c: beq    $zero, $zero, +8      ; br -> 0x001b8378
-  001b8370: dsubu $v0, $zero, $zero   
-  001b8374: sw     $v0, +148($a0)     
+  001b8370: daddu $v0, $zero, $zero   
+  001b8374: sb     $v0, +148($a0)     
   001b8378: jr     $ra                
   001b837c: sll $zero, $zero, 0       

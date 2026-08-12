@@ -3,7 +3,7 @@
 ; 16 words
 
   001dbea0: addiu  $sp, $sp, -16      
-  001dbea4: dsubu $v0, $a0, $zero     
+  001dbea4: daddu $v0, $a0, $zero     
   001dbea8: lwc1   $v1, +0($a1)       
   001dbeac: lwc1   $v0, +4($a1)       
   001dbeb0: lwc1   $at, +8($a1)       

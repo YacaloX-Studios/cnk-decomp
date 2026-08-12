@@ -9,8 +9,8 @@
   00120760: cop2   $v0,$a1,$a2        
   00120764: cop2   $at,$fp,$v0        
   00120768: op3e    $v1,$at,$zero     
-  0012076c: lw     $v1, +0($v1)       
-  00120770: sw     $v1, +0($a0)       
+  0012076c: lq     $v1, +0($v1)       
+  00120770: sq     $v1, +0($a0)       
   00120774: jr     $ra                
   00120778: addiu  $sp, $sp, +16      
   0012077c: sll $zero, $zero, 0       
@@ -26,7 +26,7 @@
   001207a4: jr     $ra                
   001207a8: sll $zero, $zero, 0       
   001207ac: sll $zero, $zero, 0       
-  001207b0: lw     $v0, +0($a1)       
-  001207b4: sw     $v0, +0($a0)       
+  001207b0: lq     $v0, +0($a1)       
+  001207b4: sq     $v0, +0($a0)       
   001207b8: jr     $ra                
-  001207bc: dsubu $v0, $a0, $zero     
+  001207bc: daddu $v0, $a0, $zero     

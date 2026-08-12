@@ -7,9 +7,9 @@
   00365458: op36    $a1,$at,$zero     
   0036545c: cop2   $zero,$fp,$at      
   00365460: op3e    $v0,$at,$zero     
-  00365464: lw     $v0, +0($v0)       
-  00365468: sw     $v0, +0($a0)       
-  0036546c: dsubu $v0, $a0, $zero     
+  00365464: lq     $v0, +0($v0)       
+  00365468: sq     $v0, +0($a0)       
+  0036546c: daddu $v0, $a0, $zero     
   00365470: jr     $ra                
   00365474: addiu  $sp, $sp, +16      
   00365478: sll $zero, $zero, 0       

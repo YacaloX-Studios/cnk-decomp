@@ -13,9 +13,9 @@
   0035c410: cop2   $s7,$fp,$s4        
   0035c414: sll $zero, $zero, 0       
   0035c418: op3e    $v0,$s7,$zero     
-  0035c41c: lw     $v0, +0($v0)       
-  0035c420: sw     $v0, +0($a0)       
-  0035c424: dsubu $v0, $a0, $zero     
+  0035c41c: lq     $v0, +0($v0)       
+  0035c420: sq     $v0, +0($a0)       
+  0035c424: daddu $v0, $a0, $zero     
   0035c428: jr     $ra                
   0035c42c: addiu  $sp, $sp, +16      
   0035c430: jr     $ra                

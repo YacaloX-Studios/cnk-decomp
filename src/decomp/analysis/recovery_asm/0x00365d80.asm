@@ -5,7 +5,7 @@
   00365d80: addiu  $sp, $sp, -160     
   00365d84: lui   $v1, 0x3f800000     
   00365d88: sw     $zero, +8($sp)     
-  00365d8c: dsubu $a2, $zero, $zero   
+  00365d8c: daddu $a2, $zero, $zero   
   00365d90: sw     $zero, +4($sp)     
   00365d94: sw     $zero, +0($sp)     
   00365d98: sw     $v1, +12($sp)      
@@ -90,8 +90,8 @@
   00365ed4: addiu  $v1, $sp, +128     
   00365ed8: sw     $a1, +132($sp)     
   00365edc: sw     $a1, +136($sp)     
-  00365ee0: lw     $v1, +0($v1)          ; GLOBAL 0x3f800000
-  00365ee4: sw     $v1, +0($a0)       
+  00365ee0: lq     $v1, +0($v1)          ; GLOBAL 0x3f800000
+  00365ee4: sq     $v1, +0($a0)       
   00365ee8: lui   $v1, 0xff7f0000     
   00365eec: addiu  $a1, $sp, +144     
   00365ef0: ori    $v1, $v1, -1       
@@ -100,10 +100,10 @@
   00365efc: sw     $v1, +144($sp)     
   00365f00: sw     $v1, +148($sp)     
   00365f04: sw     $v1, +152($sp)     
-  00365f08: lw     $v1, +0($a1)          ; GLOBAL 0x7f7f0000
-  00365f0c: sw     $v1, +0($a3)       
+  00365f08: lq     $v1, +0($a1)          ; GLOBAL 0x7f7f0000
+  00365f0c: sq     $v1, +0($a3)       
   00365f10: beq    $zero, $zero, +48     ; br -> 0x00365f44
-  00365f14: dsubu $a2, $zero, $zero   
+  00365f14: daddu $a2, $zero, $zero   
   00365f18: addu $v1, $v1, $sp        
   00365f1c: addiu  $v1, $v1, +0       
   00365f20: op36    $a0,$at,$zero     

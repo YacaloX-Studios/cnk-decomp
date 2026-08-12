@@ -19,23 +19,23 @@
   001a1838: f10.36 $at,$s0,$zero      
   001a183c: f8.c   $zero,$t0,$at      
   001a1840: sw     $zero, +32($sp)    
-  001a1844: lw     $v1, +1065($a3)    
+  001a1844: lbu    $v1, +1065($a3)    
   001a1848: bne    $v1, $zero, +36       ; br -> 0x001a1870
   001a184c: sll $zero, $zero, 0       
   001a1850: lw     $a2, +44($a3)      
   001a1854: addiu  $v1, $sp, +32      
   001a1858: lw     $a2, +0($a2)       
   001a185c: addiu  $a2, $a2, +80      
-  001a1860: lw     $a2, +0($a2)       
-  001a1864: sw     $a2, +0($v1)          ; GLOBAL 0x40c00000
+  001a1860: lq     $a2, +0($a2)       
+  001a1864: sq     $a2, +0($v1)          ; GLOBAL 0x40c00000
   001a1868: beq    $zero, $zero, +32     ; br -> 0x001a188c
   001a186c: lw     $t2, +4($a0)       
   001a1870: lw     $a2, +44($a3)      
   001a1874: addiu  $v1, $sp, +32      
   001a1878: lw     $a2, +0($a2)       
   001a187c: addiu  $a2, $a2, +16      
-  001a1880: lw     $a2, +0($a2)       
-  001a1884: sw     $a2, +0($v1)          ; GLOBAL 0x40c00000
+  001a1880: lq     $a2, +0($a2)       
+  001a1884: sq     $a2, +0($v1)          ; GLOBAL 0x40c00000
   001a1888: lw     $t2, +4($a0)       
   001a188c: addiu  $v1, $sp, +12      
   001a1890: lw     $t5, +28($a1)      
@@ -70,9 +70,9 @@
   001a1904: swc1   $v1, +0($sp)       
   001a1908: swc1   $at, +0($t0)       
   001a190c: swc1   $zero, +0($t1)     
-  001a1910: lw     $v1, +0($a3)       
-  001a1914: sw     $v1, +0($a0)          ; GLOBAL 0x3f800000
-  001a1918: lw     $v1, +73($a1)      
+  001a1910: lq     $v1, +0($a3)       
+  001a1914: sq     $v1, +0($a0)          ; GLOBAL 0x3f800000
+  001a1918: lbu    $v1, +73($a1)      
   001a191c: beq    $v1, $zero, +148      ; br -> 0x001a19b4
   001a1920: addiu  $v1, $sp, +32      
   001a1924: addiu  $v1, $sp, +32      
@@ -107,7 +107,7 @@
   001a1998: f8.27  $zero,$t0,$at      
   001a199c: sll $zero, $zero, 0       
   001a19a0: beq    $zero, $zero, +148    ; br -> 0x001a1a38
-  001a19a4: sw     $zero, +73($a1)    
+  001a19a4: sb     $zero, +73($a1)    
   001a19a8: lwc1   $zero, +56($a1)    
   001a19ac: beq    $zero, $zero, +136    ; br -> 0x001a1a38
   001a19b0: swc1   $zero, +64($a1)    
@@ -141,7 +141,7 @@
   001a1a20: f8.5   $zero,$t0,$at      
   001a1a24: addiu  $v1, $zero, +1     
   001a1a28: beq    $zero, $zero, +12     ; br -> 0x001a1a38
-  001a1a2c: sw     $v1, +73($a1)      
+  001a1a2c: sb     $v1, +73($a1)      
   001a1a30: lwc1   $zero, +56($a1)    
   001a1a34: swc1   $zero, +64($a1)    
   001a1a38: jr     $ra                

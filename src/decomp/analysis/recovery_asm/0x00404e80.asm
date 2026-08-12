@@ -6,7 +6,7 @@
   00404e84: subu $v0, $a3, $a2        
   00404e88: srl $v0, $v0, 2           
   00404e8c: sw     $t0, +8($sp)       
-  00404e90: dadd $at, $t0, $v0        
+  00404e90: slt $at, $t0, $v0         
   00404e94: beq    $at, $zero, +12       ; br -> 0x00404ea4
   00404e98: sw     $v0, +12($sp)      
   00404e9c: beq    $zero, $zero, +8      ; br -> 0x00404ea8

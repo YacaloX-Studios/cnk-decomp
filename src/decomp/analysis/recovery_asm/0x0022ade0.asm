@@ -110,7 +110,7 @@
   0022af84: addiu  $v1, $zero, +3     
   0022af88: addiu  $v1, $zero, +1     
   0022af8c: beq    $zero, $zero, +68     ; br -> 0x0022afd4
-  0022af90: dsubu $a2, $zero, $zero   
+  0022af90: daddu $a2, $zero, $zero   
   0022af94: addiu  $a1, $zero, +3     
   0022af98: beq    $a2, $a1, +52         ; br -> 0x0022afd0
   0022af9c: sll $zero, $zero, 0       
@@ -121,9 +121,9 @@
   0022afb0: beq    $a2, $v1, +12         ; br -> 0x0022afc0
   0022afb4: sll $zero, $zero, 0       
   0022afb8: beq    $zero, $zero, +24     ; br -> 0x0022afd4
-  0022afbc: dsubu $a2, $zero, $zero   
+  0022afbc: daddu $a2, $zero, $zero   
   0022afc0: beq    $zero, $zero, +16     ; br -> 0x0022afd4
-  0022afc4: dsubu $a2, $a1, $zero     
+  0022afc4: daddu $a2, $a1, $zero     
   0022afc8: beq    $zero, $zero, +8      ; br -> 0x0022afd4
   0022afcc: addiu  $a2, $zero, +1     
   0022afd0: addiu  $a2, $zero, +2     

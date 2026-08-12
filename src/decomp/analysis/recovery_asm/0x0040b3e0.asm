@@ -4,16 +4,16 @@
 
   0040b3e0: addiu  $sp, $sp, -64      
   0040b3e4: lui   $at, 0x00700000     
-  0040b3e8: sw     $s3, +48($sp)      
-  0040b3ec: sw     $s2, +32($sp)      
-  0040b3f0: sw     $s1, +16($sp)      
-  0040b3f4: sw     $s0, +0($sp)       
+  0040b3e8: sq     $s3, +48($sp)      
+  0040b3ec: sq     $s2, +32($sp)      
+  0040b3f0: sq     $s1, +16($sp)      
+  0040b3f4: sq     $s0, +0($sp)       
   0040b3f8: lw     $v1, +11040($at)      ; GLOBAL 0x00702b20
   0040b3fc: addiu  $v1, $v1, +1       
   0040b400: slti   $at, $v1, +384     
   0040b404: beq    $at, $zero, +268      ; br -> 0x0040b514
   0040b408: addiu  $v0, $zero, -1     
-  0040b40c: dsubu $v0, $v1, $zero     
+  0040b40c: daddu $v0, $v1, $zero     
   0040b410: lui   $at, 0x00700000     
   0040b414: subu $v1, $a2, $a1        
   0040b418: sw     $v0, +11040($at)      ; GLOBAL 0x00702b20
@@ -79,10 +79,10 @@
   0040b508: addu $v1, $a3, $a2        
   0040b50c: sw     $zero, +0($a0)     
   0040b510: sw     $zero, +0($v1)     
-  0040b514: lw     $s3, +48($sp)      
-  0040b518: lw     $s2, +32($sp)      
-  0040b51c: lw     $s1, +16($sp)      
-  0040b520: lw     $s0, +0($sp)       
+  0040b514: lq     $s3, +48($sp)      
+  0040b518: lq     $s2, +32($sp)      
+  0040b51c: lq     $s1, +16($sp)      
+  0040b520: lq     $s0, +0($sp)       
   0040b524: jr     $ra                
   0040b528: addiu  $sp, $sp, +64      
   0040b52c: sll $zero, $zero, 0       
