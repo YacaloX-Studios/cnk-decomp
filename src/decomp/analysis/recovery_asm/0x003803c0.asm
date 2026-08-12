@@ -9,19 +9,19 @@
   003803d0: lw     $t4, +0($a3)       
   003803d4: lw     $t0, +0($v1)       
   003803d8: lw     $t1, +0($t3)       
-  003803dc: daddu  $t0, $t4, +0       
+  003803dc: daddu $v1, $t4, $t0       
   003803e0: xori   $a3, $v1, +1       
-  003803e4: daddu  $t1, $t0, +0       
+  003803e4: daddu $v1, $t0, $t1       
   003803e8: andi   $t2, $a3, +255     
   003803ec: xori   $v1, $v1, +1       
   003803f0: beq    $t2, $zero, +12       ; br -> 0x00380400
   003803f4: andi   $v1, $v1, +255     
   003803f8: bne    $v1, $zero, +340      ; br -> 0x00380550
-  003803fc: sll    $zero, $zero, +0   
+  003803fc: sll $zero, $zero, 0       
   00380400: bne    $t2, $zero, +88       ; br -> 0x0038045c
-  00380404: daddu  $t1, $t4, +0       
+  00380404: daddu $at, $t4, $t1       
   00380408: bne    $v1, $zero, +80       ; br -> 0x0038045c
-  0038040c: sll    $zero, $zero, +0   
+  0038040c: sll $zero, $zero, 0       
   00380410: lw     $a3, +0($a0)       
   00380414: addiu  $t0, $sp, +16      
   00380418: lw     $a2, +8($a0)       
@@ -42,7 +42,7 @@
   00380454: beq    $zero, $zero, +248    ; br -> 0x00380550
   00380458: sw     $v1, +16($a1)      
   0038045c: beq    $at, $zero, +76       ; br -> 0x003804ac
-  00380460: sll    $zero, $zero, +0   
+  00380460: sll $zero, $zero, 0       
   00380464: lw     $t0, +0($a0)       
   00380468: addiu  $t1, $sp, +48      
   0038046c: lw     $a3, +8($a0)       
@@ -62,7 +62,7 @@
   003804a4: lw     $v1, +64($sp)      
   003804a8: sw     $v1, +16($a1)      
   003804ac: beq    $t2, $zero, +84       ; br -> 0x00380504
-  003804b0: sll    $zero, $zero, +0   
+  003804b0: sll $zero, $zero, 0       
   003804b4: lw     $a3, +0($a1)       
   003804b8: addiu  $t0, $sp, +80      
   003804bc: lw     $a0, +8($a1)       
@@ -104,5 +104,5 @@
   0038054c: sw     $v1, +16($a2)      
   00380550: jr     $ra                
   00380554: addiu  $sp, $sp, +144     
-  00380558: sll    $zero, $zero, +0   
-  0038055c: sll    $zero, $zero, +0   
+  00380558: sll $zero, $zero, 0       
+  0038055c: sll $zero, $zero, 0       

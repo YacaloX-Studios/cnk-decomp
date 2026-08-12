@@ -37,8 +37,8 @@
   003f68c0: lw     $v1, +48($v0)      
   003f68c4: sw     $a1, +32($a0)      
   003f68c8: sw     $v1, +48($a0)      
-  003f68cc: dsubu  $zero, $a0, +0     
+  003f68cc: dsubu $v0, $a0, $zero     
   003f68d0: jr     $ra                
   003f68d4: addiu  $sp, $sp, +64      
-  003f68d8: sll    $zero, $zero, +0   
-  003f68dc: sll    $zero, $zero, +0   
+  003f68d8: sll $zero, $zero, 0       
+  003f68dc: sll $zero, $zero, 0       

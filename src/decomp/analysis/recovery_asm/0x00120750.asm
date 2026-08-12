@@ -13,7 +13,7 @@
   00120770: sw     $v1, +0($a0)       
   00120774: jr     $ra                
   00120778: addiu  $sp, $sp, +16      
-  0012077c: sll    $zero, $zero, +0   
+  0012077c: sll $zero, $zero, 0       
   00120780: lwc1   $v0, +0($a0)       
   00120784: lwc1   $zero, +0($a1)     
   00120788: lwc1   $at, +4($a0)       
@@ -24,9 +24,9 @@
   0012079c: lwc1   $zero, +8($a1)     
   001207a0: f10.1c $v0,$s0,$zero      
   001207a4: jr     $ra                
-  001207a8: sll    $zero, $zero, +0   
-  001207ac: sll    $zero, $zero, +0   
+  001207a8: sll $zero, $zero, 0       
+  001207ac: sll $zero, $zero, 0       
   001207b0: lw     $v0, +0($a1)       
   001207b4: sw     $v0, +0($a0)       
   001207b8: jr     $ra                
-  001207bc: dsubu  $zero, $a0, +0     
+  001207bc: dsubu $v0, $a0, $zero     

@@ -86,7 +86,7 @@
   0016a254: f10.2  $zero,$s0,$v1      
   0016a258: swc1   $v0, +48($sp)      
   0016a25c: swc1   $at, +0($a2)       
-  0016a260: beq    $zero, $zero, -256    ; br -> 0x001aa164
+  0016a260: beq    $zero, $zero, -256    ; br -> 0x0016a164
   0016a264: swc1   $zero, +0($a1)     
   0016a268: jr     $ra                
   0016a26c: addiu  $sp, $sp, +64      

@@ -4,5 +4,5 @@
 
   0018ddc0: jr     $ra                
   0018ddc4: lwc1   $zero, +24($a0)    
-  0018ddc8: sll    $zero, $zero, +0   
-  0018ddcc: sll    $zero, $zero, +0   
+  0018ddc8: sll $zero, $zero, 0       
+  0018ddcc: sll $zero, $zero, 0       

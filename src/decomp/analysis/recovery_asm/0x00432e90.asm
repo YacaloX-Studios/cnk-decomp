@@ -3,9 +3,9 @@
 ; 10 words
 
   00432e90: addiu  $sp, $sp, -16      
-  00432e94: dsubu  $zero, $zero, +0   
+  00432e94: dsubu $a1, $zero, $zero   
   00432e98: sw     $ra, +0($sp)       
-  00432e9c: dsubu  $zero, $zero, +0   
+  00432e9c: dsubu $a2, $zero, $zero   
   00432ea0: addiu  $a3, $zero, +2     
   00432ea4: jal   0xf0432eb8             ; -> 0x00432eb8
   00432ea8: lw     $a0, +14($a0)      

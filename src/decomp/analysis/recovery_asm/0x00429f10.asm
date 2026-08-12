@@ -7,10 +7,10 @@
   00429f18: lw     $a0, +30548($v0)      ; GLOBAL 0x00657754
   00429f1c: sw     $ra, +0($sp)       
   00429f20: jal   0xf0429ef0             ; -> FUN_00429ef0
-  00429f24: sll    $zero, $zero, +0   
+  00429f24: sll $zero, $zero, 0       
   00429f28: lw     $ra, +0($sp)       
   00429f2c: jr     $ra                
   00429f30: addiu  $sp, $sp, +16      
-  00429f34: sll    $zero, $zero, +0   
+  00429f34: sll $zero, $zero, 0       
 
 ; globals: 0x00657754(x1)

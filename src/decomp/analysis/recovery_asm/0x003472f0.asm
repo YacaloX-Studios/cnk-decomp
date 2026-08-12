@@ -14,10 +14,10 @@
   00347314: op3e    $v0,$s4,$zero     
   00347318: lw     $v0, +0($v0)       
   0034731c: sw     $v0, +0($a0)       
-  00347320: dsubu  $zero, $a0, +0     
+  00347320: dsubu $v0, $a0, $zero     
   00347324: jr     $ra                
   00347328: addiu  $sp, $sp, +16      
-  0034732c: sll    $zero, $zero, +0   
+  0034732c: sll $zero, $zero, 0       
   00347330: lw     $v0, +0($a1)       
   00347334: lw     $v1, +16($a1)      
   00347338: sw     $v0, +0($a0)       
@@ -27,20 +27,20 @@
   00347348: sw     $v0, +32($a0)      
   0034734c: sw     $v1, +48($a0)      
   00347350: jr     $ra                
-  00347354: dsubu  $zero, $a0, +0     
-  00347358: sll    $zero, $zero, +0   
-  0034735c: sll    $zero, $zero, +0   
+  00347354: dsubu $v0, $a0, $zero     
+  00347358: sll $zero, $zero, 0       
+  0034735c: sll $zero, $zero, 0       
   00347360: lui   $v0, 0x00640000     
   00347364: jr     $ra                
   00347368: addiu  $v0, $v0, +13704   
-  0034736c: sll    $zero, $zero, +0   
+  0034736c: sll $zero, $zero, 0       
   00347370: lui   $at, 0x00640000     
   00347374: jr     $ra                
   00347378: lw     $v0, +13264($at)      ; GLOBAL 0x006433d0
-  0034737c: sll    $zero, $zero, +0   
+  0034737c: sll $zero, $zero, 0       
   00347380: jr     $ra                
   00347384: lw     $v0, +252($a0)     
-  00347388: sll    $zero, $zero, +0   
-  0034738c: sll    $zero, $zero, +0   
+  00347388: sll $zero, $zero, 0       
+  0034738c: sll $zero, $zero, 0       
 
 ; globals: 0x006433d0(x1)

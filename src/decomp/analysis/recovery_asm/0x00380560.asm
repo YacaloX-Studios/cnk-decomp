@@ -9,19 +9,19 @@
   00380570: lw     $t4, +0($a3)       
   00380574: lw     $t0, +0($v1)       
   00380578: lw     $t1, +0($t3)       
-  0038057c: daddu  $t0, $t4, +0       
+  0038057c: daddu $v1, $t4, $t0       
   00380580: xori   $a3, $v1, +1       
-  00380584: daddu  $t1, $t0, +0       
+  00380584: daddu $v1, $t0, $t1       
   00380588: andi   $t2, $a3, +255     
   0038058c: xori   $v1, $v1, +1       
   00380590: beq    $t2, $zero, +12       ; br -> 0x003805a0
   00380594: andi   $v1, $v1, +255     
   00380598: bne    $v1, $zero, +340      ; br -> 0x003806f0
-  0038059c: sll    $zero, $zero, +0   
+  0038059c: sll $zero, $zero, 0       
   003805a0: bne    $t2, $zero, +88       ; br -> 0x003805fc
-  003805a4: daddu  $t1, $t4, +0       
+  003805a4: daddu $at, $t4, $t1       
   003805a8: bne    $v1, $zero, +80       ; br -> 0x003805fc
-  003805ac: sll    $zero, $zero, +0   
+  003805ac: sll $zero, $zero, 0       
   003805b0: lw     $a3, +0($a0)       
   003805b4: addiu  $t0, $sp, +16      
   003805b8: lw     $a2, +8($a0)       
@@ -42,7 +42,7 @@
   003805f4: beq    $zero, $zero, +248    ; br -> 0x003806f0
   003805f8: sw     $v1, +16($a1)      
   003805fc: beq    $at, $zero, +76       ; br -> 0x0038064c
-  00380600: sll    $zero, $zero, +0   
+  00380600: sll $zero, $zero, 0       
   00380604: lw     $t0, +0($a0)       
   00380608: addiu  $t1, $sp, +48      
   0038060c: lw     $a3, +8($a0)       
@@ -62,7 +62,7 @@
   00380644: lw     $v1, +64($sp)      
   00380648: sw     $v1, +16($a1)      
   0038064c: beq    $t2, $zero, +84       ; br -> 0x003806a4
-  00380650: sll    $zero, $zero, +0   
+  00380650: sll $zero, $zero, 0       
   00380654: lw     $a3, +0($a1)       
   00380658: addiu  $t0, $sp, +80      
   0038065c: lw     $a0, +8($a1)       
@@ -104,70 +104,70 @@
   003806ec: sw     $v1, +16($a2)      
   003806f0: jr     $ra                
   003806f4: addiu  $sp, $sp, +144     
-  003806f8: sll    $zero, $zero, +0   
-  003806fc: sll    $zero, $zero, +0   
-  00380700: sll    $a2, $zero, +2     
-  00380704: addu   $v1, $a0, +0       
+  003806f8: sll $zero, $zero, 0       
+  003806fc: sll $zero, $zero, 0       
+  00380700: sll $v1, $a2, 2           
+  00380704: addu $t0, $a0, $v1        
   00380708: addiu  $v1, $a2, +1       
-  0038070c: sll    $v1, $zero, +1     
-  00380710: dadd   $t1, $a1, +0       
+  0038070c: sll $t1, $v1, 1           
+  00380710: dadd $at, $a1, $t1        
   00380714: bne    $at, $zero, +92       ; br -> 0x00380774
-  00380718: sll    $zero, $zero, +0   
-  0038071c: sll    $t1, $zero, +2     
+  00380718: sll $zero, $zero, 0       
+  0038071c: sll $v1, $t1, 2           
   00380720: beq    $t1, $a1, +24         ; br -> 0x0038073c
-  00380724: addu   $v1, $a0, +0       
+  00380724: addu $t2, $a0, $v1        
   00380728: lw     $a2, -4($t2)       
   0038072c: lw     $v1, +0($t2)       
-  00380730: dadd   $v1, $a2, +0       
+  00380730: dadd $at, $a2, $v1        
   00380734: beq    $at, $zero, +16       ; br -> 0x00380748
-  00380738: sll    $zero, $zero, +0   
-  0038073c: sll    $zero, $zero, +0   
+  00380738: sll $zero, $zero, 0       
+  0038073c: sll $zero, $zero, 0       
   00380740: addiu  $t1, $t1, -1       
   00380744: addiu  $t2, $t2, -4       
   00380748: lw     $a2, +0($t2)       
   0038074c: lw     $v1, +0($a3)       
-  00380750: dadd   $v1, $a2, +0       
+  00380750: dadd $at, $a2, $v1        
   00380754: beq    $at, $zero, +28       ; br -> 0x00380774
-  00380758: sll    $zero, $zero, +0   
+  00380758: sll $zero, $zero, 0       
   0038075c: addiu  $t1, $t1, +1       
   00380760: sw     $a2, +0($t0)       
-  00380764: sll    $t1, $zero, +1     
-  00380768: dadd   $t1, $a1, +0       
-  0038076c: beq    $at, $zero, -84       ; br -> 0x003c071c
-  00380770: dsubu  $zero, $t2, +0     
-  00380774: sll    $zero, $zero, +0   
+  00380764: sll $t1, $t1, 1           
+  00380768: dadd $at, $a1, $t1        
+  0038076c: beq    $at, $zero, -84       ; br -> 0x0038071c
+  00380770: dsubu $t0, $t2, $zero     
+  00380774: sll $zero, $zero, 0       
   00380778: lw     $v1, +0($a3)       
   0038077c: jr     $ra                
   00380780: sw     $v1, +0($t0)       
-  00380784: sll    $zero, $zero, +0   
-  00380788: sll    $zero, $zero, +0   
-  0038078c: sll    $zero, $zero, +0   
+  00380784: sll $zero, $zero, 0       
+  00380788: sll $zero, $zero, 0       
+  0038078c: sll $zero, $zero, 0       
   00380790: beq    $a0, $a1, +188        ; br -> 0x00380850
   00380794: addiu  $sp, $sp, -48      
   00380798: addiu  $t1, $a1, -24      
-  0038079c: daddu  $t1, $a0, +0       
+  0038079c: daddu $at, $a0, $t1       
   003807a0: beq    $at, $zero, +172      ; br -> 0x00380850
   003807a4: addiu  $t0, $sp, +16      
-  003807a8: dsubu  $zero, $a0, +0     
+  003807a8: dsubu $a3, $a0, $zero     
   003807ac: beq    $a0, $a1, +60         ; br -> 0x003807ec
-  003807b0: dsubu  $zero, $a0, +0     
+  003807b0: dsubu $t2, $a0, $zero     
   003807b4: addiu  $a3, $a3, +24      
   003807b8: beq    $a3, $a1, +48         ; br -> 0x003807ec
-  003807bc: sll    $zero, $zero, +0   
+  003807bc: sll $zero, $zero, 0       
   003807c0: lw     $a2, +0($t2)       
   003807c4: lw     $v1, +0($a3)       
   003807c8: lw     $a2, +0($a2)       
   003807cc: lw     $v1, +0($v1)       
-  003807d0: daddu  $v1, $a2, +0       
+  003807d0: daddu $at, $a2, $v1       
   003807d4: beq    $at, $zero, +8        ; br -> 0x003807e0
-  003807d8: sll    $zero, $zero, +0   
-  003807dc: dsubu  $zero, $a3, +0     
+  003807d8: sll $zero, $zero, 0       
+  003807dc: dsubu $t2, $a3, $zero     
   003807e0: addiu  $a3, $a3, +24      
-  003807e4: bne    $a3, $a1, -40         ; br -> 0x003c07c0
-  003807e8: sll    $zero, $zero, +0   
-  003807ec: sll    $zero, $zero, +0   
+  003807e4: bne    $a3, $a1, -40         ; br -> 0x003807c0
+  003807e8: sll $zero, $zero, 0       
+  003807ec: sll $zero, $zero, 0       
   003807f0: beq    $t2, $a0, +76         ; br -> 0x00380840
-  003807f4: sll    $zero, $zero, +0   
+  003807f4: sll $zero, $zero, 0       
   003807f8: lw     $a3, +0($t2)       
   003807fc: lw     $a2, +8($t2)       
   00380800: lw     $v1, +16($t2)      
@@ -187,39 +187,39 @@
   00380838: lw     $v1, +32($sp)      
   0038083c: sw     $v1, +16($a0)      
   00380840: addiu  $a0, $a0, +24      
-  00380844: daddu  $t1, $a0, +0       
-  00380848: bne    $v1, $zero, -160      ; br -> 0x003c07ac
-  0038084c: dsubu  $zero, $a0, +0     
+  00380844: daddu $v1, $a0, $t1       
+  00380848: bne    $v1, $zero, -160      ; br -> 0x003807ac
+  0038084c: dsubu $a3, $a0, $zero     
   00380850: jr     $ra                
   00380854: addiu  $sp, $sp, +48      
-  00380858: sll    $zero, $zero, +0   
-  0038085c: sll    $zero, $zero, +0   
+  00380858: sll $zero, $zero, 0       
+  0038085c: sll $zero, $zero, 0       
   00380860: beq    $a0, $a1, +188        ; br -> 0x00380920
   00380864: addiu  $sp, $sp, -48      
   00380868: addiu  $t1, $a1, -24      
-  0038086c: daddu  $t1, $a0, +0       
+  0038086c: daddu $at, $a0, $t1       
   00380870: beq    $at, $zero, +172      ; br -> 0x00380920
   00380874: addiu  $t0, $sp, +16      
-  00380878: dsubu  $zero, $a0, +0     
+  00380878: dsubu $a3, $a0, $zero     
   0038087c: beq    $a0, $a1, +60         ; br -> 0x003808bc
-  00380880: dsubu  $zero, $a0, +0     
+  00380880: dsubu $t2, $a0, $zero     
   00380884: addiu  $a3, $a3, +24      
   00380888: beq    $a3, $a1, +48         ; br -> 0x003808bc
-  0038088c: sll    $zero, $zero, +0   
+  0038088c: sll $zero, $zero, 0       
   00380890: lw     $a2, +0($t2)       
   00380894: lw     $v1, +0($a3)       
   00380898: lw     $a2, +0($a2)       
   0038089c: lw     $v1, +0($v1)       
-  003808a0: daddu  $v1, $a2, +0       
+  003808a0: daddu $at, $a2, $v1       
   003808a4: beq    $at, $zero, +8        ; br -> 0x003808b0
-  003808a8: sll    $zero, $zero, +0   
-  003808ac: dsubu  $zero, $a3, +0     
+  003808a8: sll $zero, $zero, 0       
+  003808ac: dsubu $t2, $a3, $zero     
   003808b0: addiu  $a3, $a3, +24      
-  003808b4: bne    $a3, $a1, -40         ; br -> 0x003c0890
-  003808b8: sll    $zero, $zero, +0   
-  003808bc: sll    $zero, $zero, +0   
+  003808b4: bne    $a3, $a1, -40         ; br -> 0x00380890
+  003808b8: sll $zero, $zero, 0       
+  003808bc: sll $zero, $zero, 0       
   003808c0: beq    $t2, $a0, +76         ; br -> 0x00380910
-  003808c4: sll    $zero, $zero, +0   
+  003808c4: sll $zero, $zero, 0       
   003808c8: lw     $a3, +0($t2)       
   003808cc: lw     $a2, +8($t2)       
   003808d0: lw     $v1, +16($t2)      
@@ -239,10 +239,10 @@
   00380908: lw     $v1, +32($sp)      
   0038090c: sw     $v1, +16($a0)      
   00380910: addiu  $a0, $a0, +24      
-  00380914: daddu  $t1, $a0, +0       
-  00380918: bne    $v1, $zero, -160      ; br -> 0x003c087c
-  0038091c: dsubu  $zero, $a0, +0     
+  00380914: daddu $v1, $a0, $t1       
+  00380918: bne    $v1, $zero, -160      ; br -> 0x0038087c
+  0038091c: dsubu $a3, $a0, $zero     
   00380920: jr     $ra                
   00380924: addiu  $sp, $sp, +48      
-  00380928: sll    $zero, $zero, +0   
-  0038092c: sll    $zero, $zero, +0   
+  00380928: sll $zero, $zero, 0       
+  0038092c: sll $zero, $zero, 0       

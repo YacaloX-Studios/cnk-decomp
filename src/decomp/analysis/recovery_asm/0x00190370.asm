@@ -83,8 +83,8 @@
   001904a8: sw     $a0, +0($v1)          ; GLOBAL 0x3f800000
   001904ac: jr     $ra                
   001904b0: addiu  $sp, $sp, +192     
-  001904b4: sll    $zero, $zero, +0   
-  001904b8: sll    $zero, $zero, +0   
-  001904bc: sll    $zero, $zero, +0   
+  001904b4: sll $zero, $zero, 0       
+  001904b8: sll $zero, $zero, 0       
+  001904bc: sll $zero, $zero, 0       
 
 ; globals: 0x3f800000(x9)

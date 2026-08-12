@@ -5,7 +5,7 @@
   00165e70: addiu  $sp, $sp, -32      
   00165e74: lw     $v1, +136($a0)     
   00165e78: bne    $v1, $zero, +64       ; br -> 0x00165ebc
-  00165e7c: sll    $zero, $zero, +0   
+  00165e7c: sll $zero, $zero, 0       
   00165e80: lw     $v1, +8($a0)       
   00165e84: lwc1   $zero, +108($v1)   
   00165e88: swc1   $zero, +0($a1)     
@@ -51,16 +51,16 @@
   00165f28: addiu  $v1, $v1, -1       
   00165f2c: regimm $v1, $zero, +24       ; br -> 0x00165f48
   00165f30: swc1   $a3, +24($sp)      
-  00165f34: sll    $v1, $zero, +5     
-  00165f38: addu   $a0, $v1, +0       
+  00165f34: sll $v1, $v1, 5           
+  00165f38: addu $v1, $v1, $a0        
   00165f3c: lwc1   $zero, +156($v1)      ; GLOBAL 0x3f80009c
-  00165f40: beq    $zero, $zero, -152    ; br -> 0x001a5eac
+  00165f40: beq    $zero, $zero, -152    ; br -> 0x00165eac
   00165f44: swc1   $zero, +0($a3)     
-  00165f48: beq    $zero, $zero, -24     ; br -> 0x001a5f34
+  00165f48: beq    $zero, $zero, -24     ; br -> 0x00165f34
   00165f4c: addiu  $v1, $zero, +63    
   00165f50: jr     $ra                
   00165f54: addiu  $sp, $sp, +32      
-  00165f58: sll    $zero, $zero, +0   
-  00165f5c: sll    $zero, $zero, +0   
+  00165f58: sll $zero, $zero, 0       
+  00165f5c: sll $zero, $zero, 0       
 
 ; globals: 0x3f80009c(x1)

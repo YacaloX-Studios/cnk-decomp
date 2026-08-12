@@ -8,7 +8,7 @@
   001a180c: lw     $a3, +120($a2)     
   001a1810: lw     $a2, +992($a3)     
   001a1814: beq    $a2, $v1, +544        ; br -> 0x001a1a38
-  001a1818: sll    $zero, $zero, +0   
+  001a1818: sll $zero, $zero, 0       
   001a181c: lwc1   $at, +1068($a3)    
   001a1820: lui   $v1, 0x3f800000     
   001a1824: sw     $v1, +44($sp)      
@@ -21,7 +21,7 @@
   001a1840: sw     $zero, +32($sp)    
   001a1844: lw     $v1, +1065($a3)    
   001a1848: bne    $v1, $zero, +36       ; br -> 0x001a1870
-  001a184c: sll    $zero, $zero, +0   
+  001a184c: sll $zero, $zero, 0       
   001a1850: lw     $a2, +44($a3)      
   001a1854: addiu  $v1, $sp, +32      
   001a1858: lw     $a2, +0($a2)       
@@ -48,17 +48,17 @@
   001a18ac: lw     $t4, +16($t2)      
   001a18b0: lui   $a0, 0x3f800000     
   001a18b4: sw     $a0, +0($v1)          ; GLOBAL 0x40c00000
-  001a18b8: sll    $t5, $zero, +2     
+  001a18b8: sll $t5, $t5, 2           
   001a18bc: addiu  $v1, $sp, +56      
   001a18c0: addiu  $a0, $sp, +16      
-  001a18c4: sll    $t3, $zero, +1     
-  001a18c8: addu   $t3, $t2, +0       
-  001a18cc: addu   $t5, $t4, +0       
-  001a18d0: sll    $t2, $zero, +4     
+  001a18c4: sll $t2, $t3, 1           
+  001a18c8: addu $t2, $t2, $t3        
+  001a18cc: addu $t3, $t4, $t5        
+  001a18d0: sll $t2, $t2, 4           
   001a18d4: lw     $t3, +0($t3)       
   001a18d8: lw     $t3, +16($t3)      
   001a18dc: lw     $t3, +16($t3)      
-  001a18e0: addu   $t2, $t3, +0       
+  001a18e0: addu $t2, $t3, $t2        
   001a18e4: lwc1   $at, +24($t2)      
   001a18e8: lwc1   $zero, +28($t2)    
   001a18ec: lwc1   $v1, +20($t2)      
@@ -87,12 +87,12 @@
   001a1948: f10.1c $v1,$s0,$zero      
   001a194c: f10.34 $zero,$s0,$v0      
   001a1950: f8.15  $zero,$t0,$at      
-  001a1954: sll    $zero, $zero, +0   
+  001a1954: sll $zero, $zero, 0       
   001a1958: lwc1   $at, +56($a1)      
   001a195c: lwc1   $zero, +64($a1)    
   001a1960: f10.34 $zero,$s0,$at      
   001a1964: f8.3   $zero,$t0,$zero    
-  001a1968: sll    $zero, $zero, +0   
+  001a1968: sll $zero, $zero, 0       
   001a196c: beq    $zero, $zero, +12     ; br -> 0x001a197c
   001a1970: swc1   $zero, +64($a1)    
   001a1974: f10.6  $at,$s0,$zero      
@@ -101,11 +101,11 @@
   001a1980: lwc1   $v0, +56($a1)      
   001a1984: lwc1   $at, +64($a1)      
   001a1988: fmove  $zero,$a0,$v1      
-  001a198c: sll    $zero, $zero, +0   
+  001a198c: sll $zero, $zero, 0       
   001a1990: f10.1  $v0,$s0,$at        
   001a1994: f10.36 $at,$s0,$zero      
   001a1998: f8.27  $zero,$t0,$at      
-  001a199c: sll    $zero, $zero, +0   
+  001a199c: sll $zero, $zero, 0       
   001a19a0: beq    $zero, $zero, +148    ; br -> 0x001a1a38
   001a19a4: sw     $zero, +73($a1)    
   001a19a8: lwc1   $zero, +56($a1)    
@@ -122,12 +122,12 @@
   001a19d4: f10.1c $v1,$s0,$zero      
   001a19d8: f10.36 $zero,$s0,$v0      
   001a19dc: f8.14  $zero,$t0,$zero    
-  001a19e0: sll    $zero, $zero, +0   
+  001a19e0: sll $zero, $zero, 0       
   001a19e4: lwc1   $zero, +56($a1)    
   001a19e8: lwc1   $v0, +64($a1)      
   001a19ec: f10.36 $v0,$s0,$zero      
   001a19f0: f8.3   $zero,$t0,$at      
-  001a19f4: sll    $zero, $zero, +0   
+  001a19f4: sll $zero, $zero, 0       
   001a19f8: beq    $zero, $zero, +12     ; br -> 0x001a1a08
   001a19fc: swc1   $v0, +64($a1)      
   001a1a00: f10.6  $zero,$s0,$zero    
@@ -135,7 +135,7 @@
   001a1a08: lui   $v1, 0x40f00000     
   001a1a0c: lwc1   $at, +56($a1)      
   001a1a10: fmove  $zero,$a0,$v1      
-  001a1a14: sll    $zero, $zero, +0   
+  001a1a14: sll $zero, $zero, 0       
   001a1a18: f10.1  $v0,$s0,$at        
   001a1a1c: f10.36 $at,$s0,$zero      
   001a1a20: f8.5   $zero,$t0,$at      

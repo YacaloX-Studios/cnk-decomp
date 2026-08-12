@@ -10,23 +10,23 @@
   00195834: f10.1  $zero,$s0,$at      
   00195838: lwc1   $at, +996($a0)     
   0019583c: fmove  $zero,$a0,$zero    
-  00195840: sll    $zero, $zero, +0   
+  00195840: sll $zero, $zero, 0       
   00195844: f10.34 $at,$s0,$zero      
   00195848: f8.2   $zero,$t0,$zero    
-  0019584c: sll    $zero, $zero, +0   
+  0019584c: sll $zero, $zero, 0       
   00195850: f10.7  $at,$s0,$zero      
   00195854: f10.2  $v0,$s0,$at        
   00195858: fmove  $zero,$a0,$zero    
-  0019585c: sll    $zero, $zero, +0   
+  0019585c: sll $zero, $zero, 0       
   00195860: f10.36 $v0,$s0,$zero      
   00195864: f8.21  $zero,$t0,$at      
-  00195868: sll    $zero, $zero, +0   
+  00195868: sll $zero, $zero, 0       
   0019586c: lwc1   $at, +236($a0)     
   00195870: lwc1   $zero, +240($a0)   
   00195874: f10.2  $v0,$s0,$at        
   00195878: f10.34 $at,$s0,$zero      
   0019587c: f8.3   $zero,$t0,$zero    
-  00195880: sll    $zero, $zero, +0   
+  00195880: sll $zero, $zero, 0       
   00195884: beq    $zero, $zero, +12     ; br -> 0x00195894
   00195888: lw     $v1, +44($a0)      
   0019588c: f10.6  $zero,$s0,$zero    
@@ -55,6 +55,6 @@
   001958e8: op3e    $v1,$at,$zero     
   001958ec: jr     $ra                
   001958f0: addiu  $sp, $sp, +16      
-  001958f4: sll    $zero, $zero, +0   
-  001958f8: sll    $zero, $zero, +0   
-  001958fc: sll    $zero, $zero, +0   
+  001958f4: sll $zero, $zero, 0       
+  001958f8: sll $zero, $zero, 0       
+  001958fc: sll $zero, $zero, 0       

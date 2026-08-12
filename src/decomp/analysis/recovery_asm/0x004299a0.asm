@@ -5,7 +5,7 @@
   004299a0: addiu  $sp, $sp, -64      
   004299a4: sw     $s1, +16($sp)      
   004299a8: sw     $ra, +48($sp)      
-  004299ac: dsubu  $zero, $a0, +0     
+  004299ac: dsubu $s1, $a0, $zero     
   004299b0: sw     $s2, +32($sp)      
   004299b4: bne    $s1, $zero, +32       ; br -> 0x004299d8
   004299b8: sw     $s0, +0($sp)       
@@ -23,16 +23,16 @@
   004299e8: lw     $v1, +30548($v0)      ; GLOBAL 0x00657754
   004299ec: sw     $v1, +84($s1)      
   004299f0: lw     $a0, +84($s1)      
-  004299f4: sll    $zero, $zero, +0   
+  004299f4: sll $zero, $zero, 0       
   004299f8: lw     $v0, +56($a0)      
   004299fc: bnel   $v0, $zero, +16       ; br -> 0x00429a10
   00429a00: lw     $v1, +12($s1)      
   00429a04: jal   0xf0429c60             ; -> FUN_00429c60
-  00429a08: sll    $zero, $zero, +0   
+  00429a08: sll $zero, $zero, 0       
   00429a0c: lw     $v1, +12($s1)      
   00429a10: andi   $v0, $v1, +8       
   00429a14: beq    $v0, $zero, +124      ; br -> 0x00429a94
-  00429a18: dsubu  $zero, $zero, +0   
+  00429a18: dsubu $v0, $zero, $zero   
   00429a1c: lw     $s2, +16($s1)      
   00429a20: bnel   $s2, $zero, +32       ; br -> 0x00429a44
   00429a24: lw     $v0, +0($s1)       
@@ -45,31 +45,31 @@
   00429a40: sw     $v1, +12($s1)      
   00429a44: andi   $v1, $v1, +3       
   00429a48: sw     $s2, +0($s1)       
-  00429a4c: dsubu  $zero, $zero, +0   
+  00429a4c: dsubu $a0, $zero, $zero   
   00429a50: bne    $v1, $zero, +8        ; br -> 0x00429a5c
-  00429a54: subu   $s2, $v0, +0       
+  00429a54: subu $s0, $v0, $s2        
   00429a58: lw     $a0, +20($s1)      
   00429a5c: blez   $s0, $zero, +48       ; br -> 0x00429a90
   00429a60: sw     $a0, +8($s1)       
-  00429a64: sll    $zero, $zero, +0   
+  00429a64: sll $zero, $zero, 0       
   00429a68: lw     $v0, +36($s1)      
-  00429a6c: dsubu  $zero, $s2, +0     
+  00429a6c: dsubu $a1, $s2, $zero     
   00429a70: lw     $a0, +28($s1)      
   00429a74: jalr   $v0, $ra           
-  00429a78: dsubu  $zero, $s0, +0     
-  00429a7c: dsubu  $zero, $v0, +0     
-  00429a80: blez   $v1, $zero, -84       ; br -> 0x00469a30
-  00429a84: subu   $v1, $s0, +0       
-  00429a88: bgtz   $s0, $zero, -36       ; br -> 0x00469a68
-  00429a8c: addu   $v1, $s2, +0       
-  00429a90: dsubu  $zero, $zero, +0   
+  00429a78: dsubu $a2, $s0, $zero     
+  00429a7c: dsubu $v1, $v0, $zero     
+  00429a80: blez   $v1, $zero, -84       ; br -> 0x00429a30
+  00429a84: subu $s0, $s0, $v1        
+  00429a88: bgtz   $s0, $zero, -36       ; br -> 0x00429a68
+  00429a8c: addu $s2, $s2, $v1        
+  00429a90: dsubu $v0, $zero, $zero   
   00429a94: lw     $ra, +48($sp)      
   00429a98: lw     $s2, +32($sp)      
   00429a9c: lw     $s1, +16($sp)      
   00429aa0: lw     $s0, +0($sp)       
   00429aa4: jr     $ra                
   00429aa8: addiu  $sp, $sp, +64      
-  00429aac: sll    $zero, $zero, +0   
+  00429aac: sll $zero, $zero, 0       
   00429ab0: lui   $v0, 0x00430000     
   00429ab4: lui   $v1, 0x00430000     
   00429ab8: lui   $t0, 0x00430000     

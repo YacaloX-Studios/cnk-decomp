@@ -3,11 +3,11 @@
 ; 18 words
 
   00108ee8: j     0x00445d90          
-  00108eec: or     $zero, $zero, +0   
+  00108eec: or $a0, $zero, $zero      
   00108ef0: addiu  $v1, $zero, +35    
-  00108ef4: syscall $zero,$zero,$zero 
-  00108ef8: sll    $zero, $zero, +0   
-  00108efc: sll    $zero, $zero, +0   
+  00108ef4: syscall                   
+  00108ef8: sll $zero, $zero, 0       
+  00108efc: sll $zero, $zero, 0       
   00108f00: addiu  $a0, $zero, +2     
   00108f04: lui   $v1, 0x00720000     
   00108f08: sw     $a0, +24736($v1)      ; GLOBAL 0x007260a0
@@ -17,8 +17,8 @@
   00108f18: lui   $v1, 0x00720000     
   00108f1c: jr     $ra                
   00108f20: sw     $zero, +24760($v1)    ; GLOBAL 0x007260b8
-  00108f24: sll    $zero, $zero, +0   
-  00108f28: sll    $zero, $zero, +0   
-  00108f2c: sll    $zero, $zero, +0   
+  00108f24: sll $zero, $zero, 0       
+  00108f28: sll $zero, $zero, 0       
+  00108f2c: sll $zero, $zero, 0       
 
 ; globals: 0x007260a0(x1), 0x007260a8(x1), 0x007260b8(x1)

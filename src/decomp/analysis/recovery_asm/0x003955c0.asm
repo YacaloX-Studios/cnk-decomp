@@ -30,11 +30,11 @@
   00395624: f10.1c $v0,$s0,$zero      
   00395628: lwc1   $zero, +496($a0)   
   0039562c: f10.34 $at,$s0,$zero      
-  00395630: sll    $zero, $zero, +0   
+  00395630: sll $zero, $zero, 0       
   00395634: f8.2   $zero,$t0,$at      
   00395638: addiu  $v0, $zero, +1     
-  0039563c: dsubu  $zero, $zero, +0   
+  0039563c: dsubu $v0, $zero, $zero   
   00395640: jr     $ra                
   00395644: addiu  $sp, $sp, +32      
-  00395648: sll    $zero, $zero, +0   
-  0039564c: sll    $zero, $zero, +0   
+  00395648: sll $zero, $zero, 0       
+  0039564c: sll $zero, $zero, 0       

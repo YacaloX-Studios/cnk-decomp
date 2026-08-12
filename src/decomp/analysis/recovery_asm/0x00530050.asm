@@ -11,6 +11,6 @@
   00530068: sw     $v1, +0($a0)       
   0053006c: jr     $ra                
   00530070: addiu  $sp, $sp, +16      
-  00530074: sll    $zero, $zero, +0   
-  00530078: sll    $zero, $zero, +0   
-  0053007c: sll    $zero, $zero, +0   
+  00530074: sll $zero, $zero, 0       
+  00530078: sll $zero, $zero, 0       
+  0053007c: sll $zero, $zero, 0       

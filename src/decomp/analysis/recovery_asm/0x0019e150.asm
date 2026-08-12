@@ -13,7 +13,7 @@
   0019e170: addiu  $a2, $a1, +16      
   0019e174: lw     $v1, +56($a0)      
   0019e178: lw     $v1, +181($v1)     
-  0019e17c: daddu  $v1, $zero, +0     
+  0019e17c: daddu $v1, $zero, $v1     
   0019e180: xori   $v1, $v1, +1       
   0019e184: beq    $v1, $zero, +20       ; br -> 0x0019e19c
   0019e188: lui   $v1, 0x006f0000     
@@ -27,7 +27,7 @@
   0019e1a8: f10.2  $v1,$s0,$zero      
   0019e1ac: lw     $v1, +56($a0)      
   0019e1b0: lw     $v1, +181($v1)        ; GLOBAL 0x006f00b5
-  0019e1b4: daddu  $v1, $zero, +0     
+  0019e1b4: daddu $v1, $zero, $v1     
   0019e1b8: xori   $v1, $v1, +1       
   0019e1bc: beq    $v1, $zero, +20       ; br -> 0x0019e1d4
   0019e1c0: lui   $v1, 0x006f0000     
@@ -43,17 +43,17 @@
   0019e1e8: f10.1  $zero,$s0,$at      
   0019e1ec: f10.34 $v1,$s0,$zero      
   0019e1f0: f8.3   $zero,$t0,$zero    
-  0019e1f4: sll    $zero, $zero, +0   
+  0019e1f4: sll $zero, $zero, 0       
   0019e1f8: beq    $zero, $zero, +8      ; br -> 0x0019e204
-  0019e1fc: sll    $zero, $zero, +0   
+  0019e1fc: sll $zero, $zero, 0       
   0019e200: f10.6  $zero,$s0,$zero    
   0019e204: fmove  $zero,$a0,$zero    
-  0019e208: sll    $zero, $zero, +0   
+  0019e208: sll $zero, $zero, 0       
   0019e20c: f10.36 $v1,$s0,$zero      
   0019e210: f8.19  $zero,$t0,$at      
-  0019e214: sll    $zero, $zero, +0   
-  0019e218: sll    $zero, $zero, +0   
-  0019e21c: sll    $zero, $zero, +0   
+  0019e214: sll $zero, $zero, 0       
+  0019e218: sll $zero, $zero, 0       
+  0019e21c: sll $zero, $zero, 0       
   0019e220: f10.3  $v1,$s0,$v0        
   0019e224: addiu  $a1, $sp, +0       
   0019e228: lw     $v1, +0($a2)       

@@ -16,5 +16,5 @@
   001c349c: swc1   $zero, +12($a0)    
   001c34a0: jr     $ra                
   001c34a4: addiu  $sp, $sp, +16      
-  001c34a8: sll    $zero, $zero, +0   
-  001c34ac: sll    $zero, $zero, +0   
+  001c34a8: sll $zero, $zero, 0       
+  001c34ac: sll $zero, $zero, 0       

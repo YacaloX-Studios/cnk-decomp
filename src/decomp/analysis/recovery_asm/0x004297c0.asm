@@ -4,16 +4,16 @@
 
   004297c0: addiu  $sp, $sp, -48      
   004297c4: sw     $s0, +0($sp)       
-  004297c8: dsubu  $zero, $a0, +0     
+  004297c8: dsubu $s0, $a0, $zero     
   004297cc: sw     $s1, +16($sp)      
-  004297d0: dsubu  $zero, $a1, +0     
+  004297d0: dsubu $a0, $a1, $zero     
   004297d4: lui   $s1, 0x00650000     
-  004297d8: dsubu  $zero, $a2, +0     
+  004297d8: dsubu $a1, $a2, $zero     
   004297dc: sw     $ra, +32($sp)      
   004297e0: sw     $zero, +30552($s1)    ; GLOBAL 0x00657758
   004297e4: jal   0xf043d1d8             ; -> 0x0043d1d8
-  004297e8: dsubu  $zero, $a3, +0     
-  004297ec: dsubu  $zero, $v0, +0     
+  004297e8: dsubu $a2, $a3, $zero     
+  004297ec: dsubu $v1, $v0, $zero     
   004297f0: addiu  $v0, $zero, -1     
   004297f4: bne    $v1, $v0, +20         ; br -> 0x0042980c
   004297f8: lw     $ra, +32($sp)      
@@ -21,7 +21,7 @@
   00429800: bnel   $v0, $zero, +8        ; br -> 0x0042980c
   00429804: sw     $v0, +0($s0)       
   00429808: lw     $ra, +32($sp)      
-  0042980c: dsubu  $zero, $v1, +0     
+  0042980c: dsubu $v0, $v1, $zero     
   00429810: lw     $s1, +16($sp)      
   00429814: lw     $s0, +0($sp)       
   00429818: jr     $ra                

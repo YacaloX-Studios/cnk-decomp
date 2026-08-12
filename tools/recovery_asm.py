@@ -81,8 +81,11 @@ def main():
                 n2 = sym.get("0x%08x" % tgt, {}).get("name", "0x%08x" % tgt)
                 note = "   ; -> %s" % n2
             if ins.kind == "branch":
-                tgt = (cur + 4 + ((ins.imm & 0xffff) << 2))
-                note = "   ; br -> 0x%08x" % (tgt & 0xffffffff)
+                bimm = ins.imm & 0xffff
+                if bimm >= 0x8000:
+                    bimm -= 0x10000
+                tgt = (cur + 4 + (bimm << 2)) & 0xffffffff
+                note = "   ; br -> 0x%08x" % tgt
             lines.append("  %08x: %-26s%s" % (cur, render(ins)[:26], note))
         if gl:
             lines.append("")

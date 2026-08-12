@@ -13,4 +13,4 @@
   00120740: sw     $v1, +0($a0)       
   00120744: jr     $ra                
   00120748: addiu  $sp, $sp, +16      
-  0012074c: sll    $zero, $zero, +0   
+  0012074c: sll $zero, $zero, 0       

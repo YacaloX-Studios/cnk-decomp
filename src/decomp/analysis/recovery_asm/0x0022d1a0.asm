@@ -6,25 +6,25 @@
   0022d1a4: lw     $a1, +24($a1)      
   0022d1a8: addiu  $v1, $zero, +3     
   0022d1ac: beq    $a1, $v1, +260        ; br -> 0x0022d2b4
-  0022d1b0: sll    $zero, $zero, +0   
+  0022d1b0: sll $zero, $zero, 0       
   0022d1b4: addiu  $v1, $zero, +4     
   0022d1b8: beq    $a1, $v1, +248        ; br -> 0x0022d2b4
-  0022d1bc: sll    $zero, $zero, +0   
+  0022d1bc: sll $zero, $zero, 0       
   0022d1c0: addiu  $v1, $zero, +2     
   0022d1c4: beq    $a1, $v1, +28         ; br -> 0x0022d1e4
   0022d1c8: addiu  $v1, $zero, +1     
   0022d1cc: addiu  $v1, $zero, +1     
   0022d1d0: beq    $a1, $v1, +12         ; br -> 0x0022d1e0
-  0022d1d4: sll    $zero, $zero, +0   
+  0022d1d4: sll $zero, $zero, 0       
   0022d1d8: beq    $zero, $zero, +764    ; br -> 0x0022d4d8
-  0022d1dc: sll    $zero, $zero, +0   
+  0022d1dc: sll $zero, $zero, 0       
   0022d1e0: addiu  $v1, $zero, +1     
   0022d1e4: beq    $a2, $v1, +108        ; br -> 0x0022d254
-  0022d1e8: sll    $zero, $zero, +0   
+  0022d1e8: sll $zero, $zero, 0       
   0022d1ec: beq    $a2, $zero, +12       ; br -> 0x0022d1fc
-  0022d1f0: sll    $zero, $zero, +0   
+  0022d1f0: sll $zero, $zero, 0       
   0022d1f4: beq    $zero, $zero, +188    ; br -> 0x0022d2b4
-  0022d1f8: sll    $zero, $zero, +0   
+  0022d1f8: sll $zero, $zero, 0       
   0022d1fc: beq    $t0, $zero, +36       ; br -> 0x0022d224
   0022d200: lui   $v1, 0x43610000     
   0022d204: lui   $v1, 0xc37a0000     
@@ -79,43 +79,43 @@
   0022d2c8: addiu  $a1, $zero, +3     
   0022d2cc: addiu  $v1, $zero, +3     
   0022d2d0: beq    $a3, $v1, +40         ; br -> 0x0022d2fc
-  0022d2d4: sll    $zero, $zero, +0   
+  0022d2d4: sll $zero, $zero, 0       
   0022d2d8: addiu  $v1, $zero, +2     
   0022d2dc: beq    $a3, $v1, +20         ; br -> 0x0022d2f4
-  0022d2e0: dsubu  $zero, $a2, +0     
+  0022d2e0: dsubu $a1, $a2, $zero     
   0022d2e4: addiu  $v1, $zero, +1     
   0022d2e8: beq    $zero, $zero, +72     ; br -> 0x0022d334
-  0022d2ec: dsubu  $zero, $zero, +0   
-  0022d2f0: dsubu  $zero, $a2, +0     
+  0022d2ec: dsubu $a1, $zero, $zero   
+  0022d2f0: dsubu $a1, $a2, $zero     
   0022d2f4: beq    $zero, $zero, +64     ; br -> 0x0022d338
   0022d2f8: addiu  $v1, $zero, +3     
   0022d2fc: addiu  $a1, $zero, +3     
   0022d300: beq    $a2, $a1, +44         ; br -> 0x0022d330
-  0022d304: sll    $zero, $zero, +0   
+  0022d304: sll $zero, $zero, 0       
   0022d308: addiu  $v1, $zero, +2     
   0022d30c: beq    $a2, $v1, +24         ; br -> 0x0022d328
-  0022d310: sll    $zero, $zero, +0   
+  0022d310: sll $zero, $zero, 0       
   0022d314: addiu  $v1, $zero, +1     
   0022d318: beq    $a2, $v1, +24         ; br -> 0x0022d334
-  0022d31c: sll    $zero, $zero, +0   
+  0022d31c: sll $zero, $zero, 0       
   0022d320: beq    $zero, $zero, +16     ; br -> 0x0022d334
-  0022d324: dsubu  $zero, $zero, +0   
+  0022d324: dsubu $a1, $zero, $zero   
   0022d328: beq    $zero, $zero, +8      ; br -> 0x0022d334
   0022d32c: addiu  $a1, $zero, +1     
   0022d330: addiu  $a1, $zero, +2     
   0022d334: addiu  $v1, $zero, +3     
   0022d338: beq    $a1, $v1, +324        ; br -> 0x0022d480
-  0022d33c: sll    $zero, $zero, +0   
+  0022d33c: sll $zero, $zero, 0       
   0022d340: addiu  $v1, $zero, +2     
   0022d344: beq    $a1, $v1, +216        ; br -> 0x0022d420
-  0022d348: sll    $zero, $zero, +0   
+  0022d348: sll $zero, $zero, 0       
   0022d34c: addiu  $v1, $zero, +1     
   0022d350: beq    $a1, $v1, +108        ; br -> 0x0022d3c0
-  0022d354: sll    $zero, $zero, +0   
+  0022d354: sll $zero, $zero, 0       
   0022d358: beq    $a1, $zero, +12       ; br -> 0x0022d368
-  0022d35c: sll    $zero, $zero, +0   
+  0022d35c: sll $zero, $zero, 0       
   0022d360: beq    $zero, $zero, +372    ; br -> 0x0022d4d8
-  0022d364: sll    $zero, $zero, +0   
+  0022d364: sll $zero, $zero, 0       
   0022d368: beq    $t0, $zero, +36       ; br -> 0x0022d390
   0022d36c: lui   $v1, 0x43020000     
   0022d370: lui   $v1, 0xc37a0000     
@@ -211,7 +211,7 @@
   0022d4d8: fmove  $zero,$a0,$a2      
   0022d4dc: lui   $v1, 0x42c80000     
   0022d4e0: fmove  $zero,$a0,$v1      
-  0022d4e4: sll    $zero, $zero, +0   
+  0022d4e4: sll $zero, $zero, 0       
   0022d4e8: f14.20 $zero,$s4,$zero    
   0022d4ec: f10.2  $at,$s0,$zero      
   0022d4f0: swc1   $zero, +0($a0)     
@@ -219,24 +219,24 @@
   0022d4f8: sw     $zero, +8($a0)     
   0022d4fc: jr     $ra                
   0022d500: addiu  $sp, $sp, +192     
-  0022d504: sll    $zero, $zero, +0   
-  0022d508: sll    $zero, $zero, +0   
-  0022d50c: sll    $zero, $zero, +0   
+  0022d504: sll $zero, $zero, 0       
+  0022d508: sll $zero, $zero, 0       
+  0022d50c: sll $zero, $zero, 0       
   0022d510: lw     $a1, +24($a1)      
   0022d514: addiu  $v1, $zero, +2     
   0022d518: beq    $a1, $v1, +72         ; br -> 0x0022d564
-  0022d51c: sll    $zero, $zero, +0   
+  0022d51c: sll $zero, $zero, 0       
   0022d520: addiu  $v1, $zero, +3     
   0022d524: beq    $a1, $v1, +60         ; br -> 0x0022d564
-  0022d528: sll    $zero, $zero, +0   
+  0022d528: sll $zero, $zero, 0       
   0022d52c: addiu  $v1, $zero, +4     
   0022d530: beq    $a1, $v1, +48         ; br -> 0x0022d564
-  0022d534: sll    $zero, $zero, +0   
+  0022d534: sll $zero, $zero, 0       
   0022d538: addiu  $v1, $zero, +1     
   0022d53c: beq    $a1, $v1, +12         ; br -> 0x0022d54c
-  0022d540: sll    $zero, $zero, +0   
+  0022d540: sll $zero, $zero, 0       
   0022d544: beq    $zero, $zero, +572    ; br -> 0x0022d784
-  0022d548: sll    $zero, $zero, +0   
+  0022d548: sll $zero, $zero, 0       
   0022d54c: lui   $a1, 0x42a00000     
   0022d550: lui   $v1, 0x43c30000     
   0022d554: sw     $a1, +0($a0)       
@@ -248,47 +248,47 @@
   0022d56c: lw     $v1, +13752($v1)      ; GLOBAL 0x006f35b8
   0022d570: lw     $t0, +76($v1)         ; GLOBAL 0x006f004c
   0022d574: beq    $t0, $a1, +48         ; br -> 0x0022d5a8
-  0022d578: sll    $zero, $zero, +0   
+  0022d578: sll $zero, $zero, 0       
   0022d57c: addiu  $v1, $zero, +3     
   0022d580: beq    $t0, $v1, +36         ; br -> 0x0022d5a8
-  0022d584: sll    $zero, $zero, +0   
+  0022d584: sll $zero, $zero, 0       
   0022d588: addiu  $v1, $zero, +2     
   0022d58c: beq    $t0, $v1, +16         ; br -> 0x0022d5a0
-  0022d590: sll    $zero, $zero, +0   
+  0022d590: sll $zero, $zero, 0       
   0022d594: addiu  $v1, $zero, +1     
   0022d598: beq    $zero, $zero, +68     ; br -> 0x0022d5e0
-  0022d59c: dsubu  $zero, $zero, +0   
+  0022d59c: dsubu $t0, $zero, $zero   
   0022d5a0: beq    $zero, $zero, +60     ; br -> 0x0022d5e0
-  0022d5a4: dsubu  $zero, $a2, +0     
+  0022d5a4: dsubu $t0, $a2, $zero     
   0022d5a8: addiu  $t0, $zero, +3     
   0022d5ac: beq    $a2, $t0, +44         ; br -> 0x0022d5dc
-  0022d5b0: sll    $zero, $zero, +0   
+  0022d5b0: sll $zero, $zero, 0       
   0022d5b4: addiu  $v1, $zero, +2     
   0022d5b8: beq    $a2, $v1, +24         ; br -> 0x0022d5d4
-  0022d5bc: sll    $zero, $zero, +0   
+  0022d5bc: sll $zero, $zero, 0       
   0022d5c0: addiu  $v1, $zero, +1     
   0022d5c4: beq    $a2, $v1, +28         ; br -> 0x0022d5e4
   0022d5c8: addiu  $a1, $zero, +2     
   0022d5cc: beq    $zero, $zero, +16     ; br -> 0x0022d5e0
-  0022d5d0: dsubu  $zero, $zero, +0   
+  0022d5d0: dsubu $t0, $zero, $zero   
   0022d5d4: beq    $zero, $zero, +8      ; br -> 0x0022d5e0
   0022d5d8: addiu  $t0, $zero, +1     
   0022d5dc: addiu  $t0, $zero, +2     
   0022d5e0: addiu  $a1, $zero, +2     
   0022d5e4: beq    $t0, $a1, +316        ; br -> 0x0022d724
-  0022d5e8: sll    $zero, $zero, +0   
+  0022d5e8: sll $zero, $zero, 0       
   0022d5ec: addiu  $v1, $zero, +3     
   0022d5f0: beq    $t0, $v1, +208        ; br -> 0x0022d6c4
-  0022d5f4: sll    $zero, $zero, +0   
+  0022d5f4: sll $zero, $zero, 0       
   0022d5f8: addiu  $v1, $zero, +1     
   0022d5fc: beq    $t0, $v1, +108        ; br -> 0x0022d66c
-  0022d600: sll    $zero, $zero, +0   
+  0022d600: sll $zero, $zero, 0       
   0022d604: beq    $t0, $zero, +12       ; br -> 0x0022d614
-  0022d608: sll    $zero, $zero, +0   
+  0022d608: sll $zero, $zero, 0       
   0022d60c: beq    $zero, $zero, +372    ; br -> 0x0022d784
-  0022d610: sll    $zero, $zero, +0   
+  0022d610: sll $zero, $zero, 0       
   0022d614: beq    $a3, $a1, +60         ; br -> 0x0022d654
-  0022d618: sll    $zero, $zero, +0   
+  0022d618: sll $zero, $zero, 0       
   0022d61c: beq    $a3, $zero, +32       ; br -> 0x0022d640
   0022d620: lui   $a1, 0xc2c80000     
   0022d624: lui   $a1, 0x42a00000     
@@ -310,7 +310,7 @@
   0022d664: beq    $zero, $zero, +320    ; br -> 0x0022d7a8
   0022d668: sw     $zero, +8($a0)     
   0022d66c: beq    $a3, $a1, +60         ; br -> 0x0022d6ac
-  0022d670: sll    $zero, $zero, +0   
+  0022d670: sll $zero, $zero, 0       
   0022d674: beq    $a3, $zero, +32       ; br -> 0x0022d698
   0022d678: lui   $a1, 0xc2c80000     
   0022d67c: lui   $a1, 0x42a00000     
@@ -332,7 +332,7 @@
   0022d6bc: beq    $zero, $zero, +232    ; br -> 0x0022d7a8
   0022d6c0: sw     $zero, +8($a0)     
   0022d6c4: beq    $a3, $a1, +68         ; br -> 0x0022d70c
-  0022d6c8: sll    $zero, $zero, +0   
+  0022d6c8: sll $zero, $zero, 0       
   0022d6cc: beq    $a3, $zero, +40       ; br -> 0x0022d6f8
   0022d6d0: lui   $a1, 0x442f0000     
   0022d6d4: addiu  $v1, $zero, +1     
@@ -356,7 +356,7 @@
   0022d71c: beq    $zero, $zero, +136    ; br -> 0x0022d7a8
   0022d720: sw     $zero, +8($a0)     
   0022d724: beq    $a3, $a1, +68         ; br -> 0x0022d76c
-  0022d728: sll    $zero, $zero, +0   
+  0022d728: sll $zero, $zero, 0       
   0022d72c: beq    $a3, $zero, +40       ; br -> 0x0022d758
   0022d730: lui   $a1, 0x442f0000     
   0022d734: addiu  $v1, $zero, +1     
@@ -382,13 +382,13 @@
   0022d784: fmove  $zero,$a0,$a2      
   0022d788: lui   $v1, 0x42c80000     
   0022d78c: fmove  $zero,$a0,$v1      
-  0022d790: sll    $zero, $zero, +0   
+  0022d790: sll $zero, $zero, 0       
   0022d794: f14.20 $zero,$s4,$zero    
   0022d798: f10.2  $at,$s0,$zero      
   0022d79c: swc1   $zero, +0($a0)     
   0022d7a0: swc1   $zero, +4($a0)     
   0022d7a4: sw     $zero, +8($a0)     
   0022d7a8: jr     $ra                
-  0022d7ac: sll    $zero, $zero, +0   
+  0022d7ac: sll $zero, $zero, 0       
 
 ; globals: 0x42fa0000(x3), 0x42fa0004(x3), 0x42fa0008(x3), 0x006f35b8(x2), 0x006f004c(x2)

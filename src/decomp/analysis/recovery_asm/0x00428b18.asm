@@ -4,7 +4,7 @@
 
   00428b18: addiu  $sp, $sp, -32      
   00428b1c: sw     $s0, +0($sp)       
-  00428b20: dsubu  $zero, $a0, +0     
+  00428b20: dsubu $s0, $a0, $zero     
   00428b24: andi   $v0, $s0, +7       
   00428b28: bne    $v0, $zero, +232      ; br -> 0x00428c14
   00428b2c: sw     $ra, +16($sp)      
@@ -33,9 +33,9 @@
   00428b88: mmi2   $v1,$v1,$v0        
   00428b8c: mmi2   $v1,$v1,$t0        
   00428b90: mmi2   $v0,$v1,$v1        
-  00428b94: or     $v1, $v0, +0       
+  00428b94: or $v1, $v0, $v1          
   00428b98: bne    $v1, $zero, +120      ; br -> 0x00428c14
-  00428b9c: dsubu  $zero, $s0, +0     
+  00428b9c: dsubu $a0, $s0, $zero     
   00428ba0: addiu  $a2, $a0, +16      
   00428ba4: lw     $v0, +0($a2)       
   00428ba8: mmi2   $v1,$zero,$v0      
@@ -43,40 +43,40 @@
   00428bb0: mmi2   $v0,$v0,$v1        
   00428bb4: mmi2   $v0,$v0,$t0        
   00428bb8: mmi2   $v1,$v0,$v0        
-  00428bbc: or     $v1, $v0, +0       
-  00428bc0: beql   $v0, $zero, -32       ; br -> 0x00468ba4
+  00428bbc: or $v0, $v0, $v1          
+  00428bc0: beql   $v0, $zero, -32       ; br -> 0x00428ba4
   00428bc4: addiu  $a2, $a2, +16      
   00428bc8: beq    $zero, $zero, +72     ; br -> 0x00428c14
-  00428bcc: dsubu  $zero, $a2, +0     
-  00428bd0: dsubu  $zero, $v1, +0     
-  00428bd4: dsubu  $zero, $a0, +0     
+  00428bcc: dsubu $a0, $a2, $zero     
+  00428bd0: dsubu $a3, $v1, $zero     
+  00428bd4: dsubu $t0, $a0, $zero     
   00428bd8: spec2f  $a2,$v1,$v1       
-  00428bdc: nor    $a2, $zero, +0     
-  00428be0: and    $v0, $v1, +0       
-  00428be4: and    $a0, $v1, +0       
+  00428bdc: nor $v0, $zero, $a2       
+  00428be0: and $v1, $v1, $v0         
+  00428be4: and $v1, $v1, $a0         
   00428be8: bne    $v1, $zero, +40       ; br -> 0x00428c14
-  00428bec: dsubu  $zero, $s0, +0     
+  00428bec: dsubu $a0, $s0, $zero     
   00428bf0: addiu  $a2, $s0, +8       
   00428bf4: lw     $v0, +0($a2)       
-  00428bf8: nor    $v0, $zero, +0     
+  00428bf8: nor $v1, $zero, $v0       
   00428bfc: spec2f  $v0,$a3,$v0       
-  00428c00: and    $v1, $v0, +0       
-  00428c04: and    $t0, $v0, +0       
-  00428c08: beql   $v0, $zero, -24       ; br -> 0x00468bf4
+  00428c00: and $v0, $v0, $v1         
+  00428c04: and $v0, $v0, $t0         
+  00428c08: beql   $v0, $zero, -24       ; br -> 0x00428bf4
   00428c0c: addiu  $a2, $a2, +8       
-  00428c10: dsubu  $zero, $a2, +0     
+  00428c10: dsubu $a0, $a2, $zero     
   00428c14: lw     $v0, +0($a0)       
-  00428c18: sll    $zero, $zero, +0   
-  00428c1c: sll    $zero, $zero, +0   
-  00428c20: sll    $zero, $zero, +0   
-  00428c24: sll    $zero, $zero, +0   
-  00428c28: bnel   $v0, $zero, -24       ; br -> 0x00468c14
+  00428c18: sll $zero, $zero, 0       
+  00428c1c: sll $zero, $zero, 0       
+  00428c20: sll $zero, $zero, 0       
+  00428c24: sll $zero, $zero, 0       
+  00428c28: bnel   $v0, $zero, -24       ; br -> 0x00428c14
   00428c2c: addiu  $a0, $a0, +1       
   00428c30: jal   0xf0428f48             ; -> FUN_00428f48
-  00428c34: sll    $zero, $zero, +0   
-  00428c38: dsubu  $zero, $s0, +0     
+  00428c34: sll $zero, $zero, 0       
+  00428c38: dsubu $v0, $s0, $zero     
   00428c3c: lw     $ra, +16($sp)      
   00428c40: lw     $s0, +0($sp)       
   00428c44: jr     $ra                
   00428c48: addiu  $sp, $sp, +32      
-  00428c4c: sll    $zero, $zero, +0   
+  00428c4c: sll $zero, $zero, 0       

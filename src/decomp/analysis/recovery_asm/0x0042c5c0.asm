@@ -8,7 +8,7 @@
   0042c5cc: sw     $ra, +32($sp)      
   0042c5d0: jal   0xf043c9d0             ; -> 0x0043c9d0
   0042c5d4: lui   $s1, 0x00650000     
-  0042c5d8: dsubu  $zero, $v0, +0     
+  0042c5d8: dsubu $s0, $v0, $zero     
   0042c5dc: lw     $v0, +31432($s1)      ; GLOBAL 0x00657ac8
   0042c5e0: bne    $v0, $s0, +12         ; br -> 0x0042c5f0
   0042c5e4: lui   $v0, 0x00660000     

@@ -11,6 +11,6 @@
   0042f650: lw     $ra, +0($sp)       
   0042f654: jr     $ra                
   0042f658: addiu  $sp, $sp, +16      
-  0042f65c: sll    $zero, $zero, +0   
+  0042f65c: sll $zero, $zero, 0       
 
 ; globals: 0x00657754(x1)

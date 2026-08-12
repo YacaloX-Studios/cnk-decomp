@@ -16,5 +16,5 @@
   001ace0c: swc1   $zero, +12($a0)    
   001ace10: jr     $ra                
   001ace14: addiu  $sp, $sp, +16      
-  001ace18: sll    $zero, $zero, +0   
-  001ace1c: sll    $zero, $zero, +0   
+  001ace18: sll $zero, $zero, 0       
+  001ace1c: sll $zero, $zero, 0       

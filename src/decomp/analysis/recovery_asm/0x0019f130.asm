@@ -17,15 +17,15 @@
   0019f160: f8.3   $zero,$t0,$zero    
   0019f164: addiu  $v1, $a1, +16      
   0019f168: beq    $zero, $zero, +8      ; br -> 0x0019f174
-  0019f16c: sll    $zero, $zero, +0   
+  0019f16c: sll $zero, $zero, 0       
   0019f170: f10.6  $zero,$s0,$zero    
   0019f174: fmove  $zero,$a0,$zero    
-  0019f178: sll    $zero, $zero, +0   
+  0019f178: sll $zero, $zero, 0       
   0019f17c: f10.36 $at,$s0,$zero      
   0019f180: f8.19  $zero,$t0,$at      
-  0019f184: sll    $zero, $zero, +0   
-  0019f188: sll    $zero, $zero, +0   
-  0019f18c: sll    $zero, $zero, +0   
+  0019f184: sll $zero, $zero, 0       
+  0019f188: sll $zero, $zero, 0       
+  0019f18c: sll $zero, $zero, 0       
   0019f190: f10.3  $at,$s0,$v1        
   0019f194: addiu  $a1, $sp, +0       
   0019f198: lw     $v1, +0($v1)          ; GLOBAL 0x006f0000

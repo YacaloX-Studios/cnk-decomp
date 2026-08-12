@@ -42,7 +42,7 @@
   003f14c4: addiu  $t9, $t9, +3264    
   003f14c8: sw     $a1, -13792($at)      ; GLOBAL 0x0070ca20
   003f14cc: addiu  $t8, $zero, +7     
-  003f14d0: addu   $a3, $s4, +0       
+  003f14d0: addu $a1, $s4, $a3        
   003f14d4: lui   $at, 0x00700000     
   003f14d8: sw     $a2, +0($a1)       
   003f14dc: lui   $a3, 0x00650000     
@@ -68,7 +68,7 @@
   003f152c: addiu  $a1, $a0, +1       
   003f1530: lui   $at, 0x00700000     
   003f1534: sw     $a1, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1538: addu   $a0, $s4, +0       
+  003f1538: addu $a0, $s4, $a0        
   003f153c: sw     $s2, +0($a0)          ; GLOBAL 0x00650000
   003f1540: lui   $at, 0x00700000     
   003f1544: sw     $v1, -14868($at)      ; GLOBAL 0x0070c5ec
@@ -87,7 +87,7 @@
   003f1578: addiu  $s5, $s6, +1       
   003f157c: lui   $at, 0x00700000     
   003f1580: sw     $s5, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1584: addu   $s6, $s4, +0       
+  003f1584: addu $s6, $s4, $s6        
   003f1588: addiu  $s5, $zero, +179   
   003f158c: lui   $at, 0x00700000     
   003f1590: sw     $s5, +0($s6)       
@@ -105,7 +105,7 @@
   003f15c0: addiu  $s2, $s7, +1       
   003f15c4: lui   $at, 0x00700000     
   003f15c8: sw     $s2, -13792($at)      ; GLOBAL 0x0070ca20
-  003f15cc: addu   $s7, $s4, +0       
+  003f15cc: addu $s7, $s4, $s7        
   003f15d0: addiu  $s2, $zero, +180   
   003f15d4: lui   $at, 0x00700000     
   003f15d8: sw     $s2, +0($s7)          ; GLOBAL 0x00650000
@@ -119,7 +119,7 @@
   003f15f8: addiu  $s7, $s2, +1       
   003f15fc: lui   $at, 0x00700000     
   003f1600: sw     $s7, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1604: addu   $s2, $s4, +0       
+  003f1604: addu $s2, $s4, $s2        
   003f1608: sw     $t7, +0($s2)       
   003f160c: lui   $at, 0x00700000     
   003f1610: sw     $t6, -14844($at)      ; GLOBAL 0x0070c604
@@ -132,7 +132,7 @@
   003f162c: addiu  $t6, $s2, +1       
   003f1630: lui   $at, 0x00700000     
   003f1634: sw     $t6, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1638: addu   $s2, $s4, +0       
+  003f1638: addu $s2, $s4, $s2        
   003f163c: addiu  $t6, $zero, +185   
   003f1640: lui   $at, 0x00700000     
   003f1644: sw     $t6, +0($s2)       
@@ -146,7 +146,7 @@
   003f1664: addiu  $t5, $t6, +1       
   003f1668: lui   $at, 0x00700000     
   003f166c: sw     $t5, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1670: addu   $t6, $s4, +0       
+  003f1670: addu $t6, $s4, $t6        
   003f1674: addiu  $t5, $zero, +186   
   003f1678: lui   $at, 0x00700000     
   003f167c: sw     $t5, +0($t6)          ; GLOBAL 0x00650000
@@ -160,7 +160,7 @@
   003f169c: addiu  $t5, $t4, +1       
   003f16a0: lui   $at, 0x00700000     
   003f16a4: sw     $t5, -13792($at)      ; GLOBAL 0x0070ca20
-  003f16a8: addu   $t4, $s4, +0       
+  003f16a8: addu $t4, $s4, $t4        
   003f16ac: sw     $fp, +0($t4)          ; GLOBAL 0x00650000
   003f16b0: lui   $at, 0x00700000     
   003f16b4: sw     $t3, -14832($at)      ; GLOBAL 0x0070c610
@@ -173,7 +173,7 @@
   003f16d0: addiu  $t3, $t4, +1       
   003f16d4: lui   $at, 0x00700000     
   003f16d8: sw     $t3, -13792($at)      ; GLOBAL 0x0070ca20
-  003f16dc: addu   $t4, $s4, +0       
+  003f16dc: addu $t4, $s4, $t4        
   003f16e0: addiu  $t3, $zero, +188   
   003f16e4: lui   $at, 0x00700000     
   003f16e8: sw     $t3, +0($t4)          ; GLOBAL 0x00650000
@@ -187,7 +187,7 @@
   003f1708: addiu  $t3, $t4, +1       
   003f170c: lui   $at, 0x00700000     
   003f1710: sw     $t3, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1714: addu   $t4, $s4, +0       
+  003f1714: addu $t4, $s4, $t4        
   003f1718: addiu  $t3, $zero, +189   
   003f171c: lui   $at, 0x00700000     
   003f1720: sw     $t3, +0($t4)          ; GLOBAL 0x00650000
@@ -201,7 +201,7 @@
   003f1740: addiu  $t3, $t4, +1       
   003f1744: lui   $at, 0x00700000     
   003f1748: sw     $t3, -13792($at)      ; GLOBAL 0x0070ca20
-  003f174c: addu   $t4, $s4, +0       
+  003f174c: addu $t4, $s4, $t4        
   003f1750: addiu  $t3, $zero, +181   
   003f1754: lui   $at, 0x00700000     
   003f1758: sw     $t3, +0($t4)          ; GLOBAL 0x00650000
@@ -215,7 +215,7 @@
   003f1778: addiu  $t0, $t3, +1       
   003f177c: lui   $at, 0x00700000     
   003f1780: sw     $t0, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1784: addu   $t3, $s4, +0       
+  003f1784: addu $t3, $s4, $t3        
   003f1788: addiu  $t0, $zero, +182   
   003f178c: lui   $at, 0x00700000     
   003f1790: sw     $t0, +0($t3)          ; GLOBAL 0x00650000
@@ -230,7 +230,7 @@
   003f17b4: addiu  $t0, $t2, +1       
   003f17b8: lui   $at, 0x00700000     
   003f17bc: sw     $t0, -13792($at)      ; GLOBAL 0x0070ca20
-  003f17c0: addu   $t2, $s4, +0       
+  003f17c0: addu $t2, $s4, $t2        
   003f17c4: addiu  $t0, $zero, +183   
   003f17c8: lui   $at, 0x00700000     
   003f17cc: sw     $t0, +0($t2)          ; GLOBAL 0x00650000
@@ -244,7 +244,7 @@
   003f17ec: addiu  $t0, $t1, +1       
   003f17f0: lui   $at, 0x00700000     
   003f17f4: sw     $t0, -13792($at)      ; GLOBAL 0x0070ca20
-  003f17f8: addu   $t1, $s4, +0       
+  003f17f8: addu $t1, $s4, $t1        
   003f17fc: addiu  $t0, $zero, +67    
   003f1800: lui   $at, 0x00700000     
   003f1804: sw     $t0, +0($t1)          ; GLOBAL 0x00650000
@@ -258,7 +258,7 @@
   003f1824: addiu  $a3, $t0, +1       
   003f1828: lui   $at, 0x00700000     
   003f182c: sw     $a3, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1830: addu   $t0, $s4, +0       
+  003f1830: addu $t0, $s4, $t0        
   003f1834: addiu  $a3, $zero, +201   
   003f1838: lui   $at, 0x00700000     
   003f183c: sw     $a3, +0($t0)          ; GLOBAL 0x00650000
@@ -272,7 +272,7 @@
   003f185c: addiu  $a2, $a3, +1       
   003f1860: lui   $at, 0x00700000     
   003f1864: sw     $a2, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1868: addu   $a3, $s4, +0       
+  003f1868: addu $a3, $s4, $a3        
   003f186c: addiu  $a2, $zero, +203   
   003f1870: lui   $at, 0x00700000     
   003f1874: sw     $a2, +0($a3)          ; GLOBAL 0x00650000
@@ -288,7 +288,7 @@
   003f189c: addiu  $a1, $a2, +1       
   003f18a0: lui   $at, 0x00700000     
   003f18a4: sw     $a1, -13792($at)      ; GLOBAL 0x0070ca20
-  003f18a8: addu   $a2, $s4, +0       
+  003f18a8: addu $a2, $s4, $a2        
   003f18ac: addiu  $a1, $zero, +202   
   003f18b0: lui   $at, 0x00700000     
   003f18b4: sw     $a1, +0($a2)          ; GLOBAL 0x00650000
@@ -303,7 +303,7 @@
   003f18d8: addiu  $a0, $a1, +1       
   003f18dc: lui   $at, 0x00700000     
   003f18e0: sw     $a0, -13792($at)      ; GLOBAL 0x0070ca20
-  003f18e4: addu   $a1, $s4, +0       
+  003f18e4: addu $a1, $s4, $a1        
   003f18e8: addiu  $a0, $zero, +206   
   003f18ec: lui   $at, 0x00700000     
   003f18f0: sw     $a0, +0($a1)          ; GLOBAL 0x00650000
@@ -317,7 +317,7 @@
   003f1910: addiu  $v1, $a0, +1       
   003f1914: lui   $at, 0x00700000     
   003f1918: sw     $v1, -13792($at)      ; GLOBAL 0x0070ca20
-  003f191c: addu   $a0, $s4, +0       
+  003f191c: addu $a0, $s4, $a0        
   003f1920: addiu  $v1, $zero, +205   
   003f1924: lui   $at, 0x00700000     
   003f1928: sw     $v1, +0($a0)          ; GLOBAL 0x00650000
@@ -328,7 +328,7 @@
   003f193c: sw     $s1, -14061($at)      ; GLOBAL 0x0070c913
   003f1940: lui   $at, 0x00700000     
   003f1944: lw     $v1, -13792($at)      ; GLOBAL 0x0070ca20
-  003f1948: addu   $v1, $s4, +0       
+  003f1948: addu $a0, $s4, $v1        
   003f194c: lui   $at, 0x00700000     
   003f1950: addiu  $v1, $v1, +1       
   003f1954: sw     $v1, -13792($at)      ; GLOBAL 0x0070ca20
@@ -351,24 +351,24 @@
   003f1998: lw     $s0, +0($sp)       
   003f199c: jr     $ra                
   003f19a0: addiu  $sp, $sp, +144     
-  003f19a4: sll    $zero, $zero, +0   
-  003f19a8: sll    $zero, $zero, +0   
-  003f19ac: sll    $zero, $zero, +0   
+  003f19a4: sll $zero, $zero, 0       
+  003f19a8: sll $zero, $zero, 0       
+  003f19ac: sll $zero, $zero, 0       
   003f19b0: addiu  $a2, $zero, +219   
-  003f19b4: dsubu  $zero, $a2, +0     
+  003f19b4: dsubu $v1, $a2, $zero     
   003f19b8: beq    $v1, $zero, +40       ; br -> 0x003f19e4
   003f19bc: addiu  $a2, $a2, -1       
   003f19c0: lui   $a1, 0x00700000     
   003f19c4: addiu  $a1, $a1, -16688   
-  003f19c8: addu   $a2, $a1, +0       
-  003f19cc: dsubu  $zero, $a2, +0     
+  003f19c8: addu $a0, $a1, $a2        
+  003f19cc: dsubu $v1, $a2, $zero     
   003f19d0: sw     $zero, +2641($a0)     ; GLOBAL 0x00650a51
   003f19d4: addiu  $a2, $a2, -1       
-  003f19d8: sll    $zero, $zero, +0   
-  003f19dc: bne    $v1, $zero, -24       ; br -> 0x004319c8
-  003f19e0: sll    $zero, $zero, +0   
-  003f19e4: sll    $zero, $zero, +0   
+  003f19d8: sll $zero, $zero, 0       
+  003f19dc: bne    $v1, $zero, -24       ; br -> 0x003f19c8
+  003f19e0: sll $zero, $zero, 0       
+  003f19e4: sll $zero, $zero, 0       
   003f19e8: jr     $ra                
-  003f19ec: sll    $zero, $zero, +0   
+  003f19ec: sll $zero, $zero, 0       
 
 ; globals: 0x0070ca20(x40), 0x00650000(x16), 0x0070ca28(x1), 0x0070c42c(x1), 0x0070c714(x1), 0x0070c888(x1), 0x0070c5ec(x1), 0x0070c7f4(x1), 0x0070c8f8(x1), 0x0070c5f0(x1)

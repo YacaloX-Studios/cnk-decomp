@@ -117,9 +117,10 @@ def decode(w):
             return Instr(op, name, rs=rs, kind="arith")
         if name in ("movz", "movn"):
             return Instr(op, name, rs=rs, rt=rt, rd=rd, kind="move")
-        if name in ("mult", "multu", "div", "divu", "dadd", "daddu",
-                    "dsub", "dsubu"):
+        if name in ("mult", "multu", "div", "divu"):
             return Instr(op, name, rs=rs, rt=rt, kind="arith")
+        if name in ("dadd", "daddu", "dsub", "dsubu"):
+            return Instr(op, name, rs=rs, rt=rt, rd=rd, kind="arith")
         if name in ("sll", "srl", "sra"):
             return Instr(op, name, rt=rt, rd=rd, imm=(w >> 6) & 0x1f,
                          kind="arith")

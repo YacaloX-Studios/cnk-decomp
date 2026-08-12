@@ -9,47 +9,47 @@
   005ed340: lw     $a0, +12($sp)      
   005ed344: lw     $a1, +8($a3)       
   005ed348: beq    $zero, $zero, +40     ; br -> 0x005ed374
-  005ed34c: dsubu  $zero, $zero, +0   
+  005ed34c: dsubu $a2, $zero, $zero   
   005ed350: lw     $v0, +16($a3)      
-  005ed354: sll    $a2, $zero, +2     
-  005ed358: addu   $v1, $v0, +0       
+  005ed354: sll $v1, $a2, 2           
+  005ed358: addu $v0, $v0, $v1        
   005ed35c: lw     $v0, +0($v0)       
   005ed360: bne    $a0, $v0, +12         ; br -> 0x005ed370
-  005ed364: sll    $zero, $zero, +0   
+  005ed364: sll $zero, $zero, 0       
   005ed368: beq    $zero, $zero, +28     ; br -> 0x005ed388
-  005ed36c: dadd   $zero, $a2, +0     
+  005ed36c: dadd $v0, $a2, $zero      
   005ed370: addiu  $a2, $a2, +1       
-  005ed374: dadd   $a1, $a2, +0       
-  005ed378: bne    $v0, $zero, -44       ; br -> 0x0062d350
-  005ed37c: sll    $zero, $zero, +0   
+  005ed374: dadd $v0, $a2, $a1        
+  005ed378: bne    $v0, $zero, -44       ; br -> 0x005ed350
+  005ed37c: sll $zero, $zero, 0       
   005ed380: addiu  $a2, $zero, -1     
-  005ed384: dadd   $zero, $a2, +0     
+  005ed384: dadd $v0, $a2, $zero      
   005ed388: xori   $v0, $v0, +1       
   005ed38c: jr     $ra                
   005ed390: addiu  $sp, $sp, +16      
-  005ed394: sll    $zero, $zero, +0   
-  005ed398: sll    $zero, $zero, +0   
-  005ed39c: sll    $zero, $zero, +0   
+  005ed394: sll $zero, $zero, 0       
+  005ed398: sll $zero, $zero, 0       
+  005ed39c: sll $zero, $zero, 0       
   005ed3a0: j     0x004f2c50          
   005ed3a4: lw     $a0, +8($a0)       
-  005ed3a8: sll    $zero, $zero, +0   
-  005ed3ac: sll    $zero, $zero, +0   
+  005ed3a8: sll $zero, $zero, 0       
+  005ed3ac: sll $zero, $zero, 0       
   005ed3b0: addiu  $sp, $sp, -32      
-  005ed3b4: dsubu  $zero, $a1, +0     
+  005ed3b4: dsubu $v0, $a1, $zero     
   005ed3b8: sw     $ra, +0($sp)       
-  005ed3bc: dsubu  $zero, $a2, +0     
+  005ed3bc: dsubu $a3, $a2, $zero     
   005ed3c0: lw     $a1, +8($a0)       
-  005ed3c4: dsubu  $zero, $v0, +0     
+  005ed3c4: dsubu $a2, $v0, $zero     
   005ed3c8: jal   0xf04f3260             ; -> 0x004f3260
   005ed3cc: addiu  $a0, $sp, +28      
   005ed3d0: lw     $ra, +0($sp)       
   005ed3d4: jr     $ra                
   005ed3d8: addiu  $sp, $sp, +32      
-  005ed3dc: sll    $zero, $zero, +0   
+  005ed3dc: sll $zero, $zero, 0       
   005ed3e0: j     0x004f3340          
   005ed3e4: lw     $a0, +8($a0)       
-  005ed3e8: sll    $zero, $zero, +0   
-  005ed3ec: sll    $zero, $zero, +0   
+  005ed3e8: sll $zero, $zero, 0       
+  005ed3ec: sll $zero, $zero, 0       
   005ed3f0: addiu  $sp, $sp, -32      
   005ed3f4: addiu  $t3, $zero, +1     
   005ed3f8: sw     $ra, +16($sp)      
@@ -71,7 +71,7 @@
   005ed438: sw     $t2, +20($a0)      
   005ed43c: addiu  $v1, $zero, +5     
   005ed440: sw     $t2, +24($a0)      
-  005ed444: dsubu  $zero, $a0, +0     
+  005ed444: dsubu $s0, $a0, $zero     
   005ed448: sw     $v0, +28($a0)      
   005ed44c: sw     $zero, +32($a0)    
   005ed450: addiu  $v0, $zero, +30    
@@ -159,12 +159,12 @@
   005ed598: sw     $zero, +232($a0)   
   005ed59c: jal   0xf05ed5c0             ; -> 0x005ed5c0
   005ed5a0: sw     $zero, +236($a0)   
-  005ed5a4: dsubu  $zero, $s0, +0     
+  005ed5a4: dsubu $v0, $s0, $zero     
   005ed5a8: lw     $ra, +16($sp)      
   005ed5ac: lw     $s0, +0($sp)       
   005ed5b0: jr     $ra                
   005ed5b4: addiu  $sp, $sp, +32      
-  005ed5b8: sll    $zero, $zero, +0   
-  005ed5bc: sll    $zero, $zero, +0   
+  005ed5b8: sll $zero, $zero, 0       
+  005ed5bc: sll $zero, $zero, 0       
 
 ; globals: 0x006c2228(x1), 0x006c222c(x1), 0x006c2230(x1), 0x006c2340(x1), 0x006c2344(x1), 0x006c2348(x1), 0x006c234c(x1)

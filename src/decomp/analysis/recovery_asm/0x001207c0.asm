@@ -13,12 +13,12 @@
   001207e0: sw     $v1, +0($a0)       
   001207e4: jr     $ra                
   001207e8: addiu  $sp, $sp, +16      
-  001207ec: sll    $zero, $zero, +0   
+  001207ec: sll $zero, $zero, 0       
   001207f0: sw     $zero, +8($a0)     
   001207f4: lui   $v1, 0x3f800000     
   001207f8: sw     $zero, +4($a0)     
-  001207fc: dsubu  $zero, $a0, +0     
+  001207fc: dsubu $v0, $a0, $zero     
   00120800: sw     $zero, +0($a0)     
   00120804: jr     $ra                
   00120808: sw     $v1, +12($a0)      
-  0012080c: sll    $zero, $zero, +0   
+  0012080c: sll $zero, $zero, 0       

@@ -4,10 +4,10 @@
 
   0019d330: addiu  $sp, $sp, -32      
   0019d334: fmove  $zero,$a0,$zero    
-  0019d338: sll    $zero, $zero, +0   
+  0019d338: sll $zero, $zero, 0       
   0019d33c: f10.32 $zero,$s0,$t5      
   0019d340: f8.25  $zero,$t0,$at      
-  0019d344: sll    $zero, $zero, +0   
+  0019d344: sll $zero, $zero, 0       
   0019d348: lw     $v1, +44($a0)      
   0019d34c: addiu  $a1, $sp, +16      
   0019d350: lw     $v1, +0($v1)       
@@ -45,7 +45,7 @@
   0019d3d0: cop2   $at,$fp,$v0        
   0019d3d4: op3e    $v1,$at,$zero     
   0019d3d8: fmove  $zero,$a0,$zero    
-  0019d3dc: sll    $zero, $zero, +0   
+  0019d3dc: sll $zero, $zero, 0       
   0019d3e0: f10.32 $zero,$s0,$t4      
   0019d3e4: f8.18  $zero,$t0,$at      
   0019d3e8: lui   $v1, 0x00700000     

@@ -4,11 +4,11 @@
 
   0042cac8: addiu  $sp, $sp, -32      
   0042cacc: sw     $s0, +0($sp)       
-  0042cad0: dsubu  $zero, $a1, +0     
+  0042cad0: dsubu $s0, $a1, $zero     
   0042cad4: sw     $ra, +16($sp)      
   0042cad8: jal   0xf042c660             ; -> FUN_0042c660
   0042cadc: addiu  $a1, $zero, +1     
-  0042cae0: dsubu  $zero, $v0, +0     
+  0042cae0: dsubu $v1, $v0, $zero     
   0042cae4: addiu  $a0, $zero, +1     
   0042cae8: sw     $s0, +20($v1)      
   0042caec: lw     $ra, +16($sp)      

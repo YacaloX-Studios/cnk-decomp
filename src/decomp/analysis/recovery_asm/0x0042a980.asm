@@ -6,7 +6,7 @@
   0042a984: sw     $s0, +0($sp)       
   0042a988: sw     $ra, +16($sp)      
   0042a98c: jal   0xf042a818             ; -> FUN_0042a818
-  0042a990: dsubu  $zero, $a0, +0     
+  0042a990: dsubu $s0, $a0, $zero     
   0042a994: bne    $v0, $zero, +32       ; br -> 0x0042a9b8
   0042a998: addiu  $v0, $zero, -1     
   0042a99c: lw     $v0, +4($s0)       

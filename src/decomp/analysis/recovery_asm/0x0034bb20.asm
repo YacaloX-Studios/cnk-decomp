@@ -10,7 +10,7 @@
   0034bb34: op3e    $v0,$at,$zero     
   0034bb38: lw     $v0, +0($v0)       
   0034bb3c: sw     $v0, +0($a0)       
-  0034bb40: dsubu  $zero, $a0, +0     
+  0034bb40: dsubu $v0, $a0, $zero     
   0034bb44: jr     $ra                
   0034bb48: addiu  $sp, $sp, +16      
-  0034bb4c: sll    $zero, $zero, +0   
+  0034bb4c: sll $zero, $zero, 0       

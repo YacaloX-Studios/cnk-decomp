@@ -60,17 +60,34 @@ def render(ins):
     if ins.kind == "branch":
         return "%-7s$%s, $%s, %+d" % (ins.name, r.get(ins.rs, ins.rs),
                                       r.get(ins.rt, ins.rt), (ins.imm << 2))
+    if ins.kind in ("shift", "arith") and ins.name in ("sll", "srl", "sra"):
+        return "%s $%s, $%s, %d" % (ins.name, r.get(ins.rd, ins.rd),
+                                    r.get(ins.rt, ins.rt), ins.imm)
+    if ins.kind in ("shift", "arith") and ins.name in ("sllv", "srlv", "srav"):
+        return "%s $%s, $%s, $%s" % (ins.name, r.get(ins.rd, ins.rd),
+                                     r.get(ins.rt, ins.rt),
+                                     r.get(ins.rs, ins.rs))
+    if ins.kind == "arith" and ins.name in ("add", "addu", "sub", "subu",
+                                            "and", "or", "xor", "nor",
+                                            "slt", "sltu", "dadd", "daddu",
+                                            "dsub", "dsubu"):
+        return "%s $%s, $%s, $%s" % (ins.name, r.get(ins.rd, ins.rd),
+                                     r.get(ins.rs, ins.rs),
+                                     r.get(ins.rt, ins.rt))
     if ins.kind == "arith":
         return "%-7s$%s, $%s, %+d" % (ins.name, r.get(ins.rt, ins.rt),
                                       r.get(ins.rs, ins.rs), ins.imm)
     if ins.kind in ("fmove", "float", "cop2", "simd"):
         return "%-7s$%s,$%s,$%s" % (ins.name, r.get(ins.rd, ins.rd),
                                     r.get(ins.rs, ins.rs), r.get(ins.rt, ins.rt))
-    if ins.kind in ("shift",):
-        return "%s $%s,$%s,%d" % (ins.name, r.get(ins.rt, ins.rt),
-                                  r.get(ins.rs, ins.rs), ins.imm)
-    return "%-7s $%s,$%s,$%s" % (ins.name, r.get(ins.rs, ins.rs),
-                                 r.get(ins.rt, ins.rt), r.get(ins.rd, ins.rd))
+    if ins.kind == "move":
+        return "%-7s$%s, $%s, $%s" % (ins.name, r.get(ins.rd, ins.rd),
+                                      r.get(ins.rs, ins.rs),
+                                      r.get(ins.rt, ins.rt))
+    if ins.kind == "syscall":
+        return "%-7s" % ins.name
+    return "%-8s$%s,$%s,$%s" % (ins.name or "?", r.get(ins.rs, ins.rs),
+                                r.get(ins.rt, ins.rt), r.get(ins.rd, ins.rd))
 
 
 def main():
@@ -167,10 +184,13 @@ def main():
                     ins.rt in (24, 25):
                 vpending = ins.rt          # lw tX, 0(...) -> possible vtable
             if ins.kind == "branch":
-                tgt = (cur + 4 + ((ins.imm & 0xffff) << 2))
+                bimm = ins.imm & 0xffff
+                if bimm >= 0x8000:
+                    bimm -= 0x10000
+                tgt = (cur + 4 + (bimm << 2)) & 0xffffffff
                 if tgt < cur:
                     loops += 1
-                note = "   ; br -> 0x%08x" % (tgt & 0xffffffff)
+                note = "   ; br -> 0x%08x" % tgt
             if not note and ins.kind not in ("jr",):
                 pass
             lines.append("  %08x: %-24s%s" % (cur, render(ins)[:24], note))

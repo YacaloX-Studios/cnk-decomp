@@ -136,7 +136,7 @@
   0019a76c: sw     $zero, +456($a0)   
   0019a770: jr     $ra                
   0019a774: addiu  $sp, $sp, +96      
-  0019a778: sll    $zero, $zero, +0   
-  0019a77c: sll    $zero, $zero, +0   
+  0019a778: sll $zero, $zero, 0       
+  0019a77c: sll $zero, $zero, 0       
 
 ; globals: 0x006a0000(x4), 0x461c0000(x1), 0x006f53e0(x1), 0x006f0000(x1)

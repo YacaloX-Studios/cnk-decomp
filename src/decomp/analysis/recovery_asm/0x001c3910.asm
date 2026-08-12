@@ -48,11 +48,11 @@
   001c39bc: swc1   $zero, +48($a0)    
   001c39c0: lw     $v1, +0($v1)       
   001c39c4: sw     $v1, +0($v0)          ; GLOBAL 0x006d0000
-  001c39c8: dsubu  $zero, $a0, +0     
+  001c39c8: dsubu $v0, $a0, $zero     
   001c39cc: jr     $ra                
   001c39d0: addiu  $sp, $sp, +32      
-  001c39d4: sll    $zero, $zero, +0   
-  001c39d8: sll    $zero, $zero, +0   
-  001c39dc: sll    $zero, $zero, +0   
+  001c39d4: sll $zero, $zero, 0       
+  001c39d8: sll $zero, $zero, 0       
+  001c39dc: sll $zero, $zero, 0       
 
 ; globals: 0x006d0000(x4)

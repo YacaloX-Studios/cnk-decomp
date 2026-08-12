@@ -23,8 +23,8 @@
   00157488: sw     $v1, +40($a1)      
   0015748c: jr     $ra                
   00157490: addiu  $sp, $sp, +16      
-  00157494: sll    $zero, $zero, +0   
-  00157498: sll    $zero, $zero, +0   
-  0015749c: sll    $zero, $zero, +0   
+  00157494: sll $zero, $zero, 0       
+  00157498: sll $zero, $zero, 0       
+  0015749c: sll $zero, $zero, 0       
 
 ; globals: 0x400000ac(x1)

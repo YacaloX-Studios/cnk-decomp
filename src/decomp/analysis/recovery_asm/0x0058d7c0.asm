@@ -21,7 +21,7 @@
   0058d800: f10.0  $at,$s0,$zero      
   0058d804: jr     $ra                
   0058d808: swc1   $zero, +8($a0)     
-  0058d80c: sll    $zero, $zero, +0   
+  0058d80c: sll $zero, $zero, 0       
   0058d810: lwc1   $a1, +0($a1)       
   0058d814: lwc1   $v0, +0($a2)       
   0058d818: lwc1   $a0, +4($a1)       
@@ -100,11 +100,11 @@
   0058d93c: swc1   $v0, +12($sp)      
   0058d940: andi   $v1, $zero, +1     
   0058d944: lw     $a2, +15($sp)      
-  0058d948: sll    $v1, $zero, +7     
+  0058d948: sll $a1, $v1, 7           
   0058d94c: addiu  $v1, $zero, -129   
   0058d950: lwc1   $zero, -32712($gp) 
-  0058d954: and    $v1, $a2, +0       
-  0058d958: or     $a1, $v1, +0       
+  0058d954: and $v1, $a2, $v1         
+  0058d958: or $v1, $v1, $a1          
   0058d95c: sw     $v1, +15($sp)      
   0058d960: lwc1   $at, +12($sp)      
   0058d964: f10.34 $at,$s0,$zero      
@@ -124,5 +124,5 @@
   0058d99c: swc1   $zero, +8($a0)     
   0058d9a0: jr     $ra                
   0058d9a4: addiu  $sp, $sp, +16      
-  0058d9a8: sll    $zero, $zero, +0   
-  0058d9ac: sll    $zero, $zero, +0   
+  0058d9a8: sll $zero, $zero, 0       
+  0058d9ac: sll $zero, $zero, 0       

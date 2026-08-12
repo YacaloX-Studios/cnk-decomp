@@ -5,7 +5,7 @@
   0016b030: addiu  $sp, $sp, -144     
   0016b034: lw     $v1, +521($a0)     
   0016b038: beq    $v1, $zero, +364      ; br -> 0x0016b1a8
-  0016b03c: sll    $zero, $zero, +0   
+  0016b03c: sll $zero, $zero, 0       
   0016b040: lwc1   $v1, +16($a0)      
   0016b044: lui   $a1, 0x3f800000     
   0016b048: lwc1   $zero, +400($a0)   

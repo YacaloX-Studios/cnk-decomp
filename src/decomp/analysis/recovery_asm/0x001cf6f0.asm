@@ -22,7 +22,7 @@
   001cf734: lwc1   $at, +20($a0)      
   001cf738: lwc1   $zero, +24($a0)    
   001cf73c: fmove  $zero,$a0,$t0      
-  001cf740: sll    $zero, $zero, +0   
+  001cf740: sll $zero, $zero, 0       
   001cf744: swc1   $v0, +0($sp)       
   001cf748: swc1   $at, +0($t2)       
   001cf74c: swc1   $zero, +0($t3)     
@@ -105,7 +105,7 @@
   001cf880: cop2   $at,$fp,$v0        
   001cf884: op3e    $v1,$at,$zero     
   001cf888: f10.2  $a0,$s0,$a0        
-  001cf88c: sll    $zero, $zero, +0   
+  001cf88c: sll $zero, $zero, 0       
   001cf890: f10.3  $v1,$s0,$zero      
   001cf894: fmove  $zero,$zero,$a0    
   001cf898: op36    $v1,$at,$zero     

@@ -7,16 +7,16 @@
   0028b3f8: addiu  $v1, $a1, +1       
   0028b3fc: lw     $v0, +8($v0)       
   0028b400: addiu  $v0, $v0, -2       
-  0028b404: dadd   $v0, $v1, +0       
-  0028b408: movz    $v0,$at,$v1       
+  0028b404: dadd $at, $v1, $v0        
+  0028b408: movz   $v1, $v0, $at      
   0028b40c: addiu  $a1, $a1, -1       
   0028b410: blez   $a1, $zero, +12       ; br -> 0x0028b420
-  0028b414: sll    $zero, $zero, +0   
+  0028b414: sll $zero, $zero, 0       
   0028b418: beq    $zero, $zero, +12     ; br -> 0x0028b428
   0028b41c: lui   $a3, 0x7f7f0000     
-  0028b420: dsubu  $zero, $zero, +0   
+  0028b420: dsubu $a1, $zero, $zero   
   0028b424: lui   $a3, 0x7f7f0000     
-  0028b428: dadd   $a1, $v1, +0       
+  0028b428: dadd $at, $v1, $a1        
   0028b42c: ori    $a3, $a3, -1       
   0028b430: fmove  $zero,$a0,$a3      
   0028b434: bne    $at, $zero, +336      ; br -> 0x0028b588
@@ -33,17 +33,17 @@
   0028b460: addiu  $t2, $sp, +20      
   0028b464: addiu  $t1, $sp, +24      
   0028b468: addiu  $t0, $sp, +4       
-  0028b46c: sll    $a1, $zero, +1     
-  0028b470: addu   $a1, $a0, +0       
-  0028b474: sll    $a0, $zero, +3     
+  0028b46c: sll $a0, $a1, 1           
+  0028b470: addu $a0, $a0, $a1        
+  0028b474: sll $t8, $a0, 3           
   0028b478: lui   $a0, 0x3f800000     
   0028b47c: fmove  $zero,$a0,$a0      
   0028b480: beq    $zero, $zero, +244    ; br -> 0x0028b578
   0028b484: addiu  $a3, $sp, +8       
   0028b488: lw     $a2, +16($t7)      
   0028b48c: addiu  $a0, $t8, +24      
-  0028b490: addu   $a0, $a2, +0       
-  0028b494: addu   $t8, $a2, +0       
+  0028b490: addu $a0, $a2, $a0        
+  0028b494: addu $a2, $a2, $t8        
   0028b498: lwc1   $t7, +4($a2)       
   0028b49c: lwc1   $t4, +0($a2)       
   0028b4a0: lwc1   $t6, +4($a0)          ; GLOBAL 0x3f800004
@@ -68,14 +68,14 @@
   0028b4ec: f10.18 $a1,$s0,$a0        
   0028b4f0: f10.1c $a3,$s0,$a3        
   0028b4f4: f10.3  $a2,$s0,$a0        
-  0028b4f8: sll    $zero, $zero, +0   
-  0028b4fc: sll    $zero, $zero, +0   
+  0028b4f8: sll $zero, $zero, 0       
+  0028b4fc: sll $zero, $zero, 0       
   0028b500: f10.36 $a2,$s0,$t1        
   0028b504: f8.23  $zero,$t0,$at      
   0028b508: f10.1  $t4,$s0,$zero      
   0028b50c: f10.34 $a2,$s0,$t0        
   0028b510: f8.2b  $zero,$t0,$zero    
-  0028b514: sll    $zero, $zero, +0   
+  0028b514: sll $zero, $zero, 0       
   0028b518: f10.2  $a3,$s0,$a2        
   0028b51c: f10.0  $s1,$s0,$a0        
   0028b520: f10.1  $a0,$s0,$v0        
@@ -94,18 +94,18 @@
   0028b554: f10.1c $a3,$s0,$a3        
   0028b558: f10.34 $a0,$s0,$v1        
   0028b55c: f8.4   $zero,$t0,$zero    
-  0028b560: sll    $zero, $zero, +0   
+  0028b560: sll $zero, $zero, 0       
   0028b564: f10.6  $a0,$s0,$zero      
-  0028b568: dsubu  $zero, $a1, +0     
-  0028b56c: sll    $zero, $zero, +0   
+  0028b568: dsubu $v0, $a1, $zero     
+  0028b56c: sll $zero, $zero, 0       
   0028b570: addiu  $t8, $t8, +24      
   0028b574: addiu  $a1, $a1, +1       
-  0028b578: dadd   $a1, $v1, +0       
-  0028b57c: beq    $at, $zero, -248      ; br -> 0x002cb488
-  0028b580: sll    $zero, $zero, +0   
-  0028b584: sll    $zero, $zero, +0   
+  0028b578: dadd $at, $v1, $a1        
+  0028b57c: beq    $at, $zero, -248      ; br -> 0x0028b488
+  0028b580: sll $zero, $zero, 0       
+  0028b584: sll $zero, $zero, 0       
   0028b588: beq    $zero, $zero, +100    ; br -> 0x0028b5f0
-  0028b58c: sll    $zero, $zero, +0   
+  0028b58c: sll $zero, $zero, 0       
   0028b590: f10.1  $t4,$s0,$zero      
   0028b594: f10.2  $a0,$s0,$a0        
   0028b598: f10.1  $t7,$s0,$at        
@@ -115,9 +115,9 @@
   0028b5a8: f10.18 $a1,$s0,$a0        
   0028b5ac: swc1   $a2, +0($t4)       
   0028b5b0: swc1   $a3, +0($t3)       
-  0028b5b4: beq    $zero, $zero, -96     ; br -> 0x002cb558
+  0028b5b4: beq    $zero, $zero, -96     ; br -> 0x0028b558
   0028b5b8: f10.1c $a3,$s0,$a3        
-  0028b5bc: sll    $zero, $zero, +0   
+  0028b5bc: sll $zero, $zero, 0       
   0028b5c0: f10.1  $t3,$s0,$zero      
   0028b5c4: f10.1  $t6,$s0,$at        
   0028b5c8: f10.2  $a0,$s0,$a0        
@@ -127,33 +127,33 @@
   0028b5d8: f10.18 $a1,$s0,$a0        
   0028b5dc: swc1   $a2, +0($t2)       
   0028b5e0: swc1   $a3, +0($t1)       
-  0028b5e4: beq    $zero, $zero, -144    ; br -> 0x002cb558
+  0028b5e4: beq    $zero, $zero, -144    ; br -> 0x0028b558
   0028b5e8: f10.1c $a3,$s0,$a3        
-  0028b5ec: sll    $zero, $zero, +0   
+  0028b5ec: sll $zero, $zero, 0       
   0028b5f0: jr     $ra                
   0028b5f4: addiu  $sp, $sp, +64      
-  0028b5f8: sll    $zero, $zero, +0   
-  0028b5fc: sll    $zero, $zero, +0   
+  0028b5f8: sll $zero, $zero, 0       
+  0028b5fc: sll $zero, $zero, 0       
   0028b600: lw     $t2, +16($a0)         ; GLOBAL 0x3f800010
-  0028b604: sll    $a1, $zero, +1     
-  0028b608: addu   $a1, $v1, +0       
-  0028b60c: sll    $v1, $zero, +3     
+  0028b604: sll $v1, $a1, 1           
+  0028b608: addu $v1, $v1, $a1        
+  0028b60c: sll $t0, $v1, 3           
   0028b610: lw     $t1, +16($t2)      
   0028b614: lw     $v1, +8($t2)       
   0028b618: bne    $a1, $v1, +32         ; br -> 0x0028b63c
-  0028b61c: addu   $t0, $t1, +0       
+  0028b61c: addu $t2, $t1, $t0        
   0028b620: addiu  $a1, $a1, -1       
-  0028b624: dsubu  $zero, $t2, +0     
-  0028b628: sll    $a1, $zero, +1     
-  0028b62c: addu   $a1, $v1, +0       
-  0028b630: sll    $v1, $zero, +3     
+  0028b624: dsubu $t0, $t2, $zero     
+  0028b628: sll $v1, $a1, 1           
+  0028b62c: addu $v1, $v1, $a1        
+  0028b630: sll $v1, $v1, 3           
   0028b634: beq    $zero, $zero, +24     ; br -> 0x0028b650
-  0028b638: addu   $v1, $t1, +0       
+  0028b638: addu $t2, $t1, $v1        
   0028b63c: addiu  $a1, $a1, +1       
-  0028b640: sll    $a1, $zero, +1     
-  0028b644: addu   $a1, $v1, +0       
-  0028b648: sll    $v1, $zero, +3     
-  0028b64c: addu   $v1, $t1, +0       
+  0028b640: sll $v1, $a1, 1           
+  0028b644: addu $v1, $v1, $a1        
+  0028b648: sll $v1, $v1, 3           
+  0028b64c: addu $t0, $t1, $v1        
   0028b650: lwc1   $t6, +4($t2)       
   0028b654: lwc1   $a3, +4($t0)       
   0028b658: lwc1   $t3, +4($a2)       
@@ -178,18 +178,18 @@
   0028b6a4: f10.18 $at,$s0,$zero      
   0028b6a8: f10.1c $t0,$s0,$t0        
   0028b6ac: f10.3  $v0,$s0,$zero      
-  0028b6b0: sll    $zero, $zero, +0   
+  0028b6b0: sll $zero, $zero, 0       
   0028b6b4: fmove  $zero,$a0,$zero    
-  0028b6b8: sll    $zero, $zero, +0   
+  0028b6b8: sll $zero, $zero, 0       
   0028b6bc: f10.36 $s0,$s0,$zero      
   0028b6c0: f8.d   $zero,$t0,$at      
-  0028b6c4: sll    $zero, $zero, +0   
+  0028b6c4: sll $zero, $zero, 0       
   0028b6c8: lui   $v1, 0x3f800000     
   0028b6cc: fmove  $zero,$a0,$v1      
-  0028b6d0: sll    $zero, $zero, +0   
+  0028b6d0: sll $zero, $zero, 0       
   0028b6d4: f10.34 $s0,$s0,$zero      
   0028b6d8: f8.3   $zero,$t0,$zero    
-  0028b6dc: sll    $zero, $zero, +0   
+  0028b6dc: sll $zero, $zero, 0       
   0028b6e0: f10.2  $a0,$s0,$s0        
   0028b6e4: f10.0  $t5,$s0,$zero      
   0028b6e8: f10.2  $a2,$s0,$s0        
@@ -204,7 +204,7 @@
   0028b70c: beq    $a0, $v1, +184        ; br -> 0x0028b7c8
   0028b710: f10.1  $t5,$s0,$t2        
   0028b714: beq    $a0, $zero, +12       ; br -> 0x0028b724
-  0028b718: sll    $zero, $zero, +0   
+  0028b718: sll $zero, $zero, 0       
   0028b71c: beq    $zero, $zero, +436    ; br -> 0x0028b8d4
   0028b720: sw     $zero, +0($a3)        ; GLOBAL 0x7f7f0000
   0028b724: lwc1   $zero, +12($t0)    
@@ -215,7 +215,7 @@
   0028b738: lwc1   $v1, +16($t0)      
   0028b73c: lwc1   $a0, +16($t2)      
   0028b740: fmove  $zero,$a0,$v1      
-  0028b744: sll    $zero, $zero, +0   
+  0028b744: sll $zero, $zero, 0       
   0028b748: f10.1  $zero,$s0,$v0      
   0028b74c: f10.2  $zero,$s0,$s0      
   0028b750: f10.0  $zero,$s0,$v0      
@@ -319,12 +319,12 @@
   0028b8d8: sw     $zero, +4($a3)        ; GLOBAL 0x7f7f0004
   0028b8dc: sw     $v1, +8($a3)          ; GLOBAL 0x7f7f0008
   0028b8e0: beq    $zero, $zero, +20     ; br -> 0x0028b8f8
-  0028b8e4: sll    $zero, $zero, +0   
+  0028b8e4: sll $zero, $zero, 0       
   0028b8e8: f10.6  $a1,$s0,$zero      
   0028b8ec: f10.6  $a3,$s0,$zero      
-  0028b8f0: beq    $zero, $zero, -508    ; br -> 0x002cb6f8
+  0028b8f0: beq    $zero, $zero, -508    ; br -> 0x0028b6f8
   0028b8f4: f10.6  $t1,$s0,$zero      
   0028b8f8: jr     $ra                
-  0028b8fc: sll    $zero, $zero, +0   
+  0028b8fc: sll $zero, $zero, 0       
 
 ; globals: 0x7f7f0000(x17), 0x7f7f0004(x15), 0x7f7f0008(x15), 0x00648c78(x3), 0x3f800008(x2), 0x3f800004(x1), 0x3f800000(x1), 0x3f800010(x1)

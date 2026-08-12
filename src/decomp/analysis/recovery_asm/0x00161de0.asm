@@ -13,7 +13,7 @@
   00161e00: lui   $v1, 0x40000000     
   00161e04: sw     $zero, +192($sp)   
   00161e08: fmove  $zero,$a0,$v1      
-  00161e0c: sll    $zero, $zero, +0   
+  00161e0c: sll $zero, $zero, 0       
   00161e10: f10.2  $v1,$s0,$at        
   00161e14: f10.2  $zero,$s0,$at      
   00161e18: f10.1  $zero,$s0,$v0      
@@ -91,9 +91,9 @@
   00161f38: sw     $v1, +0($a0)       
   00161f3c: jr     $ra                
   00161f40: addiu  $sp, $sp, +208     
-  00161f44: sll    $zero, $zero, +0   
-  00161f48: sll    $zero, $zero, +0   
-  00161f4c: sll    $zero, $zero, +0   
+  00161f44: sll $zero, $zero, 0       
+  00161f48: sll $zero, $zero, 0       
+  00161f4c: sll $zero, $zero, 0       
   00161f50: lwc1   $zero, +0($a1)     
   00161f54: sw     $zero, +24($a0)    
   00161f58: sw     $zero, +20($a0)    
@@ -106,9 +106,9 @@
   00161f74: lw     $v1, +0($v1)          ; GLOBAL 0x40000000
   00161f78: sw     $v1, +0($v0)          ; GLOBAL 0x3f800000
   00161f7c: jr     $ra                
-  00161f80: dsubu  $zero, $a0, +0     
-  00161f84: sll    $zero, $zero, +0   
-  00161f88: sll    $zero, $zero, +0   
-  00161f8c: sll    $zero, $zero, +0   
+  00161f80: dsubu $v0, $a0, $zero     
+  00161f84: sll $zero, $zero, 0       
+  00161f88: sll $zero, $zero, 0       
+  00161f8c: sll $zero, $zero, 0       
 
 ; globals: 0x40000000(x8), 0x3f800000(x1)

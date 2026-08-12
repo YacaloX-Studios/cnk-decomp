@@ -7,8 +7,8 @@
   00114cf8: lui   $v1, 0x006f0000     
   00114cfc: jr     $ra                
   00114d00: sw     $a1, +13784($v1)      ; GLOBAL 0x006f35d8
-  00114d04: sll    $zero, $zero, +0   
-  00114d08: sll    $zero, $zero, +0   
-  00114d0c: sll    $zero, $zero, +0   
+  00114d04: sll $zero, $zero, 0       
+  00114d08: sll $zero, $zero, 0       
+  00114d0c: sll $zero, $zero, 0       
 
 ; globals: 0x006f35d0(x1), 0x006f35d8(x1)

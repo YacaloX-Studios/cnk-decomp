@@ -24,17 +24,17 @@
   0019f83c: f10.1  $zero,$s0,$at      
   0019f840: f10.34 $v1,$s0,$zero      
   0019f844: f8.3   $zero,$t0,$zero    
-  0019f848: sll    $zero, $zero, +0   
+  0019f848: sll $zero, $zero, 0       
   0019f84c: beq    $zero, $zero, +8      ; br -> 0x0019f858
-  0019f850: sll    $zero, $zero, +0   
+  0019f850: sll $zero, $zero, 0       
   0019f854: f10.6  $zero,$s0,$zero    
   0019f858: fmove  $zero,$a0,$zero    
-  0019f85c: sll    $zero, $zero, +0   
+  0019f85c: sll $zero, $zero, 0       
   0019f860: f10.36 $v1,$s0,$zero      
   0019f864: f8.19  $zero,$t0,$at      
-  0019f868: sll    $zero, $zero, +0   
-  0019f86c: sll    $zero, $zero, +0   
-  0019f870: sll    $zero, $zero, +0   
+  0019f868: sll $zero, $zero, 0       
+  0019f86c: sll $zero, $zero, 0       
+  0019f870: sll $zero, $zero, 0       
   0019f874: f10.3  $v1,$s0,$v0        
   0019f878: addiu  $a1, $sp, +0       
   0019f87c: lw     $v1, +0($a2)       
@@ -59,8 +59,8 @@
   0019f8c8: op3e    $v1,$at,$zero     
   0019f8cc: jr     $ra                
   0019f8d0: addiu  $sp, $sp, +16      
-  0019f8d4: sll    $zero, $zero, +0   
-  0019f8d8: sll    $zero, $zero, +0   
-  0019f8dc: sll    $zero, $zero, +0   
+  0019f8d4: sll $zero, $zero, 0       
+  0019f8d8: sll $zero, $zero, 0       
+  0019f8dc: sll $zero, $zero, 0       
 
 ; globals: 0x006f5708(x2), 0x006f0000(x2), 0x006f0094(x2), 0x006f0174(x1), 0x006f0170(x1), 0x006f01b0(x1)

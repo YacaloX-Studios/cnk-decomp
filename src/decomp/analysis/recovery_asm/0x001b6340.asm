@@ -7,11 +7,11 @@
   001b6348: beq    $a3, $v0, +416        ; br -> 0x001b64ec
   001b634c: addiu  $v0, $zero, +1     
   001b6350: beq    $a3, $v0, +52         ; br -> 0x001b6388
-  001b6354: sll    $zero, $zero, +0   
+  001b6354: sll $zero, $zero, 0       
   001b6358: beq    $a3, $zero, +20       ; br -> 0x001b6370
   001b635c: addiu  $v0, $zero, +3     
   001b6360: beq    $a3, $v0, +12         ; br -> 0x001b6370
-  001b6364: sll    $zero, $zero, +0   
+  001b6364: sll $zero, $zero, 0       
   001b6368: beq    $zero, $zero, +396    ; br -> 0x001b64f8
   001b636c: addiu  $v0, $zero, +1     
   001b6370: op36    $a1,$at,$zero     
@@ -19,7 +19,7 @@
   001b6378: cop2   $at,$fp,$v0        
   001b637c: op3e    $a1,$at,$zero     
   001b6380: beq    $zero, $zero, +368    ; br -> 0x001b64f4
-  001b6384: sll    $zero, $zero, +0   
+  001b6384: sll $zero, $zero, 0       
   001b6388: lw     $t1, +4($a0)       
   001b638c: addiu  $t0, $sp, +40      
   001b6390: addiu  $a3, $sp, +36      
@@ -108,7 +108,7 @@
   001b64dc: cop2   $at,$fp,$v0        
   001b64e0: op3e    $a1,$at,$zero     
   001b64e4: beq    $zero, $zero, +12     ; br -> 0x001b64f4
-  001b64e8: sll    $zero, $zero, +0   
+  001b64e8: sll $zero, $zero, 0       
   001b64ec: lw     $v0, +0($a2)       
   001b64f0: sw     $v0, +0($a1)       
   001b64f4: addiu  $v0, $zero, +1     

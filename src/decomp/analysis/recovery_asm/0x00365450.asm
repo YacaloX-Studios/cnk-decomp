@@ -9,8 +9,8 @@
   00365460: op3e    $v0,$at,$zero     
   00365464: lw     $v0, +0($v0)       
   00365468: sw     $v0, +0($a0)       
-  0036546c: dsubu  $zero, $a0, +0     
+  0036546c: dsubu $v0, $a0, $zero     
   00365470: jr     $ra                
   00365474: addiu  $sp, $sp, +16      
-  00365478: sll    $zero, $zero, +0   
-  0036547c: sll    $zero, $zero, +0   
+  00365478: sll $zero, $zero, 0       
+  0036547c: sll $zero, $zero, 0       

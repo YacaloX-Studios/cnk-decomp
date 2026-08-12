@@ -66,7 +66,7 @@
   001964c4: lwc1   $at, +1068($a0)    
   001964c8: f10.34 $v1,$s0,$zero      
   001964cc: f8.12  $zero,$t0,$zero    
-  001964d0: sll    $zero, $zero, +0   
+  001964d0: sll $zero, $zero, 0       
   001964d4: lw     $a2, +148($v1)        ; GLOBAL 0x3f800094
   001964d8: f10.0  $v1,$s0,$at        
   001964dc: f10.7  $zero,$s0,$zero    
@@ -88,7 +88,7 @@
   0019651c: lwc1   $zero, +84($a0)    
   00196520: f10.36 $at,$s0,$zero      
   00196524: f8.16  $zero,$t0,$at      
-  00196528: sll    $zero, $zero, +0   
+  00196528: sll $zero, $zero, 0       
   0019652c: lw     $a2, +1064($a0)    
   00196530: addiu  $a3, $sp, +24      
   00196534: fmove  $zero,$a0,$zero    
@@ -136,7 +136,7 @@
   001965dc: fmove  $zero,$a0,$zero    
   001965e0: f10.32 $v1,$s0,$zero      
   001965e4: f8.b   $zero,$t0,$at      
-  001965e8: sll    $zero, $zero, +0   
+  001965e8: sll $zero, $zero, 0       
   001965ec: f10.4  $zero,$s0,$v1      
   001965f0: lwc1   $v0, +0($a1)       
   001965f4: lwc1   $at, +4($a1)       
@@ -150,10 +150,10 @@
   00196614: lui   $a1, 0x38d10000     
   00196618: ori    $a1, $a1, -18665   
   0019661c: fmove  $zero,$a0,$a1      
-  00196620: sll    $zero, $zero, +0   
+  00196620: sll $zero, $zero, 0       
   00196624: f10.36 $v1,$s0,$zero      
   00196628: f8.15  $zero,$t0,$at      
-  0019662c: sll    $zero, $zero, +0   
+  0019662c: sll $zero, $zero, 0       
   00196630: lw     $a1, +148($v1)        ; GLOBAL 0x3f800094
   00196634: lwc1   $at, +84($a0)      
   00196638: lwc1   $zero, +1068($a0)  
@@ -176,7 +176,7 @@
   0019667c: op3e    $v1,$at,$zero     
   00196680: jr     $ra                
   00196684: addiu  $sp, $sp, +48      
-  00196688: sll    $zero, $zero, +0   
-  0019668c: sll    $zero, $zero, +0   
+  00196688: sll $zero, $zero, 0       
+  0019668c: sll $zero, $zero, 0       
 
 ; globals: 0x3f800094(x6), 0x3f800000(x1), 0x38d101b0(x1)

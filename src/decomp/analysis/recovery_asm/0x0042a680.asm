@@ -5,7 +5,7 @@
   0042a680: addiu  $sp, $sp, -144     
   0042a684: sw     $s0, +112($sp)     
   0042a688: sw     $ra, +128($sp)     
-  0042a68c: dsubu  $zero, $a0, +0     
+  0042a68c: dsubu $s0, $a0, $zero     
   0042a690: lw     $v0, +12($s0)      
   0042a694: andi   $v0, $v0, +2       
   0042a698: beq    $v0, $zero, +24       ; br -> 0x0042a6b4
@@ -20,7 +20,7 @@
   0042a6bc: lw     $v0, +12($s0)      
   0042a6c0: lw     $a0, +84($s0)      
   0042a6c4: jal   0xf0429760             ; -> FUN_00429760
-  0042a6c8: dsubu  $zero, $sp, +0     
+  0042a6c8: dsubu $a2, $sp, $zero     
   0042a6cc: regimm $v0, $zero, +56       ; br -> 0x0042a708
   0042a6d0: lw     $v0, +4($sp)       
   0042a6d4: ori    $v1, $zero, -32768 
@@ -51,4 +51,4 @@
   0042a738: lw     $s0, +112($sp)     
   0042a73c: jr     $ra                
   0042a740: addiu  $sp, $sp, +144     
-  0042a744: sll    $zero, $zero, +0   
+  0042a744: sll $zero, $zero, 0       

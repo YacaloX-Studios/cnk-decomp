@@ -16,9 +16,9 @@
   0035bc6c: op3e    $v0,$s4,$zero     
   0035bc70: lw     $v0, +0($v0)       
   0035bc74: sw     $v0, +0($a0)       
-  0035bc78: dsubu  $zero, $a0, +0     
+  0035bc78: dsubu $v0, $a0, $zero     
   0035bc7c: jr     $ra                
   0035bc80: addiu  $sp, $sp, +16      
-  0035bc84: sll    $zero, $zero, +0   
-  0035bc88: sll    $zero, $zero, +0   
-  0035bc8c: sll    $zero, $zero, +0   
+  0035bc84: sll $zero, $zero, 0       
+  0035bc88: sll $zero, $zero, 0       
+  0035bc8c: sll $zero, $zero, 0       

@@ -6,10 +6,10 @@
   0042acd4: addiu  $v0, $zero, -1     
   0042acd8: sw     $s1, +16($sp)      
   0042acdc: sw     $s0, +0($sp)       
-  0042ace0: dsubu  $zero, $a0, +0     
+  0042ace0: dsubu $s1, $a0, $zero     
   0042ace4: sw     $ra, +32($sp)      
   0042ace8: beq    $s1, $v0, +356        ; br -> 0x0042ae50
-  0042acec: dsubu  $zero, $a1, +0     
+  0042acec: dsubu $s0, $a1, $zero     
   0042acf0: lw     $v0, +84($s0)      
   0042acf4: bnel   $v0, $zero, +24       ; br -> 0x0042ad10
   0042acf8: lw     $a0, +84($s0)      
@@ -17,12 +17,12 @@
   0042ad00: lw     $v1, +30548($v0)      ; GLOBAL 0x00657754
   0042ad04: sw     $v1, +84($s0)      
   0042ad08: lw     $a0, +84($s0)      
-  0042ad0c: sll    $zero, $zero, +0   
+  0042ad0c: sll $zero, $zero, 0       
   0042ad10: lw     $v0, +56($a0)      
   0042ad14: bnel   $v0, $zero, +16       ; br -> 0x0042ad28
   0042ad18: lw     $v0, +12($s0)      
   0042ad1c: jal   0xf0429c60             ; -> FUN_00429c60
-  0042ad20: sll    $zero, $zero, +0   
+  0042ad20: sll $zero, $zero, 0       
   0042ad24: lw     $v0, +12($s0)      
   0042ad28: andi   $v1, $v0, -33      
   0042ad2c: andi   $v0, $v1, +4       
@@ -34,7 +34,7 @@
   0042ad44: beql   $v0, $zero, +44       ; br -> 0x0042ad74
   0042ad48: lw     $v0, +12($s0)      
   0042ad4c: jal   0xf04299a0             ; -> FUN_004299a0
-  0042ad50: dsubu  $zero, $s0, +0     
+  0042ad50: dsubu $a0, $s0, $zero     
   0042ad54: bne    $v0, $zero, +248      ; br -> 0x0042ae50
   0042ad58: addiu  $v0, $zero, -1     
   0042ad5c: lw     $v0, +12($s0)      
@@ -50,7 +50,7 @@
   0042ad84: andi   $s1, $s1, +255     
   0042ad88: lw     $v0, +4($s0)       
   0042ad8c: lw     $v1, +52($s0)      
-  0042ad90: dadd   $v1, $v0, +0       
+  0042ad90: dadd $v0, $v0, $v1        
   0042ad94: bnel   $v0, $zero, +32       ; br -> 0x0042adb8
   0042ad98: lw     $a0, +0($s0)       
   0042ad9c: lui   $a1, 0x006a0000     
@@ -60,7 +60,7 @@
   0042adac: addiu  $a2, $zero, +68    
   0042adb0: beq    $zero, $zero, +156    ; br -> 0x0042ae50
   0042adb4: addiu  $v0, $zero, -1     
-  0042adb8: dsubu  $zero, $s1, +0     
+  0042adb8: dsubu $v0, $s1, $zero     
   0042adbc: addiu  $v1, $a0, -1       
   0042adc0: sw     $v1, +0($s0)       
   0042adc4: sw     $s1, -1($a0)       
@@ -72,7 +72,7 @@
   0042addc: beql   $v0, $zero, +60       ; br -> 0x0042ae1c
   0042ade0: lw     $a0, +4($s0)       
   0042ade4: lw     $a0, +0($s0)       
-  0042ade8: daddu  $a0, $v0, +0       
+  0042ade8: daddu $v0, $v0, $a0       
   0042adec: beql   $v0, $zero, +44       ; br -> 0x0042ae1c
   0042adf0: lw     $a0, +4($s0)       
   0042adf4: lw     $v0, -1($a0)       
@@ -82,7 +82,7 @@
   0042ae04: addiu  $v0, $a0, -1       
   0042ae08: sw     $v0, +0($s0)       
   0042ae0c: addiu  $v1, $v1, +1       
-  0042ae10: dsubu  $zero, $s1, +0     
+  0042ae10: dsubu $v0, $s1, $zero     
   0042ae14: beq    $zero, $zero, +56     ; br -> 0x0042ae50
   0042ae18: sw     $v1, +4($s0)       
   0042ae1c: addiu  $v0, $zero, +1     
@@ -92,7 +92,7 @@
   0042ae2c: addiu  $a2, $s0, +66      
   0042ae30: sw     $v0, +4($s0)       
   0042ae34: sw     $a0, +60($s0)      
-  0042ae38: dsubu  $zero, $s1, +0     
+  0042ae38: dsubu $v0, $s1, $zero     
   0042ae3c: sw     $v1, +56($s0)      
   0042ae40: sw     $a3, +48($s0)      
   0042ae44: sw     $a1, +52($s0)      
@@ -103,6 +103,6 @@
   0042ae58: lw     $s0, +0($sp)       
   0042ae5c: jr     $ra                
   0042ae60: addiu  $sp, $sp, +48      
-  0042ae64: sll    $zero, $zero, +0   
+  0042ae64: sll $zero, $zero, 0       
 
 ; globals: 0x00657754(x1)

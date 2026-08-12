@@ -16,9 +16,9 @@
   001cadbc: swc1   $zero, +12($a0)    
   001cadc0: jr     $ra                
   001cadc4: addiu  $sp, $sp, +16      
-  001cadc8: sll    $zero, $zero, +0   
-  001cadcc: sll    $zero, $zero, +0   
+  001cadc8: sll $zero, $zero, 0       
+  001cadcc: sll $zero, $zero, 0       
   001cadd0: jr     $ra                
-  001cadd4: sll    $zero, $zero, +0   
-  001cadd8: sll    $zero, $zero, +0   
-  001caddc: sll    $zero, $zero, +0   
+  001cadd4: sll $zero, $zero, 0       
+  001cadd8: sll $zero, $zero, 0       
+  001caddc: sll $zero, $zero, 0       

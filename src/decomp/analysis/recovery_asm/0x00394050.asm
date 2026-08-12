@@ -14,7 +14,7 @@
   00394074: op3e    $v0,$s4,$zero     
   00394078: lw     $v0, +0($v0)       
   0039407c: sw     $v0, +0($a0)       
-  00394080: dsubu  $zero, $a0, +0     
+  00394080: dsubu $v0, $a0, $zero     
   00394084: jr     $ra                
   00394088: addiu  $sp, $sp, +16      
-  0039408c: sll    $zero, $zero, +0   
+  0039408c: sll $zero, $zero, 0       

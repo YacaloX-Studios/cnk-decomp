@@ -28,5 +28,5 @@
   0033a0ac: sw     $a0, +0($v1)       
   0033a0b0: jr     $ra                
   0033a0b4: addiu  $sp, $sp, +64      
-  0033a0b8: sll    $zero, $zero, +0   
-  0033a0bc: sll    $zero, $zero, +0   
+  0033a0b8: sll $zero, $zero, 0       
+  0033a0bc: sll $zero, $zero, 0       

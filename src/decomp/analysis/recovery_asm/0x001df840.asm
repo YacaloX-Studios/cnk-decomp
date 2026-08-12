@@ -3,7 +3,7 @@
 ; 16 words
 
   001df840: addiu  $sp, $sp, -16      
-  001df844: dsubu  $zero, $a0, +0     
+  001df844: dsubu $v0, $a0, $zero     
   001df848: lwc1   $v1, +0($a1)       
   001df84c: lwc1   $v0, +4($a1)       
   001df850: lwc1   $at, +8($a1)       
@@ -17,4 +17,4 @@
   001df870: swc1   $zero, +12($a0)    
   001df874: jr     $ra                
   001df878: addiu  $sp, $sp, +16      
-  001df87c: sll    $zero, $zero, +0   
+  001df87c: sll $zero, $zero, 0       

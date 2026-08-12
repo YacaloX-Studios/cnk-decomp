@@ -16,5 +16,5 @@
   0015ba5c: swc1   $zero, +12($a0)    
   0015ba60: jr     $ra                
   0015ba64: addiu  $sp, $sp, +16      
-  0015ba68: sll    $zero, $zero, +0   
-  0015ba6c: sll    $zero, $zero, +0   
+  0015ba68: sll $zero, $zero, 0       
+  0015ba6c: sll $zero, $zero, 0       

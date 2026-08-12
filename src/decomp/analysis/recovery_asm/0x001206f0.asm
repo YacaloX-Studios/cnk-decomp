@@ -12,5 +12,5 @@
   0012070c: sw     $v1, +0($a0)       
   00120710: jr     $ra                
   00120714: addiu  $sp, $sp, +16      
-  00120718: sll    $zero, $zero, +0   
-  0012071c: sll    $zero, $zero, +0   
+  00120718: sll $zero, $zero, 0       
+  0012071c: sll $zero, $zero, 0       

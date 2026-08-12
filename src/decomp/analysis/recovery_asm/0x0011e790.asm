@@ -25,4 +25,4 @@
   0011e7e0: sw     $zero, +228($a0)   
   0011e7e4: jr     $ra                
   0011e7e8: sw     $a2, +256($a0)     
-  0011e7ec: sll    $zero, $zero, +0   
+  0011e7ec: sll $zero, $zero, 0       

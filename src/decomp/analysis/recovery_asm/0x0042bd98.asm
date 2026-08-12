@@ -5,8 +5,8 @@
   0042bd98: addiu  $sp, $sp, -16      
   0042bd9c: sw     $ra, +0($sp)       
   0042bda0: jal   0xf042f100             ; -> FUN_0042f100
-  0042bda4: dsubu  $zero, $zero, +0   
+  0042bda4: dsubu $a1, $zero, $zero   
   0042bda8: lw     $ra, +0($sp)       
   0042bdac: jr     $ra                
   0042bdb0: addiu  $sp, $sp, +16      
-  0042bdb4: sll    $zero, $zero, +0   
+  0042bdb4: sll $zero, $zero, 0       

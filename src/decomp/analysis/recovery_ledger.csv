@@ -206,7 +206,7 @@ address,name,score,leaf,asm,sheet,body,REV
 0x0019a560,FUN_0019a560,3.44,convert,1,1,1,
 0x00115430,FUN_00115430,3.34,convert,1,1,1,
 0x00195cd0,FUN_00195cd0,2.52,convert,1,1,1,
-0x0053fd80,FUN_0053fd80,2.34,getter,1,1,1,
+0x0053fd80,FUN_0053fd80,2.34,getter,1,1,1,1
 0x0023e070,FUN_0023e070,2.22,convert,1,1,1,
 0x00337690,FUN_00337690,2.14,thunk,1,1,1,
 0x0018ddc0,FUN_0018ddc0,1.68,getter,1,1,1,

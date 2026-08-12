@@ -2,10 +2,10 @@
 ; evidence: args=a0=ptr;a1=ptr;a2=int;a3=int ret=void calls=
 ; 48 words
 
-  001071e0: or     $a1, $a0, +0       
+  001071e0: or $v1, $a0, $a1          
   001071e4: andi   $v1, $v1, +15      
   001071e8: bne    $v1, $zero, +40       ; br -> 0x00107214
-  001071ec: sll    $zero, $zero, +0   
+  001071ec: sll $zero, $zero, 0       
   001071f0: lw     $a2, +0($a1)       
   001071f4: lw     $a3, +16($a1)      
   001071f8: lw     $t0, +32($a1)      
@@ -48,5 +48,5 @@
   0010728c: lwc1   $zero, +60($a1)    
   00107290: swc1   $zero, +60($a0)    
   00107294: jr     $ra                
-  00107298: sll    $zero, $zero, +0   
-  0010729c: sll    $zero, $zero, +0   
+  00107298: sll $zero, $zero, 0       
+  0010729c: sll $zero, $zero, 0       

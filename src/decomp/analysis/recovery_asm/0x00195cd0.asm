@@ -22,7 +22,7 @@
   00195d14: lwc1   $zero, +204($a0)   
   00195d18: f10.36 $at,$s0,$zero      
   00195d1c: f8.8   $zero,$t0,$zero    
-  00195d20: sll    $zero, $zero, +0   
+  00195d20: sll $zero, $zero, 0       
   00195d24: lwc1   $v0, +0($a3)       
   00195d28: lwc1   $at, +4($a3)       
   00195d2c: lwc1   $zero, +8($a3)     
@@ -57,16 +57,16 @@
   00195da0: swc1   $zero, +0($a1)     
   00195da4: lw     $v1, +1105($a0)    
   00195da8: beq    $v1, $zero, +104      ; br -> 0x00195e14
-  00195dac: sll    $zero, $zero, +0   
+  00195dac: sll $zero, $zero, 0       
   00195db0: lwc1   $at, +1080($a0)    
   00195db4: lwc1   $v0, +728($a0)     
   00195db8: f10.34 $at,$s0,$v0        
   00195dbc: f8.15  $zero,$t0,$at      
-  00195dc0: sll    $zero, $zero, +0   
+  00195dc0: sll $zero, $zero, 0       
   00195dc4: lwc1   $zero, +724($a0)   
   00195dc8: f10.34 $at,$s0,$zero      
   00195dcc: f8.3   $zero,$t0,$at      
-  00195dd0: sll    $zero, $zero, +0   
+  00195dd0: sll $zero, $zero, 0       
   00195dd4: beq    $zero, $zero, +20     ; br -> 0x00195dec
   00195dd8: lwc1   $v0, +732($a0)     
   00195ddc: f10.1  $at,$s0,$v0        
@@ -84,17 +84,17 @@
   00195e0c: f10.2  $at,$s0,$zero      
   00195e10: swc1   $zero, +8($a1)     
   00195e14: jr     $ra                
-  00195e18: sll    $zero, $zero, +0   
-  00195e1c: sll    $zero, $zero, +0   
+  00195e18: sll $zero, $zero, 0       
+  00195e1c: sll $zero, $zero, 0       
   00195e20: lwc1   $at, +1068($a0)    
   00195e24: lwc1   $zero, +740($a0)   
   00195e28: f10.34 $at,$s0,$zero      
   00195e2c: f8.4   $zero,$t0,$at      
-  00195e30: sll    $zero, $zero, +0   
+  00195e30: sll $zero, $zero, 0       
   00195e34: lwc1   $zero, +744($a0)   
   00195e38: f10.36 $at,$s0,$zero      
-  00195e3c: sll    $zero, $zero, +0   
+  00195e3c: sll $zero, $zero, 0       
   00195e40: jr     $ra                
-  00195e44: sll    $zero, $zero, +0   
-  00195e48: sll    $zero, $zero, +0   
-  00195e4c: sll    $zero, $zero, +0   
+  00195e44: sll $zero, $zero, 0       
+  00195e48: sll $zero, $zero, 0       
+  00195e4c: sll $zero, $zero, 0       

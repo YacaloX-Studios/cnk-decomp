@@ -3,6 +3,6 @@
 ; 4 words
 
   004450e0: addiu  $v1, $zero, +86    
-  004450e4: syscall $zero,$zero,$zero 
+  004450e4: syscall                   
   004450e8: jr     $ra                
-  004450ec: sll    $zero, $zero, +0   
+  004450ec: sll $zero, $zero, 0       
