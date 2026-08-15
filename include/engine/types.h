@@ -19,6 +19,7 @@ typedef float           f32;
 /* Unknown_a0_4_8  fields=2  evidence=382  members=40  role=float-pack
  */
 struct Unknown_a0_4_8 {
+    u8 _pad_0x0[0x4];
     f32 f_0x4;   /* also deref'd */
     f32 f_0x8;   /* also deref'd */
 };
@@ -27,6 +28,7 @@ struct Unknown_a0_4_8 {
  */
 struct Unknown_a0_0_1c {
     void * f_0x0;
+    u8 _pad_0x4[0x18];
     u32 f_0x1c;
 };
 
@@ -47,6 +49,7 @@ struct Unknown_a1_0_4 {
 /* Unknown_a0_8_c  fields=2  evidence=77  members=40  role=float-pack
  */
 struct Unknown_a0_8_c {
+    u8 _pad_0x0[0x8];
     f32 f_0x8;   /* also deref'd */
     f32 f_0xc;   /* also deref'd */
 };
@@ -74,6 +77,7 @@ struct Unknown_a1_0_4_8 {
  */
 struct Unknown_a0_0_4c {
     void * f_0x0;
+    u8 _pad_0x4[0x48];
     u32 f_0x4c;
 };
 
@@ -81,6 +85,7 @@ struct Unknown_a0_0_4c {
  */
 struct Unknown_a0_0_8 {
     void * f_0x0;
+    u8 _pad_0x4[0x4];
     void * f_0x8;
 };
 
@@ -88,6 +93,7 @@ struct Unknown_a0_0_8 {
  */
 struct Unknown_a0_0_20 {
     void * f_0x0;
+    u8 _pad_0x4[0x1c];
     void * f_0x20;
 };
 
@@ -104,12 +110,14 @@ struct Unknown_a0_0_4_8 {
  */
 struct Unknown_a1_0_10 {
     f32 f_0x0;
-    f32[4] f_0x10;
+    u8 _pad_0x4[0xc];
+    f32 f_0x10[4];
 };
 
 /* Unknown_a1_c_10  fields=2  evidence=24  members=24  role=layout
  */
 struct Unknown_a1_c_10 {
+    u8 _pad_0x0[0xc];
     u32 f_0xc;
     u32 f_0x10;
 };
@@ -127,7 +135,9 @@ struct Unknown_a1_0_4_8_c {
 /* Unknown_a0_4_c_10  fields=3  evidence=21  members=21  role=object-like
  */
 struct Unknown_a0_4_c_10 {
+    u8 _pad_0x0[0x4];
     void * f_0x4;
+    u8 _pad_0x8[0x4];
     void * f_0xc;
     void * f_0x10;
 };
@@ -135,7 +145,9 @@ struct Unknown_a0_4_c_10 {
 /* Unknown_a0_4_b4  fields=2  evidence=20  members=20  role=object-like
  */
 struct Unknown_a0_4_b4 {
+    u8 _pad_0x0[0x4];
     void * f_0x4;
+    u8 _pad_0x8[0xac];
     u32 f_0xb4;
 };
 
@@ -143,19 +155,23 @@ struct Unknown_a0_4_b4 {
  */
 struct Unknown_a0_0_80 {
     void * f_0x0;
+    u8 _pad_0x4[0x7c];
     u32 f_0x80;
 };
 
 /* Unknown_a0_4_c  fields=2  evidence=18  members=18  role=object-like
  */
 struct Unknown_a0_4_c {
+    u8 _pad_0x0[0x4];
     void * f_0x4;
+    u8 _pad_0x8[0x4];
     void * f_0xc;
 };
 
 /* Unknown_a0_c_10  fields=2  evidence=18  members=18  role=float-pack
  */
 struct Unknown_a0_c_10 {
+    u8 _pad_0x0[0xc];
     f32 f_0xc;   /* also deref'd */
     f32 f_0x10;   /* also deref'd */
 };
@@ -173,6 +189,7 @@ struct Unknown_a2_0_4_8 {
  */
 struct Unknown_a0_0_2c {
     void * f_0x0;
+    u8 _pad_0x4[0x28];
     void * f_0x2c;
 };
 
@@ -180,6 +197,7 @@ struct Unknown_a0_0_2c {
  */
 struct Unknown_a0_0_5c {
     void * f_0x0;
+    u8 _pad_0x4[0x58];
     u32 f_0x5c;
 };
 
@@ -188,14 +206,18 @@ struct Unknown_a0_0_5c {
  */
 struct Unknown_a0_0_8_10 {
     void * f_0x0;
+    u8 _pad_0x4[0x4];
     void * f_0x8;
+    u8 _pad_0xc[0x4];
     void * f_0x10;
 };
 
 /* Unknown_a0_4_10  fields=2  evidence=14  members=14  role=object-like
  */
 struct Unknown_a0_4_10 {
+    u8 _pad_0x0[0x4];
     void * f_0x4;
+    u8 _pad_0x8[0x8];
     void * f_0x10;
 };
 
@@ -203,6 +225,7 @@ struct Unknown_a0_4_10 {
  */
 struct Unknown_a0_0_50 {
     void * f_0x0;
+    u8 _pad_0x4[0x4c];
     u32 f_0x50;
 };
 
@@ -210,20 +233,25 @@ struct Unknown_a0_0_50 {
  */
 struct Unknown_a0_0_58 {
     void * f_0x0;
+    u8 _pad_0x4[0x54];
     u32 f_0x58;
 };
 
 /* Unknown_a0_4_30  fields=2  evidence=13  members=13  role=object-like
  */
 struct Unknown_a0_4_30 {
+    u8 _pad_0x0[0x4];
     void * f_0x4;
+    u8 _pad_0x8[0x28];
     void * f_0x30;
 };
 
 /* Unknown_a0_8_1c  fields=2  evidence=13  members=13  role=object-like
  */
 struct Unknown_a0_8_1c {
+    u8 _pad_0x0[0x8];
     void * f_0x8;
+    u8 _pad_0xc[0x10];
     void * f_0x1c;
 };
 
@@ -234,6 +262,7 @@ struct Unknown_a0_0_4_8_10 {
     f32 f_0x0;   /* also deref'd */
     f32 f_0x4;
     f32 f_0x8;   /* also deref'd */
+    u8 _pad_0xc[0x4];
     void * f_0x10;
 };
 
@@ -252,6 +281,7 @@ struct Unknown_a0_0_4_8_c_10 {
  */
 struct Unknown_a0_0_c {
     void * f_0x0;
+    u8 _pad_0x4[0x8];
     void * f_0xc;
 };
 
@@ -259,6 +289,7 @@ struct Unknown_a0_0_c {
  */
 struct Unknown_a0_0_14_18_1c {
     f32 f_0x0;   /* also deref'd */
+    u8 _pad_0x4[0x10];
     f32 f_0x14;
     f32 f_0x18;   /* also deref'd */
     f32 f_0x1c;   /* also deref'd */
@@ -267,14 +298,18 @@ struct Unknown_a0_0_14_18_1c {
 /* Unknown_a0_8_34  fields=2  evidence=11  members=11  role=object-like
  */
 struct Unknown_a0_8_34 {
+    u8 _pad_0x0[0x8];
     void * f_0x8;
+    u8 _pad_0xc[0x28];
     void * f_0x34;
 };
 
 /* Unknown_a0_8_14  fields=2  evidence=10  members=10  role=float-pack
  */
 struct Unknown_a0_8_14 {
+    u8 _pad_0x0[0x8];
     f32 f_0x8;
+    u8 _pad_0xc[0x8];
     f32 f_0x14;   /* also deref'd */
 };
 

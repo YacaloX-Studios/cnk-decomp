@@ -50,8 +50,11 @@ def field_c_type(f):
     t = f.get("type")
     w = int(f.get("width", 4))
     if t == "ptr":
-        return "void *"
-    return TYPE_TBF.get((t, w), "u32")
+        return "void *", ""
+    base = TYPE_TBF.get((t, w), "u32")
+    if base.endswith("[4]"):
+        return base[:-3], "[4]"
+    return base, ""
 
 
 def field_id(off):
@@ -141,12 +144,20 @@ def main():
                          ", ".join("%s(%s)" % (a[6:10], sym_for(a)) for a in real_members[:6]))
         lines.append(" */")
         lines.append("struct %s {" % name)
-        for f in sorted(s["fields"], key=lambda x: x["offset"]):
-            ctype = field_c_type(f)
+        fields = sorted(s["fields"], key=lambda x: x["offset"])
+        cursor = 0
+        for f in fields:
+            ctype, suffix = field_c_type(f)
             note = ""
             if f.get("ptr") and not ctype.startswith("void"):
                 note = "   /* also deref'd */"
-            lines.append("    %s %s;%s" % (ctype, field_id(f["offset"]), note))
+            if f["offset"] > cursor:
+                lines.append("    u8 _pad_0x%x[0x%x];" %
+                             (cursor, f["offset"] - cursor))
+            lines.append("    %s %s%s;%s" % (ctype, field_id(f["offset"]),
+                                             suffix, note))
+            w = int(f.get("width", 4))
+            cursor = f["offset"] + w
         lines.append("};")
         lines.append("")
     opaque = sorted({lab for labs in want.values() for lab in labs.values()} -

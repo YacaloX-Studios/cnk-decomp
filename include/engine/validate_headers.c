@@ -45,9 +45,9 @@ CNK_ASSERT_LAYOUT(struct Unknown_a0_0_1c,  f_0x1c, 0x1c);
 /* size sanity: the structs must be exactly the span the binary touches */
 #define CNK_UNUSED_SIZE_OK(S, SZ) _Static_assert(sizeof(S) == SZ, #S " size")
 
-/* The three float-only bodies are 12/8/12 bytes for the promoted names. */
+/* Padded to absolute offsets from the arg base: Unknown_a0_4_8 = pad4 + 8. */
 CNK_UNUSED_SIZE_OK(struct Unknown_a0_0_4_8, 12);
-CNK_UNUSED_SIZE_OK(struct Unknown_a0_4_8,   8);
+CNK_UNUSED_SIZE_OK(struct Unknown_a0_4_8,   12);
 
 /* Referencing the functions in signatures.h stops unused-decl warnings from
  * mattering and documents that the prototypes are live for decompilation. */
