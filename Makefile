@@ -17,7 +17,7 @@ CSTD     := c11
 HOST_CC  := $(shell command -v $(CC) 2>/dev/null || echo missing)
 EE_PRESENT := $(shell command -v $(EE_CC) 2>/dev/null || echo missing)
 
-.PHONY: all check check-ee clean
+.PHONY: all check check-ee match clean
 
 all: check
 
@@ -30,6 +30,12 @@ check-ee:
 	@test "$(EE_PRESENT)" != "missing" || { echo "ee-gcc not found - install ps2dev toolchain (docs/11_BUILD.md)"; exit 2; }
 	@echo "compiling recovered headers with PS2 EE $(EE_CC)..."
 	$(EE_CC) -I$(INC) -std=$(CSTD) -Wall -c -o /dev/null $(INC)/validate_headers.c && echo "PASS (EE)"
+
+# Step 5: recompile hand-recovered functions and measure parity against the
+# frozen baseline. Picks the best compiler tier automatically (ee-gcc > mips
+# cross > host syntax-only). See docs/09_ROADMAP.md step 5.
+match:
+	@python tools/recompile_match.py
 
 clean:
 	rm -f validate_headers.o /dev/null 2>/dev/null || true

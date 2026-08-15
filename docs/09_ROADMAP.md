@@ -143,7 +143,17 @@ commit, see AGENTS.md for exact commands):
 | 2. Recover data structures | `tools/recover_structs.py` | `include/engine/recovered_structs.h` draft C from composed groups (PROMOTE-ME) |
 | 3. Recover function signatures | `tools/emit_signatures.py` | `logic_signatures.h` — typed prototypes for **all 214** logic functions |
 | 4. Reconstruct build env | `tools/build_check.py` + `Makefile` + `decomp-ci.yml` | compiles `validate_headers.c` (layout `_Static_assert`s); FATAL-2 "no toolchain" gap |
-| 5. Matching/recompilation | `tools/match_baseline.py` + `tools/match_check.py` | `match_baseline.csv` (14,439 fn / 5.1 MB, sha256); `match_check --self` = 100% |
+| 5. Matching/recompilation | `tools/match_baseline.py` + `tools/match_check.py` + `tools/recompile_match.py` | `match_baseline.csv` (14,439 fn / 5.1 MB, sha256); `match_check --self` = 100%; `make match` recompiles `src/decomp/recovered/*.c` and reports per-function EXACT/SIZE-ONLY/DIFF/MISSING |
 
 The final loop for step 5: recompile the recovered `.c` bodies with the EE
 toolchain, then `match_check.py <candidate.elf>` until every function is EXACT.
+
+`tools/recompile_match.py` automates the loop: it compiles every file in
+`src/decomp/recovered/` (tier auto-resolution: `ee-gcc` PS2 EE cross >
+`mips*-linux-gnu-gcc` o32 > host gcc/clang for syntax-only), strips each
+function's `.text` with objcopy into `src/decomp/analysis/recompiled/candidate/
+<addr>.bin`, and runs `match_check.py` on that directory. `make match` wraps
+it. Only the EE tier can produce byte-exact results; the MIPS tier is a
+size/ABI sanity check; host tier proves the recovered C compiles clean but
+yields no bytes. Multi-function recovery files map f1/f2 -> addresses via
+the `raw address:` / `fN @ 0x...` header comments, in definition order.
