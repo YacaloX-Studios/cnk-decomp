@@ -143,7 +143,7 @@ def main():
             lines.append(" *   real members: %s" %
                          ", ".join("%s(%s)" % (a[6:10], sym_for(a)) for a in real_members[:6]))
         lines.append(" */")
-        lines.append("struct %s {" % name)
+        lines.append("typedef struct %s {" % name)
         fields = sorted(s["fields"], key=lambda x: x["offset"])
         cursor = 0
         for f in fields:
@@ -158,13 +158,13 @@ def main():
                                              suffix, note))
             w = int(f.get("width", 4))
             cursor = f["offset"] + w
-        lines.append("};")
+        lines.append("} %s;" % name)
         lines.append("")
     opaque = sorted({lab for labs in want.values() for lab in labs.values()} -
                     {s["name"] for s in promoted})
     lines.append("/* --- opaque forward decls used by signatures.h (not promoted) --- */")
     for o in opaque:
-        lines.append("struct %s;" % o)
+        lines.append("typedef struct %s %s;" % (o, o))
     lines.append("")
     lines.append("#endif /* _CNK_ENGINE_TYPES_H */")
     lines.append("")
