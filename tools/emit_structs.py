@@ -50,7 +50,8 @@ def field_c_type(f):
     t = f.get("type")
     w = int(f.get("width", 4))
     if t == "ptr":
-        return "void *", ""
+        # PS2 pointers are 32-bit: emit u32 so host (x86-64) layout matches.
+        return "u32", ""
     base = TYPE_TBF.get((t, w), "u32")
     if base.endswith("[4]"):
         return base[:-3], "[4]"

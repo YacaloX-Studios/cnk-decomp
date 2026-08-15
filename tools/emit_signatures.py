@@ -40,12 +40,12 @@ def main():
     types = {r["address"]: r for r in load_csv(os.path.join(OUT_DIR, "inferred_types.csv"))}
     prop = load_csv(os.path.join(OUT_DIR, "propagated_types.csv"))
     states = {r["address"]: r for r in load_csv(os.path.join(OUT_DIR, "symbols.csv"))}
-    # promoted struct names = ones defined in types.h
+    # promoted struct names = ones defined in types.h (typedef struct Name ...)
     prom = set()
     with io.open(os.path.join(INC_DIR, "types.h"), encoding="utf-8") as f:
         for ln in f:
-            if ln.startswith("struct "):
-                nm = ln.strip().split()[1].rstrip("{")
+            if ln.startswith("typedef struct "):
+                nm = ln.split()[2].lstrip("{")
                 prom.add(nm)
 
     # best propagated label per (addr, arg)
@@ -60,7 +60,7 @@ def main():
     def arg_c(a, arg, targ):
         lab = best.get(a, {}).get(arg)
         if lab and lab[0] in prom:
-            return "struct %s *" % lab[0], ("struct %s" % lab[0])
+            return "%s *" % lab[0], ("struct %s" % lab[0])
         if "ptr" in (targ or ""):
             return "void *", "ptr"
         if "int" in (targ or ""):

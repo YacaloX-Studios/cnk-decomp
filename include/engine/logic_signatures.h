@@ -17,102 +17,102 @@ void FUN_00108ee8(int a0);
 void * FUN_0010c820(void * a0, void * a1, int a2, int a3);
 /* 0x00114cf0 FUN_00114cf0 [ ] a0:int */
 void FUN_00114cf0(int a0);
-/* 0x00115430 FUN_00115430 [ ] a0:ptr */
-void * FUN_00115430(void * a0);
-/* 0x00115460 FUN_00115460 [ ]  */
-void FUN_00115460(void);
-/* 0x001206f0 FUN_001206f0 [ ] a0:ptr */
-void FUN_001206f0(void * a0);
-/* 0x00120720 FUN_00120720 [ ] a0:ptr|a2:struct Unknown_a2_0_4_8 */
-void FUN_00120720(void * a0, struct Unknown_a2_0_4_8 * a2);
-/* 0x00120750 FUN_00120750 [ ] a0:ptr */
-void FUN_00120750(void * a0);
-/* 0x001207c0 FUN_001207c0 [ ] a0:ptr */
-void FUN_001207c0(void * a0);
+/* 0x00115430 FUN_00115430 [ ] a0:struct Unknown_a0_1944 */
+void * FUN_00115430(Unknown_a0_1944 * a0);
+/* 0x00115460 FUN_00115460 [ ] a0:struct Unknown_a0_1944 */
+void FUN_00115460(Unknown_a0_1944 * a0);
+/* 0x001206f0 FUN_001206f0 [ ] a0:struct Unknown_a0_0|a2:struct Unknown_a2_0|a3:struct Unknown_a3_20 */
+void FUN_001206f0(Unknown_a0_0 * a0, Unknown_a2_0 * a2, Unknown_a3_20 * a3);
+/* 0x00120720 FUN_00120720 [ ] a0:struct Unknown_a0_0|a2:struct Unknown_a2_0_4_8 */
+void FUN_00120720(Unknown_a0_0 * a0, Unknown_a2_0_4_8 * a2);
+/* 0x00120750 FUN_00120750 [ ] a0:struct Unknown_a0_0|a1:struct Unknown_a1_0|a2:struct Unknown_a2_0|a3:struct Unknown_a3_20 */
+void FUN_00120750(Unknown_a0_0 * a0, Unknown_a1_0 * a1, Unknown_a2_0 * a2, Unknown_a3_20 * a3);
+/* 0x001207c0 FUN_001207c0 [ ] a0:struct Unknown_a0_0|a1:struct Unknown_a0_38|a2:struct Unknown_a2_0 */
+void FUN_001207c0(Unknown_a0_0 * a0, Unknown_a0_38 * a1, Unknown_a2_0 * a2);
 /* 0x001238d0 FUN_001238d0 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c */
-void * FUN_001238d0(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1);
+void * FUN_001238d0(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8_c * a1);
 /* 0x00134ec0 FUN_00134ec0 [ ]  */
 void * FUN_00134ec0(void);
 /* 0x00136110 FUN_00136110 [ ] a0:ptr */
 void FUN_00136110(void * a0);
 /* 0x0013e950 FUN_0013e950 [ ] a0:struct Unknown_a0_0_4_8|a1:int */
-void * FUN_0013e950(struct Unknown_a0_0_4_8 * a0, int a1);
+void * FUN_0013e950(Unknown_a0_0_4_8 * a0, int a1);
 /* 0x00154d50 FUN_00154d50 [ ] a0:int|a1:ptr|a2:int|a3:int */
 void * FUN_00154d50(int a0, void * a1, int a2, int a3);
-/* 0x00157010 FUN_00157010 [ ] a0:ptr|a1:ptr */
-int FUN_00157010(void * a0, void * a1);
-/* 0x00157070 FUN_00157070 [ ] a0:ptr|a1:ptr */
-void * FUN_00157070(void * a0, void * a1);
-/* 0x00157440 FUN_00157440 [ ] a0:ptr|a1:ptr */
-int FUN_00157440(void * a0, void * a1);
-/* 0x001574a0 FUN_001574a0 [ ] a0:ptr|a1:ptr */
-void * FUN_001574a0(void * a0, void * a1);
-/* 0x00161de0 FUN_00161de0 [ ] a0:ptr|a1:ptr|a2:struct Unknown_a2_0_4_8|a3:int */
-void * FUN_00161de0(void * a0, void * a1, struct Unknown_a2_0_4_8 * a2, int a3);
+/* 0x00157010 FUN_00157010 [ ] a0:struct Unknown_a0_4_8_a4|a1:struct Unknown_a1_28 */
+int FUN_00157010(Unknown_a0_4_8_a4 * a0, Unknown_a1_28 * a1);
+/* 0x00157070 FUN_00157070 [ ] a0:struct Unknown_a0_4_8_a4|a1:struct Unknown_a1_8_18_28 */
+void * FUN_00157070(Unknown_a0_4_8_a4 * a0, Unknown_a1_8_18_28 * a1);
+/* 0x00157440 FUN_00157440 [ ] a0:struct Unknown_a0_4_8_ac|a1:struct Unknown_a1_28 */
+int FUN_00157440(Unknown_a0_4_8_ac * a0, Unknown_a1_28 * a1);
+/* 0x001574a0 FUN_001574a0 [ ] a0:struct Unknown_a0_4_8_ac|a1:struct Unknown_a1_8_18_28 */
+void * FUN_001574a0(Unknown_a0_4_8_ac * a0, Unknown_a1_8_18_28 * a1);
+/* 0x00161de0 FUN_00161de0 [ ] a0:struct Unknown_a0_0|a1:struct Unknown_a1_0_10_14_18|a2:struct Unknown_a2_0_4_8|a3:int */
+void * FUN_00161de0(Unknown_a0_0 * a0, Unknown_a1_0_10_14_18 * a1, Unknown_a2_0_4_8 * a2, int a3);
 /* 0x0016a110 FUN_0016a110 [ ] a0:ptr|a1:int|a2:int */
 void * FUN_0016a110(void * a0, int a1, int a2);
 /* 0x0016b030 FUN_0016b030 [ ] a0:ptr|a1:int|a2:int|a3:int */
 void * FUN_0016b030(void * a0, int a1, int a2, int a3);
 /* 0x0018ddc0 FUN_0018ddc0 [ ]  */
 void FUN_0018ddc0(void);
-/* 0x00195cd0 FUN_00195cd0 [ ] a0:ptr|a1:struct Unknown_a1_0_4_8 */
-void FUN_00195cd0(void * a0, struct Unknown_a1_0_4_8 * a1);
+/* 0x00195cd0 FUN_00195cd0 [ ] a0:struct Unknown_a0_4ec|a1:struct Unknown_a1_0_4_8 */
+void FUN_00195cd0(Unknown_a0_4ec * a0, Unknown_a1_0_4_8 * a1);
 /* 0x001963d0 FUN_001963d0 [ ] a0:ptr|a1:int|a2:int|a3:int */
 void * FUN_001963d0(void * a0, int a1, int a2, int a3);
-/* 0x00197870 FUN_00197870 [ ] a0:ptr|a1:ptr|a2:int */
-void * FUN_00197870(void * a0, void * a1, int a2);
+/* 0x00197870 FUN_00197870 [ ] a0:ptr|a1:struct Unknown_a1_0|a2:int */
+void * FUN_00197870(void * a0, Unknown_a1_0 * a1, int a2);
 /* 0x0019a560 FUN_0019a560 [ ] a0:ptr|a1:int|a2:int|a3:int */
 void FUN_0019a560(void * a0, int a1, int a2, int a3);
 /* 0x0019d330 FUN_0019d330 [ ] a0:ptr */
 void * FUN_0019d330(void * a0);
 /* 0x001acde0 FUN_001acde0 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8 */
-void * FUN_001acde0(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1);
+void * FUN_001acde0(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8 * a1);
 /* 0x001b82f0 FUN_001b82f0 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8 */
-void * FUN_001b82f0(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1);
+void * FUN_001b82f0(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8 * a1);
 /* 0x001c3470 FUN_001c3470 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8 */
-void * FUN_001c3470(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1);
+void * FUN_001c3470(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8 * a1);
 /* 0x001ca130 FUN_001ca130 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c */
-void * FUN_001ca130(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1);
+void * FUN_001ca130(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8_c * a1);
 /* 0x001cad90 FUN_001cad90 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8 */
-void * FUN_001cad90(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1);
+void * FUN_001cad90(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8 * a1);
 /* 0x001ccb00 FUN_001ccb00 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c */
-void * FUN_001ccb00(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1);
+void * FUN_001ccb00(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8_c * a1);
 /* 0x001cf680 FUN_001cf680 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8 */
-void * FUN_001cf680(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1);
-/* 0x001cf6f0 FUN_001cf6f0 [ ] a0:ptr|a1:ptr|a2:ptr|a3:int */
-void * FUN_001cf6f0(void * a0, void * a1, void * a2, int a3);
+void * FUN_001cf680(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8 * a1);
+/* 0x001cf6f0 FUN_001cf6f0 [ ] a0:ptr|a1:struct Unknown_a1_0|a2:struct Unknown_a2_0|a3:int */
+void * FUN_001cf6f0(void * a0, Unknown_a1_0 * a1, Unknown_a2_0 * a2, int a3);
 /* 0x001dbea0 FUN_001dbea0 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c */
-void * FUN_001dbea0(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1);
+void * FUN_001dbea0(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8_c * a1);
 /* 0x001df840 FUN_001df840 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c */
-void * FUN_001df840(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1);
+void * FUN_001df840(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8_c * a1);
 /* 0x001dfdb0 FUN_001dfdb0 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c */
-void * FUN_001dfdb0(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1);
+void * FUN_001dfdb0(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8_c * a1);
 /* 0x001e0050 FUN_001e0050 [ ] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8_c */
-void * FUN_001e0050(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8_c * a1);
+void * FUN_001e0050(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8_c * a1);
 /* 0x001f4e00 FUN_001f4e00 [ ] a0:ptr|a1:int|a2:int|a3:int */
 int FUN_001f4e00(void * a0, int a1, int a2, int a3);
 /* 0x002366c0 FUN_002366c0 [ ] a0:ptr|a1:int|a2:int|a3:int */
 void FUN_002366c0(void * a0, int a1, int a2, int a3);
 /* 0x0023e070 FUN_0023e070 [ ] a0:struct Unknown_a1_0_4|a1:struct Unknown_a1_0_4_8 */
-void FUN_0023e070(struct Unknown_a1_0_4 * a0, struct Unknown_a1_0_4_8 * a1);
-/* 0x002470e0 FUN_002470e0 [ ] a0:ptr|a1:ptr|a3:ptr */
-void * FUN_002470e0(void * a0, void * a1, void * a3);
+void FUN_0023e070(Unknown_a1_0_4 * a0, Unknown_a1_0_4_8 * a1);
+/* 0x002470e0 FUN_002470e0 [ ] a0:struct Unknown_a0_0|a1:ptr|a3:struct Unknown_a3_0 */
+void * FUN_002470e0(Unknown_a0_0 * a0, void * a1, Unknown_a3_0 * a3);
 /* 0x0028b3f0 FUN_0028b3f0 [ ] a0:struct Unknown_a0_0_4_8_10|a1:int|a2:struct Unknown_a2_0_4_8|a3:int */
-void * FUN_0028b3f0(struct Unknown_a0_0_4_8_10 * a0, int a1, struct Unknown_a2_0_4_8 * a2, int a3);
+void * FUN_0028b3f0(Unknown_a0_0_4_8_10 * a0, int a1, Unknown_a2_0_4_8 * a2, int a3);
 /* 0x0031c990 FUN_0031c990 [ ] a0:ptr|a1:int|a2:int|a3:int */
 void FUN_0031c990(void * a0, int a1, int a2, int a3);
-/* 0x00337690 FUN_00337690 [ ] a0:ptr|a1:ptr|a2:int|a3:int */
-void * FUN_00337690(void * a0, void * a1, int a2, int a3);
-/* 0x0033a050 FUN_0033a050 [ ] a0:ptr */
-void FUN_0033a050(void * a0);
-/* 0x0034bb20 FUN_0034bb20 [ ] a0:ptr */
-void * FUN_0034bb20(void * a0);
+/* 0x00337690 FUN_00337690 [ ] a0:struct Unknown_a0_14_64|a1:ptr|a2:int|a3:int */
+void * FUN_00337690(Unknown_a0_14_64 * a0, void * a1, int a2, int a3);
+/* 0x0033a050 FUN_0033a050 [ ] a0:ptr|a1:struct Unknown_a1_8 */
+void FUN_0033a050(void * a0, Unknown_a1_8 * a1);
+/* 0x0034bb20 FUN_0034bb20 [ ] a0:struct Unknown_a0_0 */
+void * FUN_0034bb20(Unknown_a0_0 * a0);
 /* 0x00363b70 FUN_00363b70 [ ]  */
 void * FUN_00363b70(void);
-/* 0x00365450 FUN_00365450 [ ] a0:ptr */
-void * FUN_00365450(void * a0);
-/* 0x0036d630 FUN_0036d630 [ ] a0:ptr */
-void * FUN_0036d630(void * a0);
+/* 0x00365450 FUN_00365450 [ ] a0:struct Unknown_a0_0 */
+void * FUN_00365450(Unknown_a0_0 * a0);
+/* 0x0036d630 FUN_0036d630 [ ] a0:struct Unknown_a0_0 */
+void * FUN_0036d630(Unknown_a0_0 * a0);
 /* 0x003bff30 FUN_003bff30 [ ] a0:ptr|a1:int|a2:int|a3:int */
 void FUN_003bff30(void * a0, int a1, int a2, int a3);
 /* 0x003eddf0 FUN_003eddf0 [ ] a0:int|a1:int|a2:int|a3:int */
@@ -207,16 +207,16 @@ void FUN_0042bd98(int a0, int a1, int a2, int a3);
 void FUN_0042bdb8(int a0, int a1, int a2, int a3);
 /* 0x0042bde0 FUN_0042bde0 [ ] a0:int|a1:int|a2:int|a3:int */
 int FUN_0042bde0(int a0, int a1, int a2, int a3);
-/* 0x0042bfa8 FUN_0042bfa8 [ ] a0:ptr|a1:int|a2:int|a3:int */
-void FUN_0042bfa8(void * a0, int a1, int a2, int a3);
+/* 0x0042bfa8 FUN_0042bfa8 [ ] a0:struct Unknown_a0_0|a1:int|a2:int|a3:int */
+void FUN_0042bfa8(Unknown_a0_0 * a0, int a1, int a2, int a3);
 /* 0x0042c1c8 FUN_0042c1c8 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_0042c1c8(int a0, int a1, int a2, int a3);
 /* 0x0042c1e8 FUN_0042c1e8 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_0042c1e8(int a0, int a1, int a2, int a3);
 /* 0x0042c238 FUN_0042c238 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_0042c238(int a0, int a1, int a2, int a3);
-/* 0x0042c280 FUN_0042c280 [ ] a0:int|a1:ptr|a2:int|a3:ptr */
-int FUN_0042c280(int a0, void * a1, int a2, void * a3);
+/* 0x0042c280 FUN_0042c280 [ ] a0:int|a1:struct Unknown_a1_0|a2:int|a3:ptr */
+int FUN_0042c280(int a0, Unknown_a1_0 * a1, int a2, void * a3);
 /* 0x0042c5c0 FUN_0042c5c0 [ ] a0:int|a1:int|a2:int|a3:int */
 void * FUN_0042c5c0(int a0, int a1, int a2, int a3);
 /* 0x0042c620 FUN_0042c620 [ ] a0:int|a1:int|a2:int|a3:int */
@@ -231,10 +231,10 @@ void FUN_0042c848(int a0, void * a1, int a2, int a3);
 void FUN_0042cac8(int a0, int a1, int a2, int a3);
 /* 0x0042cb00 FUN_0042cb00 [ ] a0:int|a1:int|a2:int|a3:int */
 void * FUN_0042cb00(int a0, int a1, int a2, int a3);
-/* 0x0042cd18 FUN_0042cd18 [ ] a0:int|a1:ptr|a2:int|a3:int */
-void * FUN_0042cd18(int a0, void * a1, int a2, int a3);
+/* 0x0042cd18 FUN_0042cd18 [ ] a0:int|a1:struct Unknown_a1_0|a2:int|a3:int */
+void * FUN_0042cd18(int a0, Unknown_a1_0 * a1, int a2, int a3);
 /* 0x0042ce18 FUN_0042ce18 [ ] a0:struct Unknown_a0_0_4|a1:int|a2:int|a3:int */
-void FUN_0042ce18(struct Unknown_a0_0_4 * a0, int a1, int a2, int a3);
+void FUN_0042ce18(Unknown_a0_0_4 * a0, int a1, int a2, int a3);
 /* 0x0042cfe0 FUN_0042cfe0 [ ] a0:int|a1:int|a2:int|a3:int */
 void * FUN_0042cfe0(int a0, int a1, int a2, int a3);
 /* 0x0042d3d0 FUN_0042d3d0 [ ] a0:int|a1:int|a2:int|a3:int */
@@ -246,7 +246,7 @@ void FUN_0042d6b0(int a0, int a1, int a2, int a3);
 /* 0x0042d708 FUN_0042d708 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_0042d708(int a0, int a1, int a2, int a3);
 /* 0x0042d770 FUN_0042d770 [ ] a0:struct Unknown_a0_0_8|a1:ptr|a2:ptr|a3:int */
-int FUN_0042d770(struct Unknown_a0_0_8 * a0, void * a1, void * a2, int a3);
+int FUN_0042d770(Unknown_a0_0_8 * a0, void * a1, void * a2, int a3);
 /* 0x0042f100 FUN_0042f100 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_0042f100(int a0, int a1, int a2, int a3);
 /* 0x0042f130 FUN_0042f130 [ ] a0:int|a1:int|a2:int|a3:int */
@@ -261,8 +261,8 @@ void * FUN_0042f750(int a0, int a1, int a2, int a3);
 void FUN_0042fb10(int a0, int a1, int a2, int a3);
 /* 0x0042fd98 FUN_0042fd98 [ ] a0:int|a1:int|a2:int|a3:int */
 void * FUN_0042fd98(int a0, int a1, int a2, int a3);
-/* 0x00430000 FUN_00430000 [ ] a0:ptr|a1:int|a2:int|a3:int */
-void * FUN_00430000(void * a0, int a1, int a2, int a3);
+/* 0x00430000 FUN_00430000 [ ] a0:struct Unknown_a0_4_8_c|a1:int|a2:int|a3:int */
+void * FUN_00430000(Unknown_a0_4_8_c * a0, int a1, int a2, int a3);
 /* 0x00430748 FUN_00430748 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_00430748(int a0, int a1, int a2, int a3);
 /* 0x004312a0 FUN_004312a0 [ ] a0:int|a1:int|a2:int|a3:int */
@@ -275,130 +275,130 @@ void FUN_00431488(int a0, int a1, int a2, int a3);
 int FUN_00431920(int a0, int a1, int a2, int a3);
 /* 0x00432588 FUN_00432588 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_00432588(int a0, int a1, int a2, int a3);
-/* 0x00432e90 FUN_00432e90 [ ] a0:ptr|a1:int|a2:int|a3:int */
-void FUN_00432e90(void * a0, int a1, int a2, int a3);
+/* 0x00432e90 FUN_00432e90 [ ] a0:struct Unknown_a0_e|a1:int|a2:int|a3:int */
+void FUN_00432e90(Unknown_a0_e * a0, int a1, int a2, int a3);
 /* 0x00433090 FUN_00433090 [ ] a0:int|a1:int|a2:int|a3:int */
 void * FUN_00433090(int a0, int a1, int a2, int a3);
 /* 0x00433ec0 FUN_00433ec0 [ ] a0:int|a1:int|a2:int|a3:int */
 void FUN_00433ec0(int a0, int a1, int a2, int a3);
 /* 0x00433ef0 FUN_00433ef0 [ ] a0:int|a1:int|a2:int|a3:int */
 void * FUN_00433ef0(int a0, int a1, int a2, int a3);
-/* 0x0043cb00 FUN_0043cb00 [ ]  */
-void FUN_0043cb00(void);
+/* 0x0043cb00 FUN_0043cb00 [ ] a0:struct Unknown_a1_c|a1:struct Unknown_a1_c */
+void FUN_0043cb00(Unknown_a1_c * a0, Unknown_a1_c * a1);
 /* 0x0043f5b8 FUN_0043f5b8 [ ] a0:ptr|a1:int */
 void * FUN_0043f5b8(void * a0, int a1);
 /* 0x004450e0 FUN_004450e0 [ ]  */
 void FUN_004450e0(void);
 /* 0x0044fcb0 FUN_0044fcb0 [ ] a0:ptr|a1:ptr|a2:ptr */
 int FUN_0044fcb0(void * a0, void * a1, void * a2);
-/* 0x0045d6f0 FUN_0045d6f0 [ ] a0:ptr|a1:ptr|a2:int */
-int FUN_0045d6f0(void * a0, void * a1, int a2);
+/* 0x0045d6f0 FUN_0045d6f0 [ ] a0:struct Unknown_a0_0|a1:struct Unknown_a1_0|a2:int */
+int FUN_0045d6f0(Unknown_a0_0 * a0, Unknown_a1_0 * a1, int a2);
 /* 0x0046c500 FUN_0046c500 [ ] a1:int|a2:int */
 int FUN_0046c500(int a1, int a2);
 /* 0x0047f4a0 FUN_0047f4a0 [ ] a1:int|a2:int */
 int FUN_0047f4a0(int a1, int a2);
-/* 0x0053fd80 FUN_0053fd80 [ ] a0:ptr */
-void * FUN_0053fd80(void * a0);
-/* 0x00540780 FUN_00540780 [ ] a0:ptr|a1:ptr */
-int FUN_00540780(void * a0, void * a1);
-/* 0x00551a70 FUN_00551a70 [ ] a0:ptr */
-void * FUN_00551a70(void * a0);
-/* 0x0058ab30 FUN_0058ab30 [ ] a0:ptr|a1:ptr|a3:int */
-void * FUN_0058ab30(void * a0, void * a1, int a3);
-/* 0x001071e0 FUN_001071e0 [K] a0:ptr|a1:ptr|a2:int|a3:int */
-void FUN_001071e0(void * a0, void * a1, int a2, int a3);
-/* 0x0010e780 FUN_0010e780 [K] a0:struct Unknown_a0_0_4_8_10|a1:int|a2:ptr|a3:int */
-void FUN_0010e780(struct Unknown_a0_0_4_8_10 * a0, int a1, void * a2, int a3);
-/* 0x0010ee50 FUN_0010ee50 [K] a0:ptr|a1:ptr|a2:int|a3:int */
-void * FUN_0010ee50(void * a0, void * a1, int a2, int a3);
+/* 0x0053fd80 FUN_0053fd80 [ ] a0:struct Unknown_a0_8 */
+void * FUN_0053fd80(Unknown_a0_8 * a0);
+/* 0x00540780 FUN_00540780 [ ] a0:ptr|a1:struct Unknown_a1_0 */
+int FUN_00540780(void * a0, Unknown_a1_0 * a1);
+/* 0x00551a70 FUN_00551a70 [ ] a0:struct Unknown_a0_8 */
+void * FUN_00551a70(Unknown_a0_8 * a0);
+/* 0x0058ab30 FUN_0058ab30 [ ] a0:struct Unknown_a0_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c|a1:struct Unknown_a1_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c|a3:int */
+void * FUN_0058ab30(Unknown_a0_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c * a0, Unknown_a1_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c * a1, int a3);
+/* 0x001071e0 FUN_001071e0 [K] a0:struct Unknown_a0_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c|a1:struct Unknown_a1_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c|a2:int|a3:int */
+void FUN_001071e0(Unknown_a0_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c * a0, Unknown_a1_0_4_8_c_10_14_18_1c_20_24_28_2c_30_34_38_3c * a1, int a2, int a3);
+/* 0x0010e780 FUN_0010e780 [K] a0:struct Unknown_a0_0_4_8_10|a1:int|a2:struct Unknown_a2_c|a3:int */
+void FUN_0010e780(Unknown_a0_0_4_8_10 * a0, int a1, Unknown_a2_c * a2, int a3);
+/* 0x0010ee50 FUN_0010ee50 [K] a0:struct Unknown_a0_0_4_c_10|a1:struct Unknown_a1_c|a2:int|a3:int */
+void * FUN_0010ee50(Unknown_a0_0_4_c_10 * a0, Unknown_a1_c * a1, int a2, int a3);
 /* 0x0011e790 FUN_0011e790 [K] a0:ptr|a1:int|a2:int */
 void FUN_0011e790(void * a0, int a1, int a2);
-/* 0x0012bda0 FUN_0012bda0 [K] a0:int|a1:int|a2:int */
-int FUN_0012bda0(int a0, int a1, int a2);
+/* 0x0012bda0 FUN_0012bda0 [K] a0:int|a1:int|a2:int|a3:struct Unknown_a0_0_4_8_10_28_2c_64 */
+int FUN_0012bda0(int a0, int a1, int a2, Unknown_a0_0_4_8_10_28_2c_64 * a3);
 /* 0x0015ba30 FUN_0015ba30 [K] a0:struct Unknown_a0_0_4_8_c|a1:struct Unknown_a1_0_4_8 */
-void * FUN_0015ba30(struct Unknown_a0_0_4_8_c * a0, struct Unknown_a1_0_4_8 * a1);
-/* 0x00165e70 FUN_00165e70 [K] a0:ptr|a1:ptr|a2:int|a3:int */
-void * FUN_00165e70(void * a0, void * a1, int a2, int a3);
+void * FUN_0015ba30(Unknown_a0_0_4_8_c * a0, Unknown_a1_0_4_8 * a1);
+/* 0x00165e70 FUN_00165e70 [K] a0:ptr|a1:struct Unknown_a1_0|a2:int|a3:int */
+void * FUN_00165e70(void * a0, Unknown_a1_0 * a1, int a2, int a3);
 /* 0x00190370 FUN_00190370 [K] a0:ptr|a1:int|a2:int */
 void FUN_00190370(void * a0, int a1, int a2);
 /* 0x00195820 FUN_00195820 [K] a0:ptr|a2:int */
 void FUN_00195820(void * a0, int a2);
 /* 0x0019e150 FUN_0019e150 [K] a0:ptr|a1:int|a2:int */
 void * FUN_0019e150(void * a0, int a1, int a2);
-/* 0x0019ea30 FUN_0019ea30 [K] a0:ptr|a1:int|a2:int */
-void * FUN_0019ea30(void * a0, int a1, int a2);
+/* 0x0019ea30 FUN_0019ea30 [K] a0:struct Unknown_a0_0_10_2c_38_3c_44_60_80_94_1b0|a1:int|a2:int */
+void * FUN_0019ea30(Unknown_a0_0_10_2c_38_3c_44_60_80_94_1b0 * a0, int a1, int a2);
 /* 0x0019f130 FUN_0019f130 [K] a0:ptr|a1:int */
 void * FUN_0019f130(void * a0, int a1);
-/* 0x0019f7f0 FUN_0019f7f0 [K] a0:ptr|a1:int|a2:int */
-void * FUN_0019f7f0(void * a0, int a1, int a2);
+/* 0x0019f7f0 FUN_0019f7f0 [K] a0:struct Unknown_a0_0_10_2c_38_3c_44_60_80_94_1b0|a1:int|a2:int */
+void * FUN_0019f7f0(Unknown_a0_0_10_2c_38_3c_44_60_80_94_1b0 * a0, int a1, int a2);
 /* 0x001a1800 FUN_001a1800 [K] a0:ptr|a1:ptr|a2:int|a3:int */
 void * FUN_001a1800(void * a0, void * a1, int a2, int a3);
-/* 0x001a1bd0 FUN_001a1bd0 [K] a0:ptr|a1:int|a2:int|a3:ptr */
-void FUN_001a1bd0(void * a0, int a1, int a2, void * a3);
-/* 0x001b6340 FUN_001b6340 [K] a0:ptr|a1:ptr|a2:struct Unknown_a2_0_4_8 */
-void * FUN_001b6340(void * a0, void * a1, struct Unknown_a2_0_4_8 * a2);
+/* 0x001a1bd0 FUN_001a1bd0 [K] a0:struct Unknown_a0_8|a1:int|a2:int|a3:struct Unknown_a3_0 */
+void FUN_001a1bd0(Unknown_a0_8 * a0, int a1, int a2, Unknown_a3_0 * a3);
+/* 0x001b6340 FUN_001b6340 [K] a0:ptr|a1:struct Unknown_a1_0|a2:struct Unknown_a2_0_4_8 */
+void * FUN_001b6340(void * a0, Unknown_a1_0 * a1, Unknown_a2_0_4_8 * a2);
 /* 0x001c3910 FUN_001c3910 [K] a0:ptr|a1:int|a2:ptr|a3:int */
 void * FUN_001c3910(void * a0, int a1, void * a2, int a3);
-/* 0x0022ade0 FUN_0022ade0 [K] a0:int|a1:ptr */
-void * FUN_0022ade0(int a0, void * a1);
-/* 0x0022d1a0 FUN_0022d1a0 [K] a0:struct Unknown_a0_0_4_8|a1:ptr|a2:int */
-void FUN_0022d1a0(struct Unknown_a0_0_4_8 * a0, void * a1, int a2);
+/* 0x0022ade0 FUN_0022ade0 [K] a0:int|a1:struct Unknown_a1_18 */
+void * FUN_0022ade0(int a0, Unknown_a1_18 * a1);
+/* 0x0022d1a0 FUN_0022d1a0 [K] a0:struct Unknown_a0_0_4_8|a1:struct Unknown_a1_18|a2:int */
+void FUN_0022d1a0(Unknown_a0_0_4_8 * a0, Unknown_a1_18 * a1, int a2);
 /* 0x002304a0 FUN_002304a0 [K] a0:struct Unknown_a0_0_4_8|a2:int */
-void FUN_002304a0(struct Unknown_a0_0_4_8 * a0, int a2);
-/* 0x0026d960 FUN_0026d960 [K] a0:ptr|a1:int|a2:int|a3:int */
-void * FUN_0026d960(void * a0, int a1, int a2, int a3);
+void FUN_002304a0(Unknown_a0_0_4_8 * a0, int a2);
+/* 0x0026d960 FUN_0026d960 [K] a0:struct Unknown_a0_0_4_8_c_10_14|a1:int|a2:int|a3:int */
+void * FUN_0026d960(Unknown_a0_0_4_8_c_10_14 * a0, int a1, int a2, int a3);
 /* 0x0026e060 FUN_0026e060 [K] a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int */
-void * FUN_0026e060(struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
+void * FUN_0026e060(Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
 /* 0x0026e1a0 FUN_0026e1a0 [K] a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int */
-void * FUN_0026e1a0(struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
+void * FUN_0026e1a0(Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
 /* 0x0026e2e0 FUN_0026e2e0 [K] a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int */
-void * FUN_0026e2e0(struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
+void * FUN_0026e2e0(Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
 /* 0x0026e420 FUN_0026e420 [K] a0:struct Unknown_a0_0_4_8_c_10|a1:int|a2:int|a3:int */
-void * FUN_0026e420(struct Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
-/* 0x003472f0 FUN_003472f0 [K] a0:ptr */
-void * FUN_003472f0(void * a0);
-/* 0x0035bc40 FUN_0035bc40 [K] a0:ptr */
-void * FUN_0035bc40(void * a0);
-/* 0x0035c3f0 FUN_0035c3f0 [K] a0:ptr */
-void * FUN_0035c3f0(void * a0);
+void * FUN_0026e420(Unknown_a0_0_4_8_c_10 * a0, int a1, int a2, int a3);
+/* 0x003472f0 FUN_003472f0 [K] a0:struct Unknown_a0_0 */
+void * FUN_003472f0(Unknown_a0_0 * a0);
+/* 0x0035bc40 FUN_0035bc40 [K] a0:struct Unknown_a0_0|a3:struct Unknown_a3_20 */
+void * FUN_0035bc40(Unknown_a0_0 * a0, Unknown_a3_20 * a3);
+/* 0x0035c3f0 FUN_0035c3f0 [K] a0:struct Unknown_a0_0|a2:struct Unknown_a2_0 */
+void * FUN_0035c3f0(Unknown_a0_0 * a0, Unknown_a2_0 * a2);
 /* 0x00365d80 FUN_00365d80 [K] a0:ptr|a1:int|a2:int|a3:int */
 void * FUN_00365d80(void * a0, int a1, int a2, int a3);
-/* 0x003803c0 FUN_003803c0 [K] a0:struct Unknown_a0_0_8_10|a1:ptr|a2:ptr|a3:int */
-void FUN_003803c0(struct Unknown_a0_0_8_10 * a0, void * a1, void * a2, int a3);
-/* 0x00380560 FUN_00380560 [K] a0:struct Unknown_a0_0_8_10|a1:ptr|a2:ptr|a3:int */
-void FUN_00380560(struct Unknown_a0_0_8_10 * a0, void * a1, void * a2, int a3);
-/* 0x00381030 FUN_00381030 [K] a0:ptr|a1:ptr|a2:ptr|a3:int */
-void * FUN_00381030(void * a0, void * a1, void * a2, int a3);
-/* 0x00394050 FUN_00394050 [K] a0:ptr */
-void * FUN_00394050(void * a0);
-/* 0x003955c0 FUN_003955c0 [K] a0:ptr */
-void * FUN_003955c0(void * a0);
-/* 0x003a0730 FUN_003a0730 [K] a0:ptr|a1:int|a2:ptr|a3:ptr */
-void * FUN_003a0730(void * a0, int a1, void * a2, void * a3);
-/* 0x003a09f0 FUN_003a09f0 [K] a0:ptr|a1:int|a2:ptr|a3:ptr */
-void * FUN_003a09f0(void * a0, int a1, void * a2, void * a3);
+/* 0x003803c0 FUN_003803c0 [K] a0:struct Unknown_a0_0_8_10|a1:struct Unknown_a1_0_8_10|a2:struct Unknown_a2_0|a3:int */
+void FUN_003803c0(Unknown_a0_0_8_10 * a0, Unknown_a1_0_8_10 * a1, Unknown_a2_0 * a2, int a3);
+/* 0x00380560 FUN_00380560 [K] a0:struct Unknown_a0_0_8_10|a1:struct Unknown_a1_0_8_10|a2:struct Unknown_a2_0|a3:int */
+void FUN_00380560(Unknown_a0_0_8_10 * a0, Unknown_a1_0_8_10 * a1, Unknown_a2_0 * a2, int a3);
+/* 0x00381030 FUN_00381030 [K] a0:ptr|a1:struct Unknown_a1_0_4_8_c_10_14_18_1c_20|a2:ptr|a3:int */
+void * FUN_00381030(void * a0, Unknown_a1_0_4_8_c_10_14_18_1c_20 * a1, void * a2, int a3);
+/* 0x00394050 FUN_00394050 [K] a0:struct Unknown_a0_0 */
+void * FUN_00394050(Unknown_a0_0 * a0);
+/* 0x003955c0 FUN_003955c0 [K] a0:struct Unknown_a0_1f0 */
+void * FUN_003955c0(Unknown_a0_1f0 * a0);
+/* 0x003a0730 FUN_003a0730 [K] a0:struct Unknown_a0_0|a1:int|a2:struct Unknown_a2_0_4|a3:struct Unknown_a3_0 */
+void * FUN_003a0730(Unknown_a0_0 * a0, int a1, Unknown_a2_0_4 * a2, Unknown_a3_0 * a3);
+/* 0x003a09f0 FUN_003a09f0 [K] a0:struct Unknown_a0_0|a1:int|a2:struct Unknown_a2_0_4|a3:struct Unknown_a3_0 */
+void * FUN_003a09f0(Unknown_a0_0 * a0, int a1, Unknown_a2_0_4 * a2, Unknown_a3_0 * a3);
 /* 0x003ae0e0 FUN_003ae0e0 [K] a0:ptr|a1:int|a2:int|a3:int */
 void * FUN_003ae0e0(void * a0, int a1, int a2, int a3);
-/* 0x003ec660 FUN_003ec660 [K] a0:struct Unknown_a0_0_4|a2:int */
-void * FUN_003ec660(struct Unknown_a0_0_4 * a0, int a2);
-/* 0x003f6840 FUN_003f6840 [K] a0:ptr|a1:int */
-void * FUN_003f6840(void * a0, int a1);
-/* 0x003f6b20 FUN_003f6b20 [K] a0:ptr|a1:int */
-void * FUN_003f6b20(void * a0, int a1);
-/* 0x00405d20 FUN_00405d20 [K] a0:ptr|a1:int|a2:int|a3:ptr */
-void FUN_00405d20(void * a0, int a1, int a2, void * a3);
-/* 0x00405dc0 FUN_00405dc0 [K] a0:ptr|a1:int|a2:int|a3:ptr */
-void FUN_00405dc0(void * a0, int a1, int a2, void * a3);
-/* 0x00407550 FUN_00407550 [K] a0:ptr|a1:int|a2:int|a3:ptr */
-void FUN_00407550(void * a0, int a1, int a2, void * a3);
-/* 0x004075f0 FUN_004075f0 [K] a0:ptr|a1:int|a2:int|a3:ptr */
-void FUN_004075f0(void * a0, int a1, int a2, void * a3);
+/* 0x003ec660 FUN_003ec660 [K] a0:struct Unknown_a0_0_4|a1:struct Unknown_a1_0_4_8_f|a2:int */
+void * FUN_003ec660(Unknown_a0_0_4 * a0, Unknown_a1_0_4_8_f * a1, int a2);
+/* 0x003f6840 FUN_003f6840 [K] a0:ptr|a1:int|a2:struct Unknown_a2_18 */
+void * FUN_003f6840(void * a0, int a1, Unknown_a2_18 * a2);
+/* 0x003f6b20 FUN_003f6b20 [K] a0:struct Unknown_a0_0_10_20|a1:int|a2:struct Unknown_a2_0_10 */
+void * FUN_003f6b20(Unknown_a0_0_10_20 * a0, int a1, Unknown_a2_0_10 * a2);
+/* 0x00405d20 FUN_00405d20 [K] a0:struct Unknown_a0_0|a1:int|a2:int|a3:struct Unknown_a3_0 */
+void FUN_00405d20(Unknown_a0_0 * a0, int a1, int a2, Unknown_a3_0 * a3);
+/* 0x00405dc0 FUN_00405dc0 [K] a0:struct Unknown_a0_0|a1:int|a2:int|a3:struct Unknown_a3_0 */
+void FUN_00405dc0(Unknown_a0_0 * a0, int a1, int a2, Unknown_a3_0 * a3);
+/* 0x00407550 FUN_00407550 [K] a0:struct Unknown_a0_0|a1:int|a2:int|a3:struct Unknown_a3_0 */
+void FUN_00407550(Unknown_a0_0 * a0, int a1, int a2, Unknown_a3_0 * a3);
+/* 0x004075f0 FUN_004075f0 [K] a0:struct Unknown_a0_0|a1:int|a2:int|a3:struct Unknown_a3_0 */
+void FUN_004075f0(Unknown_a0_0 * a0, int a1, int a2, Unknown_a3_0 * a3);
 /* 0x00428b18 FUN_00428b18 [K] a0:ptr|a1:int|a2:int|a3:int */
 void FUN_00428b18(void * a0, int a1, int a2, int a3);
 /* 0x00428c50 FUN_00428c50 [K] a0:ptr|a1:int|a2:int */
 void * FUN_00428c50(void * a0, int a1, int a2);
-/* 0x00428f48 FUN_00428f48 [K] a0:int|a1:ptr|a2:ptr|a3:int */
-void * FUN_00428f48(int a0, void * a1, void * a2, int a3);
+/* 0x00428f48 FUN_00428f48 [K] a0:int|a1:ptr|a2:struct Unknown_a2_0_10|a3:int */
+void * FUN_00428f48(int a0, void * a1, Unknown_a2_0_10 * a2, int a3);
 /* 0x0042a4e0 FUN_0042a4e0 [K] a0:int|a1:int|a2:int|a3:int */
 void * FUN_0042a4e0(int a0, int a1, int a2, int a3);
 /* 0x0042a680 FUN_0042a680 [K] a0:int|a1:int|a2:int|a3:int */
@@ -409,34 +409,34 @@ int FUN_0042a818(int a0, int a1, int a2, int a3);
 int FUN_0042ac48(int a0, int a1, int a2, int a3);
 /* 0x0042bc88 FUN_0042bc88 [K] a0:int|a1:int|a2:int|a3:int */
 int FUN_0042bc88(int a0, int a1, int a2, int a3);
-/* 0x0042f660 FUN_0042f660 [K] a0:int|a1:int|a2:ptr */
-void FUN_0042f660(int a0, int a1, void * a2);
+/* 0x0042f660 FUN_0042f660 [K] a0:int|a1:int|a2:struct Unknown_a2_0 */
+void FUN_0042f660(int a0, int a1, Unknown_a2_0 * a2);
 /* 0x004311f0 FUN_004311f0 [K] a0:int|a2:int|a3:int */
 void * FUN_004311f0(int a0, int a2, int a3);
-/* 0x004327a0 FUN_004327a0 [K] a0:int|a1:ptr|a2:int|a3:ptr */
-void * FUN_004327a0(int a0, void * a1, int a2, void * a3);
-/* 0x00432818 FUN_00432818 [K] a0:int|a1:ptr|a2:int|a3:int */
-void FUN_00432818(int a0, void * a1, int a2, int a3);
+/* 0x004327a0 FUN_004327a0 [K] a0:int|a1:struct Unknown_a1_0|a2:int|a3:struct Unknown_a3_0 */
+void * FUN_004327a0(int a0, Unknown_a1_0 * a1, int a2, Unknown_a3_0 * a3);
+/* 0x00432818 FUN_00432818 [K] a0:int|a1:struct Unknown_a1_0|a2:int|a3:int */
+void FUN_00432818(int a0, Unknown_a1_0 * a1, int a2, int a3);
 /* 0x00432fc0 FUN_00432fc0 [K] a0:int|a1:ptr|a2:ptr|a3:int */
 void FUN_00432fc0(int a0, void * a1, void * a2, int a3);
-/* 0x004518d0 FUN_004518d0 [K] a0:ptr|a1:ptr|a2:ptr|a3:ptr */
-void FUN_004518d0(void * a0, void * a1, void * a2, void * a3);
-/* 0x004f9eb0 FUN_004f9eb0 [K] a0:ptr|a1:ptr|a2:int|a3:ptr */
-void FUN_004f9eb0(void * a0, void * a1, int a2, void * a3);
-/* 0x00530050 FUN_00530050 [K] a0:ptr */
-void FUN_00530050(void * a0);
+/* 0x004518d0 FUN_004518d0 [K] a0:struct Unknown_a0_0_8_9|a1:ptr|a2:struct Unknown_a2_0|a3:struct Unknown_a3_0 */
+void FUN_004518d0(Unknown_a0_0_8_9 * a0, void * a1, Unknown_a2_0 * a2, Unknown_a3_0 * a3);
+/* 0x004f9eb0 FUN_004f9eb0 [K] a0:struct Unknown_a0_0|a1:ptr|a2:int|a3:struct Unknown_a3_0 */
+void FUN_004f9eb0(Unknown_a0_0 * a0, void * a1, int a2, Unknown_a3_0 * a3);
+/* 0x00530050 FUN_00530050 [K] a0:struct Unknown_a0_0_1 */
+void FUN_00530050(Unknown_a0_0_1 * a0);
 /* 0x00530080 FUN_00530080 [K] a0:ptr */
 void FUN_00530080(void * a0);
-/* 0x00534b60 FUN_00534b60 [K] a0:ptr|a1:ptr|a2:int|a3:ptr */
-void FUN_00534b60(void * a0, void * a1, int a2, void * a3);
+/* 0x00534b60 FUN_00534b60 [K] a0:struct Unknown_a0_0|a1:ptr|a2:int|a3:struct Unknown_a3_0 */
+void FUN_00534b60(Unknown_a0_0 * a0, void * a1, int a2, Unknown_a3_0 * a3);
 /* 0x0058d7c0 FUN_0058d7c0 [K] a0:struct Unknown_a0_0_4|a1:struct Unknown_a1_0_4_8|a2:struct Unknown_a2_0_4_8 */
-void FUN_0058d7c0(struct Unknown_a0_0_4 * a0, struct Unknown_a1_0_4_8 * a1, struct Unknown_a2_0_4_8 * a2);
+void FUN_0058d7c0(Unknown_a0_0_4 * a0, Unknown_a1_0_4_8 * a1, Unknown_a2_0_4_8 * a2);
 /* 0x0058dea0 FUN_0058dea0 [K] a0:struct Unknown_a0_0_4_8_c|a1:int|a2:int */
-void FUN_0058dea0(struct Unknown_a0_0_4_8_c * a0, int a1, int a2);
+void FUN_0058dea0(Unknown_a0_0_4_8_c * a0, int a1, int a2);
 /* 0x005ec0a0 FUN_005ec0a0 [K] a0:struct Unknown_a0_0_8_10|a1:int|a2:int|a3:int */
-void * FUN_005ec0a0(struct Unknown_a0_0_8_10 * a0, int a1, int a2, int a3);
+void * FUN_005ec0a0(Unknown_a0_0_8_10 * a0, int a1, int a2, int a3);
 /* 0x005ed330 FUN_005ed330 [K] a0:struct Unknown_a0_0_8_10|a1:int|a2:int|a3:int */
-void * FUN_005ed330(struct Unknown_a0_0_8_10 * a0, int a1, int a2, int a3);
+void * FUN_005ed330(Unknown_a0_0_8_10 * a0, int a1, int a2, int a3);
 /* 0x006588a0 FUN_006588a0 [K] a0:int|a1:int|a2:int|a3:int */
 void * FUN_006588a0(int a0, int a1, int a2, int a3);
 
