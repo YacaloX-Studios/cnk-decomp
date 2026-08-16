@@ -37,3 +37,7 @@ Crash Nitro Kart Decomp.rep/
 __pycache__/
 *.py[cod]
 *.pyo
+
+# Recompilation artifacts (recompile_match.py)
+src/decomp/analysis/recompiled/
+*.o

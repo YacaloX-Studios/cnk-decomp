@@ -28,6 +28,7 @@ import re
 import shutil
 import subprocess
 import sys
+import io
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REC = os.path.join(ROOT, "src", "decomp", "recovered")
@@ -60,26 +61,86 @@ def load_csv(path):
 def addr_map(path):
     """(function_name -> addr) for everything defined in the .c.
 
-    Addresses come from the header comment in the order the functions are
-    defined: "raw address: 0x..." names the primary symbol; multi-function
-    files annotate each sub-function ("f1 @ 0x0053fd80", "f2 @ 0x0053fda0").
+    "raw address: 0x..." names the primary symbol; multi-function files
+    annotate each sub-function ("f1 @ 0x0053fd80", "f2 @ 0x0053fda0") and
+    name them FUN_x_a, FUN_x_b... The suffix maps to the fN annotation;
+    a symbol without a suffix maps to the raw address.
     """
     with open(path, encoding="utf-8") as f:
         txt = f.read()
+    raw = re.findall(r"raw address: 0x([0-9a-fA-F]{8})", txt)
+    base = int(raw[0], 16) if raw else None
+    sub = {int(k): int(v, 16) for k, v in
+           re.findall(r"f(\d+) @ 0x([0-9a-fA-F]{8})", txt)}
     fns = re.findall(r"\b(FUN_[0-9a-fA-F]{8}(?:_[a-z0-9]+)?)\s*\(", txt)
-    addrs = re.findall(r"raw address: 0x([0-9a-fA-F]{8})", txt)
-    addrs += re.findall(r"f\d+ @ 0x([0-9a-fA-F]{8})", txt)
     out = {}
-    for i, fn in enumerate(fns):
-        if i < len(addrs):
-            out[fn] = int(addrs[i], 16)
+    for fn in fns:
+        m = re.match(r"FUN_[0-9a-fA-F]{8}_([a-z0-9]+)$", fn)
+        if m and sub:
+            idx = ord(m.group(1)) - ord('a') + 1
+            if idx in sub:
+                out[fn] = sub[idx]
+                continue
+        if base is not None and not sub:
+            out[fn] = base
     return out
+
+
+def elf_sections(data):
+    """[(name, bytes)] for an ELF object (32/64-bit, either endianness)."""
+    if data[:4] != b"\x7fELF":
+        return []
+    cls = data[4]
+    endian = "little" if data[5] == 1 else "big"
+    if cls == 1:
+        shoff = int.from_bytes(data[0x20:0x24], endian)
+        shentsz = int.from_bytes(data[0x2e:0x30], endian)
+        shnum = int.from_bytes(data[0x30:0x32], endian)
+        shstr = int.from_bytes(data[0x32:0x34], endian)
+    else:
+        shoff = int.from_bytes(data[0x28:0x38], endian)
+        shentsz = int.from_bytes(data[0x3a:0x3c], endian)
+        shnum = int.from_bytes(data[0x3c:0x40], endian)
+        shstr = int.from_bytes(data[0x40:0x44], endian)
+    secs = []
+    for i in range(shnum):
+        off = shoff + i * shentsz
+        if cls == 1:
+            name_off = int.from_bytes(data[off:off + 4], endian)
+            fl = int.from_bytes(data[off + 8:off + 12], endian)
+            sec_off = int.from_bytes(data[off + 0x10:off + 0x14], endian)
+            sec_sz = int.from_bytes(data[off + 0x14:off + 0x18], endian)
+        else:
+            name_off = int.from_bytes(data[off:off + 4], endian)
+            fl = int.from_bytes(data[off + 8:off + 16], endian)
+            sec_off = int.from_bytes(data[off + 0x18:off + 0x20], endian)
+            sec_sz = int.from_bytes(data[off + 0x20:off + 0x28], endian)
+        secs.append((i, name_off, fl, sec_off, sec_sz))
+    str_sh = secs[shstr]
+    strtab = data[str_sh[3]:str_sh[3] + str_sh[4]]
+    out = []
+    for i, name_off, fl, sec_off, sec_sz in secs:
+        if not (fl & 2):  # SHF_ALLOC
+            continue
+        end = strtab.find(b"\x00", name_off)
+        name = strtab[name_off:end].decode("ascii", "replace")
+        out.append((name, data[sec_off:sec_off + sec_sz]))
+    return out
+
+
+def extract_from_elf(data, sec):
+    for name, blob in elf_sections(data):
+        if name == sec:
+            return blob
+    return None
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-check", action="store_true",
                     help="build candidate/ but do not run match_check")
+    ap.add_argument("-O", dest="opt", default="0",
+                    help="optimization level (default 0; try -O2 for size signal)")
     args = ap.parse_args()
 
     cc = None
@@ -88,9 +149,13 @@ def main():
             cc = name
             cc_flags = flags
             break
-    if not cc:
+
+    # zig cc: one-binary cross toolkit (host or mips-linux-gnu big-endian).
+    zig = which("zig")
+
+    if not cc and not zig:
         sys.stderr.write("no C compiler found - nothing to compile.\n"
-                         "  host: install gcc/clang\n"
+                         "  host: install gcc/clang, or put zig on PATH\n"
                          "  EE:   install ps2dev (ee-gcc) - best tier\n")
         sys.exit(2)
 
@@ -100,8 +165,8 @@ def main():
             objcopy = name
             break
 
-    tier = "EE" if cc == "ee-gcc" else ("MIPS" if "mips" in cc else "HOST")
-    print("compiler tier: %s (%s)" % (tier, cc))
+    tier = "EE" if cc == "ee-gcc" else ("MIPS" if zig or cc and "mips" in cc else "HOST")
+    print("compiler tier: %s%s" % (tier, " (via zig cc)" if zig else " (%s)" % cc))
 
     os.makedirs(RDIR, exist_ok=True)
     for f in os.listdir(RDIR):
@@ -115,34 +180,58 @@ def main():
             continue
         src = os.path.join(REC, fn)
         ob = os.path.join(OUT, fn[:-2] + ".o")
-        cmd = [cc, "-I", os.path.join(ROOT, "include", "engine"),
-               "-std=" + CSTD, "-O0", "-c", "-o", ob, src] + cc_flags
+        amap = addr_map(src)
+        if zig:
+            target = "-target" if "mips" in tier or tier == "ZIG" else ""
+        if zig:
+            cmd = [zig, "cc", "-I", os.path.join(ROOT, "include", "engine"),
+                   "-std=" + CSTD, "-O" + args.opt, "-c", "-o", ob, src,
+                   "-ffunction-sections"]
+            if tier == "MIPS":
+                cmd += ["-target", "mips-linux-gnu", "-mabi=32"]
+        else:
+            cmd = [cc, "-I", os.path.join(ROOT, "include", "engine"),
+                   "-std=" + CSTD, "-O" + args.opt, "-c", "-o", ob, src] + cc_flags
         r = subprocess.run(cmd, capture_output=True, text=True)
         if r.returncode != 0:
-            printed.append("COMPILE-FAIL  %-20s %s" % (fn, (r.stderr or "").strip().splitlines()[:1]))
+            printed.append("COMPILE-FAIL  %-20s %s" %
+                           (fn, (r.stderr or "").strip().splitlines()[:1]))
             continue
         n_ok += 1
-        if objcopy and tier != "HOST":
-            amap = addr_map(src)
+        bytes_ok = 0
+        if tier != "HOST":
+            with io.open(ob, "rb") as f:
+                ob_data = f.read()
             for sym, addr in amap.items():
                 sec = ".text." + sym
-                dst = os.path.join(RDIR, "0x%08x.bin" % addr)
-                r2 = subprocess.run([objcopy, "--dump-section", "%s=%s" % (sec, dst),
-                                     ob], capture_output=True, text=True)
-                if r2.returncode == 0 and os.path.exists(dst) and \
-                        os.path.getsize(dst) > 0:
-                    printed.append("DUMPED       %-20s %-32s -> %08x (%d B)" %
-                                   (fn, sym, addr, os.path.getsize(dst)))
+                blob = extract_from_elf(ob_data, sec) if not objcopy else None
+                if objcopy:
+                    dst = os.path.join(RDIR, "0x%08x.bin" % addr)
+                    r2 = subprocess.run(
+                        [objcopy, "--dump-section", "%s=%s" % (sec, dst), ob],
+                        capture_output=True, text=True)
+                    if r2.returncode == 0 and os.path.exists(dst) and \
+                            os.path.getsize(dst) > 0:
+                        blob = open(dst, "rb").read()
+                if blob:
+                    dst = os.path.join(RDIR, "0x%08x.bin" % addr)
+                    with open(dst, "wb") as f:
+                        f.write(blob)
+                    bytes_ok += len(blob)
+                    printed.append("DUMPED       %-20s %-36s 0x%08x (%d B)" %
+                                   (fn, sym, addr, len(blob)))
                 else:
                     printed.append("DUMP-FAIL    %-20s %s (%s)" %
-                                   (fn, sym, (r2.stderr or "").strip()[:80]))
-        else:
+                                   (fn, sym, (r.stderr or "").strip()[:80]))
+        if bytes_ok == 0 and tier != "HOST":
+            printed.append("COMPILED     %-20s (no function sections found)" % fn)
+        if tier == "HOST":
             printed.append("COMPILED     %-20s (host tier: no bytes, syntax OK)" % fn)
 
     print("\n".join(printed))
     print("recovered files compiled clean: %d / %d" % (n_ok, len(files)))
     if tier == "HOST":
-        print("HOST tier: no byte extraction - install ee-gcc for real matching.")
+        print("HOST tier: no byte extraction - use --zig or ee-gcc for matching.")
     else:
         nbin = sum(1 for f in os.listdir(RDIR))
         print("candidate dir: %s (%d function bins)" % (RDIR, nbin))
