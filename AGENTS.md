@@ -147,6 +147,87 @@ python tools/decomp_split.py SLUS_206.49.c src/decomp   # 440 real / 13,999 stub
   (`match_baseline.csv`, 14,439 fn / 5.1 MB, sha256-fingerprinted).
   `match_check.py <candidate|--self>` reports EXACT/SIZE-ONLY/DIFF/MISSING
   and a global match %; `--self` = 100% parity by construction.
+- **Recompile harness** (`tools/recompile_match.py`): Phase 4F. Compiles
+  `src/decomp/recovered/*.c`, dumps each function's `.text.<sym>` section to
+  `candidate/<addr>.bin` (via objcopy or the built-in ELF section reader) and
+  chains into `match_check.py`. Compiler tiers auto-resolved, best wins:
+  `mips64r5900el-ps2-elf-gcc` / `ee-gcc` (ps2dev EE, real R5900 bytes) >
+  mips-linux-gnu > host gcc/clang/zig (syntax only).
+
+### Matching toolchain (byte-exact goal)
+
+The retail binary self-identifies its build tools — strings inside
+SLUS_206.49 (`EE Ver.* Build:Apr 16 2003` + `Append: GCC2096 SCE2700`):
+
+- **Compiler**: ee-gcc **2.96** ("GCC2096"), Cygnus/SCE cross for R5900.
+- **SDK**: Sony SCE **2700** (PS2 SDK 2.7.x, libs built Apr 16 2003).
+
+GCC 15 (modern ps2dev) can never reproduce those bytes; EXACT requires the
+original cc1. The canonical copy used by PS2 decomp projects (god-hand-decomp
+matches byte-for-byte with it) is:
+
+```
+https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.96.tar.xz
+sha256 0590d2ca9da8f5903889d66761220d14b47a8d14ba987ca53db84a1650a1fd0a   (VERIFIED)
+```
+
+Contents are **Linux i386 ELF** binaries (`bin/ee-as`, `bin/ee-cpp`,
+`lib/gcc-lib/ee/2.96-ee-001003-1/{cc1,cc1plus,cpp0}`) — they do NOT run on
+Windows natively. Options: WSL2 + `libc6:i386` (standard route), or a Linux
+box/container. A Win32-native fallback exists (`ee-gcc2.95.3-136.tar.gz`,
+SN ProDG v1.36, same release page) but is GCC 2.95.3 — wrong codegen for
+CNK's 2.96 build.
+
+Modern ps2dev EE tier (installed at
+`F:\Descargas\ps2dev-windows-latest.tar\ps2dev`, GCC 15.2.0 target
+`mips64r5900el-ps2-elf`): 32-bit PE exes that need MSYS2 **i686** DLLs
+copied next to them (`ee\bin` + `ee\libexec\gcc\mips64r5900el-ps2-elf\15.2.0`):
+`libgmp-10`, `libiconv-2`, `libisl-23`, `libmpc-3`, `libmpfr-6`,
+`libwinpthread-1`, `libzstd`, `libgcc_s_dw2-1` (+ `libstdc++-6`). Source:
+MSYS2 i686 repo packages (`repo.msys2.org/mingw/i686/`; note
+`libwinpthread-1.dll` lives in the `mingw-w64-i686-libwinpthread*` package,
+NOT in `winpthreads`, and `libgcc_s_dw2-1.dll` in `gcc-libs`). The driver
+defaults to `-march=r5900 -mhard-float -msingle-float -mno-llsc -mno-shared
+-mplt`.
+
+### ENDIANNESS CORRECTION (important)
+
+The on-disc SLUS_206.49 is a **genuine little-endian MIPS ELF** — NOT an
+"endian-swapped preservation copy". The EE boots little-endian (`MIPSEL`
+predefines in the SN specs, ps2dev target is `r5900el`). e_flags read LE =
+`0x20924001` = the standard EABI64/R5900 flag set (retail EXE shows
+`...4000` without the reloc bit). All earlier notes claiming a swapped copy
+were wrong; candidate `.text` bytes compare against baseline bytes directly,
+no swapping anywhere.
+
+### SN ProDG tier (era-correct, runs natively on Windows)
+
+`ee-gcc2.95.3-136.tar.gz` (SN Systems ProDG v1.36, sha256
+3b6ae6897229ad005aaf1b0afaa1f3cb46e74b4c21a42e01130c07c0c598067f, VERIFIED)
+contains Win32 PE binaries that run natively here — installed at
+`F:\Descargas\ee-gcc2.95.3-136\` (`bin\ee-gcc.exe` driver +
+`lib\gcc-lib\ee\2.95.3\{cc1,cc1plus,cpp,as}.exe` + `specs`). Its specs say
+`*version: 2.95.3-EE`, predefines `-D_MIPSEL -D_R5900`, multilib defaults
+`EL mips3`. Its objects are full-LE ELF32 MIPS with e_flags `0x20924001` —
+the same format as the retail ELF.
+
+`recompile_match.py` auto-detects it as tier **SN-EE** (search order:
+env `CNK_SN_GCC`, `tools/toolchains/ee-gcc2.95.3-136/`,
+`F:\Descargas\ee-gcc2.95.3-136\`, temp dir). It compiles with
+`-B<sn-lib> -I tools/sn_include -G0 -O<n>` (no `-ffunction-sections` in
+gcc 2.95 — functions are sliced from the object symtab instead), and pads
+candidate bins with zeros to the baseline size so link padding doesn't mask
+matches. Repo has `tools/sn_include/stdint.h` because the 2003 toolchain
+ships no libc headers.
+
+Status after first SN-EE run (-O2): **6/6 recovered files compile, 4 of 7
+function bins SIZE-ONLY, 2 DIFF, 0 EXACT** (GCC 15 tier had been 7 DIFF).
+Remaining gap is instruction selection (e.g. FUN_00114cf0 wants
+`lui $v1/sw-offset` + store sunk into the `jr` delay slot — v0 reserved
+hints the original returned something). Next lever: the actual GCC2096 cc1
+(Linux i386 ELF, already downloaded+sha-verified at temp
+`opencode/ee-gcc2.96/`) needs WSL2 + libc6:i386; WSL install was staged but
+cancelled (UAC denied). Add `...\ps2dev\ee\bin` to PATH for the modern tier.
 - **Conflict triage + hub dissection** (`tools/triage_conflicts.py`,
   `tools/dissect_hubs.py`): the human-review toolkit. Triage ranks all
   type-conflicts by class S-S > S-I > P-I (`conflicts_priority.csv`,
@@ -164,8 +245,8 @@ python tools/score_functions.py            # reads src/decomp, writes src/decomp
   and `roadmap.md`. Score = fan-in × 3 + callees + globals + COP2 + loops +
   size. `docs/09_ROADMAP.md` explains the ranking and the recoverable set.
 - The on-disc SLUS_206.49 reads as **little-endian** MIPS ELF (`data=1`,
-  `e_flags=0x20924000`, entry `0x00108D28`, LOAD at `0x00100000`) — endian-swapped
-  preservation copy; the EE is big-endian.
+  `e_flags=0x20924000`, entry `0x00108D28`, LOAD at `0x00100000`) — genuine
+  LE, see the ENDIANNESS CORRECTION above (old "swapped copy" claim wrong).
 - IGB parser (`tests` regression): public object list is `igb.objs` (not
   `objects`); scene walk is `extract_meshes()` (not `walk_scene()`).
 

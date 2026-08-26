@@ -7,7 +7,7 @@ run tools/match_check.py against the frozen match_baseline.csv so the
 progress bar is measurable per function (EXACT / SIZE-ONLY / DIFF / MISSING).
 
 Compiler tiers (auto-resolved, best wins):
-    ee-gcc        (ps2dev EE cross, big-endian MIPS R5900)  -> real bytes
+    mips64r5900el-ps2-elf-gcc / ee-gcc  (ps2dev EE cross, BE MIPS R5900) -> real bytes
     mips-linux-gnu-gcc / mipsel-linux-gnu-gcc               -> o32 MIPS bytes
     gcc / clang / cc                                         -> syntax-only
 The EE tier is the only one that can ever produce EXACT; the MIPS tier gives
@@ -26,6 +26,7 @@ import argparse
 import os
 import re
 import shutil
+import struct
 import subprocess
 import sys
 import io
@@ -37,13 +38,23 @@ RDIR = os.path.join(OUT, "candidate")
 TOOLS = os.path.join(ROOT, "tools")
 CSTD = "c11"
 
-CC_TIERS = [("ee-gcc", ["-ffunction-sections"]),
+CC_TIERS = [("mips64r5900el-ps2-elf-gcc", ["-ffunction-sections"]),
+            ("ee-gcc", ["-ffunction-sections"]),
             ("mips-linux-gnu-gcc", ["-ffunction-sections"]),
             ("mipsel-linux-gnu-gcc", ["-ffunction-sections"]),
             ("gcc", []), ("clang", []), ("cc", [])]
 
-OBJ_TIERS = ["ee-objcopy", "mips-linux-gnu-objcopy",
-             "mipsel-linux-gnu-objcopy"]
+OBJ_TIERS = ["mips64r5900el-ps2-elf-objcopy", "ee-objcopy",
+             "mips-linux-gnu-objcopy", "mipsel-linux-gnu-objcopy"]
+
+# SN Systems ProDG ee-gcc 2.95.3-EE (Win32 PE, era-correct codegen, LE MIPS).
+# Search order: env override, repo-local, stable download location, temp.
+SN_GCC_CANDIDATES = [
+    os.path.join(ROOT, "tools", "toolchains", "ee-gcc2.95.3-136", "bin", "ee-gcc.exe"),
+    r"F:\Descargas\ee-gcc2.95.3-136\bin\ee-gcc.exe",
+    r"C:\Users\Admin\AppData\Local\Temp\opencode\ee-gcc2.95.3\bin\ee-gcc.exe",
+]
+SN_INCLUDE = os.path.join(TOOLS, "sn_include")
 
 
 def which(name):
@@ -135,6 +146,51 @@ def extract_from_elf(data, sec):
     return None
 
 
+def elf_symbols(data):
+    """[(name, value, size, type)] STT_FUNC/STT_OBJECT globals from an ELF32 object."""
+    if data[:4] != b"\x7fELF" or data[4] != 1:
+        return []
+    endian = "<" if data[5] == 1 else ">"
+    shoff = int.from_bytes(data[0x20:0x24], "little")
+    shentsz = int.from_bytes(data[0x2e:0x30], "little")
+    shnum = int.from_bytes(data[0x30:0x32], "little")
+    secs = []
+    for i in range(shnum):
+        off = shoff + i * shentsz
+        name_off, fl = struct.unpack_from(endian + "II", data, off)
+        sec_off, sec_sz = struct.unpack_from(endian + "II", data, off + 0x10)
+        secs.append((i, name_off, fl, sec_off, sec_sz))
+    def blob(i):
+        _, _, _, o, sz = secs[i]
+        return data[o:o + sz]
+    syms = []
+    for i, name_off, fl, o, sz in secs:
+        if fl & 2 or (i == 0):  # skip non-alloc? symtab is not alloc; use type instead
+            pass
+    # find SHT_SYMTAB (type 2) and its linked strtab
+    symtab_i = None
+    for i in range(shnum):
+        off = shoff + i * shentsz
+        sh_type = int.from_bytes(data[off + 4:off + 6], "little")
+        if sh_type == 2:
+            symtab_i = i
+            break
+    if symtab_i is None:
+        return []
+    link = int.from_bytes(data[shoff + symtab_i * shentsz + 24:
+                               shoff + symtab_i * shentsz + 26], "little")
+    strtab = blob(link)
+    tab = blob(symtab_i)
+    for j in range(0, len(tab) - len(tab) % 16, 16):
+        name32, val, size_, info, _oth, _sh = struct.unpack(endian + "IIIBBH", tab[j:j + 16])
+        if (info & 0xf) not in (1, 2) or name32 == 0:  # STT_OBJECT / STT_FUNC
+            continue
+        end = strtab.find(b"\x00", name32)
+        nm = strtab[name32:end].decode("ascii", "replace")
+        syms.append((nm, val, size_, info & 0xf))
+    return syms
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-check", action="store_true",
@@ -144,19 +200,26 @@ def main():
     args = ap.parse_args()
 
     cc = None
-    for name, flags in CC_TIERS:
-        if which(name):
-            cc = name
-            cc_flags = flags
-            break
+    cc_flags = []
+    sn_gcc = os.environ.get("CNK_SN_GCC") or next(
+        (p for p in SN_GCC_CANDIDATES if os.path.isfile(p)), None)
+    if sn_gcc:
+        cc = sn_gcc
+    else:
+        for name, flags in CC_TIERS:
+            if which(name):
+                cc = name
+                cc_flags = flags
+                break
 
     # zig cc: one-binary cross toolkit (host or mips-linux-gnu big-endian).
-    zig = which("zig")
+    zig = None if sn_gcc else which("zig")
 
     if not cc and not zig:
         sys.stderr.write("no C compiler found - nothing to compile.\n"
                          "  host: install gcc/clang, or put zig on PATH\n"
-                         "  EE:   install ps2dev (ee-gcc) - best tier\n")
+                         "  EE:   install ps2dev (mips64r5900el-ps2-elf-gcc) - best tier\n"
+                         "  SN:   set CNK_SN_GCC=<...ee-gcc.exe> - era-correct tier\n")
         sys.exit(2)
 
     objcopy = None
@@ -165,8 +228,28 @@ def main():
             objcopy = name
             break
 
-    tier = "EE" if cc == "ee-gcc" else ("MIPS" if zig or cc and "mips" in cc else "HOST")
-    print("compiler tier: %s%s" % (tier, " (via zig cc)" if zig else " (%s)" % cc))
+    is_sn = bool(sn_gcc) and cc == sn_gcc
+    if is_sn:
+        tier = "SN-EE"
+    elif cc in ("ee-gcc", "mips64r5900el-ps2-elf-gcc"):
+        tier = "EE"
+    else:
+        tier = "MIPS" if zig or cc and "mips" in cc else "HOST"
+    print("compiler tier: %s%s" % (
+        tier,
+        " (SN ProDG 2.95.3)" if is_sn else (" (via zig cc)" if zig else " (%s)" % cc)))
+
+    # baseline sizes for zero-padding candidate bins (linker alignment parity)
+    base_sizes = {}
+    bl_csv = os.path.join(ROOT, "src", "decomp", "analysis", "match_baseline.csv")
+    if os.path.exists(bl_csv):
+        import csv as _csv
+        with io.open(bl_csv, encoding="utf-8", newline="") as f:
+            for row in _csv.DictReader(f):
+                try:
+                    base_sizes[int(row["address"], 16)] = int(row["size"])
+                except (KeyError, ValueError):
+                    pass
 
     os.makedirs(RDIR, exist_ok=True)
     for f in os.listdir(RDIR):
@@ -181,9 +264,14 @@ def main():
         src = os.path.join(REC, fn)
         ob = os.path.join(OUT, fn[:-2] + ".o")
         amap = addr_map(src)
-        if zig:
+        if is_sn:
+            sn_lib = os.path.join(os.path.dirname(os.path.dirname(cc)),
+                                  "lib", "gcc-lib", "ee", "2.95.3") + os.sep
+            cmd = [cc, "-B" + sn_lib, "-I", SN_INCLUDE,
+                   "-I", os.path.join(ROOT, "include", "engine"),
+                   "-G0", "-O" + args.opt, "-c", "-o", ob, src]
+        elif zig:
             target = "-target" if "mips" in tier or tier == "ZIG" else ""
-        if zig:
             cmd = [zig, "cc", "-I", os.path.join(ROOT, "include", "engine"),
                    "-std=" + CSTD, "-O" + args.opt, "-c", "-o", ob, src,
                    "-ffunction-sections"]
@@ -202,10 +290,11 @@ def main():
         if tier != "HOST":
             with io.open(ob, "rb") as f:
                 ob_data = f.read()
+            syms = {nm: (val, sz) for nm, val, sz, _t in elf_symbols(ob_data)}
             for sym, addr in amap.items():
                 sec = ".text." + sym
                 blob = extract_from_elf(ob_data, sec) if not objcopy else None
-                if objcopy:
+                if objcopy and not blob:
                     dst = os.path.join(RDIR, "0x%08x.bin" % addr)
                     r2 = subprocess.run(
                         [objcopy, "--dump-section", "%s=%s" % (sec, dst), ob],
@@ -213,7 +302,16 @@ def main():
                     if r2.returncode == 0 and os.path.exists(dst) and \
                             os.path.getsize(dst) > 0:
                         blob = open(dst, "rb").read()
+                if not blob and sym in syms:
+                    val, sz = syms[sym]  # symtab slice (SN objects: single .text)
+                    for sname, sblob in elf_sections(ob_data):
+                        if sname == ".text":
+                            blob = sblob[val:val + sz]
+                            break
                 if blob:
+                    want = base_sizes.get(addr)
+                    if want and len(blob) < want:
+                        blob = blob + b"\x00" * (want - len(blob))  # link padding parity
                     dst = os.path.join(RDIR, "0x%08x.bin" % addr)
                     with open(dst, "wb") as f:
                         f.write(blob)
