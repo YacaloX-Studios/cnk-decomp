@@ -1,4 +1,4 @@
-[![Build Status]][actions] ![Progress] [![Discord Badge]][discord]
+[![Build Status]][actions] ![Progress]
 =============
 
 [Build Status]: https://github.com/YacaloX-Studios/cnk-decomp/actions/workflows/build.yml/badge.svg
