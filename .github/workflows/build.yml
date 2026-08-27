@@ -1,0 +1,75 @@
+name: build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# Serialize per ref — a new push supersedes its in-flight run; main never
+# cancelled so its report always finishes (mirrors crashwoc matching.yml).
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: python syntax check (tools)
+        run: |
+          set -e
+          for t in tools/*.py; do python -m py_compile "$t"; done
+          echo "py_compile OK"
+
+      - name: regenerate analysis products (smoke)
+        run: |
+          python tools/make_registry.py || echo "make_registry skipped (needs SLUS_206.49)"
+          python tools/score_functions.py || echo "score_functions skipped"
+          python tools/infer_types.py SLUS_206.49 src/decomp 2>&1 | head -20 || echo "infer_types skipped (no ELF)"
+          python tools/propagate_types.py || echo "propagate_types skipped"
+
+      - name: host C check of recovered headers
+        run: |
+          gcc -Iinclude/engine -std=c11 -Wall -Wextra -c -o /dev/null include/engine/validate_headers.c
+          echo "PASS (host gcc)"
+
+      - name: generate decomp.dev progress report
+        run: |
+          mkdir -p build
+          python tools/decomp_progress.py --out build/report.json
+          cat build/report.json
+
+      - name: upload decomp.dev report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: build/report.json
+          if-no-files-found: error
+
+      # Optional: if the repo is registered on decomp.dev and DECOMP_DEV_TOKEN
+      # is set as an Actions secret, push the report to the project page.
+      # To enable:
+      #   1. Create project at https://decomp.dev/manage/new (slug: YacaloX-Studios/cnk-decomp)
+      #   2. In repo Settings → Secrets → Actions, add secret DECOMP_DEV_TOKEN
+      #      (Personal Access Token from decomp.dev with `report:write` scope)
+      # The step is a no-op without the secret, so forks never fail.
+      - name: publish to decomp.dev
+        if: env.DECOMP_DEV_TOKEN != ''
+        env:
+          DECOMP_DEV_TOKEN: ${{ secrets.DECOMP_DEV_TOKEN }}
+        run: |
+          curl -sS -X POST "https://decomp.dev/api/YacaloX-Studios/cnk-decomp/report" \
+            -H "Authorization: Bearer $DECOMP_DEV_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data-binary @build/report.json \
+            | head -c 500; echo

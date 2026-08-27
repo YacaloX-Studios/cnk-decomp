@@ -1,3 +1,12 @@
+[![Build Status]][actions] ![Progress] [![Discord Badge]][discord]
+=============
+
+[Build Status]: https://github.com/YacaloX-Studios/cnk-decomp/actions/workflows/build.yml/badge.svg
+[actions]: https://github.com/YacaloX-Studios/cnk-decomp/actions/workflows/build.yml
+[Progress]: https://decomp.dev/YacaloX-Studios/cnk-decomp.svg?mode=shield&measure=matched_code_percent&label=Matched
+[Discord Badge]: https://img.shields.io/badge/chat-discord-7289da.svg
+[discord]: https://discord.gg/invite
+
 # Crash Nitro Kart Decomp
 
 Reverse-engineering project for **Crash Nitro Kart** (PS2 / Xbox / GameCube, 2003,
@@ -56,6 +65,59 @@ repository grants permission to redistribute the game's data.
 ├── README.md
 └── .gitignore
 ```
+
+## Progress tracking (decomp.dev)
+
+This project reports matching progress to [decomp.dev](https://decomp.dev/YacaloX-Studios/cnk-decomp) (badge above). The CI workflow [build.yml](.github/workflows/build.yml) generates and uploads `build/report.json` on every push/PR.
+
+### 1. Configurar los archivos objetivo (target objects)
+
+El sistema necesita comparar tu código reescrito contra los binarios originales:
+
+- Asegúrate de tener los objetos (`.o`) que representen el estado "completado" del binario. En este repo el baseline congelado es [`src/decomp/analysis/match_baseline.csv`](src/decomp/analysis/match_baseline.csv) (14.439 funciones / 5,1 MB, sha256 por función) y los candidatos se vuelcan como `src/decomp/analysis/recompiled/candidate/<addr>.bin` vía [`tools/recompile_match.py`](tools/recompile_match.py).
+- Si migras a **splat** para desensamblar `SLUS_206.49`, activa el parámetro que fuerza objetos completos en lugar de un `.s` por función:
+
+  ```bash
+  # en splat config yaml o CLI:
+  --make-full-disasm-for-code
+  ```
+
+  Esto hace que splat emita objetos completos (`.o` comparables) y objdiff pueda medir el progreso por unidad de compilación.
+
+### 2. Generar el reporte con objdiff
+
+La forma estándar de enviar datos a la plataforma es mediante **objdiff** (o el generador propio de este repo):
+
+```bash
+# Opción A — generador propio (sin dependencias nativas, ya integrado al CI):
+python tools/decomp_progress.py --out build/report.json
+cat build/report.json  # { measures: { matched_code_percent: ... }, categories: [...] }
+
+# Opción B — si usas splat + objdiff nativo:
+#   python -m objdiff report generate --in build/report.json --out build/report.json
+# (plantillas modernas dtk-template ya lo traen preconfigurado)
+```
+
+El workflow [`build.yml`](.github/workflows/build.yml) hace exactamente esto y sube el artefacto `report` con `actions/upload-artifact@v4`. Puedes replicarlo local:
+
+```bash
+python tools/decomp_progress.py --candidate src/decomp/analysis/recompiled/candidate
+```
+
+### 3. Instalar la aplicación de GitHub
+
+Para que tu proyecto aparezca listado y se actualice solo:
+
+1. Dirígete a [decomp.dev](https://decomp.dev) y crea el proyecto en `Manage → New` (slug sugerido: `YacaloX-Studios/cnk-decomp`).
+2. Instala su **GitHub App** en tu repositorio u organización (Settings → GitHub Apps → `decomp.dev` → Install).
+3. En `Settings → Secrets and variables → Actions` añade el secreto `DECOMP_DEV_TOKEN` (token con scope `report:write` generado en decomp.dev).
+4. El workflow `build.yml` contiene el paso final `publish to decomp.dev` que hace `POST https://decomp.dev/api/YacaloX-Studios/cnk-decomp/report` automáticamente; el bot comentará en tus Pull Requests el delta de progreso.
+
+Sin el token el CI sigue verde (el paso es `if: env.DECOMP_DEV_TOKEN != ''`), así que los forks no fallan.
+
+### 4. Consultar y validar la API
+
+Si usas herramientas personalizadas ajenas a objdiff, puedes estructurar tus reportes usando su esquema de Protocol Buffers (protobuf) y enviarlos directamente mediante su API. Explora los endpoints en el [API explorer de decomp.dev](https://decomp.dev/api) para personalizar también tus medallas (badges) de progreso — p. ej. `https://decomp.dev/YacaloX-Studios/cnk-decomp.svg?mode=shield&measure=matched_code_percent`.
 
 ## Usage
 

@@ -41,3 +41,4 @@ __pycache__/
 # Recompilation artifacts (recompile_match.py)
 src/decomp/analysis/recompiled/
 *.o
+build/
