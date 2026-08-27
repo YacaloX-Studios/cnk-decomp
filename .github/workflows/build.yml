@@ -43,16 +43,26 @@ jobs:
           gcc -Iinclude/engine -std=c11 -Wall -Wextra -c -o /dev/null include/engine/validate_headers.c
           echo "PASS (host gcc)"
 
-      - name: generate decomp.dev progress report
+      - name: generate objdiff config (guide step 3)
+        run: |
+          python tools/generate_objdiff_config.py --check
+          cat objdiff.json
+
+      - name: generate decomp.dev progress report (guide step 4)
         run: |
           mkdir -p build
-          python tools/decomp_progress.py --out build/report.json
+          # Prefer objdiff-cli if available (dtk-template style), fallback to python generator
+          if command -v objdiff-cli >/dev/null 2>&1; then
+            objdiff-cli report generate -o build/report.json || python tools/decomp_progress.py --out build/report.json
+          else
+            python tools/decomp_progress.py --out build/report.json
+          fi
           cat build/report.json
 
-      - name: upload decomp.dev report artifact
+      - name: upload decomp.dev report artifact (guide step 5 — VERSION_report)
         uses: actions/upload-artifact@v4
         with:
-          name: report
+          name: SLUS_206.49_report
           path: build/report.json
           if-no-files-found: error
 

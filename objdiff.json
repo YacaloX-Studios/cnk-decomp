@@ -1,7 +1,28 @@
 {
-  "_comment": "objdiff project for Crash Nitro Kart (PS2) — stub until splat is wired. Once splat is adopted, generate via python configure.py and run python -m objdiff report generate --in build/report.json. decomp.dev will ingest build/report.json produced by tools/decomp_progress.py.",
+  "$schema": "https://raw.githubusercontent.com/encounter/objdiff/main/config.schema.json",
   "custom_make": "ninja",
+  "build_target": false,
   "build_base": false,
-  "watch_patterns": ["src/decomp/recovered/**/*.c", "include/engine/**/*.h"],
-  "units": []
+  "watch_patterns": [
+    "src/decomp/recovered/**/*.c",
+    "include/engine/**/*.h"
+  ],
+  "progress_categories": [
+    {
+      "id": "code",
+      "name": "Code"
+    }
+  ],
+  "units": [
+    {
+      "name": "main",
+      "target_path": "expected/build/SLUS_206.49.o",
+      "base_path": "build/src/main.o",
+      "metadata": {
+        "progress_categories": [
+          "code"
+        ]
+      }
+    }
+  ]
 }

@@ -42,3 +42,8 @@ __pycache__/
 src/decomp/analysis/recompiled/
 *.o
 build/
+# decomp.dev local server (never commit)
+db.sqlite
+jobs.sqlite
+config.yml
+.github/workflows/config.yml
