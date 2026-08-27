@@ -4,8 +4,6 @@
 [Build Status]: https://github.com/YacaloX-Studios/cnk-decomp/actions/workflows/build.yml/badge.svg
 [actions]: https://github.com/YacaloX-Studios/cnk-decomp/actions/workflows/build.yml
 [Progress]: https://decomp.dev/YacaloX-Studios/cnk-decomp.svg?mode=shield&measure=matched_code_percent&label=Matched
-[Discord Badge]: https://img.shields.io/badge/chat-discord-7289da.svg
-[discord]: https://discord.gg/invite
 
 # Crash Nitro Kart Decomp
 
