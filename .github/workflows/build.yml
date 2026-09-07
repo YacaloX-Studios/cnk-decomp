@@ -16,6 +16,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [SLUS_206.49]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -50,29 +54,25 @@ jobs:
 
       - name: generate decomp.dev progress report (guide step 4)
         run: |
-          mkdir -p build
-          # Prefer objdiff-cli if available (dtk-template style), fallback to python generator
+          mkdir -p build/${{ matrix.version }}
+          # Prefer objdiff-cli if available (dtk-template/melee style), fallback to python generator
           if command -v objdiff-cli >/dev/null 2>&1; then
-            objdiff-cli report generate -o build/report.json || python tools/decomp_progress.py --out build/report.json
+            objdiff-cli report generate -o build/${{ matrix.version }}/report.json || python tools/decomp_progress.py --out build/${{ matrix.version }}/report.json
           else
-            python tools/decomp_progress.py --out build/report.json
+            python tools/decomp_progress.py --out build/${{ matrix.version }}/report.json
           fi
-          cat build/report.json
+          cat build/${{ matrix.version }}/report.json
 
-      - name: upload decomp.dev report artifact (guide step 5 — VERSION_report)
+      - name: upload decomp.dev report artifact (guide step 5 — VERSION_report, melee uses GALE01_report)
         uses: actions/upload-artifact@v4
         with:
-          name: SLUS_206.49_report
-          path: build/report.json
+          name: ${{ matrix.version }}_report
+          path: build/${{ matrix.version }}/report.json
           if-no-files-found: error
 
-      # Optional: if the repo is registered on decomp.dev and DECOMP_DEV_TOKEN
-      # is set as an Actions secret, push the report to the project page.
-      # To enable:
-      #   1. Create project at https://decomp.dev/manage/new (slug: YacaloX-Studios/cnk-decomp)
-      #   2. In repo Settings → Secrets → Actions, add secret DECOMP_DEV_TOKEN
-      #      (Personal Access Token from decomp.dev with `report:write` scope)
-      # The step is a no-op without the secret, so forks never fail.
+      # Optional: si el repo ya está registrado en decomp.dev y DECOMP_DEV_TOKEN
+      # está en Secrets (org o repo), hace POST directo. Normalmente basta con
+      # el GitHub App (polling) — este paso es fallback y no-op sin token.
       - name: publish to decomp.dev
         if: env.DECOMP_DEV_TOKEN != ''
         env:
@@ -81,5 +81,5 @@ jobs:
           curl -sS -X POST "https://decomp.dev/api/YacaloX-Studios/cnk-decomp/report" \
             -H "Authorization: Bearer $DECOMP_DEV_TOKEN" \
             -H "Content-Type: application/json" \
-            --data-binary @build/report.json \
-            | head -c 500; echo
+            --data-binary @build/${{ matrix.version }}/report.json \
+            | head -c 800; echo
